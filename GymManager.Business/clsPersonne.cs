@@ -63,6 +63,19 @@ namespace GymManager.Business
         }
 
 
+        public static clsPersonne FindPersonne(int ID)
+        {
+            string Prenom = "", Nom = "", NumeroTelephone = "", Email = "", Image = ""; 
+            byte Genre = 0;
+            DateTime DateDeNaissance = DateTime.Now;
+
+
+
+            if ( clsPersonneData.FindPersonne( ID, ref  Prenom, ref  Nom, ref  NumeroTelephone, ref  Email, ref  DateDeNaissance, ref  Genre, ref  Image) )
+                return new clsPersonne(ID, Prenom,  Nom,  NumeroTelephone,  Email,  DateDeNaissance,  Genre,  Image);
+            else
+                return null;
+        }
 
 
 
