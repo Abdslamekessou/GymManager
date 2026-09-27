@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DVLD_DataAccessLayer">
-      <HintPath>..\..\..\Programming Advices\Course 19\DVLDTRY\DVLD_DataAccessLayer\bin\Debug\DVLD_DataAccessLayer.dll</HintPath>
+    <Reference Include="GymManager.DataAccess">
+      <HintPath>..\GymManager.DataAccess\bin\Debug\GymManager.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
