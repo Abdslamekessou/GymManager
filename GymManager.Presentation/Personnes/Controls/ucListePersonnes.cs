@@ -1,5 +1,4 @@
-﻿using GymManager.Business;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GymManager.Presentation
+namespace GymManager.Presentation.Personnes.Controls
 {
-    public partial class MainForm : Form
+    public partial class ucListePersonnes : UserControl
     {
-        public MainForm()
+        public ucListePersonnes()
         {
             InitializeComponent();
         }
+
+
 
     }
 }
