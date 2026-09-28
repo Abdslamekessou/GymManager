@@ -69,6 +69,46 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
+
+        public static bool isPersonExist(int id)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+
+            string query = "SELECT * FROM Personnes WHERE PersonneID = @id";
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                    isFound = true;
+                else
+                    isFound = false;
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+
+        }
+
+
         public static DataTable GetAllPersons()
         {
             DataTable dt = new DataTable();
@@ -119,6 +159,9 @@ from Personnes";
 
 
     }
+
+
+
 
 
 }

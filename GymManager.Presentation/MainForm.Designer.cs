@@ -33,7 +33,7 @@
             // 
             // ucListePersonnes1
             // 
-            this.ucListePersonnes1.Location = new System.Drawing.Point(12, 12);
+            this.ucListePersonnes1.Location = new System.Drawing.Point(48, 40);
             this.ucListePersonnes1.Name = "ucListePersonnes1";
             this.ucListePersonnes1.Size = new System.Drawing.Size(1114, 481);
             this.ucListePersonnes1.TabIndex = 0;
