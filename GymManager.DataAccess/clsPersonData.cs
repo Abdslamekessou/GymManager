@@ -149,6 +149,66 @@ SELECT SCOPE_IDENTITY();
 
         }
 
+        public static bool UpdatePerson(int PersonID, string FirstName, string LastName,
+    string PhoneNumber, string Email, DateTime DateOfBirth, byte Gendor, string Image)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+            string query = @"
+UPDATE Personnes
+SET
+    Prenom = @Prenom,
+    Nom = @Nom,
+    NumeroTelephone = @NumeroTelephone,
+    Email = @Email,
+    DateDeNaissance = @DateDeNaissance,
+    Genre = @Genre,
+    Image = @Image
+WHERE PersonneID = @PersonID;
+";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@Prenom", FirstName);
+            command.Parameters.AddWithValue("@Nom", LastName);
+            command.Parameters.AddWithValue("@NumeroTelephone", PhoneNumber);
+            command.Parameters.AddWithValue("@DateDeNaissance", DateOfBirth);
+            command.Parameters.AddWithValue("@Genre", Gendor);
+
+            if (!string.IsNullOrEmpty(Email))
+                command.Parameters.AddWithValue("@Email", Email);
+            else
+                command.Parameters.AddWithValue("@Email", DBNull.Value);
+
+            if (!string.IsNullOrEmpty(Image))
+                command.Parameters.AddWithValue("@Image", Image);
+            else
+                command.Parameters.AddWithValue("@Image", DBNull.Value);
+
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                isFound = rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
         public static bool isPersonExist(int id)
         {
             bool isFound = false;

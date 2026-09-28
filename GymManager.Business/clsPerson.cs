@@ -70,6 +70,12 @@ namespace GymManager.Business
         }
 
 
+        private bool _UpdatePerson()
+        {
+            return clsPersonData.UpdatePerson(this.PersonID, this.FirstName, this.LastName, this.PhoneNumber, this.Email, this.DateOfBirth, this.Gendor, this.Image);
+        }
+
+
         public static clsPerson FindPerson(int ID)
         {
             string FirstName = "", LastName = "", PhoneNumber = "", Email = "", Image = ""; 

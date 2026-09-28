@@ -107,6 +107,37 @@
         }
 
 
+        [TestMethod]
+        public void UpdatePerson_ShouldReturnTrue_WhenPersonExists()
+        {
+            // Arrange
+            int personID = 12;
+
+            string firstName = "Ahcene";
+            string lastName = "Updated";
+            string phoneNumber = "0555555555";
+            string email = "john.updated@gmail.com";
+            DateTime dateOfBirth = new DateTime(2000, 1, 15);
+            byte gender = 1;
+            string image = "";
+
+            // Act
+            bool result = clsPersonData.UpdatePerson(
+                personID,
+                firstName,
+                lastName,
+                phoneNumber,
+                email,
+                dateOfBirth,
+                gender,
+                image
+            );
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+
     }
 
 

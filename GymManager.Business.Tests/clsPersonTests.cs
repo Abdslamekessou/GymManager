@@ -95,5 +95,33 @@
         //}
 
 
+
+        //[TestMethod]
+        //public void UpdatePerson_ShouldUpdatePersonSuccessfully()
+        //{
+        //    // Arrange
+        //    int personID = 12;
+
+        //    clsPerson person = clsPerson.FindPerson(personID);
+
+        //    person.FirstName = "UpdatedFirstName";
+        //    person.LastName = "UpdatedLastName";
+        //    person.PhoneNumber = "0555555555";
+        //    person.Email = "updated@gmail.com";
+        //    person.DateOfBirth = new DateTime(2000, 1, 1);
+        //    person.Gendor = 1;
+        //    person.Image = "";
+
+        //    // Act
+        //    bool result = person._UpdatePerson();
+
+        //    // Assert
+        //    Assert.IsTrue(result);
+        //}
+
+
     }
+
+
+
 }
