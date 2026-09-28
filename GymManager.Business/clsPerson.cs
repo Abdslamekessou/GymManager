@@ -78,6 +78,12 @@ namespace GymManager.Business
         }
 
 
+        public static bool isPersonExist(int ID)
+        {
+            return clsPersonData.isPersonExist(ID);
+        }
+
+
 
         public static DataTable GetAllPersons()
         {

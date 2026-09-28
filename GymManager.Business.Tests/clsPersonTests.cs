@@ -42,5 +42,32 @@
         }
 
 
+        [TestMethod]
+        public void IsPersonExist_ExistingPerson_ReturnsTrue()
+        {
+            // Arrange
+            int personID = 1; // Make sure this PersonID exists in the database
+
+            // Act
+            bool result = clsPerson.isPersonExist(personID);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void IsPersonExist_NonExistingPerson_ReturnsFalse()
+        {
+            // Arrange
+            int personID = 999999; // Make sure this ID does not exist
+
+            // Act
+            bool result = clsPerson.isPersonExist(personID);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+
     }
 }
