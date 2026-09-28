@@ -69,5 +69,31 @@
         }
 
 
+        //[TestMethod]
+        //public void AddNewPerson_ValidData_PersonIsAdded()
+        //{
+        //    // Arrange
+        //    clsPerson person = new clsPerson();
+
+        //    person.FirstName = "Test02";
+        //    person.LastName = "Person";
+        //    person.PhoneNumber = "0555555555";
+        //    person.Email = "test@test.com";
+        //    person.DateOfBirth = new DateTime(2000, 1, 1);
+        //    person.Gendor = 1;
+        //    person.Image = null;
+
+        //    // Act
+        //    bool result = person._AddNewPerson();
+
+        //    // Assert
+        //    Assert.IsTrue(result);
+        //    Assert.IsTrue(person.PersonID > 0);
+
+        //    // Verify that the generated ID actually exists
+        //    Assert.IsTrue(clsPerson.isPersonExist(person.PersonID));
+        //}
+
+
     }
 }

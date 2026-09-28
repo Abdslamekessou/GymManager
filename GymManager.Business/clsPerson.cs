@@ -62,6 +62,13 @@ namespace GymManager.Business
             Mode = enMode.Update;
         }
 
+        private bool _AddNewPerson()
+        {
+            this.PersonID = clsPersonData.AddNewPerson(this.FirstName , this.LastName , this.PhoneNumber, this.Email , this.DateOfBirth , this.Gendor , this.Image);
+
+            return PersonID != -1;
+        }
+
 
         public static clsPerson FindPerson(int ID)
         {

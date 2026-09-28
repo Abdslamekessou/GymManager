@@ -79,6 +79,34 @@
         }
 
 
+        [TestMethod]
+        public void AddNewPerson_ValidData_ReturnsNewPersonID()
+        {
+            // Arrange
+            string firstName = "Test";
+            string lastName = "Person";
+            string phoneNumber = "0555555555";
+            string email = "test@test.com";
+            DateTime dateOfBirth = new DateTime(2000, 1, 1);
+            byte gender = 1;
+            string image = "";
+
+            // Act
+            int personID = clsPersonData.AddNewPerson(
+                firstName,
+                lastName,
+                phoneNumber,
+                email,
+                dateOfBirth,
+                gender,
+                image
+            );
+
+            // Assert
+            Assert.IsTrue(personID > 0);
+        }
+
+
     }
 
 

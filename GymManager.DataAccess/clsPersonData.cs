@@ -69,6 +69,85 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
+        public static int AddNewPerson(string FirstName, string LastName, string PhoneNumber, string Email, DateTime DateOfBirth , byte Gendor , string Image )
+        {
+            int addedPersonId = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+            string query = @"
+INSERT INTO Personnes
+(
+    Prenom,
+    Nom,
+    NumeroTelephone,
+    Email,
+    DateDeNaissance,
+    Genre,
+    Image
+    
+)
+VALUES
+(
+    @Prenom,
+    @Nom,
+    @NumeroTelephone,
+    @Email,
+    @DateDeNaissance,
+    @Genre,
+    @Image
+   
+);
+
+SELECT SCOPE_IDENTITY();
+";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Prenom", FirstName );
+            command.Parameters.AddWithValue("@Nom", LastName);
+            command.Parameters.AddWithValue("@NumeroTelephone", PhoneNumber);
+            command.Parameters.AddWithValue("@DateDeNaissance", DateOfBirth);
+            command.Parameters.AddWithValue("@Genre", Gendor);
+
+
+            if (Email != "" && Email != null)
+                command.Parameters.AddWithValue("@Email", Email);
+            else
+                command.Parameters.AddWithValue("@Email", DBNull.Value);
+
+
+            if (Image != "" && Image != null)
+                command.Parameters.AddWithValue("@Image", Image);
+            else
+                command.Parameters.AddWithValue("@Image", DBNull.Value);
+
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+
+                if (result != null && int.TryParse(result.ToString(), out int insertedID))
+                {
+                    addedPersonId = insertedID;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return addedPersonId;
+
+        }
 
         public static bool isPersonExist(int id)
         {
