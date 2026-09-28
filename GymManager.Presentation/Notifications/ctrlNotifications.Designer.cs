@@ -277,7 +277,7 @@
             // 
             // Status
             // 
-            this.Status.DataPropertyName = "Status";
+            this.Status.DataPropertyName = "AbonnementStatus";
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 8;
             this.Status.Name = "Status";
@@ -333,6 +333,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlNotifications";
             this.Size = new System.Drawing.Size(1480, 969);
+            this.Load += new System.EventHandler(this.ctrlNotifications_Load_1);
             this.pnlFilters.ResumeLayout(false);
             this.pnlFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).EndInit();

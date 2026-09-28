@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GymManager.Presentation.Notifications
@@ -25,7 +19,7 @@ namespace GymManager.Presentation.Notifications
             dtNotifications.Columns.Add("MemberName", typeof(string));
             dtNotifications.Columns.Add("Sport", typeof(string));
             dtNotifications.Columns.Add("SubscriptionType", typeof(string));
-            dtNotifications.Columns.Add("Status", typeof(string));
+            dtNotifications.Columns.Add("AbonnementStatus", typeof(string));
             dtNotifications.Columns.Add("ReadStatus", typeof(string));
             dtNotifications.Columns.Add("Exportation", typeof(string));
 
@@ -77,6 +71,11 @@ namespace GymManager.Presentation.Notifications
             dgvNotifications.DataSource = dtNotifications;
         }
         private void ctrlNotifications_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlNotifications_Load_1(object sender, EventArgs e)
         {
 
         }
