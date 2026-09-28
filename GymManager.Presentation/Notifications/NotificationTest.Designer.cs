@@ -35,10 +35,10 @@
             // 
             this.ctrlNotifications1.AutoSize = true;
             this.ctrlNotifications1.BackColor = System.Drawing.Color.White;
-            this.ctrlNotifications1.Location = new System.Drawing.Point(12, 12);
-            this.ctrlNotifications1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlNotifications1.Location = new System.Drawing.Point(13, 1);
+            this.ctrlNotifications1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlNotifications1.Name = "ctrlNotifications1";
-            this.ctrlNotifications1.Size = new System.Drawing.Size(1860, 948);
+            this.ctrlNotifications1.Size = new System.Drawing.Size(1431, 948);
             this.ctrlNotifications1.TabIndex = 0;
             // 
             // NotificationTest
@@ -46,7 +46,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1773, 739);
+            this.ClientSize = new System.Drawing.Size(1605, 987);
             this.Controls.Add(this.ctrlNotifications1);
             this.Name = "NotificationTest";
             this.Text = "NotificationTest";

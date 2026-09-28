@@ -22,16 +22,14 @@ namespace GymManager.Presentation.Notifications
         {
             DataTable dtNotifications = new DataTable();
 
-            dtNotifications.Columns.Add("NotificationID", typeof(int));
             dtNotifications.Columns.Add("MemberName", typeof(string));
             dtNotifications.Columns.Add("Sport", typeof(string));
             dtNotifications.Columns.Add("SubscriptionType", typeof(string));
             dtNotifications.Columns.Add("Status", typeof(string));
             dtNotifications.Columns.Add("ReadStatus", typeof(string));
-            dtNotifications.Columns.Add("ExportStatus", typeof(string));
+            dtNotifications.Columns.Add("Exportation", typeof(string));
 
             dtNotifications.Rows.Add(
-                1,
                 "Ahmed Ali",
                 "Musculation",
                 "Mensuel",
@@ -41,7 +39,6 @@ namespace GymManager.Presentation.Notifications
             );
 
             dtNotifications.Rows.Add(
-                2,
                 "Karim Benali",
                 "Spinning",
                 "Trimestriel",
@@ -51,7 +48,6 @@ namespace GymManager.Presentation.Notifications
             );
 
             dtNotifications.Rows.Add(
-                3,
                 "Sara Ahmed",
                 "Yoga",
                 "Mensuel",
@@ -61,7 +57,6 @@ namespace GymManager.Presentation.Notifications
             );
 
             dtNotifications.Rows.Add(
-                4,
                 "Yacine Brahimi",
                 "CrossFit",
                 "Trimestriel",
@@ -71,7 +66,6 @@ namespace GymManager.Presentation.Notifications
             );
 
             dtNotifications.Rows.Add(
-                5,
                 "Lina Mansouri",
                 "Boxe",
                 "Mensuel",
@@ -81,7 +75,6 @@ namespace GymManager.Presentation.Notifications
             );
 
             dgvNotifications.DataSource = dtNotifications;
-
         }
         private void ctrlNotifications_Load(object sender, EventArgs e)
         {
