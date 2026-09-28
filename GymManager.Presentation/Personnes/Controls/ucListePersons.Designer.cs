@@ -1,6 +1,6 @@
 ﻿namespace GymManager.Presentation.Personnes.Controls
 {
-    partial class ucListePersonnes
+    partial class ucListePersons
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnAddPersonne = new System.Windows.Forms.Button();
+            this.btnAddPerson = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvPersonnes = new System.Windows.Forms.DataGridView();
+            this.dgvPersons = new System.Windows.Forms.DataGridView();
             this.gpFilters = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblManagerPersonnes = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             this.gpFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAddPersonne
+            // btnAddPerson
             // 
-            this.btnAddPersonne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPersonne.Location = new System.Drawing.Point(931, 35);
-            this.btnAddPersonne.Name = "btnAddPersonne";
-            this.btnAddPersonne.Size = new System.Drawing.Size(123, 52);
-            this.btnAddPersonne.TabIndex = 128;
-            this.btnAddPersonne.Text = "Ajouter Personne";
-            this.btnAddPersonne.UseVisualStyleBackColor = true;
+            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPerson.Location = new System.Drawing.Point(931, 35);
+            this.btnAddPerson.Name = "btnAddPerson";
+            this.btnAddPerson.Size = new System.Drawing.Size(123, 52);
+            this.btnAddPerson.TabIndex = 128;
+            this.btnAddPerson.Text = "Ajouter Personne";
+            this.btnAddPerson.UseVisualStyleBackColor = true;
             // 
             // cbFilterBy
             // 
@@ -110,19 +110,19 @@
             this.label2.TabIndex = 122;
             this.label2.Text = "# Nombre de Personnes :";
             // 
-            // dgvPersonnes
+            // dgvPersons
             // 
-            this.dgvPersonnes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonnes.Location = new System.Drawing.Point(13, 190);
-            this.dgvPersonnes.Name = "dgvPersonnes";
-            this.dgvPersonnes.RowHeadersWidth = 51;
-            this.dgvPersonnes.RowTemplate.Height = 24;
-            this.dgvPersonnes.Size = new System.Drawing.Size(1071, 249);
-            this.dgvPersonnes.TabIndex = 121;
+            this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersons.Location = new System.Drawing.Point(13, 190);
+            this.dgvPersons.Name = "dgvPersons";
+            this.dgvPersons.RowHeadersWidth = 51;
+            this.dgvPersons.RowTemplate.Height = 24;
+            this.dgvPersons.Size = new System.Drawing.Size(1071, 249);
+            this.dgvPersons.TabIndex = 121;
             // 
             // gpFilters
             // 
-            this.gpFilters.Controls.Add(this.btnAddPersonne);
+            this.gpFilters.Controls.Add(this.btnAddPerson);
             this.gpFilters.Controls.Add(this.label1);
             this.gpFilters.Controls.Add(this.cbFilterBy);
             this.gpFilters.Controls.Add(this.txtFilterValue);
@@ -144,11 +144,11 @@
             this.lblManagerPersonnes.ForeColor = System.Drawing.Color.Red;
             this.lblManagerPersonnes.Location = new System.Drawing.Point(287, 16);
             this.lblManagerPersonnes.Name = "lblManagerPersonnes";
-            this.lblManagerPersonnes.Size = new System.Drawing.Size(517, 52);
+            this.lblManagerPersonnes.Size = new System.Drawing.Size(512, 51);
             this.lblManagerPersonnes.TabIndex = 126;
             this.lblManagerPersonnes.Text = "Manager Les Personnes";
             // 
-            // ucListePersonnes
+            // ucListePersons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -156,11 +156,11 @@
             this.Controls.Add(this.gpFilters);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvPersonnes);
-            this.Name = "ucListePersonnes";
+            this.Controls.Add(this.dgvPersons);
+            this.Name = "ucListePersons";
             this.Size = new System.Drawing.Size(1091, 476);
-            this.Load += new System.EventHandler(this.ucListePersonnes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnes)).EndInit();
+            this.Load += new System.EventHandler(this.ucListePersons_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).EndInit();
             this.gpFilters.ResumeLayout(false);
             this.gpFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -171,13 +171,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAddPersonne;
+        private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvPersonnes;
+        private System.Windows.Forms.DataGridView dgvPersons;
         private System.Windows.Forms.GroupBox gpFilters;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblManagerPersonnes;

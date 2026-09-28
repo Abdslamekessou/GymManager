@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace GymManager.DataAccess
 {
-    public class clsPersonneData
+    public class clsPersonData
     {
 
-        public static bool FindPersonne(int ID , ref string Prenom ,ref string Nom ,ref string NumeroTelephone ,ref string Email ,ref DateTime DateDeNaissance ,ref byte Genre ,ref string Image)
+        public static bool FindPerson(int ID , ref string FirstName ,ref string LastName ,ref string PhoneNumber ,ref string Email ,ref DateTime DateOfBirth ,ref byte Gendor ,ref string Image)
         {
             bool isFound = false;
 
@@ -40,11 +40,11 @@ namespace GymManager.DataAccess
                     // The record was found
                     isFound = true;
 
-                    Prenom = (string)reader["Prenom"];
-                    Nom = (string)reader["Nom"];
-                    NumeroTelephone = (string)reader["NumeroTelephone"];
-                    DateDeNaissance = (DateTime)reader["DateDeNaissance"];
-                    Genre = (byte)reader["Genre"];
+                    FirstName = (string)reader["Prenom"];
+                    LastName = (string)reader["Nom"];
+                    PhoneNumber = (string)reader["NumeroTelephone"];
+                    DateOfBirth = (DateTime)reader["DateDeNaissance"];
+                    Gendor = (byte)reader["Genre"];
                     Email = reader["Email"] == DBNull.Value ? null : (string)reader["Email"];
                     Image = reader["Image"] == DBNull.Value ? null : (string)reader["Image"];
 
@@ -69,7 +69,7 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
-        public static DataTable GetAllPersonnes()
+        public static DataTable GetAllPersons()
         {
             DataTable dt = new DataTable();
 

@@ -1,7 +1,7 @@
 ﻿namespace GymManager.DataAccess.Tests
 {
     [TestClass]
-    public sealed class clsPersonneDataTests
+    public sealed class clsPersonDataTests
     {
 
 
@@ -20,7 +20,7 @@
             string image = "";
 
             // Act
-            bool isFound = clsPersonneData.FindPersonne(
+            bool isFound = clsPersonData.FindPerson(
                 personID,
                 ref prenom,
                 ref nom,

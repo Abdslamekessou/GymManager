@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucListePersonnes1 = new GymManager.Presentation.Personnes.Controls.ucListePersonnes();
+            this.ucListePersonnes1 = new GymManager.Presentation.Personnes.Controls.ucListePersons();
             this.SuspendLayout();
             // 
             // ucListePersonnes1
@@ -53,7 +53,7 @@
 
         #endregion
 
-        private Personnes.Controls.ucListePersonnes ucListePersonnes1;
+        private Personnes.Controls.ucListePersons ucListePersonnes1;
     }
 }
 
