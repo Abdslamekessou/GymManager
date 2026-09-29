@@ -204,6 +204,7 @@
             this.dgvNotifications.AllowUserToAddRows = false;
             this.dgvNotifications.AllowUserToDeleteRows = false;
             this.dgvNotifications.AllowUserToResizeRows = false;
+            this.dgvNotifications.AutoGenerateColumns = false;
             this.dgvNotifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvNotifications.BackgroundColor = System.Drawing.Color.White;
             this.dgvNotifications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
