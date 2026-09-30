@@ -15,6 +15,12 @@ namespace GymManager.Presentation
         public MainForm()
         {
             InitializeComponent();
+            
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
