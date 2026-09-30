@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace GymManager.Presentation
 {
@@ -20,7 +21,13 @@ namespace GymManager.Presentation
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            ipbCurrentUser.IconChar = IconChar.User;
+            ipbCurrentUser.IconSize = 50;
+        }
+
+        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
