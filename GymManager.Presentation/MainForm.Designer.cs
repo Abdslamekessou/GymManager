@@ -34,14 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.btnPersonnes = new FontAwesome.Sharp.IconButton();
-            this.btnAdherents = new FontAwesome.Sharp.IconButton();
-            this.btnSports = new FontAwesome.Sharp.IconButton();
-            this.btnTypesAbonnements = new FontAwesome.Sharp.IconButton();
-            this.btnAbonnements = new FontAwesome.Sharp.IconButton();
-            this.btnDeconnexion = new FontAwesome.Sharp.IconButton();
             this.btnUtilisateurs = new FontAwesome.Sharp.IconButton();
+            this.btnDeconnexion = new FontAwesome.Sharp.IconButton();
+            this.btnAbonnements = new FontAwesome.Sharp.IconButton();
+            this.btnTypesAbonnements = new FontAwesome.Sharp.IconButton();
+            this.btnSports = new FontAwesome.Sharp.IconButton();
+            this.btnAdherents = new FontAwesome.Sharp.IconButton();
+            this.btnPersonnes = new FontAwesome.Sharp.IconButton();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ipbCurrentUser)).BeginInit();
             this.pnlSidebar.SuspendLayout();
@@ -59,7 +59,6 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1924, 100);
             this.pnlHeader.TabIndex = 0;
-            this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
             // ipbCurrentUser
             // 
@@ -117,76 +116,18 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(327, 900);
             this.pnlSidebar.TabIndex = 1;
-            this.pnlSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSidebar_Paint);
             // 
-            // pnlContent
+            // btnUtilisateurs
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.RosyBrown;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(327, 100);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1597, 900);
-            this.pnlContent.TabIndex = 2;
-            // 
-            // btnPersonnes
-            // 
-            this.btnPersonnes.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnPersonnes.IconColor = System.Drawing.Color.Black;
-            this.btnPersonnes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPersonnes.Location = new System.Drawing.Point(3, 41);
-            this.btnPersonnes.Name = "btnPersonnes";
-            this.btnPersonnes.Size = new System.Drawing.Size(327, 77);
-            this.btnPersonnes.TabIndex = 0;
-            this.btnPersonnes.Text = "Personnes";
-            this.btnPersonnes.UseVisualStyleBackColor = true;
-            // 
-            // btnAdherents
-            // 
-            this.btnAdherents.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAdherents.IconColor = System.Drawing.Color.Black;
-            this.btnAdherents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdherents.Location = new System.Drawing.Point(3, 143);
-            this.btnAdherents.Name = "btnAdherents";
-            this.btnAdherents.Size = new System.Drawing.Size(327, 77);
-            this.btnAdherents.TabIndex = 1;
-            this.btnAdherents.Text = "Adhérents";
-            this.btnAdherents.UseVisualStyleBackColor = true;
-            // 
-            // btnSports
-            // 
-            this.btnSports.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSports.IconColor = System.Drawing.Color.Black;
-            this.btnSports.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSports.Location = new System.Drawing.Point(3, 250);
-            this.btnSports.Name = "btnSports";
-            this.btnSports.Size = new System.Drawing.Size(327, 77);
-            this.btnSports.TabIndex = 2;
-            this.btnSports.Text = "Sports";
-            this.btnSports.UseVisualStyleBackColor = true;
-            // 
-            // btnTypesAbonnements
-            // 
-            this.btnTypesAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnTypesAbonnements.IconColor = System.Drawing.Color.Black;
-            this.btnTypesAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTypesAbonnements.Location = new System.Drawing.Point(0, 358);
-            this.btnTypesAbonnements.Name = "btnTypesAbonnements";
-            this.btnTypesAbonnements.Size = new System.Drawing.Size(327, 77);
-            this.btnTypesAbonnements.TabIndex = 3;
-            this.btnTypesAbonnements.Text = "Types d’abonnements";
-            this.btnTypesAbonnements.UseVisualStyleBackColor = true;
-            // 
-            // btnAbonnements
-            // 
-            this.btnAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAbonnements.IconColor = System.Drawing.Color.Black;
-            this.btnAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAbonnements.Location = new System.Drawing.Point(0, 465);
-            this.btnAbonnements.Name = "btnAbonnements";
-            this.btnAbonnements.Size = new System.Drawing.Size(327, 77);
-            this.btnAbonnements.TabIndex = 4;
-            this.btnAbonnements.Text = "Abonnements";
-            this.btnAbonnements.UseVisualStyleBackColor = true;
+            this.btnUtilisateurs.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnUtilisateurs.IconColor = System.Drawing.Color.Black;
+            this.btnUtilisateurs.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUtilisateurs.Location = new System.Drawing.Point(0, 580);
+            this.btnUtilisateurs.Name = "btnUtilisateurs";
+            this.btnUtilisateurs.Size = new System.Drawing.Size(327, 77);
+            this.btnUtilisateurs.TabIndex = 6;
+            this.btnUtilisateurs.Text = "Utilisateurs";
+            this.btnUtilisateurs.UseVisualStyleBackColor = true;
             // 
             // btnDeconnexion
             // 
@@ -200,17 +141,74 @@
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = true;
             // 
-            // btnUtilisateurs
+            // btnAbonnements
             // 
-            this.btnUtilisateurs.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnUtilisateurs.IconColor = System.Drawing.Color.Black;
-            this.btnUtilisateurs.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUtilisateurs.Location = new System.Drawing.Point(0, 580);
-            this.btnUtilisateurs.Name = "btnUtilisateurs";
-            this.btnUtilisateurs.Size = new System.Drawing.Size(327, 77);
-            this.btnUtilisateurs.TabIndex = 6;
-            this.btnUtilisateurs.Text = "Utilisateurs";
-            this.btnUtilisateurs.UseVisualStyleBackColor = true;
+            this.btnAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAbonnements.IconColor = System.Drawing.Color.Black;
+            this.btnAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAbonnements.Location = new System.Drawing.Point(0, 465);
+            this.btnAbonnements.Name = "btnAbonnements";
+            this.btnAbonnements.Size = new System.Drawing.Size(327, 77);
+            this.btnAbonnements.TabIndex = 4;
+            this.btnAbonnements.Text = "Abonnements";
+            this.btnAbonnements.UseVisualStyleBackColor = true;
+            // 
+            // btnTypesAbonnements
+            // 
+            this.btnTypesAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnTypesAbonnements.IconColor = System.Drawing.Color.Black;
+            this.btnTypesAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTypesAbonnements.Location = new System.Drawing.Point(0, 358);
+            this.btnTypesAbonnements.Name = "btnTypesAbonnements";
+            this.btnTypesAbonnements.Size = new System.Drawing.Size(327, 77);
+            this.btnTypesAbonnements.TabIndex = 3;
+            this.btnTypesAbonnements.Text = "Types d’abonnements";
+            this.btnTypesAbonnements.UseVisualStyleBackColor = true;
+            // 
+            // btnSports
+            // 
+            this.btnSports.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSports.IconColor = System.Drawing.Color.Black;
+            this.btnSports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSports.Location = new System.Drawing.Point(3, 250);
+            this.btnSports.Name = "btnSports";
+            this.btnSports.Size = new System.Drawing.Size(327, 77);
+            this.btnSports.TabIndex = 2;
+            this.btnSports.Text = "Sports";
+            this.btnSports.UseVisualStyleBackColor = true;
+            // 
+            // btnAdherents
+            // 
+            this.btnAdherents.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAdherents.IconColor = System.Drawing.Color.Black;
+            this.btnAdherents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdherents.Location = new System.Drawing.Point(3, 143);
+            this.btnAdherents.Name = "btnAdherents";
+            this.btnAdherents.Size = new System.Drawing.Size(327, 77);
+            this.btnAdherents.TabIndex = 1;
+            this.btnAdherents.Text = "Adhérents";
+            this.btnAdherents.UseVisualStyleBackColor = true;
+            // 
+            // btnPersonnes
+            // 
+            this.btnPersonnes.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnPersonnes.IconColor = System.Drawing.Color.Black;
+            this.btnPersonnes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPersonnes.Location = new System.Drawing.Point(3, 41);
+            this.btnPersonnes.Name = "btnPersonnes";
+            this.btnPersonnes.Size = new System.Drawing.Size(327, 77);
+            this.btnPersonnes.TabIndex = 0;
+            this.btnPersonnes.Text = "Personnes";
+            this.btnPersonnes.UseVisualStyleBackColor = true;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.RosyBrown;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(327, 100);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1597, 900);
+            this.pnlContent.TabIndex = 2;
             // 
             // MainForm
             // 
