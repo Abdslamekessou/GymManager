@@ -29,5 +29,10 @@ namespace GymManager.Presentation
         {
 
         }
+
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
