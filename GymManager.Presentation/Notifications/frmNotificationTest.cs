@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace GymManager.Presentation.Notifications
 {
-    public partial class NotificationTest : Form
+    public partial class frmNotificationTest : Form
     {
-        public NotificationTest()
+        public frmNotificationTest()
         {
             InitializeComponent();
+        }
+
+        private void ctrlNotifications1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void frmNotificationTest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,28 +52,46 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notifications\ctrlNoficationDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notifications\ctrlNoficationDetails.Designer.cs">
+      <DependentUpon>ctrlNoficationDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notifications\ctrlNotifications.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Notifications\ctrlNotifications.Designer.cs">
       <DependentUpon>ctrlNotifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notifications\NotificationTest.cs">
+    <Compile Include="Notifications\frmNotificationDetailsTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Notifications\NotificationTest.Designer.cs">
-      <DependentUpon>NotificationTest.cs</DependentUpon>
+    <Compile Include="Notifications\frmNotificationDetailsTest.Designer.cs">
+      <DependentUpon>frmNotificationDetailsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\frmNotificationTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notifications\frmNotificationTest.Designer.cs">
+      <DependentUpon>frmNotificationTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\ctrlNoficationDetails.resx">
+      <DependentUpon>ctrlNoficationDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notifications\ctrlNotifications.resx">
       <DependentUpon>ctrlNotifications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notifications\NotificationTest.resx">
-      <DependentUpon>NotificationTest.cs</DependentUpon>
+    <EmbeddedResource Include="Notifications\frmNotificationDetailsTest.resx">
+      <DependentUpon>frmNotificationDetailsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\frmNotificationTest.resx">
+      <DependentUpon>frmNotificationTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

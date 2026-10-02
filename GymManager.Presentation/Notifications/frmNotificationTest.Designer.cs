@@ -1,6 +1,6 @@
 ﻿namespace GymManager.Presentation.Notifications
 {
-    partial class NotificationTest
+    partial class frmNotificationTest
     {
         /// <summary>
         /// Required designer variable.
@@ -40,16 +40,18 @@
             this.ctrlNotifications1.Name = "ctrlNotifications1";
             this.ctrlNotifications1.Size = new System.Drawing.Size(1431, 948);
             this.ctrlNotifications1.TabIndex = 0;
+            this.ctrlNotifications1.Load += new System.EventHandler(this.ctrlNotifications1_Load);
             // 
-            // NotificationTest
+            // frmNotificationTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1605, 987);
             this.Controls.Add(this.ctrlNotifications1);
-            this.Name = "NotificationTest";
+            this.Name = "frmNotificationTest";
             this.Text = "NotificationTest";
+            this.Load += new System.EventHandler(this.frmNotificationTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

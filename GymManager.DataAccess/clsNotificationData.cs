@@ -15,36 +15,6 @@ namespace GymManager.DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            //            string query = @"SELECT 
-            //N.NotificationID,
-            //P.Nom +' '+ P.Prenom as MemberName,
-            //S.Nom as Sport,
-            //T.Nom as SubscriptionType,
-            //CASE 
-            //When A.EtatAbonnement = 0 then 'Active'
-            //when A.EtatAbonnement = 1 then 'Expired'
-            //when A.EtatAbonnement = 2 then 'Expiring Soon'
-            //when A.EtatAbonnement = 3 then 'Cancelled'
-            //End as AbonnementStatus,
-
-            //CASE
-            //WHEN N.EstVue = 0 then 'Lu'
-            //Else 'Non Lu'
-            //End as ReadStatus ,
-
-            //CASE
-            //WHEN N.EstExportee = 0 then 'Exporté'
-            //Else 'Non Exporté'
-            //End as Exportation 
-
-            //FROM   Notifications as N INNER JOIN
-            //             Abonnements as A ON N.AbonnementID = A.AbonnementID INNER JOIN
-            //             Adherents AD ON A.AdherentID = AD.AdherentID INNER JOIN
-            //             Personnes as P ON AD.PersonneID = P.PersonneID INNER JOIN
-            //             TypeAbonnements as T ON A.TypeAbonnementID = T.TypeAbonnementID INNER JOIN
-            //             Sports as S ON T.SportID = S.SportID
-            //";
-
             string query = @"select * from Notifications_View";
 
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -68,6 +38,91 @@ namespace GymManager.DataAccess
             }
             return dt;
 
+        }
+
+        public static bool MarkAllAsRead()
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"UPDATE Notifications
+                 SET EstVue = 0";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            short NumberOfRowsAffected = 0;
+
+            try
+            {
+                connection.Open();
+                NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Nothine
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return NumberOfRowsAffected > 0;
+        }
+
+        public static bool MarkAsRead(int notificationID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"UPDATE Notifications
+                 SET EstVue = 0
+                  WHERE NotificationID = @notificationID;";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("notificationID", notificationID);
+            short NumberOfRowsAffected = 0;
+            try
+            {
+                connection.Open();
+                NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Nothine
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return NumberOfRowsAffected>0;
+        }
+
+        public static bool Save(int notificationID,bool isRead, string message)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"UPDATE Notifications
+                 SET EstVue = @isRead,LeMessage =@message
+                  WHERE NotificationID = @notificationID;";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("notificationID", notificationID);
+            cmd.Parameters.AddWithValue("message", message);
+            cmd.Parameters.AddWithValue("isRead", isRead?0:1);
+            short NumberOfRowsAffected = 0;
+            try
+            {
+                connection.Open();
+                NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Nothine
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return NumberOfRowsAffected > 0;
         }
     }
 }

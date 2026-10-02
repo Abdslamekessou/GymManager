@@ -11,10 +11,8 @@
         private System.Windows.Forms.Panel pnlFilters;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cbStatus;
-        private System.Windows.Forms.Label lblReadStatus;
-        private System.Windows.Forms.ComboBox cbReadStatus;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblExportStatus;
+        private System.Windows.Forms.ComboBox cbExportStatus;
         private System.Windows.Forms.Button btnMarkAllRead;
         private System.Windows.Forms.Button btnExport;
 
@@ -47,16 +45,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlFilters = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.lblReadStatus = new System.Windows.Forms.Label();
-            this.cbReadStatus = new System.Windows.Forms.ComboBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblExportStatus = new System.Windows.Forms.Label();
+            this.cbExportStatus = new System.Windows.Forms.ComboBox();
             this.btnMarkAllRead = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvNotifications = new System.Windows.Forms.DataGridView();
@@ -68,6 +64,7 @@
             this.Exportation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarkAsRead = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).BeginInit();
             this.SuspendLayout();
@@ -88,12 +85,11 @@
             // 
             this.pnlFilters.BackColor = System.Drawing.Color.White;
             this.pnlFilters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFilters.Controls.Add(this.btnSearch);
             this.pnlFilters.Controls.Add(this.lblStatus);
             this.pnlFilters.Controls.Add(this.cbStatus);
-            this.pnlFilters.Controls.Add(this.lblReadStatus);
-            this.pnlFilters.Controls.Add(this.cbReadStatus);
-            this.pnlFilters.Controls.Add(this.lblSearch);
-            this.pnlFilters.Controls.Add(this.txtSearch);
+            this.pnlFilters.Controls.Add(this.lblExportStatus);
+            this.pnlFilters.Controls.Add(this.cbExportStatus);
             this.pnlFilters.Controls.Add(this.btnMarkAllRead);
             this.pnlFilters.Controls.Add(this.btnExport);
             this.pnlFilters.Location = new System.Drawing.Point(39, 100);
@@ -109,9 +105,9 @@
             this.lblStatus.Location = new System.Drawing.Point(26, 24);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(58, 25);
+            this.lblStatus.Size = new System.Drawing.Size(144, 25);
             this.lblStatus.TabIndex = 0;
-            this.lblStatus.Text = "Statut";
+            this.lblStatus.Text = "Statut de Lecture";
             // 
             // cbStatus
             // 
@@ -119,57 +115,38 @@
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Tous",
-            "Actif",
-            "Expiré"});
+            "Lu",
+            "Non Lu"});
             this.cbStatus.Location = new System.Drawing.Point(26, 53);
             this.cbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(230, 28);
             this.cbStatus.TabIndex = 1;
             // 
-            // lblReadStatus
+            // lblExportStatus
             // 
-            this.lblReadStatus.AutoSize = true;
-            this.lblReadStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblReadStatus.Location = new System.Drawing.Point(296, 24);
-            this.lblReadStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReadStatus.Name = "lblReadStatus";
-            this.lblReadStatus.Size = new System.Drawing.Size(140, 25);
-            this.lblReadStatus.TabIndex = 2;
-            this.lblReadStatus.Text = "Statut de lecture";
+            this.lblExportStatus.AutoSize = true;
+            this.lblExportStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblExportStatus.Location = new System.Drawing.Point(296, 24);
+            this.lblExportStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExportStatus.Name = "lblExportStatus";
+            this.lblExportStatus.Size = new System.Drawing.Size(174, 25);
+            this.lblExportStatus.TabIndex = 2;
+            this.lblExportStatus.Text = "Statut d\' Exportation";
             // 
-            // cbReadStatus
+            // cbExportStatus
             // 
-            this.cbReadStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReadStatus.FormattingEnabled = true;
-            this.cbReadStatus.Items.AddRange(new object[] {
+            this.cbExportStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbExportStatus.FormattingEnabled = true;
+            this.cbExportStatus.Items.AddRange(new object[] {
             "Tous",
-            "Lu",
-            "Non lu"});
-            this.cbReadStatus.Location = new System.Drawing.Point(296, 53);
-            this.cbReadStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.cbReadStatus.Name = "cbReadStatus";
-            this.cbReadStatus.Size = new System.Drawing.Size(230, 28);
-            this.cbReadStatus.TabIndex = 3;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSearch.Location = new System.Drawing.Point(566, 24);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(97, 25);
-            this.lblSearch.TabIndex = 4;
-            this.lblSearch.Text = "Rechercher";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(566, 53);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(333, 26);
-            this.txtSearch.TabIndex = 5;
+            "Exporté",
+            "Non Exporté"});
+            this.cbExportStatus.Location = new System.Drawing.Point(296, 53);
+            this.cbExportStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cbExportStatus.Name = "cbExportStatus";
+            this.cbExportStatus.Size = new System.Drawing.Size(230, 28);
+            this.cbExportStatus.TabIndex = 3;
             // 
             // btnMarkAllRead
             // 
@@ -184,6 +161,7 @@
             this.btnMarkAllRead.TabIndex = 6;
             this.btnMarkAllRead.Text = "Tout marquer comme lu";
             this.btnMarkAllRead.UseVisualStyleBackColor = false;
+            this.btnMarkAllRead.Click += new System.EventHandler(this.btnMarkAllRead_Click);
             // 
             // btnExport
             // 
@@ -204,19 +182,18 @@
             this.dgvNotifications.AllowUserToAddRows = false;
             this.dgvNotifications.AllowUserToDeleteRows = false;
             this.dgvNotifications.AllowUserToResizeRows = false;
-            this.dgvNotifications.AutoGenerateColumns = false;
             this.dgvNotifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvNotifications.BackgroundColor = System.Drawing.Color.White;
             this.dgvNotifications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvNotifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvNotifications.ColumnHeadersHeight = 40;
             this.dgvNotifications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MemberName,
@@ -227,14 +204,14 @@
             this.Exportation,
             this.colMarkAsRead,
             this.colDetails});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNotifications.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNotifications.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvNotifications.EnableHeadersVisualStyles = false;
             this.dgvNotifications.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(226)))));
             this.dgvNotifications.Location = new System.Drawing.Point(39, 300);
@@ -322,6 +299,22 @@
             this.colDetails.UseColumnTextForButtonValue = true;
             this.colDetails.Width = 75;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(557, 53);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(120, 38);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Chercher";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // ctrlNotifications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -334,7 +327,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlNotifications";
             this.Size = new System.Drawing.Size(1480, 969);
-            this.Load += new System.EventHandler(this.ctrlNotifications_Load_1);
+            this.Load += new System.EventHandler(this.ctrlNotifications_Load);
             this.pnlFilters.ResumeLayout(false);
             this.pnlFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).EndInit();
@@ -353,5 +346,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Exportation;
         private System.Windows.Forms.DataGridViewButtonColumn colMarkAsRead;
         private System.Windows.Forms.DataGridViewButtonColumn colDetails;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
