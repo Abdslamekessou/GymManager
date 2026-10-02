@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymManager.Presentation.Personnes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace GymManager.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new frmFindPerson());
         }
     }
 }

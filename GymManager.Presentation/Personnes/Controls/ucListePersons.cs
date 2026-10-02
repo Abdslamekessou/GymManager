@@ -23,9 +23,45 @@ namespace GymManager.Presentation.Personnes.Controls
             InitializeComponent();
         }
 
+        private void _RefreshListPeople()
+        {
+            _dtAllPersons = clsPerson.GetAllPersons();
+
+            _dtPersons = _dtAllPersons.DefaultView.ToTable(false, "PersonneID", "Nom", "Prenom", "NumeroTelephone", "Email", "DateDeNaissance", "GendorCaption");
+
+            dgvPersons.DataSource = _dtPersons;
+
+            lblRecordsCount.Text = dgvPersons.Rows.Count.ToString();
+        }
+
         private void ucListePersons_Load(object sender, EventArgs e)
         {
             dgvPersons.DataSource = _dtPersons;
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmAddUpdatePerson((int)dgvPersons.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+            _RefreshListPeople();
+        }
+
+        private void AddNewtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
+
+            frm.ShowDialog();
+
+            _RefreshListPeople();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmShowPersonInfo frm = new frmShowPersonInfo((int)dgvPersons.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
 
         }
     }
