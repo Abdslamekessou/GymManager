@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucListePersons));
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
@@ -56,83 +57,81 @@
             // 
             // btnAddPerson
             // 
-            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPerson.Location = new System.Drawing.Point(931, 35);
+            resources.ApplyResources(this.btnAddPerson, "btnAddPerson");
+            this.errorProvider1.SetError(this.btnAddPerson, resources.GetString("btnAddPerson.Error"));
+            this.errorProvider1.SetIconAlignment(this.btnAddPerson, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAddPerson.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnAddPerson, ((int)(resources.GetObject("btnAddPerson.IconPadding"))));
             this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(123, 52);
-            this.btnAddPerson.TabIndex = 128;
-            this.btnAddPerson.Text = "Ajouter Personne";
             this.btnAddPerson.UseVisualStyleBackColor = true;
             // 
             // cbFilterBy
             // 
+            resources.ApplyResources(this.cbFilterBy, "cbFilterBy");
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbFilterBy, resources.GetString("cbFilterBy.Error"));
             this.cbFilterBy.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbFilterBy, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbFilterBy.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbFilterBy, ((int)(resources.GetObject("cbFilterBy.IconPadding"))));
             this.cbFilterBy.Items.AddRange(new object[] {
-            "Aucun",
-            "PersonneID",
-            "Prenom",
-            "Nom",
-            "Numero de Telephone",
-            "Email",
-            "Genre"});
-            this.cbFilterBy.Location = new System.Drawing.Point(129, 48);
+            resources.GetString("cbFilterBy.Items"),
+            resources.GetString("cbFilterBy.Items1"),
+            resources.GetString("cbFilterBy.Items2"),
+            resources.GetString("cbFilterBy.Items3"),
+            resources.GetString("cbFilterBy.Items4"),
+            resources.GetString("cbFilterBy.Items5"),
+            resources.GetString("cbFilterBy.Items6")});
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(210, 24);
-            this.cbFilterBy.TabIndex = 127;
             // 
             // txtFilterValue
             // 
+            resources.ApplyResources(this.txtFilterValue, "txtFilterValue");
             this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterValue.Location = new System.Drawing.Point(361, 49);
-            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.errorProvider1.SetError(this.txtFilterValue, resources.GetString("txtFilterValue.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtFilterValue, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtFilterValue.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtFilterValue, ((int)(resources.GetObject("txtFilterValue.IconPadding"))));
             this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.Size = new System.Drawing.Size(256, 22);
-            this.txtFilterValue.TabIndex = 126;
-            this.txtFilterValue.Visible = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 46);
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 25);
-            this.label1.TabIndex = 125;
-            this.label1.Text = "Filtrer par:";
             // 
             // lblRecordsCount
             // 
-            this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Location = new System.Drawing.Point(275, 452);
+            resources.ApplyResources(this.lblRecordsCount, "lblRecordsCount");
+            this.errorProvider1.SetError(this.lblRecordsCount, resources.GetString("lblRecordsCount.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblRecordsCount, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblRecordsCount.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblRecordsCount, ((int)(resources.GetObject("lblRecordsCount.IconPadding"))));
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(21, 16);
-            this.lblRecordsCount.TabIndex = 123;
-            this.lblRecordsCount.Text = "??";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 445);
+            resources.ApplyResources(this.label2, "label2");
+            this.errorProvider1.SetError(this.label2, resources.GetString("label2.Error"));
+            this.errorProvider1.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 25);
-            this.label2.TabIndex = 122;
-            this.label2.Text = "# Nombre de Personnes :";
             // 
             // dgvPersons
             // 
+            resources.ApplyResources(this.dgvPersons, "dgvPersons");
             this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersons.ContextMenuStrip = this.cmsPeople;
-            this.dgvPersons.Location = new System.Drawing.Point(13, 190);
+            this.errorProvider1.SetError(this.dgvPersons, resources.GetString("dgvPersons.Error"));
+            this.errorProvider1.SetIconAlignment(this.dgvPersons, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("dgvPersons.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.dgvPersons, ((int)(resources.GetObject("dgvPersons.IconPadding"))));
             this.dgvPersons.Name = "dgvPersons";
-            this.dgvPersons.RowHeadersWidth = 51;
             this.dgvPersons.RowTemplate.Height = 24;
-            this.dgvPersons.Size = new System.Drawing.Size(1071, 249);
-            this.dgvPersons.TabIndex = 121;
             // 
             // cmsPeople
             // 
+            resources.ApplyResources(this.cmsPeople, "cmsPeople");
+            this.errorProvider1.SetError(this.cmsPeople, resources.GetString("cmsPeople.Error"));
+            this.errorProvider1.SetIconAlignment(this.cmsPeople, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmsPeople.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cmsPeople, ((int)(resources.GetObject("cmsPeople.IconPadding"))));
             this.cmsPeople.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsPeople.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDetailsToolStripMenuItem,
@@ -144,109 +143,96 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.cmsPeople.Name = "contextMenuStrip1";
-            this.cmsPeople.Size = new System.Drawing.Size(227, 272);
             // 
             // showDetailsToolStripMenuItem
             // 
+            resources.ApplyResources(this.showDetailsToolStripMenuItem, "showDetailsToolStripMenuItem");
             this.showDetailsToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.PersonDetails_32;
-            this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.showDetailsToolStripMenuItem.Text = "&Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(223, 6);
             // 
             // AddNewtoolStripMenuItem
             // 
+            resources.ApplyResources(this.AddNewtoolStripMenuItem, "AddNewtoolStripMenuItem");
             this.AddNewtoolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.AddPerson_32;
-            this.AddNewtoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddNewtoolStripMenuItem.Name = "AddNewtoolStripMenuItem";
-            this.AddNewtoolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.AddNewtoolStripMenuItem.Text = "Add &New Person";
             this.AddNewtoolStripMenuItem.Click += new System.EventHandler(this.AddNewtoolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
+            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
             this.editToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.edit_32;
-            this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.editToolStripMenuItem.Text = "&Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.Delete_32;
-            this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.deleteToolStripMenuItem.Text = "&Delete";
             // 
             // toolStripSeparator1
             // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
+            resources.ApplyResources(this.sendEmailToolStripMenuItem, "sendEmailToolStripMenuItem");
             this.sendEmailToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.send_email_32;
-            this.sendEmailToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.sendEmailToolStripMenuItem.Text = "Send E&mail";
             // 
             // phoneCallToolStripMenuItem
             // 
+            resources.ApplyResources(this.phoneCallToolStripMenuItem, "phoneCallToolStripMenuItem");
             this.phoneCallToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.Phone_32;
-            this.phoneCallToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(226, 38);
-            this.phoneCallToolStripMenuItem.Text = "Phone &Call";
             // 
             // gpFilters
             // 
+            resources.ApplyResources(this.gpFilters, "gpFilters");
             this.gpFilters.Controls.Add(this.btnAddPerson);
             this.gpFilters.Controls.Add(this.label1);
             this.gpFilters.Controls.Add(this.cbFilterBy);
             this.gpFilters.Controls.Add(this.txtFilterValue);
-            this.gpFilters.Location = new System.Drawing.Point(17, 74);
+            this.errorProvider1.SetError(this.gpFilters, resources.GetString("gpFilters.Error"));
+            this.errorProvider1.SetIconAlignment(this.gpFilters, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gpFilters.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.gpFilters, ((int)(resources.GetObject("gpFilters.IconPadding"))));
             this.gpFilters.Name = "gpFilters";
-            this.gpFilters.Size = new System.Drawing.Size(1067, 110);
-            this.gpFilters.TabIndex = 17;
             this.gpFilters.TabStop = false;
-            this.gpFilters.Text = "Filter";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // lblManagerPersonnes
             // 
-            this.lblManagerPersonnes.AutoSize = true;
-            this.lblManagerPersonnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblManagerPersonnes, "lblManagerPersonnes");
+            this.errorProvider1.SetError(this.lblManagerPersonnes, resources.GetString("lblManagerPersonnes.Error"));
             this.lblManagerPersonnes.ForeColor = System.Drawing.Color.Red;
-            this.lblManagerPersonnes.Location = new System.Drawing.Point(287, 16);
+            this.errorProvider1.SetIconAlignment(this.lblManagerPersonnes, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblManagerPersonnes.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblManagerPersonnes, ((int)(resources.GetObject("lblManagerPersonnes.IconPadding"))));
             this.lblManagerPersonnes.Name = "lblManagerPersonnes";
-            this.lblManagerPersonnes.Size = new System.Drawing.Size(512, 51);
-            this.lblManagerPersonnes.TabIndex = 126;
-            this.lblManagerPersonnes.Text = "Manager Les Personnes";
             // 
             // ucListePersons
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.Controls.Add(this.lblManagerPersonnes);
             this.Controls.Add(this.gpFilters);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvPersons);
+            this.errorProvider1.SetError(this, resources.GetString("$this.Error"));
+            this.errorProvider1.SetIconAlignment(this, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("$this.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this, ((int)(resources.GetObject("$this.IconPadding"))));
             this.Name = "ucListePersons";
-            this.Size = new System.Drawing.Size(1101, 479);
             this.Load += new System.EventHandler(this.ucListePersons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).EndInit();
             this.cmsPeople.ResumeLayout(false);
