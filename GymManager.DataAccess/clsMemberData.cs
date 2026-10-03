@@ -301,10 +301,9 @@ WHERE AdherentID = @MemberID";
                         clsDataAccessSettings.connectionString);
 
 
-                string query = @"
-SELECT Adherents.AdherentID, Adherents.PersonneID , Personnes.Prenom , Personnes.Nom, Personnes.NumeroTelephone, Personnes.Email, Personnes.DateDeNaissance, Personnes.Genre, Personnes.Image, 
+                string query = @"SELECT Adherents.AdherentID, Adherents.PersonneID , Personnes.Prenom , Personnes.Nom + ' ' + Personnes.Prenom AS NomComplet , Personnes.Nom, Personnes.NumeroTelephone, Personnes.Email, Personnes.DateDeNaissance, Personnes.Genre, Personnes.Image, 
                   Adherents.DateAjout, Adherents.CreePar, Adherents.EstActif
-FROM     Adherents INNER JOIN
+                  FROM     Adherents INNER JOIN
                   Personnes ON Adherents.PersonneID = Personnes.PersonneID";
 
 
