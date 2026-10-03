@@ -17,7 +17,7 @@ namespace GymManager.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmFindPerson());
+            Application.Run(new MainForm());
         }
     }
 }
