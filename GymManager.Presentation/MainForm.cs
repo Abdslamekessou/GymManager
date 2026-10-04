@@ -25,7 +25,7 @@ namespace GymManager.Presentation
         private void MainForm_Load(object sender, EventArgs e)
         {
             ipbCurrentUser.IconChar = IconChar.User;
-            ipbCurrentUser.IconSize = 50;
+            ipbCurrentUser.IconSize = 40;
 
             UIHelper.SetupIconButton(btnPersonnes , IconChar.PeopleGroup);
             UIHelper.SetupIconButton(btnAdherents, IconChar.UserCheck);
@@ -34,8 +34,26 @@ namespace GymManager.Presentation
             UIHelper.SetupIconButton(btnAbonnements, IconChar.CreditCard);
             UIHelper.SetupIconButton(btnUtilisateurs, IconChar.UserCog);
             UIHelper.SetupIconButton(btnDeconnexion, IconChar.SignOutAlt);
+
+            lblTitle.ForeColor = ColorTranslator.FromHtml("#111827");
+
+            UIHelper.SetupSidebarButtonStyle(btnPersonnes);
+            UIHelper.SetupSidebarButtonStyle(btnAdherents);
+            UIHelper.SetupSidebarButtonStyle(btnSports);
+            UIHelper.SetupSidebarButtonStyle(btnTypesAbonnements);
+            UIHelper.SetupSidebarButtonStyle(btnAbonnements);
+            UIHelper.SetupSidebarButtonStyle(btnUtilisateurs);
+            UIHelper.SetupSidebarButtonStyle(btnDeconnexion);
+
+
+            pnlSidebar.BackColor = ColorTranslator.FromHtml("#0F172A");
+           
+            
         }
 
-       
+        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
