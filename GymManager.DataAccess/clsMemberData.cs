@@ -301,7 +301,13 @@ WHERE AdherentID = @MemberID";
                         clsDataAccessSettings.connectionString);
 
 
-                string query = @"SELECT Adherents.AdherentID, Adherents.PersonneID , Personnes.Prenom , Personnes.Nom + ' ' + Personnes.Prenom AS NomComplet , Personnes.Nom, Personnes.NumeroTelephone, Personnes.Email, Personnes.DateDeNaissance, Personnes.Genre, Personnes.Image, 
+                string query = @"SELECT Adherents.AdherentID, Adherents.PersonneID , Personnes.Prenom , Personnes.Nom + ' ' + Personnes.Prenom AS NomComplet , Personnes.Nom, Personnes.NumeroTelephone, Personnes.Email, Personnes.DateDeNaissance, Personnes.Genre,  				  CASE
+                  WHEN Personnes.Genre = 0 THEN 'Homme'
+
+                  ELSE 'Femmme'
+
+                  END as GendorCaption ,
+				  Personnes.Image, 
                   Adherents.DateAjout, Adherents.CreePar, Adherents.EstActif
                   FROM     Adherents INNER JOIN
                   Personnes ON Adherents.PersonneID = Personnes.PersonneID";

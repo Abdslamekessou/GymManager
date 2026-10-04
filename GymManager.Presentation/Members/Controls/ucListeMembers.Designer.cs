@@ -202,12 +202,10 @@ namespace GymManager.Presentation.Members.Controls
             this.colFullName.DataPropertyName = "NomComplet";
             this.colFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-
             this.colPhoneNumber.HeaderText = "Téléphone";
             this.colPhoneNumber.Name = "colPhoneNumber";
             this.colPhoneNumber.DataPropertyName = "NumeroTelephone";
-            this.colPhoneNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+            this.colPhoneNumber.Width = 120;
 
             this.colEmail.HeaderText = "Email";
             this.colEmail.Name = "colEmail";
@@ -216,23 +214,26 @@ namespace GymManager.Presentation.Members.Controls
 
             this.colGendor.HeaderText = "Genre";
             this.colGendor.Name = "colGendor";
-            this.colGendor.DataPropertyName = "Genre";
-            this.colGendor.Width = 110;
+            this.colGendor.DataPropertyName = "GendorCaption";
+            this.colGendor.Width = 90;
 
-
-            this.colMemberDetails.HeaderText = "Action";
+            this.colMemberDetails.HeaderText = "Details";
             this.colMemberDetails.Name = "colMemberDetails";
+            this.colMemberDetails.Text = "Voir Détails";
+            this.colMemberDetails.UseColumnTextForButtonValue = true;
 
-            this.colUpdateMember.HeaderText = "Action";
+            this.colUpdateMember.HeaderText = "Modifier";
             this.colUpdateMember.Name = "colUpdateMember";
-            this.colUpdateMember.Width = 110;
+            this.colUpdateMember.Text = "Modifier";
+            this.colUpdateMember.UseColumnTextForButtonValue = true;
+            this.colUpdateMember.Width = 100;
 
 
             this.colManagesubscriptions.HeaderText = "Abonnements";
             this.colManagesubscriptions.Name = "colManagesubscriptions";
             this.colManagesubscriptions.Text = "Gérer";
             this.colManagesubscriptions.UseColumnTextForButtonValue = true;
-            this.colManagesubscriptions.Width = 110;
+            this.colManagesubscriptions.Width = 100;
 
 
             // Add columns to DataGridView
