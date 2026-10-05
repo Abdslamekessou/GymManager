@@ -2,39 +2,46 @@
 {
     partial class MainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.uc_Test1 = new GymManager.Presentation.Types_d_abonnements.Controls.uc_Test();
+            this.SuspendLayout();
+            // 
+            // uc_Test1
+            // 
+            this.uc_Test1.Location = new System.Drawing.Point(143, 12);
+            this.uc_Test1.Name = "uc_Test1";
+            this.uc_Test1.Size = new System.Drawing.Size(1125, 678);
+            this.uc_Test1.TabIndex = 0;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1668, 860);
+            this.Controls.Add(this.uc_Test1);
+            this.Name = "MainForm";
             this.Text = "MainForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Types_d_abonnements.Controls.uc_Test uc_Test1;
     }
 }
-
