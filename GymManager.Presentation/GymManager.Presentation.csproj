@@ -54,6 +54,12 @@
     <Compile Include="Abonnements\ucAbonnementInfo.Designer.cs">
       <DependentUpon>ucAbonnementInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abonnements\ucDetailsAbonnemnt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Abonnements\ucDetailsAbonnemnt.Designer.cs">
+      <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
