@@ -1,4 +1,5 @@
-﻿using GymManager.Presentation.Personnes;
+﻿using GymManager.Presentation.Members;
+using GymManager.Presentation.Personnes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace GymManager.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new frmAddUpdateMember());
         }
     }
 }
