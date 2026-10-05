@@ -31,7 +31,6 @@ namespace GymManager.Presentation.Members.Controls
         /// </summary>
         private void InitializeComponent()
         {
-
             this.grpHeader = new System.Windows.Forms.GroupBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddMember = new System.Windows.Forms.Button();
@@ -42,7 +41,7 @@ namespace GymManager.Presentation.Members.Controls
             this.lblGender = new System.Windows.Forms.Label();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.grpMembersTable = new System.Windows.Forms.GroupBox();
-
+            this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +49,6 @@ namespace GymManager.Presentation.Members.Controls
             this.colMemberDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colUpdateMember = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colManagesubscriptions = new System.Windows.Forms.DataGridViewButtonColumn();
-
-            this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.grpHeader.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.grpMembersTable.SuspendLayout();
@@ -116,6 +113,7 @@ namespace GymManager.Presentation.Members.Controls
             this.cbMemberFilterBy.Name = "cbMemberFilterBy";
             this.cbMemberFilterBy.Size = new System.Drawing.Size(210, 24);
             this.cbMemberFilterBy.TabIndex = 128;
+            this.cbMemberFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbMemberFilterBy_SelectedIndexChanged);
             // 
             // lblSearch
             // 
@@ -133,6 +131,7 @@ namespace GymManager.Presentation.Members.Controls
             this.txtSearchMember.Name = "txtSearchMember";
             this.txtSearchMember.Size = new System.Drawing.Size(179, 22);
             this.txtSearchMember.TabIndex = 1;
+            this.txtSearchMember.TextChanged += new System.EventHandler(this.txtSearchMember_TextChanged);
             // 
             // lblGender
             // 
@@ -158,6 +157,7 @@ namespace GymManager.Presentation.Members.Controls
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(340, 24);
             this.cmbGender.TabIndex = 3;
+            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
             // grpMembersTable
             // 
@@ -175,14 +175,19 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.AllowUserToAddRows = false;
             this.dgvMembers.AllowUserToDeleteRows = false;
             this.dgvMembers.AllowUserToResizeRows = false;
-            dgvMembers.AutoGenerateColumns = false;
-
             this.dgvMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMembers.BackgroundColor = System.Drawing.Color.White;
             this.dgvMembers.ColumnHeadersHeight = 40;
-
+            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFullName,
+            this.colPhoneNumber,
+            this.colEmail,
+            this.colGendor,
+            this.colMemberDetails,
+            this.colUpdateMember,
+            this.colManagesubscriptions});
             this.dgvMembers.Location = new System.Drawing.Point(18, 35);
             this.dgvMembers.MultiSelect = false;
             this.dgvMembers.Name = "dgvMembers";
@@ -193,61 +198,55 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMembers.Size = new System.Drawing.Size(1289, 309);
             this.dgvMembers.TabIndex = 0;
-
             // 
-            // dgvMembers  "Columns"
+            // colFullName
             // 
-            this.colFullName.HeaderText = "Nom";
+            this.colFullName.MinimumWidth = 6;
             this.colFullName.Name = "colFullName";
-            this.colFullName.DataPropertyName = "NomComplet";
-            this.colFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            this.colPhoneNumber.HeaderText = "Téléphone";
+            this.colFullName.ReadOnly = true;
+            this.colFullName.Width = 125;
+            // 
+            // colPhoneNumber
+            // 
+            this.colPhoneNumber.MinimumWidth = 6;
             this.colPhoneNumber.Name = "colPhoneNumber";
-            this.colPhoneNumber.DataPropertyName = "NumeroTelephone";
-            this.colPhoneNumber.Width = 120;
-
-            this.colEmail.HeaderText = "Email";
+            this.colPhoneNumber.ReadOnly = true;
+            this.colPhoneNumber.Width = 125;
+            // 
+            // colEmail
+            // 
+            this.colEmail.MinimumWidth = 6;
             this.colEmail.Name = "colEmail";
-            this.colEmail.DataPropertyName = "Email";
-            this.colEmail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            this.colGendor.HeaderText = "Genre";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Width = 125;
+            // 
+            // colGendor
+            // 
+            this.colGendor.MinimumWidth = 6;
             this.colGendor.Name = "colGendor";
-            this.colGendor.DataPropertyName = "GendorCaption";
-            this.colGendor.Width = 90;
-
-            this.colMemberDetails.HeaderText = "Details";
+            this.colGendor.ReadOnly = true;
+            this.colGendor.Width = 125;
+            // 
+            // colMemberDetails
+            // 
+            this.colMemberDetails.MinimumWidth = 6;
             this.colMemberDetails.Name = "colMemberDetails";
-            this.colMemberDetails.Text = "Voir Détails";
-            this.colMemberDetails.UseColumnTextForButtonValue = true;
-
-            this.colUpdateMember.HeaderText = "Modifier";
+            this.colMemberDetails.ReadOnly = true;
+            this.colMemberDetails.Width = 125;
+            // 
+            // colUpdateMember
+            // 
+            this.colUpdateMember.MinimumWidth = 6;
             this.colUpdateMember.Name = "colUpdateMember";
-            this.colUpdateMember.Text = "Modifier";
-            this.colUpdateMember.UseColumnTextForButtonValue = true;
-            this.colUpdateMember.Width = 100;
-
-
-            this.colManagesubscriptions.HeaderText = "Abonnements";
+            this.colUpdateMember.ReadOnly = true;
+            this.colUpdateMember.Width = 125;
+            // 
+            // colManagesubscriptions
+            // 
+            this.colManagesubscriptions.MinimumWidth = 6;
             this.colManagesubscriptions.Name = "colManagesubscriptions";
-            this.colManagesubscriptions.Text = "Gérer";
-            this.colManagesubscriptions.UseColumnTextForButtonValue = true;
-            this.colManagesubscriptions.Width = 100;
-
-
-            // Add columns to DataGridView
-            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
-            {
-    this.colFullName,
-    this.colPhoneNumber,
-    this.colEmail,
-    this.colGendor,
-    this.colMemberDetails,
-    this.colUpdateMember,
-    this.colManagesubscriptions
-            });
-
+            this.colManagesubscriptions.ReadOnly = true;
+            this.colManagesubscriptions.Width = 125;
             // 
             // ucListeMembers
             // 
