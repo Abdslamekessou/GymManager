@@ -141,7 +141,6 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(337, 921);
             this.pnlSidebar.TabIndex = 1;
-           
             // 
             // pnlUtilisateurIndicator
             // 
@@ -150,7 +149,7 @@
             this.pnlUtilisateurIndicator.Size = new System.Drawing.Size(10, 77);
             this.pnlUtilisateurIndicator.TabIndex = 12;
             this.pnlUtilisateurIndicator.Visible = false;
-           
+            // 
             // pnlAbonnementsIndicator
             // 
             this.pnlAbonnementsIndicator.Location = new System.Drawing.Point(0, 468);
@@ -158,7 +157,6 @@
             this.pnlAbonnementsIndicator.Size = new System.Drawing.Size(10, 77);
             this.pnlAbonnementsIndicator.TabIndex = 11;
             this.pnlAbonnementsIndicator.Visible = false;
-           
             // 
             // pnlTypesAbonnementIndicator
             // 
@@ -168,7 +166,6 @@
             this.pnlTypesAbonnementIndicator.Size = new System.Drawing.Size(10, 77);
             this.pnlTypesAbonnementIndicator.TabIndex = 10;
             this.pnlTypesAbonnementIndicator.Visible = false;
-            
             // 
             // pnlSportsIndicator
             // 
@@ -177,7 +174,8 @@
             this.pnlSportsIndicator.Name = "pnlSportsIndicator";
             this.pnlSportsIndicator.Size = new System.Drawing.Size(10, 77);
             this.pnlSportsIndicator.TabIndex = 9;
-            this.pnlSportsIndicator.Visible = false; // 
+            this.pnlSportsIndicator.Visible = false;
+            // 
             // pnlAdherentsIndicator
             // 
             this.pnlAdherentsIndicator.BackColor = System.Drawing.Color.RoyalBlue;
@@ -187,7 +185,6 @@
             this.pnlAdherentsIndicator.Size = new System.Drawing.Size(10, 77);
             this.pnlAdherentsIndicator.TabIndex = 8;
             this.pnlAdherentsIndicator.Visible = false;
-            
             // 
             // pnlPersonnesIndicator
             // 
@@ -198,7 +195,6 @@
             this.pnlPersonnesIndicator.Size = new System.Drawing.Size(10, 77);
             this.pnlPersonnesIndicator.TabIndex = 7;
             this.pnlPersonnesIndicator.Visible = false;
-          
             // 
             // btnUtilisateurs
             // 
@@ -258,7 +254,7 @@
             this.btnSports.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSports.Location = new System.Drawing.Point(-3, 250);
             this.btnSports.Name = "btnSports";
-            this.btnSports.Size = new System.Drawing.Size(337, 77);
+            this.btnSports.Size = new System.Drawing.Size(340, 77);
             this.btnSports.TabIndex = 2;
             this.btnSports.Text = "Sports";
             this.btnSports.UseVisualStyleBackColor = true;
@@ -293,13 +289,12 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.RosyBrown;
+            this.pnlContent.BackColor = System.Drawing.Color.White;
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(337, 79);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1587, 921);
             this.pnlContent.TabIndex = 2;
-           
             // 
             // MainForm
             // 
