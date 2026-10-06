@@ -103,6 +103,24 @@ namespace GymManager.Business
                 }
             }
 
+            public static clsAbonnement FindAbonnementByMemberID(int MemberID)
+            {
+                int abonnementID = -1, typeAbonnementID = -1, creePar = -1;
+                DateTime dateDebut = DateTime.Now, dateFin = DateTime.Now;
+                decimal prixPaye = 0;
+                byte etatAbonnement = 0;
+
+                if (clsAbonnementDataAccess.GetAbonnementByMemberID(MemberID, ref abonnementID, ref typeAbonnementID,
+                    ref dateDebut, ref dateFin, ref creePar, ref prixPaye, ref etatAbonnement))
+                {
+                    return new clsAbonnement(abonnementID, MemberID, typeAbonnementID, dateDebut, dateFin, creePar, prixPaye, etatAbonnement);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
             public bool Save()
             {
                 switch (Mode)
