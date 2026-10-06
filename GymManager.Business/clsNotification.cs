@@ -1,5 +1,6 @@
 ﻿using GymManager.DataAccess;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace GymManager.Business
@@ -84,7 +85,36 @@ namespace GymManager.Business
 
         public bool Save()
         {
-            return clsNotificationData.Save(NotificationId,IsRead, Message);
+            return clsNotificationData.Save(NotificationId, IsRead, Message);
         }
+
+        static public bool MakeNotificationsAsExported(List<int> NotificationsID)
+        {
+            return clsNotificationData.MakeNotificationsAsExported(NotificationsID);
+        }
+
+        public void GenerateMessage()
+        {
+            if (!string.IsNullOrEmpty(Message))
+                return;
+
+            switch (SubscriptionStatus)
+            {
+                case "Expired":
+                    Message = $"Bonjour {MemberName}, votre abonnement a expiré. " +
+                              "Veuillez le renouveler pour continuer à profiter de nos services.";
+                    break;
+
+                case "Expiring Soon":
+                    Message = $"Bonjour {MemberName}, votre abonnement arrive bientôt à expiration. " +
+                              "Pensez à le renouveler.";
+                    break;
+
+                default:
+                    Message = "";
+                    break;
+            }
+        }
+
     }
 }
