@@ -35,6 +35,12 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pnlUtilisateurIndicator = new System.Windows.Forms.Panel();
+            this.pnlAbonnementsIndicator = new System.Windows.Forms.Panel();
+            this.pnlTypesAbonnementIndicator = new System.Windows.Forms.Panel();
+            this.pnlSportsIndicator = new System.Windows.Forms.Panel();
+            this.pnlAdherentsIndicator = new System.Windows.Forms.Panel();
+            this.pnlPersonnesIndicator = new System.Windows.Forms.Panel();
             this.btnUtilisateurs = new FontAwesome.Sharp.IconButton();
             this.btnDeconnexion = new FontAwesome.Sharp.IconButton();
             this.btnAbonnements = new FontAwesome.Sharp.IconButton();
@@ -117,6 +123,12 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.White;
+            this.pnlSidebar.Controls.Add(this.pnlUtilisateurIndicator);
+            this.pnlSidebar.Controls.Add(this.pnlAbonnementsIndicator);
+            this.pnlSidebar.Controls.Add(this.pnlTypesAbonnementIndicator);
+            this.pnlSidebar.Controls.Add(this.pnlSportsIndicator);
+            this.pnlSidebar.Controls.Add(this.pnlAdherentsIndicator);
+            this.pnlSidebar.Controls.Add(this.pnlPersonnesIndicator);
             this.pnlSidebar.Controls.Add(this.btnUtilisateurs);
             this.pnlSidebar.Controls.Add(this.btnDeconnexion);
             this.pnlSidebar.Controls.Add(this.btnAbonnements);
@@ -129,6 +141,64 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(337, 921);
             this.pnlSidebar.TabIndex = 1;
+           
+            // 
+            // pnlUtilisateurIndicator
+            // 
+            this.pnlUtilisateurIndicator.Location = new System.Drawing.Point(0, 575);
+            this.pnlUtilisateurIndicator.Name = "pnlUtilisateurIndicator";
+            this.pnlUtilisateurIndicator.Size = new System.Drawing.Size(10, 77);
+            this.pnlUtilisateurIndicator.TabIndex = 12;
+            this.pnlUtilisateurIndicator.Visible = false;
+           
+            // pnlAbonnementsIndicator
+            // 
+            this.pnlAbonnementsIndicator.Location = new System.Drawing.Point(0, 468);
+            this.pnlAbonnementsIndicator.Name = "pnlAbonnementsIndicator";
+            this.pnlAbonnementsIndicator.Size = new System.Drawing.Size(10, 77);
+            this.pnlAbonnementsIndicator.TabIndex = 11;
+            this.pnlAbonnementsIndicator.Visible = false;
+           
+            // 
+            // pnlTypesAbonnementIndicator
+            // 
+            this.pnlTypesAbonnementIndicator.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnlTypesAbonnementIndicator.Location = new System.Drawing.Point(0, 358);
+            this.pnlTypesAbonnementIndicator.Name = "pnlTypesAbonnementIndicator";
+            this.pnlTypesAbonnementIndicator.Size = new System.Drawing.Size(10, 77);
+            this.pnlTypesAbonnementIndicator.TabIndex = 10;
+            this.pnlTypesAbonnementIndicator.Visible = false;
+            
+            // 
+            // pnlSportsIndicator
+            // 
+            this.pnlSportsIndicator.BackColor = System.Drawing.Color.MediumBlue;
+            this.pnlSportsIndicator.Location = new System.Drawing.Point(0, 250);
+            this.pnlSportsIndicator.Name = "pnlSportsIndicator";
+            this.pnlSportsIndicator.Size = new System.Drawing.Size(10, 77);
+            this.pnlSportsIndicator.TabIndex = 9;
+            this.pnlSportsIndicator.Visible = false; // 
+            // pnlAdherentsIndicator
+            // 
+            this.pnlAdherentsIndicator.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlAdherentsIndicator.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.pnlAdherentsIndicator.Location = new System.Drawing.Point(0, 145);
+            this.pnlAdherentsIndicator.Name = "pnlAdherentsIndicator";
+            this.pnlAdherentsIndicator.Size = new System.Drawing.Size(10, 77);
+            this.pnlAdherentsIndicator.TabIndex = 8;
+            this.pnlAdherentsIndicator.Visible = false;
+            
+            // 
+            // pnlPersonnesIndicator
+            // 
+            this.pnlPersonnesIndicator.BackColor = System.Drawing.Color.MediumBlue;
+            this.pnlPersonnesIndicator.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlPersonnesIndicator.Location = new System.Drawing.Point(0, 41);
+            this.pnlPersonnesIndicator.Name = "pnlPersonnesIndicator";
+            this.pnlPersonnesIndicator.Size = new System.Drawing.Size(10, 77);
+            this.pnlPersonnesIndicator.TabIndex = 7;
+            this.pnlPersonnesIndicator.Visible = false;
+          
             // 
             // btnUtilisateurs
             // 
@@ -141,6 +211,7 @@
             this.btnUtilisateurs.TabIndex = 6;
             this.btnUtilisateurs.Text = "Utilisateurs";
             this.btnUtilisateurs.UseVisualStyleBackColor = true;
+            this.btnUtilisateurs.Click += new System.EventHandler(this.btnUtilisateurs_Click);
             // 
             // btnDeconnexion
             // 
@@ -165,6 +236,7 @@
             this.btnAbonnements.TabIndex = 4;
             this.btnAbonnements.Text = "Abonnements";
             this.btnAbonnements.UseVisualStyleBackColor = true;
+            this.btnAbonnements.Click += new System.EventHandler(this.btnAbonnements_Click);
             // 
             // btnTypesAbonnements
             // 
@@ -177,6 +249,7 @@
             this.btnTypesAbonnements.TabIndex = 3;
             this.btnTypesAbonnements.Text = "Types d’abonnements";
             this.btnTypesAbonnements.UseVisualStyleBackColor = true;
+            this.btnTypesAbonnements.Click += new System.EventHandler(this.btnTypesAbonnements_Click);
             // 
             // btnSports
             // 
@@ -189,6 +262,7 @@
             this.btnSports.TabIndex = 2;
             this.btnSports.Text = "Sports";
             this.btnSports.UseVisualStyleBackColor = true;
+            this.btnSports.Click += new System.EventHandler(this.btnSports_Click);
             // 
             // btnAdherents
             // 
@@ -201,6 +275,7 @@
             this.btnAdherents.TabIndex = 1;
             this.btnAdherents.Text = "Adhérents";
             this.btnAdherents.UseVisualStyleBackColor = true;
+            this.btnAdherents.Click += new System.EventHandler(this.btnAdherents_Click);
             // 
             // btnPersonnes
             // 
@@ -214,6 +289,7 @@
             this.btnPersonnes.TabIndex = 0;
             this.btnPersonnes.Text = "Personnes";
             this.btnPersonnes.UseVisualStyleBackColor = false;
+            this.btnPersonnes.Click += new System.EventHandler(this.btnPersonnes_Click);
             // 
             // pnlContent
             // 
@@ -223,7 +299,7 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1587, 921);
             this.pnlContent.TabIndex = 2;
-            this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint);
+           
             // 
             // MainForm
             // 
@@ -265,6 +341,12 @@
         private FontAwesome.Sharp.IconButton btnPersonnes;
         private FontAwesome.Sharp.IconButton btnUtilisateurs;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnlPersonnesIndicator;
+        private System.Windows.Forms.Panel pnlUtilisateurIndicator;
+        private System.Windows.Forms.Panel pnlAbonnementsIndicator;
+        private System.Windows.Forms.Panel pnlTypesAbonnementIndicator;
+        private System.Windows.Forms.Panel pnlSportsIndicator;
+        private System.Windows.Forms.Panel pnlAdherentsIndicator;
     }
 }
 

@@ -11,6 +11,7 @@ namespace GymManager.Presentation.Helpers
 {
     public static class UIHelper
     {
+        private static IconButton _activeButton;
         public static void SetupIconButton(IconButton btn , IconChar icon)
         {
 
@@ -19,10 +20,12 @@ namespace GymManager.Presentation.Helpers
            
             btn.ImageAlign = ContentAlignment.MiddleLeft;
             btn.TextAlign = ContentAlignment.MiddleRight;
+
+            btn.Padding = new Padding(10, 0, 0, 0);
         }
 
 
-        public static void SetupSidebarButtonStyle(IconButton btn)
+        public static void SetupSidebarButtonStyle(IconButton btn )
         {
             Color normalColor;
             Color hoverColor;
@@ -45,10 +48,54 @@ namespace GymManager.Presentation.Helpers
             btn.FlatAppearance.BorderSize = 0;
 
             btn.MouseEnter += (s, args) =>
+            {
+                if (btn != _activeButton)
+                {
                     btn.BackColor = hoverColor;
+                }
+            };
+
+
 
             btn.MouseLeave += (s, args) =>
-                           btn.BackColor = normalColor;
+            {
+                if (btn != _activeButton)
+                {
+                    btn.BackColor = normalColor;
+                }
+            };
+                           
+        }
+
+        public static void ActivateButton(IconButton button ,Panel indicator ,List<Panel> _sidebarIndicators, Panel SideBar)
+        {
+            
+            
+            foreach(Control control in SideBar.Controls)
+            {
+                if(control is IconButton sidebarButton && sidebarButton.Name != "btnDeconnexion")
+                {
+                    sidebarButton.BackColor = ColorTranslator.FromHtml("#0F172A");
+                    sidebarButton.ForeColor = ColorTranslator.FromHtml("#F8FAFC");
+                    sidebarButton.IconColor = ColorTranslator.FromHtml("#F8FAFC");
+                }
+
+
+            }
+
+            foreach(Panel idicator in _sidebarIndicators)
+            {
+                idicator.Visible = false;
+            }
+
+            button.BackColor = ColorTranslator.FromHtml("#334155");
+            button.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+            button.IconColor = ColorTranslator.FromHtml("#3B82F6");
+
+            indicator.Visible = true;
+            indicator.BackColor = ColorTranslator.FromHtml("#3B82F6");
+
+            _activeButton = button;
         }
     }
 }

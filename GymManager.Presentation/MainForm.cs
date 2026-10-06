@@ -14,9 +14,20 @@ namespace GymManager.Presentation
 {
     public partial class MainForm : Form
     {
+        private List<Panel> _sidebarIndicators;
         public MainForm()
         {
             InitializeComponent();
+
+            _sidebarIndicators = new List<Panel>
+            {
+                    pnlPersonnesIndicator,
+                    pnlAdherentsIndicator,
+                    pnlSportsIndicator,
+                    pnlTypesAbonnementIndicator,
+                    pnlAbonnementsIndicator,
+                    pnlUtilisateurIndicator
+            };
             
         }
 
@@ -51,9 +62,35 @@ namespace GymManager.Presentation
             
         }
 
-        private void pnlContent_Paint(object sender, PaintEventArgs e)
+       
+        private void btnPersonnes_Click(object sender, EventArgs e)
         {
+            UIHelper.ActivateButton(btnPersonnes, pnlPersonnesIndicator, _sidebarIndicators, pnlSidebar);
+        }
 
+        private void btnAdherents_Click(object sender, EventArgs e)
+        {
+            UIHelper.ActivateButton(btnAdherents, pnlAdherentsIndicator, _sidebarIndicators, pnlSidebar);
+        }
+
+        private void btnSports_Click(object sender, EventArgs e)
+        {
+            UIHelper.ActivateButton(btnSports, pnlSportsIndicator, _sidebarIndicators, pnlSidebar);
+        }
+
+        private void btnTypesAbonnements_Click(object sender, EventArgs e)
+        {
+            UIHelper.ActivateButton(btnTypesAbonnements, pnlTypesAbonnementIndicator, _sidebarIndicators, pnlSidebar);
+        }
+
+        private void btnAbonnements_Click(object sender, EventArgs e)
+        {
+            UIHelper.ActivateButton(btnAbonnements, pnlAbonnementsIndicator, _sidebarIndicators, pnlSidebar);
+        }
+
+        private void btnUtilisateurs_Click(object sender, EventArgs e)
+        {
+            UIHelper.ActivateButton(btnUtilisateurs, pnlUtilisateurIndicator, _sidebarIndicators, pnlSidebar);
         }
     }
 }
