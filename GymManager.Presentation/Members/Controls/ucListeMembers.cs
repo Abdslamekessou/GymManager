@@ -1,4 +1,5 @@
 ﻿using GymManager.Business;
+using GymManager.Presentation.Personnes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -167,22 +168,30 @@ namespace GymManager.Presentation.Members.Controls
 
 
             _ApplyFilters();
-            //switch (cmbGender.SelectedItem.ToString())
-            //{
-            //    case "Tous":
-            //        _dtAllMembers.DefaultView.RowFilter = string.Empty;
-            //        break;
-            //    case "Homme":
-            //        _dtAllMembers.DefaultView.RowFilter = string.Format("{0} LIKE '{1}'", "GendorCaption", "Homme");
-            //        break;
-            //    case "Femme":
-            //        _dtAllMembers.DefaultView.RowFilter = string.Format("{0} LIKE '{1}'", "GendorCaption", "Femme");
-            //        break;
-            //    default:
-            //        break;
-            //}
+
         }
 
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember();
+
+            frm.ShowDialog();
+        }
+
+        private void AddNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember();
+
+            frm.ShowDialog();
+        }
+
+        private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember((int)dgvMembers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+            _RefreshListMembers();
+        }
 
 
     }

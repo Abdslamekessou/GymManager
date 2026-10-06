@@ -85,6 +85,7 @@ namespace GymManager.Presentation.Members.Controls
             this.btnAddMember.TabIndex = 1;
             this.btnAddMember.Text = "+ Ajouter";
             this.btnAddMember.UseVisualStyleBackColor = true;
+            this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
             // grpSearch
             // 
