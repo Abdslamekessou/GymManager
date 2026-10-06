@@ -48,16 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abonnements\ucAbonnementInfo.cs">
+    <Compile Include="Abonnements\Control\ucAbonnementInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Abonnements\ucAbonnementInfo.Designer.cs">
+    <Compile Include="Abonnements\Control\ucAbonnementInfo.Designer.cs">
       <DependentUpon>ucAbonnementInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abonnements\ucDetailsAbonnemnt.cs">
+    <Compile Include="Abonnements\Control\ucDetailsAbonnemnt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Abonnements\ucDetailsAbonnemnt.Designer.cs">
+    <Compile Include="Abonnements\Control\ucDetailsAbonnemnt.Designer.cs">
       <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">

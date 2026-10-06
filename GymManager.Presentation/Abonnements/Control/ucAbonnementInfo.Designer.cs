@@ -1,4 +1,4 @@
-﻿namespace GymManager.Presentation.Abonnements
+﻿namespace GymManager.Presentation.Abonnements.Control
 {
     partial class ucAbonnementInfo
     {
