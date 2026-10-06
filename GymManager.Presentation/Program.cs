@@ -18,7 +18,8 @@ namespace GymManager.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateMember());
+            Application.Run(new MainForm());
         }
+
     }
 }
