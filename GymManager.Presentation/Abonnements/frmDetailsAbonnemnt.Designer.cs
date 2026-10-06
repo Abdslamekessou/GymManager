@@ -1,37 +1,71 @@
-﻿using GymManager.Presentation.Abonnements.Control;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace GymManager.Presentation.Abonnements
+﻿namespace GymManager.Presentation.Abonnements
 {
-    public partial class frmDetailsAbonnemnt : Form
+    partial class frmDetailsAbonnemnt
     {
-        private int _AbonnemntID = -1;
+        private System.ComponentModel.IContainer components = null;
 
-        public frmDetailsAbonnemnt(int selectedID)
+        protected override void Dispose(bool disposing)
         {
-            InitializeComponent();
-            _AbonnemntID = selectedID;
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
-        private void frmDetailsAbonnemnt_Load(object sender, EventArgs e)
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
         {
-            if (_AbonnemntID != -1)
-                ucDetailsAbonnemnt1.LoadAbonnementInfo(_AbonnemntID);
-            else
-                MessageBox.Show("Error");
+            this.btnFermer = new System.Windows.Forms.Button();
+            this.ucDetailsAbonnemnt1 = new GymManager.Presentation.Abonnements.Control.ucDetailsAbonnemnt();
+            this.SuspendLayout();
+            // 
+            // btnFermer
+            // 
+            this.btnFermer.BackColor = System.Drawing.Color.White;
+            this.btnFermer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFermer.Location = new System.Drawing.Point(702, 190);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(100, 32);
+            this.btnFermer.TabIndex = 1;
+            this.btnFermer.Text = "Fermer";
+            this.btnFermer.UseVisualStyleBackColor = false;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
+            // 
+            // ucDetailsAbonnemnt1
+            // 
+            this.ucDetailsAbonnemnt1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDetailsAbonnemnt1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucDetailsAbonnemnt1.Location = new System.Drawing.Point(12, 12);
+            this.ucDetailsAbonnemnt1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucDetailsAbonnemnt1.Name = "ucDetailsAbonnemnt1";
+            this.ucDetailsAbonnemnt1.Size = new System.Drawing.Size(790, 170);
+            this.ucDetailsAbonnemnt1.TabIndex = 0;
+            // 
+            // frmDetailsAbonnemnt
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(814, 234);
+            this.Controls.Add(this.btnFermer);
+            this.Controls.Add(this.ucDetailsAbonnemnt1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmDetailsAbonnemnt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Détails de l\'abonnement";
+            this.Load += new System.EventHandler(this.frmDetailsAbonnemnt_Load);
+            this.ResumeLayout(false);
+
         }
 
-        private void btnFermer_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
+
+        private Control.ucDetailsAbonnemnt ucDetailsAbonnemnt1;
+        private System.Windows.Forms.Button btnFermer;
     }
 }
