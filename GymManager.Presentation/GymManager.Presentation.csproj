@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonnements\Control\ucListD_Abonnement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Abonnements\Control\ucListD_Abonnement.Designer.cs">
+      <DependentUpon>ucListD_Abonnement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abonnements\frmRenouveler.cs">
       <SubType>Form</SubType>
     </Compile>
