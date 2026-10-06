@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GymManager.DataAccess
 {
@@ -100,7 +98,7 @@ namespace GymManager.DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"UPDATE Notifications
-                 SET EstVue = @isRead,LeMessage =@message
+                 SET EstVue = @isRead,Message =@message
                   WHERE NotificationID = @notificationID;";
 
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -123,6 +121,38 @@ namespace GymManager.DataAccess
                 connection.Close();
             }
             return NumberOfRowsAffected > 0;
+        }
+
+        public static bool MakeNotificationsAsExported(List<int> notificationsID)
+        {
+
+            if (notificationsID == null || notificationsID.Count == 0)
+                return false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string set = string.Join(",", notificationsID);
+            string query = $@"UPDATE Notifications
+                                SET EstExportee=0
+                                WHERE NotificationID IN ({set});";
+
+            SqlCommand cmd = new SqlCommand(query,connection);
+            short NumberOfRowsAffected = 0;
+            try
+            {
+                connection.Open();
+                 NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
+
+            }catch(Exception ex)
+            {
+
+            }finally
+            {
+                connection.Close();
+            }
+
+            
+            return NumberOfRowsAffected>0;
         }
     }
 }
