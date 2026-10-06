@@ -40,8 +40,12 @@ namespace GymManager.Presentation.Notifications
             txtStartDate.Text = _Notification.StartDate.Date.ToString("dd/mm/yyyy");
             txtEndDate.Text = _Notification.EndDate.Date.ToString("dd/mm/yyyy");
             txtSubscriptionStatus.Text = _Notification.SubscriptionStatus;
-            rtbMessage.Text = _Notification.Message == null ? "" : _Notification.Message.ToString();
 
+            if (string.IsNullOrEmpty(_Notification.Message.Trim()))
+                _Notification.GenerateMessage();
+
+            rtbMessage.Text =_Notification.Message.ToString();
+            
             if (_Notification.IsRead)
             {
                 lblReadStatusValue.Text = "●   Lu";
@@ -84,6 +88,7 @@ namespace GymManager.Presentation.Notifications
             {
                 NotificationMarkedAsRead?.Invoke(_Notification);
                 MessageBox.Show("Les Changements sont sauvegader avec successé");
+                btnSave.Enabled = false;
             }else
                 MessageBox.Show("Les Changements ne sont pas sauvegader","",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
