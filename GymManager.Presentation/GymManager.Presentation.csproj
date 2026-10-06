@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonnements\frmRenouveler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnements\frmRenouveler.Designer.cs">
+      <DependentUpon>frmRenouveler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abonnements\Control\ucAbonnementInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -59,6 +65,18 @@
     </Compile>
     <Compile Include="Abonnements\Control\ucDetailsAbonnemnt.Designer.cs">
       <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abonnements\frmAnnuler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnements\frmAnnuler.Designer.cs">
+      <DependentUpon>frmAnnuler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abonnements\frmDetailsAbonnemnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnements\frmDetailsAbonnemnt.Designer.cs">
+      <DependentUpon>frmDetailsAbonnemnt.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
