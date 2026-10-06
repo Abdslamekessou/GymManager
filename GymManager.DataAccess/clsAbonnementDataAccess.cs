@@ -55,6 +55,51 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
+        public static bool GetAbonnementByMemberID(int MemberID, ref int AbonnementID, ref int TypeAbonnementID,
+    ref DateTime DateDebut, ref DateTime DateFin, ref int CreePar, ref decimal PrixPaye, ref byte EtatAbonnement)
+        {
+            bool isFound = false;
+            string query = @"SELECT * FROM Abonnements WHERE AdherentID = @MemberID";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MemberID", MemberID);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                AbonnementID = (int)reader["AbonnementID"];
+                                TypeAbonnementID = (int)reader["TypeAbonnementID"];
+                                DateDebut = (DateTime)reader["DateDebut"];
+                                DateFin = (DateTime)reader["DateFin"];
+                                CreePar = (int)reader["CreePar"];
+                                PrixPaye = Convert.ToDecimal(reader["PrixPaye"]);
+                                EtatAbonnement = (byte)reader["EtatAbonnement"];
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        isFound = false;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
+            return isFound;
+        }
+
         public static DataTable GetAllAbonnements()
         {
             DataTable dt = new DataTable();
