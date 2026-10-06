@@ -1,7 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using GymManager.DataAccess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GymManager.DataAccess;
+using System;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace GYM.DATA.TEST
 {
@@ -38,6 +39,21 @@ namespace GYM.DATA.TEST
             {
                 Assert.IsTrue(dt.Columns.Contains(col), $"Expected column '{col}' was not found in the returned DataTable.");
             }
+        }
+
+        [TestMethod]
+        public void MakeNotificationsAsExported_SetsEstExportee_ForGivenIds()
+        {
+            List<int> IDs  = new List<int>();
+            IDs.Add(1);
+            IDs.Add(2);
+            IDs.Add(3);
+
+            //Act
+            bool Affected = clsNotificationData.MakeNotificationsAsExported(IDs);
+
+            //
+            Assert.IsTrue(Affected);
         }
     }
 }
