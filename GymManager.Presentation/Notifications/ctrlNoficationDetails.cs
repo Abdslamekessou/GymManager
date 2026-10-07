@@ -32,11 +32,9 @@ namespace GymManager.Presentation.Notifications
             txtSport.Text = _Notification.SportName;
             txtPhone.Text = _Notification.Phone;
             txtSubscriptionType.Text = _Notification.SubscriptionType;
-            txtStartDate.Text = _Notification.StartDate.Date.ToString("dd/mm/yyyy");
-            txtEndDate.Text = _Notification.EndDate.Date.ToString("dd/mm/yyyy");
+            txtStartDate.Text = _Notification.StartDate.ToString("dd/MM/yyyy");
+            txtEndDate.Text = _Notification.EndDate.Date.ToString("dd/MM/yyyy");
             txtSubscriptionStatus.Text = _Notification.SubscriptionStatus;
-
-            _Notification.GenerateMessage(_Notification);
 
             rtbMessage.Text = _Notification.Message.ToString();
 

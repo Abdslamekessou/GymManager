@@ -43,7 +43,7 @@ namespace GymManager.DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"UPDATE Notifications
-                 SET EstVue = 0";
+                 SET EstVue = 1";
 
             SqlCommand cmd = new SqlCommand(query, connection);
             short NumberOfRowsAffected = 0;
@@ -70,7 +70,7 @@ namespace GymManager.DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"UPDATE Notifications
-                 SET EstVue = 0
+                 SET EstVue = 1
                   WHERE NotificationID = @notificationID;";
 
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -104,7 +104,7 @@ namespace GymManager.DataAccess
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("notificationID", notificationID);
             cmd.Parameters.AddWithValue("message", message);
-            cmd.Parameters.AddWithValue("isRead", isRead?0:1);
+            cmd.Parameters.AddWithValue("isRead", isRead?1:0);
             short NumberOfRowsAffected = 0;
             try
             {
