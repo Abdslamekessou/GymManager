@@ -96,6 +96,12 @@
     <Compile Include="Members\frmAddUpdateMember.Designer.cs">
       <DependentUpon>frmAddUpdateMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Members\frmShowMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmShowMemberInfo.Designer.cs">
+      <DependentUpon>frmShowMemberInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personnes\Controls\ucListePersons.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Members\frmAddUpdateMember.resx">
       <DependentUpon>frmAddUpdateMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmShowMemberInfo.resx">
+      <DependentUpon>frmShowMemberInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnes\Controls\ucListePersons.dje-NE.resx">
       <DependentUpon>ucListePersons.cs</DependentUpon>
