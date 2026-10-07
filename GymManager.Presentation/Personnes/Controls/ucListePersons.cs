@@ -36,7 +36,10 @@ namespace GymManager.Presentation.Personnes.Controls
 
         private void ucListePersons_Load(object sender, EventArgs e)
         {
-            dgvPersons.DataSource = _dtPersons;
+            _RefreshListPeople();
+
+            cmbGendor.SelectedIndex = 0;
+            cbFilterBy.SelectedIndex = 0;
 
         }
 
@@ -64,5 +67,130 @@ namespace GymManager.Presentation.Personnes.Controls
             frm.ShowDialog();
 
         }
+
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm = new frmAddUpdatePerson();
+
+            frm.ShowDialog();
+
+            _RefreshListPeople();
+        }
+
+        private void _ApplyFilters()
+        {
+            if (_dtPersons == null)
+                return;
+
+            _dtPersons.DefaultView.RowFilter = _GeneratePersonSearchFilter() + " AND " + _GenerateGenderFilter();
+        }
+
+        private string _GeneratePersonSearchFilter()
+        {
+            string filterColumn = "";
+
+            // Map selected filter to real column name
+            switch (cbFilterBy.Text)
+            {
+                case "PersonneID":
+                    filterColumn = "PersonneID";
+                    break;
+
+                case "Prenom":
+                    filterColumn = "Prenom";
+                    break;
+
+                case "Nom":
+                    filterColumn = "Nom";
+                    break;
+
+                case "Numero de Telephone":
+                    filterColumn = "NumeroTelephone";
+                    break;
+
+                case "Email":
+                    filterColumn = "Email";
+                    break;
+
+                default:
+                    filterColumn = "";
+                    break;
+            }
+
+            string value = txtFilterValue.Text.Trim();
+
+            if (txtFilterValue.Text.Trim() == "" || filterColumn == "")
+                return "1=1";
+
+
+            if (filterColumn == "PersonneID")
+            {
+                if (int.TryParse(value, out int id))
+                {
+                    return string.Format("[{0}] = {1}", filterColumn, id);
+                }
+                else
+                {
+                    // invalid numeric filter -> no results
+                    return "1=1";
+                }
+
+            }
+
+
+            return string.Format("{0} LIKE '{1}%'", filterColumn, txtFilterValue.Text);
+
+        }
+
+        private string _GenerateGenderFilter()
+        {
+            if (cmbGendor.SelectedItem.ToString() == "Tous")
+            {
+                return "1=1";
+            }
+            else
+            {
+                return $"[GendorCaption] = '{cmbGendor.Text}'";
+            }
+
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+
+            _ApplyFilters();
+            lblRecordsCount.Text = dgvPersons.Rows.Count.ToString();
+
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbFilterBy.SelectedItem.ToString() == "Aucun")
+            {
+                txtFilterValue.Visible = false;
+            }
+            else
+            {
+                txtFilterValue.Visible = true;
+                txtFilterValue.Text = "";
+            }
+
+        }
+
+        private void cmbGendor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _ApplyFilters();
+            lblRecordsCount.Text = dgvPersons.Rows.Count.ToString();
+        }
+
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //we allow number incase person id is selected.
+            if (cbFilterBy.Text == "PersonneID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
+        }
     }
+
 }

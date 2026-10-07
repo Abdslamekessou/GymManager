@@ -173,7 +173,6 @@ namespace GymManager.Presentation.Members.Controls
         private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
             _ApplyFilters();
 
         }
