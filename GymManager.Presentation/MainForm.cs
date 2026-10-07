@@ -98,5 +98,13 @@ namespace GymManager.Presentation
         {
             UIHelper.ActivateButton(btnUtilisateurs, pnlUtilisateurIndicator, _sidebarIndicators, pnlSidebar);
         }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Êtes-vous sûr de vouloir vous déconnecter ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
