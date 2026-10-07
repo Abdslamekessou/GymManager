@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblCurrentUser = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -305,8 +306,10 @@
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "GymManager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlHeader.ResumeLayout(false);

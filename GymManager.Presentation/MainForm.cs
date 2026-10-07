@@ -63,7 +63,7 @@ namespace GymManager.Presentation
             lblCurrentUser.ForeColor = Color.White;
             ipbCurrentUser.IconColor = Color.White;
 
-            this.ShowIcon = false;
+            //this.ShowIcon = false;
 
 
         }
