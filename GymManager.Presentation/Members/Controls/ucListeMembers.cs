@@ -201,5 +201,56 @@ namespace GymManager.Presentation.Members.Controls
         }
 
 
+        private int _GetSelectedMemberIdOfTheSelectedRow()
+        {
+
+            int selectedMemberID = (int)_dtAllMembers.Rows[dgvMembers.CurrentRow.Index]["AdherentID"];
+
+            return selectedMemberID;
+        }
+
+        private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore header clicks
+            if (e.RowIndex < 0)
+                return;
+
+            int memberID = Convert.ToInt32(
+                dgvMembers.Rows[e.RowIndex].Cells["colMemberID"].Value
+            );
+
+            switch (dgvMembers.Columns[e.ColumnIndex].Name)
+            {
+                case "colUpdateMember":
+
+                    frmAddUpdateMember frm = new frmAddUpdateMember(memberID);
+                    frm.ShowDialog();
+                    _RefreshListMembers();
+
+                    break;
+
+                case "colMemberDetails":
+
+                    frmShowMemberInfo frm1 = new frmShowMemberInfo(memberID);
+                    frm1.ShowDialog();
+                    _RefreshListMembers();
+
+                    break;
+
+                case "colManagesubscriptions":
+
+                    MessageBox.Show("Not implemented yet !!!");
+                    break;
+            }
+
+
+
+        }
+
+
+
+
+
+
     }
 }
