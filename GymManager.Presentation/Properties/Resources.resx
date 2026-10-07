@@ -121,4 +121,7 @@
   <data name="GymMangerLogo512HD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GymMangerLogo512HD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GymManagerLogo512WithBlueBgColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GymManagerLogo512WithBlueBgColor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

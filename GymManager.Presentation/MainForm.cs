@@ -58,8 +58,14 @@ namespace GymManager.Presentation
 
 
             pnlSidebar.BackColor = ColorTranslator.FromHtml("#0F172A");
-           
-            
+            pnlHeader.BackColor = ColorTranslator.FromHtml("#0F172A");
+            lblTitle.ForeColor = Color.White;
+            lblCurrentUser.ForeColor = Color.White;
+            ipbCurrentUser.IconColor = Color.White;
+
+            this.ShowIcon = false;
+
+
         }
 
        

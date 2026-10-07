@@ -98,5 +98,8 @@
   <ItemGroup>
     <None Include="Resources\GymMangerLogo512HD.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GymManagerLogo512WithBlueBgColor.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

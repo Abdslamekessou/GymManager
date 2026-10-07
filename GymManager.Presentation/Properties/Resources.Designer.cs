@@ -63,6 +63,16 @@ namespace GymManager.Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GymManagerLogo512WithBlueBgColor {
+            get {
+                object obj = ResourceManager.GetObject("GymManagerLogo512WithBlueBgColor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GymMangerLogo512HD {
             get {
                 object obj = ResourceManager.GetObject("GymMangerLogo512HD", resourceCulture);

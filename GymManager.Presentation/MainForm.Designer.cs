@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ipbCurrentUser = new FontAwesome.Sharp.IconPictureBox();
-            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblCurrentUser = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
@@ -41,6 +39,7 @@
             this.pnlSportsIndicator = new System.Windows.Forms.Panel();
             this.pnlAdherentsIndicator = new System.Windows.Forms.Panel();
             this.pnlPersonnesIndicator = new System.Windows.Forms.Panel();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.btnUtilisateurs = new FontAwesome.Sharp.IconButton();
             this.btnDeconnexion = new FontAwesome.Sharp.IconButton();
             this.btnAbonnements = new FontAwesome.Sharp.IconButton();
@@ -48,11 +47,12 @@
             this.btnSports = new FontAwesome.Sharp.IconButton();
             this.btnAdherents = new FontAwesome.Sharp.IconButton();
             this.btnPersonnes = new FontAwesome.Sharp.IconButton();
-            this.pnlContent = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ipbCurrentUser = new FontAwesome.Sharp.IconPictureBox();
             this.pnlHeader.SuspendLayout();
+            this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbCurrentUser)).BeginInit();
-            this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -60,7 +60,7 @@
             this.pnlHeader.BackColor = System.Drawing.Color.White;
             this.pnlHeader.Controls.Add(this.pictureBox1);
             this.pnlHeader.Controls.Add(this.ipbCurrentUser);
-            this.pnlHeader.Controls.Add(this.lblAdmin);
+            this.pnlHeader.Controls.Add(this.lblCurrentUser);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Controls.Add(this.panel3);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -69,39 +69,15 @@
             this.pnlHeader.Size = new System.Drawing.Size(1924, 79);
             this.pnlHeader.TabIndex = 0;
             // 
-            // pictureBox1
+            // lblCurrentUser
             // 
-            this.pictureBox1.Image = global::GymManager.Presentation.Properties.Resources.GymMangerLogo512HD;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ipbCurrentUser
-            // 
-            this.ipbCurrentUser.BackColor = System.Drawing.Color.White;
-            this.ipbCurrentUser.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ipbCurrentUser.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ipbCurrentUser.IconColor = System.Drawing.SystemColors.ControlText;
-            this.ipbCurrentUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ipbCurrentUser.IconSize = 33;
-            this.ipbCurrentUser.Location = new System.Drawing.Point(1708, 19);
-            this.ipbCurrentUser.Name = "ipbCurrentUser";
-            this.ipbCurrentUser.Size = new System.Drawing.Size(39, 33);
-            this.ipbCurrentUser.TabIndex = 5;
-            this.ipbCurrentUser.TabStop = false;
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.Location = new System.Drawing.Point(1753, 16);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(120, 45);
-            this.lblAdmin.TabIndex = 4;
-            this.lblAdmin.Text = "Admin";
+            this.lblCurrentUser.AutoSize = true;
+            this.lblCurrentUser.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentUser.Location = new System.Drawing.Point(1753, 19);
+            this.lblCurrentUser.Name = "lblCurrentUser";
+            this.lblCurrentUser.Size = new System.Drawing.Size(105, 38);
+            this.lblCurrentUser.TabIndex = 4;
+            this.lblCurrentUser.Text = "Admin";
             // 
             // lblTitle
             // 
@@ -196,6 +172,15 @@
             this.pnlPersonnesIndicator.TabIndex = 7;
             this.pnlPersonnesIndicator.Visible = false;
             // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.White;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(337, 79);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1587, 921);
+            this.pnlContent.TabIndex = 2;
+            // 
             // btnUtilisateurs
             // 
             this.btnUtilisateurs.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -287,14 +272,29 @@
             this.btnPersonnes.UseVisualStyleBackColor = false;
             this.btnPersonnes.Click += new System.EventHandler(this.btnPersonnes_Click);
             // 
-            // pnlContent
+            // pictureBox1
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.White;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(337, 79);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1587, 921);
-            this.pnlContent.TabIndex = 2;
+            this.pictureBox1.Image = global::GymManager.Presentation.Properties.Resources.GymManagerLogo512WithBlueBgColor;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ipbCurrentUser
+            // 
+            this.ipbCurrentUser.BackColor = System.Drawing.Color.White;
+            this.ipbCurrentUser.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ipbCurrentUser.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ipbCurrentUser.IconColor = System.Drawing.SystemColors.ControlText;
+            this.ipbCurrentUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbCurrentUser.IconSize = 33;
+            this.ipbCurrentUser.Location = new System.Drawing.Point(1708, 19);
+            this.ipbCurrentUser.Name = "ipbCurrentUser";
+            this.ipbCurrentUser.Size = new System.Drawing.Size(39, 33);
+            this.ipbCurrentUser.TabIndex = 5;
+            this.ipbCurrentUser.TabStop = false;
             // 
             // MainForm
             // 
@@ -307,14 +307,13 @@
             this.Controls.Add(this.pnlHeader);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gym Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            this.pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbCurrentUser)).EndInit();
-            this.pnlSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -326,7 +325,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblAdmin;
+        private System.Windows.Forms.Label lblCurrentUser;
         private FontAwesome.Sharp.IconPictureBox ipbCurrentUser;
         private FontAwesome.Sharp.IconButton btnDeconnexion;
         private FontAwesome.Sharp.IconButton btnAbonnements;
