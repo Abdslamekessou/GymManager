@@ -175,10 +175,17 @@ namespace GymManager.Business
         }
 
 
+
+        public static bool DeleteMember(int ID)
+        {
+
+            return clsMemberData.DeleteMember(ID);
+        }
+
         // =========================================================
         // Get All Members
         // =========================================================
-        
+
         public static DataTable GetAllMembers()
         {
             return clsMemberData.GetAllMembers();

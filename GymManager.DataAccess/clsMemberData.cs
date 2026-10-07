@@ -288,11 +288,49 @@ WHERE AdherentID = @MemberID";
             }
 
 
-            // =========================================================
-            // Get All Members
-            // =========================================================
 
-            public static DataTable GetAllMembers()
+        public static bool DeleteMember(int MemberID)
+        {
+
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+
+            string query = @"Delete Adherents 
+                                where AdherentID = @MemberID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@MemberID", MemberID);
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+
+                connection.Close();
+
+            }
+
+            return (rowsAffected > 0);
+
+        }
+
+
+        // =========================================================
+        // Get All Members
+        // =========================================================
+
+        public static DataTable GetAllMembers()
             {
                 DataTable dt = new DataTable();
 

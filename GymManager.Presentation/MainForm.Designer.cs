@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucListePersons1 = new GymManager.Presentation.Personnes.Controls.ucListePersons();
+            this.ucListeMembers1 = new GymManager.Presentation.Members.Controls.ucListeMembers();
             this.SuspendLayout();
             // 
-            // ucListePersons1
+            // ucListeMembers1
             // 
-            this.ucListePersons1.AutoSize = true;
-            this.ucListePersons1.Location = new System.Drawing.Point(92, 45);
-            this.ucListePersons1.Name = "ucListePersons1";
-            this.ucListePersons1.Size = new System.Drawing.Size(1087, 470);
-            this.ucListePersons1.TabIndex = 0;
+            this.ucListeMembers1.AutoSize = true;
+            this.ucListeMembers1.Location = new System.Drawing.Point(12, 12);
+            this.ucListeMembers1.Name = "ucListeMembers1";
+            this.ucListeMembers1.Size = new System.Drawing.Size(1345, 582);
+            this.ucListeMembers1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -45,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1389, 612);
-            this.Controls.Add(this.ucListePersons1);
+            this.Controls.Add(this.ucListeMembers1);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -56,7 +56,7 @@
 
         #endregion
 
-        private Personnes.Controls.ucListePersons ucListePersons1;
+        private Members.Controls.ucListeMembers ucListeMembers1;
     }
 }
 

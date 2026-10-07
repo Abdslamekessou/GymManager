@@ -31,6 +31,7 @@ namespace GymManager.Presentation.Members.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpHeader = new System.Windows.Forms.GroupBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddMember = new System.Windows.Forms.Button();
@@ -50,10 +51,13 @@ namespace GymManager.Presentation.Members.Controls
             this.colMemberDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colUpdateMember = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colManagesubscriptions = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cmsMember = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpHeader.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.grpMembersTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            this.cmsMember.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpHeader
@@ -191,6 +195,7 @@ namespace GymManager.Presentation.Members.Controls
             this.colMemberDetails,
             this.colUpdateMember,
             this.colManagesubscriptions});
+            this.dgvMembers.ContextMenuStrip = this.cmsMember;
             this.dgvMembers.Location = new System.Drawing.Point(18, 35);
             this.dgvMembers.MultiSelect = false;
             this.dgvMembers.Name = "dgvMembers";
@@ -259,6 +264,21 @@ namespace GymManager.Presentation.Members.Controls
             this.colManagesubscriptions.ReadOnly = true;
             this.colManagesubscriptions.Width = 125;
             // 
+            // cmsMember
+            // 
+            this.cmsMember.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.cmsMember.Name = "contextMenuStrip1";
+            this.cmsMember.Size = new System.Drawing.Size(211, 56);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Text = "Supprimer";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // ucListeMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,6 +296,7 @@ namespace GymManager.Presentation.Members.Controls
             this.grpSearch.PerformLayout();
             this.grpMembersTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            this.cmsMember.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -311,5 +332,7 @@ namespace GymManager.Presentation.Members.Controls
 
 
         private System.Windows.Forms.ComboBox cbMemberFilterBy;
+        private ContextMenuStrip cmsMember;
+        private ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

@@ -246,9 +246,24 @@ namespace GymManager.Presentation.Members.Controls
 
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Vous etes sur de supprimer ce membre [" + dgvMembers.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 
+            {
 
+                //Perform Delele and refresh
+                if (clsMember.DeleteMember((int)dgvMembers.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Member Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _RefreshListMembers();
+                }
 
+                else
+                    MessageBox.Show("Member was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
 
 
     }
