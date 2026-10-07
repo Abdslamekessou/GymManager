@@ -29,6 +29,13 @@ namespace GymManager.Presentation.Members.Controls
 
             dgvMembers.AutoGenerateColumns = false;
 
+
+            // MemberID
+            colMemberID.HeaderText = "MemberID";
+            colMemberID.Name = "colMemberID";
+            colMemberID.DataPropertyName = "AdherentID";
+            colMemberID.Visible = false;
+
             // Full Name
             colFullName.HeaderText = "Nom";
             colFullName.Name = "colFullName";

@@ -42,6 +42,7 @@ namespace GymManager.Presentation.Members.Controls
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.grpMembersTable = new System.Windows.Forms.GroupBox();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.colMemberID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -182,6 +183,7 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.BackgroundColor = System.Drawing.Color.White;
             this.dgvMembers.ColumnHeadersHeight = 40;
             this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMemberID,
             this.colFullName,
             this.colPhoneNumber,
             this.colEmail,
@@ -199,6 +201,14 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMembers.Size = new System.Drawing.Size(1289, 309);
             this.dgvMembers.TabIndex = 0;
+            this.dgvMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellContentClick);
+            // 
+            // colMemberID
+            // 
+            this.colMemberID.MinimumWidth = 6;
+            this.colMemberID.Name = "colMemberID";
+            this.colMemberID.ReadOnly = true;
+            this.colMemberID.Width = 125;
             // 
             // colFullName
             // 
@@ -282,6 +292,7 @@ namespace GymManager.Presentation.Members.Controls
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.ComboBox cmbGender;
 
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
