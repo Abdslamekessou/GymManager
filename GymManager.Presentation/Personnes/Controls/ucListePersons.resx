@@ -306,39 +306,6 @@
   <metadata name="cmsPeople.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 18</value>
   </metadata>
-  <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 244</value>
-  </data>
-  <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
-    <value>cmsPeople</value>
-  </data>
-  <data name="&gt;&gt;cmsPeople.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 190</value>
-  </data>
-  <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1071, 249</value>
-  </data>
-  <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
-    <value>121</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
-    <value>dgvPersons</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="showDetailsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -373,7 +340,7 @@
     <value>None</value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 38</value>
+    <value>226, 38</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Delete</value>
@@ -399,23 +366,38 @@
   <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
     <value>Phone &amp;Call</value>
   </data>
-  <data name="cmbGendor.Items" xml:space="preserve">
-    <value>Tous</value>
+  <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 272</value>
   </data>
-  <data name="cmbGendor.Items1" xml:space="preserve">
-    <value>Homme</value>
+  <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
+    <value>cmsPeople</value>
   </data>
-  <data name="cmbGendor.Items2" xml:space="preserve">
-    <value>Femme</value>
+  <data name="&gt;&gt;cmsPeople.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cmbGendor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>701, 50</value>
+  <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 190</value>
   </data>
-  <data name="cmbGendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 24</value>
+  <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
-  <data name="cmbGendor.TabIndex" type="System.Int32, mscorlib">
-    <value>129</value>
+  <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1071, 249</value>
+  </data>
+  <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
+    <value>121</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
+    <value>dgvPersons</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cmbGendor.Name" xml:space="preserve">
     <value>cmbGendor</value>
@@ -557,5 +539,35 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cmbGendor.Items" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="cmbGendor.Items1" xml:space="preserve">
+    <value>Homme</value>
+  </data>
+  <data name="cmbGendor.Items2" xml:space="preserve">
+    <value>Femme</value>
+  </data>
+  <data name="cmbGendor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 50</value>
+  </data>
+  <data name="cmbGendor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 24</value>
+  </data>
+  <data name="cmbGendor.TabIndex" type="System.Int32, mscorlib">
+    <value>129</value>
+  </data>
+  <data name="&gt;&gt;cmbGendor.Name" xml:space="preserve">
+    <value>cmbGendor</value>
+  </data>
+  <data name="&gt;&gt;cmbGendor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbGendor.Parent" xml:space="preserve">
+    <value>gpFilters</value>
+  </data>
+  <data name="&gt;&gt;cmbGendor.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

@@ -191,6 +191,29 @@ namespace GymManager.Presentation.Personnes.Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Vous etes sur de supprimer cette personne [" + dgvPersons.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+
+            {
+
+                //Perform Delele and refresh
+                if (clsPerson.DeletePerson((int)dgvPersons.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Person Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _RefreshListPeople();
+                }
+
+                else
+                    MessageBox.Show("Person was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+
+
     }
 
 }

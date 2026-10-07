@@ -120,6 +120,11 @@ namespace GymManager.Business
         }
 
 
+        public static bool DeletePerson(int ID)
+        {
+
+            return clsPersonData.DeletePerson(ID);
+        }
 
         public static DataTable GetAllPersons()
         {
