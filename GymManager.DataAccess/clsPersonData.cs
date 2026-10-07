@@ -257,9 +257,9 @@ WHERE PersonneID = @PersonID;
             string query =
   @"select  Personnes.PersonneID , Personnes.Prenom , Personnes.Nom , Personnes.NumeroTelephone , Personnes.Email , 
 		Personnes.DateDeNaissance , Personnes.Genre , 				  CASE
-                  WHEN Personnes.Genre = 0 THEN 'Male'
+                  WHEN Personnes.Genre = 0 THEN 'Homme'
 
-                  ELSE 'Female'
+                  ELSE 'Femme'
 
                   END as GendorCaption , 
 				  Personnes.Image
