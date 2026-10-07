@@ -21,11 +21,6 @@ namespace GymManager.Presentation.Notifications
 
         public clsNotification Notificaton
         { get { return _Notification; } }
-        public bool BtnSaveEnable
-        {
-            get { return btnSave.Enabled; }
-            set { btnSave.Enabled = value; }
-        }
         public ctrlNoficationDetails()
         {
             InitializeComponent();
@@ -41,11 +36,10 @@ namespace GymManager.Presentation.Notifications
             txtEndDate.Text = _Notification.EndDate.Date.ToString("dd/mm/yyyy");
             txtSubscriptionStatus.Text = _Notification.SubscriptionStatus;
 
-            if (string.IsNullOrEmpty(_Notification.Message.Trim()))
-                _Notification.GenerateMessage();
+            _Notification.GenerateMessage(_Notification);
 
-            rtbMessage.Text =_Notification.Message.ToString();
-            
+            rtbMessage.Text = _Notification.Message.ToString();
+
             if (_Notification.IsRead)
             {
                 lblReadStatusValue.Text = "●   Lu";
@@ -69,7 +63,6 @@ namespace GymManager.Presentation.Notifications
         {
             _Notification.IsRead = true;
 
-            btnSave.Enabled = true;
             lblReadStatusValue.Text = "●   Lu";
             lblReadStatusValue.ForeColor = Color.Green;
             btnMarkAsRead.Enabled = false;
@@ -78,7 +71,6 @@ namespace GymManager.Presentation.Notifications
 
         private void rtbMessage_TextChanged(object sender, EventArgs e)
         {
-            btnSave.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -89,8 +81,9 @@ namespace GymManager.Presentation.Notifications
                 NotificationMarkedAsRead?.Invoke(_Notification);
                 MessageBox.Show("Les Changements sont sauvegader avec successé");
                 btnSave.Enabled = false;
-            }else
-                MessageBox.Show("Les Changements ne sont pas sauvegader","",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Les Changements ne sont pas sauvegader", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
         }

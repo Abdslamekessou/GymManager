@@ -93,21 +93,39 @@ namespace GymManager.Business
             return clsNotificationData.MakeNotificationsAsExported(NotificationsID);
         }
 
-        public void GenerateMessage()
+        public void GenerateMessage(clsNotification N)
         {
-            if (!string.IsNullOrEmpty(Message))
-                return;
-
             switch (SubscriptionStatus)
             {
-                case "Expired":
-                    Message = $"Bonjour {MemberName}, votre abonnement a expiré. " +
-                              "Veuillez le renouveler pour continuer à profiter de nos services.";
+                case "Active":
+                    Message = $"Bonjour {N.MemberName},\n\n" +
+                              $"Votre abonnement \"{N.SubscriptionType}\" pour {N.SportName} " +
+                              $"est actuellement actif jusqu'au {EndDate:dd/MM/yyyy}.\n\n" +
+                              "Merci pour votre confiance.";
                     break;
 
                 case "Expiring Soon":
-                    Message = $"Bonjour {MemberName}, votre abonnement arrive bientôt à expiration. " +
-                              "Pensez à le renouveler.";
+                    Message = $"Bonjour {N.MemberName},\n\n" +
+                              $"Nous vous informons que votre abonnement \"{N.SubscriptionType}\" " +
+                              $"pour {N.SportName} arrive bientôt à expiration, le {N.EndDate.Date.ToString("dd / MM / yyyy")}.\n\n" +
+                              "Pensez à renouveler votre abonnement afin de continuer à profiter de nos services.\n\n" +
+                              "Merci pour votre confiance.";
+                    break;
+
+                case "Expired":
+                    Message = $"Bonjour {N.MemberName},\n\n" +
+                              $"Nous vous informons que votre abonnement \"{N.SubscriptionType}\" " +
+                              $"pour {N.SportName} a expiré le {N.EndDate.Date.ToString("dd / MM / yyyy")}.\n\n" +
+                              "Vous pouvez nous contacter ou visiter la salle pour renouveler votre abonnement.\n\n" +
+                              "Merci pour votre confiance.";
+                    break;
+
+                case "Cancelled":
+                    Message = $"Bonjour {N.MemberName},\n\n" +
+                              $"Nous vous informons que votre abonnement \"{N.SubscriptionType}\" " +
+                              $"pour {N.SportName} a été annulé.\n\n" +
+                              "Pour plus d'informations, veuillez nous contacter ou visiter la salle.\n\n" +
+                              "Merci pour votre confiance.";
                     break;
 
                 default:

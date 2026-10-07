@@ -28,7 +28,6 @@ namespace GymManager.Presentation.Notifications
         private void NotificationDetailsTest_Load(object sender, EventArgs e)
         {
             ctrlNoficationDetails1.LoadNotification(_Notification);
-            ctrlNoficationDetails1.BtnSaveEnable = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

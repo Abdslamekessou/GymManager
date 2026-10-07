@@ -47,7 +47,6 @@
             // 
             this.ctrlNoficationDetails1.AutoSize = true;
             this.ctrlNoficationDetails1.BackColor = System.Drawing.Color.White;
-            this.ctrlNoficationDetails1.BtnSaveEnable = true;
             this.ctrlNoficationDetails1.Location = new System.Drawing.Point(0, -7);
             this.ctrlNoficationDetails1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlNoficationDetails1.Name = "ctrlNoficationDetails1";
