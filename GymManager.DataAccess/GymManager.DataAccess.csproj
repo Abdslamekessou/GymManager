@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAbonnementDataAccess.cs" />
+    <Compile Include="clsDataAccessSettings.cs" />
+    <Compile Include="clsMemberData.cs" />
+    <Compile Include="clsPersonData.cs" />
+    <Compile Include="clsSportDataAccess.cs" />
+    <Compile Include="clsTypesDabonnementsData.cs" />
     <Compile Include="clsDataAccessSetting.cs" />
     <Compile Include="clsNotificationData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
