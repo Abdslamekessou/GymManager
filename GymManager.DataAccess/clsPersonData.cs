@@ -17,7 +17,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
 
             string query = "SELECT * FROM Personnes WHERE PersonneID = @id";
@@ -73,7 +73,7 @@ namespace GymManager.DataAccess
         {
             int addedPersonId = -1;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"
 INSERT INTO Personnes
@@ -154,7 +154,7 @@ SELECT SCOPE_IDENTITY();
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"
 UPDATE Personnes
@@ -213,7 +213,7 @@ WHERE PersonneID = @PersonID;
         {
             bool isFound = false;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
 
             string query = "SELECT * FROM Personnes WHERE PersonneID = @id";
@@ -252,7 +252,7 @@ WHERE PersonneID = @PersonID;
 
             int rowsAffected = 0;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"Delete Personnes 
                                 where PersonneID = @PersonID";
@@ -287,7 +287,7 @@ WHERE PersonneID = @PersonID;
         {
             DataTable dt = new DataTable();
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query =
   @"select  Personnes.PersonneID , Personnes.Prenom , Personnes.Nom , Personnes.NumeroTelephone , Personnes.Email , 

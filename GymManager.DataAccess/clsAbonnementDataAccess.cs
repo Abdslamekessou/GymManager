@@ -16,7 +16,7 @@ namespace GymManager.DataAccess
             bool isFound = false;
             string query = @"SELECT * FROM Abonnements WHERE AbonnementID = @AbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -61,7 +61,7 @@ namespace GymManager.DataAccess
             bool isFound = false;
             string query = @"SELECT * FROM Abonnements WHERE AdherentID = @MemberID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -105,7 +105,7 @@ namespace GymManager.DataAccess
             DataTable dt = new DataTable();
             string query = @"select * from View_ListAbonnement";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -143,7 +143,7 @@ namespace GymManager.DataAccess
                             (@AdherentID, @TypeAbonnementID, @DateDebut, @DateFin, @CreePar, @PrixPaye, @EtatAbonnement); 
                         SELECT SCOPE_IDENTITY();";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -190,7 +190,7 @@ namespace GymManager.DataAccess
                                  EtatAbonnement = @EtatAbonnement
                              WHERE AbonnementID = @AbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -229,7 +229,7 @@ namespace GymManager.DataAccess
 
             string query = @"SELECT Found = 1 FROM Abonnements WHERE AbonnementID = @AbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

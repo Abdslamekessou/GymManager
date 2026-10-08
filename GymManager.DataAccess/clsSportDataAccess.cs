@@ -17,7 +17,7 @@ namespace GymManager.Business
             bool isFound = false;
             string query = @"SELECT * FROM Sports WHERE SportID = @SportID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -57,7 +57,7 @@ namespace GymManager.Business
             DataTable dt = new DataTable();
             string query = @"SELECT * FROM Sports";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -95,7 +95,7 @@ namespace GymManager.Business
                              VALUES (@Nom, @Description, @EstActif);
                              SELECT SCOPE_IDENTITY();";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -138,7 +138,7 @@ namespace GymManager.Business
                                  EstActif = @EstActif
                              WHERE SportID = @SportID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

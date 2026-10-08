@@ -1,4 +1,5 @@
-﻿using GymManager.Business;
+﻿using Globla_Classes;
+using GymManager.Business;
 using GymManager.Presentation.Global_Classes;
 using GymManager.Presentation.Properties;
 using System;
@@ -11,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace GymManager.Presentation.Personnes
 {

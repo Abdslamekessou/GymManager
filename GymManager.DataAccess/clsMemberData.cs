@@ -25,7 +25,7 @@ namespace GymManager.DataAccess
                 bool isFound = false;
 
                 SqlConnection connection =
-                    new SqlConnection(clsDataAccessSettings.connectionString);
+                    new SqlConnection(clsDataAccessSetting.ConnectionString);
 
                 string query = @"
 SELECT *
@@ -90,7 +90,7 @@ WHERE AdherentID = @MemberID";
                 int addedMemberID = -1;
 
                 SqlConnection connection =
-                    new SqlConnection(clsDataAccessSettings.connectionString);
+                    new SqlConnection(clsDataAccessSetting.ConnectionString);
 
 
                 string query = @"
@@ -176,7 +176,7 @@ SELECT SCOPE_IDENTITY();
                 bool isFound = false;
 
                 SqlConnection connection =
-                    new SqlConnection(clsDataAccessSettings.connectionString);
+                    new SqlConnection(clsDataAccessSetting.ConnectionString);
 
 
                 string query = @"
@@ -246,7 +246,7 @@ WHERE AdherentID = @MemberID;
                 bool isFound = false;
 
                 SqlConnection connection =
-                    new SqlConnection(clsDataAccessSettings.connectionString);
+                    new SqlConnection(clsDataAccessSetting.ConnectionString);
 
 
                 string query = @"
@@ -294,7 +294,7 @@ WHERE AdherentID = @MemberID";
 
             int rowsAffected = 0;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
             string query = @"Delete Adherents 
                                 where AdherentID = @MemberID";
@@ -336,7 +336,7 @@ WHERE AdherentID = @MemberID";
 
                 SqlConnection connection =
                     new SqlConnection(
-                        clsDataAccessSettings.connectionString);
+                        clsDataAccessSetting.ConnectionString);
 
 
                 string query = @"SELECT Adherents.AdherentID, Adherents.PersonneID , Personnes.Prenom , Personnes.Nom + ' ' + Personnes.Prenom AS NomComplet , Personnes.Nom, Personnes.NumeroTelephone, Personnes.Email, Personnes.DateDeNaissance, Personnes.Genre,  				  CASE

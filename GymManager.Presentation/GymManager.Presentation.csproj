@@ -250,9 +250,7 @@
     <EmbeddedResource Include="Abonnements\frmRenouveler.resx">
       <DependentUpon>frmRenouveler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
+
     <EmbeddedResource Include="Members\Controls\ucListeMembers.resx">
       <DependentUpon>ucListeMembers.cs</DependentUpon>
     </EmbeddedResource>

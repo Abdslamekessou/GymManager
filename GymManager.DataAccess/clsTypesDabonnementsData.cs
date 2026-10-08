@@ -17,7 +17,7 @@ namespace GymManager.DataAccess
             bool isFound = false;
             string query = @"SELECT * FROM TypeAbonnements WHERE TypeAbonnementID = @TypeAbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -65,7 +65,7 @@ namespace GymManager.DataAccess
             DataTable dt = new DataTable();
             string query = @"select * from View_TypeAbonnementsList";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -98,7 +98,7 @@ namespace GymManager.DataAccess
             bool isFound = false;
             string query = @"SELECT * FROM TypeAbonnements WHERE Nom = @Nom";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -153,7 +153,7 @@ namespace GymManager.DataAccess
                             (@Nom, @SportID, @DureeEnJour, @Prix, @Description, @NombreDeSeances, @EstActif); 
                         SELECT SCOPE_IDENTITY();";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -213,7 +213,7 @@ namespace GymManager.DataAccess
                          EstActif = @EstActif
                      WHERE TypeAbonnementID = @TypeAbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -261,7 +261,7 @@ namespace GymManager.DataAccess
                             SET EstActif = 1 
                             WHERE TypeAbonnementID = @TypeAbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -295,7 +295,7 @@ namespace GymManager.DataAccess
                             SET EstActif = 0 
                             WHERE TypeAbonnementID = @TypeAbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
