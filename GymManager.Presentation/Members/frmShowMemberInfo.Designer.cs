@@ -1,6 +1,6 @@
-﻿namespace GymManager.Presentation
+﻿namespace GymManager.Presentation.Members
 {
-    partial class MainForm
+    partial class frmShowMemberInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucListeMembers1 = new GymManager.Presentation.Members.Controls.ucListeMembers();
+            this.ucPersonCard1 = new GymManager.Presentation.Personnes.Controls.ucPersonCard();
             this.SuspendLayout();
             // 
-            // ucListeMembers1
+            // ucPersonCard1
             // 
-            this.ucListeMembers1.AutoSize = true;
-            this.ucListeMembers1.Location = new System.Drawing.Point(12, 12);
-            this.ucListeMembers1.Name = "ucListeMembers1";
-            this.ucListeMembers1.Size = new System.Drawing.Size(1345, 582);
-            this.ucListeMembers1.TabIndex = 0;
+            this.ucPersonCard1.AutoSize = true;
+            this.ucPersonCard1.Location = new System.Drawing.Point(12, 37);
+            this.ucPersonCard1.Name = "ucPersonCard1";
+            this.ucPersonCard1.Size = new System.Drawing.Size(1083, 202);
+            this.ucPersonCard1.TabIndex = 0;
             // 
-            // MainForm
+            // frmShowMemberInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1389, 612);
-            this.Controls.Add(this.ucListeMembers1);
-            this.Name = "MainForm";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.ClientSize = new System.Drawing.Size(1219, 580);
+            this.Controls.Add(this.ucPersonCard1);
+            this.Name = "frmShowMemberInfo";
+            this.Text = "frmShowMemberInfo";
+            this.Load += new System.EventHandler(this.frmShowMemberInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,7 +55,6 @@
 
         #endregion
 
-        private Members.Controls.ucListeMembers ucListeMembers1;
+        private Personnes.Controls.ucPersonCard ucPersonCard1;
     }
 }
-

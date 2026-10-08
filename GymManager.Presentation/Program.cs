@@ -1,4 +1,6 @@
-﻿using GymManager.Presentation.Notifications;
+﻿using GymManager.Presentation.Members;
+using GymManager.Presentation.Personnes;
+using GymManager.Presentation.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +21,6 @@ namespace GymManager.Presentation
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmNotificationTest());
         }
+
     }
 }

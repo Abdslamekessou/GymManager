@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Data;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 
@@ -10,6 +14,7 @@ namespace Globla_Classes
 {
     internal class clsUtil
     {
+
         public static string GenerateGUID()
         {
 
@@ -69,7 +74,7 @@ namespace Globla_Classes
             string destinationFile = DestinationFolder + ReplaceFileNameWithGUID(sourceFile);
             try
             {
-                File.Copy(sourceFile, destinationFile);
+                File.Copy(sourceFile, destinationFile, true);
 
             }
             catch (IOException iox)

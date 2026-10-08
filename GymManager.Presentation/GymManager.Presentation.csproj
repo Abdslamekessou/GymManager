@@ -84,7 +84,38 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonnements\Control\ucAbonnementInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Abonnements\Control\ucAbonnementInfo.Designer.cs">
+      <DependentUpon>ucAbonnementInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abonnements\Control\ucDetailsAbonnemnt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Abonnements\Control\ucDetailsAbonnemnt.Designer.cs">
+      <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abonnements\frmAnnuler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnements\frmAnnuler.Designer.cs">
+      <DependentUpon>frmAnnuler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abonnements\frmDetailsAbonnemnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnements\frmDetailsAbonnemnt.Designer.cs">
+      <DependentUpon>frmDetailsAbonnemnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abonnements\frmRenouveler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonnements\frmRenouveler.Designer.cs">
+      <DependentUpon>frmRenouveler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global Classes\clsUtil.cs" />
+    <Compile Include="Global Classes\clsValidatoin.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +146,60 @@
     <Compile Include="Notifications\frmNotificationTest.Designer.cs">
       <DependentUpon>frmNotificationTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Members\Controls\ucListeMembers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Members\Controls\ucListeMembers.Designer.cs">
+      <DependentUpon>ucListeMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmAddUpdateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmAddUpdateMember.Designer.cs">
+      <DependentUpon>frmAddUpdateMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmShowMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmShowMemberInfo.Designer.cs">
+      <DependentUpon>frmShowMemberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnes\Controls\ucListePersons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Personnes\Controls\ucListePersons.Designer.cs">
+      <DependentUpon>ucListePersons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnes\Controls\ucPersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Personnes\Controls\ucPersonCard.Designer.cs">
+      <DependentUpon>ucPersonCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnes\Controls\ucPersonCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Personnes\Controls\ucPersonCardWithFilter.Designer.cs">
+      <DependentUpon>ucPersonCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnes\frmAddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnes\frmAddUpdatePerson.Designer.cs">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnes\frmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnes\frmFindPerson.Designer.cs">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnes\frmShowPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnes\frmShowPersonInfo.Designer.cs">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
@@ -132,6 +217,72 @@
     <EmbeddedResource Include="Notifications\frmNotificationTest.resx">
       <DependentUpon>frmNotificationTest.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Types d%27abonnements\Controls\ucListTypesAbonnements.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Types d%27abonnements\Controls\ucListTypesAbonnements.Designer.cs">
+      <DependentUpon>ucListTypesAbonnements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Types d%27abonnements\frmAddUpdateTypeAbonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Types d%27abonnements\frmAddUpdateTypeAbonnement.Designer.cs">
+      <DependentUpon>frmAddUpdateTypeAbonnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Types d%27abonnements\frmDetailsTypeAbonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Types d%27abonnements\frmDetailsTypeAbonnement.Designer.cs">
+      <DependentUpon>frmDetailsTypeAbonnement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Abonnements\Control\ucAbonnementInfo.resx">
+      <DependentUpon>ucAbonnementInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abonnements\Control\ucDetailsAbonnemnt.resx">
+      <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abonnements\frmAnnuler.resx">
+      <DependentUpon>frmAnnuler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abonnements\frmDetailsAbonnemnt.resx">
+      <DependentUpon>frmDetailsAbonnemnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abonnements\frmRenouveler.resx">
+      <DependentUpon>frmRenouveler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\Controls\ucListeMembers.resx">
+      <DependentUpon>ucListeMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmAddUpdateMember.resx">
+      <DependentUpon>frmAddUpdateMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmShowMemberInfo.resx">
+      <DependentUpon>frmShowMemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\Controls\ucListePersons.dje-NE.resx">
+      <DependentUpon>ucListePersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\Controls\ucListePersons.resx">
+      <DependentUpon>ucListePersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\Controls\ucPersonCard.resx">
+      <DependentUpon>ucPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\Controls\ucPersonCardWithFilter.resx">
+      <DependentUpon>ucPersonCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\frmAddUpdatePerson.resx">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\frmFindPerson.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnes\frmShowPersonInfo.resx">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,7 +291,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Types d%27abonnements\Controls\ucListTypesAbonnements.resx">
+      <DependentUpon>ucListTypesAbonnements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Types d%27abonnements\frmAddUpdateTypeAbonnement.resx">
+      <DependentUpon>frmAddUpdateTypeAbonnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Types d%27abonnements\frmDetailsTypeAbonnement.resx">
+      <DependentUpon>frmDetailsTypeAbonnement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,5 +322,36 @@
       <Name>GymManager.Business</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Female 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonDetails 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Person 40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send email 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPerson.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
