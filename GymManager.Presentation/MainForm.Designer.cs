@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucMemberCard1 = new GymManager.Presentation.Members.Controls.ucMemberCard();
+            this.ucMemberCardWithFilter1 = new GymManager.Presentation.Members.Controls.ucMemberCardWithFilter();
             this.SuspendLayout();
             // 
-            // ucMemberCard1
+            // ucMemberCardWithFilter1
             // 
-            this.ucMemberCard1.Location = new System.Drawing.Point(26, 38);
-            this.ucMemberCard1.Name = "ucMemberCard1";
-            this.ucMemberCard1.Size = new System.Drawing.Size(1107, 253);
-            this.ucMemberCard1.TabIndex = 0;
+            this.ucMemberCardWithFilter1.FilterEnabled = true;
+            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(37, 24);
+            this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
+            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1110, 375);
+            this.ucMemberCardWithFilter1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -44,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1389, 612);
-            this.Controls.Add(this.ucMemberCard1);
+            this.Controls.Add(this.ucMemberCardWithFilter1);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -54,7 +55,7 @@
 
         #endregion
 
-        private Members.Controls.ucMemberCard ucMemberCard1;
+        private Members.Controls.ucMemberCardWithFilter ucMemberCardWithFilter1;
     }
 }
 

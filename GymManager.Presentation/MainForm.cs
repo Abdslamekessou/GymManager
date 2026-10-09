@@ -21,7 +21,6 @@ namespace GymManager.Presentation
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ucMemberCard1.LoadMemberInfo(33);
         }
 
     }
