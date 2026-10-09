@@ -28,33 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucPersonCard1 = new GymManager.Presentation.Personnes.Controls.ucPersonCard();
+            this.ucMemberCardWithFilter1 = new GymManager.Presentation.Members.Controls.ucMemberCardWithFilter();
+            this.ucListAbonnmentPerson1 = new GymManager.Presentation.Abonnements.Control.ucListAbonnmentPerson();
             this.SuspendLayout();
             // 
-            // ucPersonCard1
+            // ucMemberCardWithFilter1
             // 
-            this.ucPersonCard1.AutoSize = true;
-            this.ucPersonCard1.Location = new System.Drawing.Point(12, 37);
-            this.ucPersonCard1.Name = "ucPersonCard1";
-            this.ucPersonCard1.Size = new System.Drawing.Size(1083, 202);
-            this.ucPersonCard1.TabIndex = 0;
+            this.ucMemberCardWithFilter1.FilterEnabled = true;
+            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(12, 12);
+            this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
+            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1110, 329);
+            this.ucMemberCardWithFilter1.TabIndex = 0;
+            // 
+            // ucListAbonnmentPerson1
+            // 
+            this.ucListAbonnmentPerson1.BackColor = System.Drawing.Color.White;
+            this.ucListAbonnmentPerson1.Location = new System.Drawing.Point(12, 313);
+            this.ucListAbonnmentPerson1.Name = "ucListAbonnmentPerson1";
+            this.ucListAbonnmentPerson1.Size = new System.Drawing.Size(888, 430);
+            this.ucListAbonnmentPerson1.TabIndex = 1;
             // 
             // frmShowMemberInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 580);
-            this.Controls.Add(this.ucPersonCard1);
+            this.ClientSize = new System.Drawing.Size(1334, 610);
+            this.Controls.Add(this.ucListAbonnmentPerson1);
+            this.Controls.Add(this.ucMemberCardWithFilter1);
             this.Name = "frmShowMemberInfo";
             this.Text = "frmShowMemberInfo";
             this.Load += new System.EventHandler(this.frmShowMemberInfo_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Personnes.Controls.ucPersonCard ucPersonCard1;
+        private Controls.ucMemberCardWithFilter ucMemberCardWithFilter1;
+        private Abonnements.Control.ucListAbonnmentPerson ucListAbonnmentPerson1;
     }
 }

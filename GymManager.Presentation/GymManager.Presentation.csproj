@@ -58,6 +58,12 @@
     <Compile Include="Abonnements\Control\ucDetailsAbonnemnt.Designer.cs">
       <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abonnements\Control\ucListAbonnmentPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Abonnements\Control\ucListAbonnmentPerson.Designer.cs">
+      <DependentUpon>ucListAbonnmentPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abonnements\frmAnnuler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Abonnements\Control\ucDetailsAbonnemnt.resx">
       <DependentUpon>ucDetailsAbonnemnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abonnements\Control\ucListAbonnmentPerson.resx">
+      <DependentUpon>ucListAbonnmentPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abonnements\frmAnnuler.resx">
       <DependentUpon>frmAnnuler.cs</DependentUpon>

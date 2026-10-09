@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucMemberCardWithFilter1 = new GymManager.Presentation.Members.Controls.ucMemberCardWithFilter();
+            this.ucListeMembers1 = new GymManager.Presentation.Members.Controls.ucListeMembers();
             this.SuspendLayout();
             // 
-            // ucMemberCardWithFilter1
+            // ucListeMembers1
             // 
-            this.ucMemberCardWithFilter1.FilterEnabled = true;
-            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(37, 24);
-            this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
-            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1110, 375);
-            this.ucMemberCardWithFilter1.TabIndex = 0;
+            this.ucListeMembers1.AutoSize = true;
+            this.ucListeMembers1.Location = new System.Drawing.Point(12, 12);
+            this.ucListeMembers1.Name = "ucListeMembers1";
+            this.ucListeMembers1.Size = new System.Drawing.Size(1345, 582);
+            this.ucListeMembers1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -45,17 +45,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1389, 612);
-            this.Controls.Add(this.ucMemberCardWithFilter1);
+            this.Controls.Add(this.ucListeMembers1);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Members.Controls.ucMemberCardWithFilter ucMemberCardWithFilter1;
+        private Members.Controls.ucListeMembers ucListeMembers1;
     }
 }
 
