@@ -51,7 +51,7 @@ namespace GymManager.DataAccess
                 }
                 else
                 {
-                    // The record was not foun
+                    // The record was not found
                     isFound = false;
                 }
 
@@ -76,31 +76,31 @@ namespace GymManager.DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
 
             string query = @"
-                         INSERT INTO Personnes
-                         (
-                             Prenom,
-                             Nom,
-                             NumeroTelephone,
-                             Email,
-                             DateDeNaissance,
-                             Genre,
-                             Image
-                             
-                         )
-                         VALUES
-                         (
-                             @Prenom,
-                             @Nom,
-                             @NumeroTelephone,
-                             @Email,
-                             @DateDeNaissance,
-                             @Genre,
-                             @Image
-                            
-                         );
-                         
-                         SELECT SCOPE_IDENTITY();
-                         ";
+INSERT INTO Personnes
+(
+    Prenom,
+    Nom,
+    NumeroTelephone,
+    Email,
+    DateDeNaissance,
+    Genre,
+    Image
+    
+)
+VALUES
+(
+    @Prenom,
+    @Nom,
+    @NumeroTelephone,
+    @Email,
+    @DateDeNaissance,
+    @Genre,
+    @Image
+   
+);
+
+SELECT SCOPE_IDENTITY();
+";
 
             SqlCommand command = new SqlCommand(query, connection);
 
