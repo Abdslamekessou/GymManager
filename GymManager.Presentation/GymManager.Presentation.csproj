@@ -90,6 +90,18 @@
     <Compile Include="Members\Controls\ucListeMembers.Designer.cs">
       <DependentUpon>ucListeMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Members\Controls\ucMemberCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Members\Controls\ucMemberCard.Designer.cs">
+      <DependentUpon>ucMemberCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\Controls\ucMemberCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Members\Controls\ucMemberCardWithFilter.Designer.cs">
+      <DependentUpon>ucMemberCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Members\frmAddUpdateMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Members\Controls\ucListeMembers.resx">
       <DependentUpon>ucListeMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\Controls\ucMemberCard.resx">
+      <DependentUpon>ucMemberCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\Controls\ucMemberCardWithFilter.resx">
+      <DependentUpon>ucMemberCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Members\frmAddUpdateMember.resx">
       <DependentUpon>frmAddUpdateMember.cs</DependentUpon>
