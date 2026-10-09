@@ -25,6 +25,11 @@ namespace GymManager.Presentation.Members.Controls
             get { return _Member; }
         }
 
+        public clsPerson PersonInfo
+        {
+            get { return ucPersonCard1.SelectedPersonInfo; }
+        }
+
         public ucMemberCard()
         {
             InitializeComponent();
@@ -49,6 +54,11 @@ namespace GymManager.Presentation.Members.Controls
                 rbActif.Checked = true;
             else
                 rbInActif.Checked = true;
+
+        }
+
+        private void ucMemberCard_Load(object sender, EventArgs e)
+        {
 
         }
     }

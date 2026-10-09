@@ -57,6 +57,11 @@ namespace GymManager.Presentation.Members.Controls
             get { return ucMemberCard1.SelectedMemberInfo; }
         }
 
+        public clsPerson PersonInfo
+        {
+            get { return ucMemberCard1.PersonInfo; }
+        }
+
         public void LoadMemberInfo(int MemberID)
         {
 

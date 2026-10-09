@@ -40,6 +40,7 @@
             this.ucPersonCard1.Name = "ucPersonCard1";
             this.ucPersonCard1.Size = new System.Drawing.Size(1083, 202);
             this.ucPersonCard1.TabIndex = 0;
+            this.ucPersonCard1.Tilte = "INFORMATIONS DE LA PERSONNE";
             // 
             // rbActif
             // 
@@ -72,6 +73,7 @@
             this.Controls.Add(this.ucPersonCard1);
             this.Name = "ucMemberCard";
             this.Size = new System.Drawing.Size(1107, 253);
+            this.Load += new System.EventHandler(this.ucMemberCard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
