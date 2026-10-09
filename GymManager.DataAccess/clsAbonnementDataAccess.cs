@@ -132,6 +132,42 @@ namespace GymManager.DataAccess
             return dt;
         }
 
+        public static DataTable GetAllAbonnementsWithPerson(string Adherent)
+        {
+            DataTable dt = new DataTable();
+            string query = @"select * from View_ListAbonnement
+                        where Adherent = @Adherent";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Adherent", Adherent);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dt.Load(reader);
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        connection.Close();
+                        return null;
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+
         public static int AddNewAbonnement(int AdherentID, int TypeAbonnementID,
             DateTime DateDebut, DateTime DateFin, int CreePar, decimal PrixPaye, byte EtatAbonnement)
         {
