@@ -30,7 +30,8 @@ namespace GymManager.DataAccess
             catch (Exception ex)
             {
 
-            }finally
+            }
+            finally
             {
                 connection.Close();
             }
@@ -90,10 +91,10 @@ namespace GymManager.DataAccess
             {
                 connection.Close();
             }
-            return NumberOfRowsAffected>0;
+            return NumberOfRowsAffected > 0;
         }
 
-        public static bool Save(int notificationID,bool isRead, string message)
+        public static bool Save(int notificationID, bool isRead, string message)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
@@ -104,7 +105,7 @@ namespace GymManager.DataAccess
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("notificationID", notificationID);
             cmd.Parameters.AddWithValue("message", message);
-            cmd.Parameters.AddWithValue("isRead", isRead?1:0);
+            cmd.Parameters.AddWithValue("isRead", isRead ? 1 : 0);
             short NumberOfRowsAffected = 0;
             try
             {
@@ -136,23 +137,51 @@ namespace GymManager.DataAccess
                                 SET EstExportee=0
                                 WHERE NotificationID IN ({set});";
 
-            SqlCommand cmd = new SqlCommand(query,connection);
+            SqlCommand cmd = new SqlCommand(query, connection);
             short NumberOfRowsAffected = 0;
             try
             {
                 connection.Open();
-                 NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
+                NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
 
-            }finally
+            }
+            finally
             {
                 connection.Close();
             }
 
-            
-            return NumberOfRowsAffected>0;
+
+            return NumberOfRowsAffected > 0;
+        }
+
+        public static bool CreateNotfication(int abonnementID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"Insert into Notifications (AbonnementID,EstVue,EstExportee,Message)
+                                Values (@abonnementID,0,0,'');";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@abonnementID", abonnementID);
+            short NumberOfRowsAffected = 0;
+
+            try
+            {
+                connection.Open();
+                NumberOfRowsAffected = (short)cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+
+            return NumberOfRowsAffected > 0;
         }
     }
 }

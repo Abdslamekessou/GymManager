@@ -93,5 +93,9 @@ namespace GymManager.Business
             return clsNotificationData.MakeNotificationsAsExported(NotificationsID);
         }
 
+        public static bool CreateNotification(int abonnementID)
+        {
+            return clsNotificationData.CreateNotfication(abonnementID);
+        }
     }
 }

@@ -143,6 +143,9 @@ namespace GymManager.Presentation.Members
 
                         return;
                     }
+                    //Create A notification
+                    clsNotification.CreateNotification(ucAbonnementInfo1.AbonnementInfo.AbonnementID);
+
                 }
 
 
