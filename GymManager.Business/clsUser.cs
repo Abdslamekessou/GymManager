@@ -65,6 +65,21 @@ namespace GymManager.Business
                 return null;
         }
 
+        public static clsUser FindByUserNameAndPassword(string UserName, string Password)
+        {
+            int UserID = -1, PersonID = -1, RoleID = -1;
+            bool IsActive = true;
+            DateTime CreatedDate = DateTime.Now;
+
+            bool IsFound = clsUserData.GetUserInfoByUserNameAndPassword(UserName, Password, ref UserID, ref PersonID,
+                                                                        ref RoleID, ref IsActive, ref CreatedDate);
+
+            if (IsFound)
+                return new clsUser(UserID, PersonID, UserName, Password, RoleID, IsActive, CreatedDate);
+            else
+                return null;
+        }
+
         private bool _AddNewUser()
         {
             this.UserID = clsUserData.AddUser(this.PersonID, this.UserName, this.Password, this.RoleID, this.IsActive, this.CreatedDate);

@@ -58,6 +58,51 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
+        public static bool GetUserInfoByUserNameAndPassword(string NomUtilisateur, string MotDePasse, ref int UserID, ref int PersonID, ref int Role, ref bool IsActive, ref DateTime CreatedDate)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur AND MotDePasse = @MotDePasse";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NomUtilisateur", NomUtilisateur);
+                    command.Parameters.AddWithValue("@MotDePasse", MotDePasse);
+
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                UserID = (int)reader["UtilisateurID"];
+                                PersonID = (int)reader["PersonneID"];
+                                Role = Convert.ToByte( reader["Role"]);
+                                IsActive = (bool)reader["Etat"];
+                                CreatedDate = (DateTime)reader["DateDeCreation"];
+                            }
+                        }
+
+                        clsEventLog.LogEvent($"Data retrieved successfully for UserName: {NomUtilisateur}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error fetching Role data for UserName: {NomUtilisateur}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        Console.WriteLine("Error: " + ex.Message);
+                        isFound = false;
+                    }
+                }
+            }
+            return isFound;
+        }
+
         public static int AddUser(int PersonID, string UserName, string Password, int Role, bool IsActive, DateTime CreatedDate)
         {
             int UserID = -1;
