@@ -44,7 +44,7 @@ namespace GymManager.DataAccess
                     LastName = (string)reader["Nom"];
                     PhoneNumber = (string)reader["NumeroTelephone"];
                     DateOfBirth = (DateTime)reader["DateDeNaissance"];
-                    Gendor = (byte)reader["Genre"];
+                    Gendor = Convert.ToByte( reader["Genre"]);
                     Email = reader["Email"] == DBNull.Value ? null : (string)reader["Email"];
                     Image = reader["Image"] == DBNull.Value ? null : (string)reader["Image"];
 
