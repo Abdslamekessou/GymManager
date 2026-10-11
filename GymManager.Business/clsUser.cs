@@ -15,6 +15,7 @@ namespace GymManager.Business
 
         public int UserID { get; set; }
         public int PersonID { get; set; }
+        public clsPerson PersonInfo;
         public string UserName { get; set; }
         public string Password { get; set; }
         public int RoleID { get; set; }
@@ -39,6 +40,7 @@ namespace GymManager.Business
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
+            this.PersonInfo = clsPerson.FindPerson(PersonID);
             this.UserName = UserName;
             this.Password = Password;
             this.RoleID = RoleID;
@@ -135,5 +137,11 @@ namespace GymManager.Business
         {
             return clsUserData.IsUserExistsForPerson(PersonID);
         }
+
+        public static bool ChangePassword(int UserID, string NewPassword)
+        {
+            return clsUserData.ChangePassword(UserID, NewPassword);
+        }
     }
+
 }

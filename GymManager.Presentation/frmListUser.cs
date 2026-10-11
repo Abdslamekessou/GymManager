@@ -13,10 +13,11 @@ namespace GymManager.Presentation
 {
     public partial class frmListUser : Form
     {
-        public frmListUser()
+        public frmLogin frmLogin;
+        public frmListUser(frmLogin frmLogin)
         {
             InitializeComponent();
-
+            this.frmLogin = frmLogin;
         }
 
         private static DataTable _dtAllUser;
@@ -145,5 +146,6 @@ namespace GymManager.Presentation
                 _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, FilterValue);
             }
         }
+
     }
 }

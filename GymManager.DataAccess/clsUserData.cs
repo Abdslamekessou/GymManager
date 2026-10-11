@@ -10,18 +10,18 @@ namespace GymManager.DataAccess
 {
     public class clsUserData
     {
-        public static bool GetUserByID(int UserID, ref int PersonID, ref string UserName, ref string Password,
+        public static bool GetUserByID(int UtilisateurID, ref int PersonID, ref string UserName, ref string Password,
             ref int Role, ref bool IsActive, ref DateTime CreatedDate)
         {
             bool isFound = false;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
             {
-                string query = "SELECT * FROM Utilisateurs WHERE UtilisateurID = @UserID";
+                string query = "SELECT * FROM Utilisateurs WHERE UtilisateurID = @UtilisateurID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@UtilisateurID", UserID);
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
                     try
                     {
                         connection.Open();
@@ -35,19 +35,19 @@ namespace GymManager.DataAccess
                                 PersonID = (int)reader["PersonneID"];
                                 UserName = (string)reader["NomUtilisateur"];
                                 Password = (string)reader["MotDePasse"];
-                                Role = (int)reader["Role"];     
+                                Role = Convert.ToByte(reader["Role"]);
                                 IsActive = (bool)reader["Etat"];
                                 CreatedDate = (DateTime)reader["DateDeCreation"];
 
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UserID: {UserID}", EventLogEntryType.Information);
+                        clsEventLog.LogEvent($"Data retrieved successfully for UtilisateurID: {UtilisateurID}", EventLogEntryType.Information);
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
-                        clsEventLog.LogEvent($"Error fetching Role data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+                        clsEventLog.LogEvent($"Error fetching Role data for UtilisateurID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
                         Console.WriteLine("Error: " + ex.Message);
 
                         isFound = false;
@@ -355,6 +355,40 @@ namespace GymManager.DataAccess
 
             return dt;
         }
+
+        public static bool ChangePassword(int UtilisateurID, string NewPassword)
+        {
+            int rowsAffected = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "UPDATE Utilisateurs SET MotDePasse = @NewPassword WHERE UtilisateurID = @UtilisateurID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserID", UtilisateurID);
+                    command.Parameters.AddWithValue("@NewPassword", NewPassword);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"Password changed successfully for UserID: {UtilisateurID}. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error changing password for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        Console.WriteLine("Error: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }   
 
 
     }

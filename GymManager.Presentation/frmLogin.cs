@@ -37,7 +37,7 @@ namespace GymManager.Presentation
                 }
 
                 clsGlobal.CurrentUser = _User;
-                this.Hide();
+                this.Hide();      
                 //MainForm frm = new MainForm(this);
                 //frm.ShowDialog();
                 //Add Parameter to MainForm constructor 
