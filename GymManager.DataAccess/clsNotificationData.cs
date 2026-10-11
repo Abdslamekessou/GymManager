@@ -134,7 +134,7 @@ namespace GymManager.DataAccess
 
             string set = string.Join(",", notificationsID);
             string query = $@"UPDATE Notifications
-                                SET EstExportee=0
+                                SET EstExportee=1
                                 WHERE NotificationID IN ({set});";
 
             SqlCommand cmd = new SqlCommand(query, connection);
