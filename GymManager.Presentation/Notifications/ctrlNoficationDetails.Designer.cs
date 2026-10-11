@@ -34,8 +34,8 @@ namespace GymManager.Presentation.Notifications
 
         private Label lblReadStatusValue;
         private Label lblExportStatusValue;
+        private System.Windows.Forms.Label lblMessage;
 
-        private RichTextBox rtbMessage;
 
         private Button btnMarkAsRead;
 
@@ -80,9 +80,8 @@ namespace GymManager.Presentation.Notifications
             this.lblExportStatus = new System.Windows.Forms.Label();
             this.lblExportStatusValue = new System.Windows.Forms.Label();
             this.gbMessage = new System.Windows.Forms.GroupBox();
-            this.rtbMessage = new System.Windows.Forms.RichTextBox();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.btnMarkAsRead = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.gbNotificationInfo.SuspendLayout();
             this.gbMessage.SuspendLayout();
             this.SuspendLayout();
@@ -142,11 +141,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtMemberName
             // 
+            this.txtMemberName.BackColor = System.Drawing.Color.White;
+            this.txtMemberName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemberName.Enabled = false;
             this.txtMemberName.Location = new System.Drawing.Point(32, 80);
             this.txtMemberName.Margin = new System.Windows.Forms.Padding(4);
             this.txtMemberName.Name = "txtMemberName";
             this.txtMemberName.ReadOnly = true;
-            this.txtMemberName.Size = new System.Drawing.Size(372, 34);
+            this.txtMemberName.Size = new System.Drawing.Size(372, 27);
             this.txtMemberName.TabIndex = 1;
             this.txtMemberName.Text = "Ahmed Ali";
             // 
@@ -162,11 +164,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtPhone
             // 
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.Enabled = false;
             this.txtPhone.Location = new System.Drawing.Point(456, 80);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(372, 34);
+            this.txtPhone.Size = new System.Drawing.Size(372, 27);
             this.txtPhone.TabIndex = 3;
             this.txtPhone.Text = "055 XX XX XX XX";
             // 
@@ -182,11 +187,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtSport
             // 
+            this.txtSport.BackColor = System.Drawing.Color.White;
+            this.txtSport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSport.Enabled = false;
             this.txtSport.Location = new System.Drawing.Point(32, 173);
             this.txtSport.Margin = new System.Windows.Forms.Padding(4);
             this.txtSport.Name = "txtSport";
             this.txtSport.ReadOnly = true;
-            this.txtSport.Size = new System.Drawing.Size(372, 34);
+            this.txtSport.Size = new System.Drawing.Size(372, 27);
             this.txtSport.TabIndex = 5;
             this.txtSport.Text = "Musculation";
             // 
@@ -202,11 +210,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtSubscriptionType
             // 
+            this.txtSubscriptionType.BackColor = System.Drawing.Color.White;
+            this.txtSubscriptionType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSubscriptionType.Enabled = false;
             this.txtSubscriptionType.Location = new System.Drawing.Point(456, 173);
             this.txtSubscriptionType.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubscriptionType.Name = "txtSubscriptionType";
             this.txtSubscriptionType.ReadOnly = true;
-            this.txtSubscriptionType.Size = new System.Drawing.Size(372, 34);
+            this.txtSubscriptionType.Size = new System.Drawing.Size(372, 27);
             this.txtSubscriptionType.TabIndex = 7;
             this.txtSubscriptionType.Text = "Mensuel";
             // 
@@ -222,11 +233,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtStartDate
             // 
+            this.txtStartDate.BackColor = System.Drawing.Color.White;
+            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStartDate.Enabled = false;
             this.txtStartDate.Location = new System.Drawing.Point(32, 267);
             this.txtStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(372, 34);
+            this.txtStartDate.Size = new System.Drawing.Size(372, 27);
             this.txtStartDate.TabIndex = 9;
             this.txtStartDate.Text = "10/08/2026";
             // 
@@ -242,11 +256,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtEndDate
             // 
+            this.txtEndDate.BackColor = System.Drawing.Color.White;
+            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEndDate.Enabled = false;
             this.txtEndDate.Location = new System.Drawing.Point(456, 267);
             this.txtEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(372, 34);
+            this.txtEndDate.Size = new System.Drawing.Size(372, 27);
             this.txtEndDate.TabIndex = 11;
             this.txtEndDate.Text = "10/09/2026";
             // 
@@ -262,11 +279,14 @@ namespace GymManager.Presentation.Notifications
             // 
             // txtSubscriptionStatus
             // 
+            this.txtSubscriptionStatus.BackColor = System.Drawing.Color.White;
+            this.txtSubscriptionStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSubscriptionStatus.Enabled = false;
             this.txtSubscriptionStatus.Location = new System.Drawing.Point(32, 360);
             this.txtSubscriptionStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubscriptionStatus.Name = "txtSubscriptionStatus";
             this.txtSubscriptionStatus.ReadOnly = true;
-            this.txtSubscriptionStatus.Size = new System.Drawing.Size(372, 34);
+            this.txtSubscriptionStatus.Size = new System.Drawing.Size(372, 27);
             this.txtSubscriptionStatus.TabIndex = 13;
             this.txtSubscriptionStatus.Text = "Expiré";
             // 
@@ -317,7 +337,7 @@ namespace GymManager.Presentation.Notifications
             // 
             // gbMessage
             // 
-            this.gbMessage.Controls.Add(this.rtbMessage);
+            this.gbMessage.Controls.Add(this.lblMessage);
             this.gbMessage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.gbMessage.Location = new System.Drawing.Point(26, 567);
             this.gbMessage.Margin = new System.Windows.Forms.Padding(4);
@@ -330,22 +350,21 @@ namespace GymManager.Presentation.Notifications
             // 
             // rtbMessage
             // 
-            this.rtbMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbMessage.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rtbMessage.Location = new System.Drawing.Point(26, 40);
-            this.rtbMessage.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbMessage.Name = "rtbMessage";
-            this.rtbMessage.Size = new System.Drawing.Size(1182, 172);
-            this.rtbMessage.TabIndex = 0;
-            this.rtbMessage.Text = "Bonjour Ahmed Ali,\n\nNous vous informons que votre abonnement Mensuel en Musculati" +
-    "on a expiré le 10/09/2026.\n\nVous pouvez nous contacter ou visiter la salle pour " +
-    "renouveler votre abonnement.\n\nMerci.";
-            this.rtbMessage.TextChanged += new System.EventHandler(this.rtbMessage_TextChanged);
-            // 
+            this.lblMessage.AutoSize = false;
+            this.lblMessage.BackColor = System.Drawing.Color.White;
+            this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblMessage.ForeColor = System.Drawing.Color.Black;
+            this.lblMessage.Location = new System.Drawing.Point(26, 40);
+            this.lblMessage.Margin = new System.Windows.Forms.Padding(4);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(1182, 172);
+            this.lblMessage.TabIndex = 0;
+            this.lblMessage.Text = "Bonjour Ahmed Ali,\n\nNous vous informons que votre abonnement Mensuel en Musculation a expiré le 10/09/2026.\n\nVous pouvez nous contacter ou visiter la salle pour renouveler votre abonnement.\n\nMerci.";
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.TopLeft;            // 
             // btnMarkAsRead
             // 
             this.btnMarkAsRead.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnMarkAsRead.Location = new System.Drawing.Point(680, 815);
+            this.btnMarkAsRead.Location = new System.Drawing.Point(1003, 815);
             this.btnMarkAsRead.Margin = new System.Windows.Forms.Padding(4);
             this.btnMarkAsRead.Name = "btnMarkAsRead";
             this.btnMarkAsRead.Size = new System.Drawing.Size(257, 60);
@@ -353,23 +372,11 @@ namespace GymManager.Presentation.Notifications
             this.btnMarkAsRead.Text = "✓  Marquer comme lu";
             this.btnMarkAsRead.Click += new System.EventHandler(this.btnMarkAsRead_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSave.Location = new System.Drawing.Point(958, 815);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(257, 60);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Sauvegarder";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // ctrlNoficationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbNotificationInfo);
             this.Controls.Add(this.btnMarkAsRead);
@@ -387,7 +394,5 @@ namespace GymManager.Presentation.Notifications
         }
 
         #endregion
-
-        private Button btnSave;
     }
 }

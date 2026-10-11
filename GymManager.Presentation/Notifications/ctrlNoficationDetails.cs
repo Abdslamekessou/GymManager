@@ -36,7 +36,7 @@ namespace GymManager.Presentation.Notifications
             txtEndDate.Text = _Notification.EndDate.Date.ToString("dd/MM/yyyy");
             txtSubscriptionStatus.Text = _Notification.SubscriptionStatus;
 
-            rtbMessage.Text = _Notification.Message.ToString();
+            lblMessage.Text = _Notification.Message.ToString();
 
             if (_Notification.IsRead)
             {
@@ -60,30 +60,13 @@ namespace GymManager.Presentation.Notifications
         private void btnMarkAsRead_Click(object sender, EventArgs e)
         {
             _Notification.IsRead = true;
-
+            clsNotification.MarkAsRead(_Notification.NotificationId);
             lblReadStatusValue.Text = "●   Lu";
             lblReadStatusValue.ForeColor = Color.Green;
             btnMarkAsRead.Enabled = false;
 
         }
 
-        private void rtbMessage_TextChanged(object sender, EventArgs e)
-        {
-        }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            _Notification.Message = rtbMessage.Text;
-            if (_Notification.Save())
-            {
-                NotificationMarkedAsRead?.Invoke(_Notification);
-                MessageBox.Show("Les Changements sont sauvegader avec successé");
-                btnSave.Enabled = false;
-            }
-            else
-                MessageBox.Show("Les Changements ne sont pas sauvegader", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-        }
     }
 }

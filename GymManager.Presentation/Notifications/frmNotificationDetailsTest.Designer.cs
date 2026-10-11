@@ -35,10 +35,10 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnClose.Location = new System.Drawing.Point(463, 809);
+            this.btnClose.Location = new System.Drawing.Point(792, 810);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(193, 60);
+            this.btnClose.Size = new System.Drawing.Size(193, 56);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Fermer";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
