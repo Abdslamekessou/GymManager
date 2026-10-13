@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.ibtnNotifications = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ipbCurrentUser = new FontAwesome.Sharp.IconPictureBox();
             this.lblCurrentUser = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -40,7 +43,6 @@
             this.pnlSportsIndicator = new System.Windows.Forms.Panel();
             this.pnlAdherentsIndicator = new System.Windows.Forms.Panel();
             this.pnlPersonnesIndicator = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.btnUtilisateurs = new FontAwesome.Sharp.IconButton();
             this.btnDeconnexion = new FontAwesome.Sharp.IconButton();
             this.btnAbonnements = new FontAwesome.Sharp.IconButton();
@@ -48,17 +50,17 @@
             this.btnSports = new FontAwesome.Sharp.IconButton();
             this.btnAdherents = new FontAwesome.Sharp.IconButton();
             this.btnPersonnes = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ipbCurrentUser = new FontAwesome.Sharp.IconPictureBox();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
-            this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbCurrentUser)).BeginInit();
+            this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.White;
+            this.pnlHeader.Controls.Add(this.ibtnNotifications);
             this.pnlHeader.Controls.Add(this.pictureBox1);
             this.pnlHeader.Controls.Add(this.ipbCurrentUser);
             this.pnlHeader.Controls.Add(this.lblCurrentUser);
@@ -69,6 +71,42 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1924, 79);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // ibtnNotifications
+            // 
+            this.ibtnNotifications.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ibtnNotifications.IconColor = System.Drawing.Color.Black;
+            this.ibtnNotifications.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnNotifications.Location = new System.Drawing.Point(1485, 3);
+            this.ibtnNotifications.Name = "ibtnNotifications";
+            this.ibtnNotifications.Size = new System.Drawing.Size(115, 70);
+            this.ibtnNotifications.TabIndex = 7;
+            this.ibtnNotifications.UseVisualStyleBackColor = true;
+            this.ibtnNotifications.Paint += new System.Windows.Forms.PaintEventHandler(this.ibtnNotifications_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GymManager.Presentation.Properties.Resources.GymManagerLogo512WithBlueBgColor;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ipbCurrentUser
+            // 
+            this.ipbCurrentUser.BackColor = System.Drawing.Color.White;
+            this.ipbCurrentUser.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ipbCurrentUser.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ipbCurrentUser.IconColor = System.Drawing.SystemColors.ControlText;
+            this.ipbCurrentUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ipbCurrentUser.IconSize = 33;
+            this.ipbCurrentUser.Location = new System.Drawing.Point(1708, 19);
+            this.ipbCurrentUser.Name = "ipbCurrentUser";
+            this.ipbCurrentUser.Size = new System.Drawing.Size(39, 33);
+            this.ipbCurrentUser.TabIndex = 5;
+            this.ipbCurrentUser.TabStop = false;
             // 
             // lblCurrentUser
             // 
@@ -173,15 +211,6 @@
             this.pnlPersonnesIndicator.TabIndex = 7;
             this.pnlPersonnesIndicator.Visible = false;
             // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.White;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(337, 79);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1587, 921);
-            this.pnlContent.TabIndex = 2;
-            // 
             // btnUtilisateurs
             // 
             this.btnUtilisateurs.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -274,29 +303,14 @@
             this.btnPersonnes.UseVisualStyleBackColor = false;
             this.btnPersonnes.Click += new System.EventHandler(this.btnPersonnes_Click);
             // 
-            // pictureBox1
+            // pnlContent
             // 
-            this.pictureBox1.Image = global::GymManager.Presentation.Properties.Resources.GymManagerLogo512WithBlueBgColor;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ipbCurrentUser
-            // 
-            this.ipbCurrentUser.BackColor = System.Drawing.Color.White;
-            this.ipbCurrentUser.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ipbCurrentUser.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ipbCurrentUser.IconColor = System.Drawing.SystemColors.ControlText;
-            this.ipbCurrentUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ipbCurrentUser.IconSize = 33;
-            this.ipbCurrentUser.Location = new System.Drawing.Point(1708, 19);
-            this.ipbCurrentUser.Name = "ipbCurrentUser";
-            this.ipbCurrentUser.Size = new System.Drawing.Size(39, 33);
-            this.ipbCurrentUser.TabIndex = 5;
-            this.ipbCurrentUser.TabStop = false;
+            this.pnlContent.BackColor = System.Drawing.Color.White;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(337, 79);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1587, 921);
+            this.pnlContent.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -315,9 +329,9 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
-            this.pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbCurrentUser)).EndInit();
+            this.pnlSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -345,6 +359,7 @@
         private System.Windows.Forms.Panel pnlTypesAbonnementIndicator;
         private System.Windows.Forms.Panel pnlSportsIndicator;
         private System.Windows.Forms.Panel pnlAdherentsIndicator;
+        private FontAwesome.Sharp.IconButton ibtnNotifications;
     }
 }
 
