@@ -217,6 +217,18 @@
     <EmbeddedResource Include="Notifications\frmNotificationTest.resx">
       <DependentUpon>frmNotificationTest.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Sports\frmShowListSportsTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sports\frmShowListSportsTest.Designer.cs">
+      <DependentUpon>frmShowListSportsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sports\uctrlShowListSports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sports\uctrlShowListSports.Designer.cs">
+      <DependentUpon>uctrlShowListSports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Types d%27abonnements\Controls\ucListTypesAbonnements.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,7 +262,6 @@
     <EmbeddedResource Include="Abonnements\frmRenouveler.resx">
       <DependentUpon>frmRenouveler.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Members\Controls\ucListeMembers.resx">
       <DependentUpon>ucListeMembers.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +302,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sports\frmShowListSportsTest.resx">
+      <DependentUpon>frmShowListSportsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sports\uctrlShowListSports.resx">
+      <DependentUpon>uctrlShowListSports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Types d%27abonnements\Controls\ucListTypesAbonnements.resx">
       <DependentUpon>ucListTypesAbonnements.cs</DependentUpon>
     </EmbeddedResource>
