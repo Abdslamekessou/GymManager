@@ -13,10 +13,12 @@ namespace GymManager.Presentation
 {
     public partial class frmListUser : Form
     {
-        public frmListUser()
+        public frmLogin _frmLogin;
+        public frmListUser(frmLogin frm)
         {
             InitializeComponent();
 
+            _frmLogin = frm;
         }
 
         private static DataTable _dtAllUser;

@@ -38,8 +38,8 @@ namespace GymManager.Presentation
 
                 clsGlobal.CurrentUser = _User;
                 this.Hide();
-                //MainForm frm = new MainForm(this);
-                //frm.ShowDialog();
+                frmListUser frm = new frmListUser(this);
+                frm.ShowDialog();
                 //Add Parameter to MainForm constructor 
             }
             else
