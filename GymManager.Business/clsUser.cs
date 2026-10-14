@@ -94,6 +94,11 @@ namespace GymManager.Business
             return clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.Password, this.RoleID, this.IsActive);
         }
 
+        public static bool DeleteUser(int UserID)
+        {
+            return clsUserData.DeleteUser(UserID);
+        }
+
         public bool Save()
         {
             switch (_Mode)
@@ -142,6 +147,13 @@ namespace GymManager.Business
         {
             return clsUserData.ChangePassword(UserID, NewPassword);
         }
+
+        public static bool DesActivateUser(int UserID)
+        {
+            return clsUserData.DesActivateUser(UserID);
+        }
+
+          
     }
 
 }

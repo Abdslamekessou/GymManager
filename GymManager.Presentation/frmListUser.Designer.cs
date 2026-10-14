@@ -196,6 +196,7 @@
             this.btnAddUser.TabIndex = 3;
             this.btnAddUser.Text = "+ Ajouter un utilisateur";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // dgvUsers
             // 
@@ -230,31 +231,35 @@
             this.toolStripSeparator1,
             this.tsmiDeleteUser});
             this.cmsUserOptions.Name = "cmsUserOptions";
-            this.cmsUserOptions.Size = new System.Drawing.Size(509, 130);
+            this.cmsUserOptions.Size = new System.Drawing.Size(509, 158);
             // 
             // tsmiAddUser
             // 
             this.tsmiAddUser.Name = "tsmiAddUser";
             this.tsmiAddUser.Size = new System.Drawing.Size(508, 24);
             this.tsmiAddUser.Text = "+ Ajouter un utilisateur";
+            this.tsmiAddUser.Click += new System.EventHandler(this.tsmiAddUser_Click);
             // 
             // tsmiEditUser
             // 
             this.tsmiEditUser.Name = "tsmiEditUser";
             this.tsmiEditUser.Size = new System.Drawing.Size(508, 24);
             this.tsmiEditUser.Text = "✏ Modifier les données de l\'utilisateur";
+            this.tsmiEditUser.Click += new System.EventHandler(this.tsmiEditUser_Click);
             // 
             // tsmiShowDetails
             // 
             this.tsmiShowDetails.Name = "tsmiShowDetails";
             this.tsmiShowDetails.Size = new System.Drawing.Size(508, 24);
             this.tsmiShowDetails.Text = "👁 Afficher les détails de l\'utilisateur";
+            this.tsmiShowDetails.Click += new System.EventHandler(this.tsmiShowDetails_Click);
             // 
             // tsmiToggleStatus
             // 
             this.tsmiToggleStatus.Name = "tsmiToggleStatus";
             this.tsmiToggleStatus.Size = new System.Drawing.Size(508, 24);
             this.tsmiToggleStatus.Text = "🔄 Activer / Désactiver le compte utilisateur";
+            this.tsmiToggleStatus.Click += new System.EventHandler(this.tsmiToggleStatus_Click);
             // 
             // toolStripSeparator1
             // 
@@ -266,6 +271,7 @@
             this.tsmiDeleteUser.Name = "tsmiDeleteUser";
             this.tsmiDeleteUser.Size = new System.Drawing.Size(508, 24);
             this.tsmiDeleteUser.Text = "🗑 Supprimer l\'utilisateur uniquement s\'il n\'a aucune donnée liée";
+            this.tsmiDeleteUser.Click += new System.EventHandler(this.tsmiDeleteUser_Click);
             // 
             // frmListUser
             // 

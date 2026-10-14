@@ -197,6 +197,38 @@ namespace GymManager.DataAccess
             return (rowsAffected > 0);  
         }
 
+        public static bool DeleteUser(int UserID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "DELETE FROM Utilisateurs WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UserID);
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"User deleted successfully. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error deleting User data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        Console.WriteLine("Error: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }
+
         public static bool IsUserExists(string UserName)
         {
             bool isFound = false;
@@ -390,6 +422,38 @@ namespace GymManager.DataAccess
             return (rowsAffected > 0);
         }   
 
+        public static bool DesActivateUser(int UtilisateurID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "UPDATE Utilisateurs SET Etat = 0 WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"User activation status changed successfully for UserID: {UtilisateurID}. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        Console.WriteLine("Error: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }
 
     }
 }

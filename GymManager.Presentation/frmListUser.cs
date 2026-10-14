@@ -1,4 +1,5 @@
 ﻿using GymManager.Business;
+using GymManager.Presentation.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,11 @@ namespace GymManager.Presentation
 {
     public partial class frmListUser : Form
     {
-        public frmLogin frmLogin;
+        public frmLogin _frmLogin;
         public frmListUser(frmLogin frmLogin)
         {
             InitializeComponent();
-            this.frmLogin = frmLogin;
+            _frmLogin = frmLogin;
         }
 
         private static DataTable _dtAllUser;
@@ -147,5 +148,96 @@ namespace GymManager.Presentation
             }
         }
 
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateUser frm = new frmAddUpdateUser();
+            frm.ShowDialog();
+            frmListUser_Load(null, null);
+
+        }
+
+        private void tsmiAddUser_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateUser frm = new frmAddUpdateUser();
+            frm.ShowDialog();
+            frmListUser_Load(null, null);
+        }
+        private void tsmiShowDetails_Click(object sender, EventArgs e)
+        {
+            frmDeatiles frm = new frmDeatiles((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
+
+        private void tsmiEditUser_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateUser frm = new frmAddUpdateUser((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            frmListUser_Load(null, null);
+        }
+
+        private void tsmiToggleStatus_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow == null) return;
+
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            clsUser User = clsUser.Find(UserID);
+
+            if (User == null) return;
+
+            if(User.RoleInfo.RoleName == "Admin")
+            {
+                MessageBox.Show("Aucun administrateur ne peut supprimer le compte d'un autre administrateur.", "Arretez le proccessus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (MessageBox.Show("Etes-vous sur de vouloir desactiver cet utilisateur?", "Confirmation de l'atmosphere", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+
+                bool IsDesActivated = clsUser.DesActivateUser(UserID);
+
+                if (IsDesActivated)
+                {
+                    MessageBox.Show("L'utilisateur A Ete Desacitve Avec Succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmListUser_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("L'utilisateur par l'utilisateur a Echoue.", "Echouer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void tsmiDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Etes-vous sur de vouloir supprimer l'utilisateur?", "Supprimer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+                clsUser User = clsUser.Find(UserID);
+
+                if (User == null) return;
+
+
+                if (User.RoleInfo.RoleName == "Admin")
+                {
+                    MessageBox.Show("le compte administrateur ne peut pas etre desactive.", "Rejete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                bool IsDeleted = clsUser.DeleteUser(UserID);
+
+                if (IsDeleted)
+                {
+                    MessageBox.Show("Voulez-vous supprimer le nom d'utilisateur?.", "Supprimer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmListUser_Load(null, null);
+                }
+                else
+                    MessageBox.Show("La suppression de l'utilisateur a echoue.", "Echouer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }
