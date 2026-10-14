@@ -149,7 +149,8 @@ namespace GymManager.Presentation.Notifications
 
                 if (clsNotification.MakeNotificationsAsExported(GetNotificationsIDs(_AllNotifications)))
                 {
-                    if (clsUtil.GenerateAndSaveExcelFile(_AllNotifications, FullPath))
+                    DataTable dt = _AllNotifications.DefaultView.ToTable(false, "Adhérent", "Numéro de Téléphone", "Sport", "Type d'Abonnement", "DateDebut", "DateFin", "Status d'Abonnement", "Message");
+                    if (clsUtil.GenerateAndSaveExcelFile(dt, FullPath))
                     {
                         MessageBox.Show("Le fichier excel est sauvegadé ");
                         _LoadNotifications();

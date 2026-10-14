@@ -106,22 +106,22 @@ namespace Globla_Classes
 
                 worksheet.Cell("A1").Value = "GYM - Notifications";
 
-                worksheet.Range("A1:K1").Merge();
+                worksheet.Range("A1:H1").Merge();
 
-                worksheet.Range("A1:K1").Style.Font.Bold = true;
+                worksheet.Range("A1:H1").Style.Font.Bold = true;
 
-                worksheet.Range("A1:K1").Style.Font.FontSize = 16;
+                worksheet.Range("A1:H1").Style.Font.FontSize = 16;
 
-                worksheet.Range("A1:K1").Style.Alignment.Horizontal =
+                worksheet.Range("A1:H1").Style.Alignment.Horizontal =
                     XLAlignmentHorizontalValues.Center;
 
-                worksheet.Range("A1:K1").Style.Alignment.Vertical =
+                worksheet.Range("A1:H1").Style.Alignment.Vertical =
                     XLAlignmentVerticalValues.Center;
 
-                worksheet.Range("A1:K1").Style.Fill.BackgroundColor =
+                worksheet.Range("A1:H1").Style.Fill.BackgroundColor =
                     XLColor.DarkBlue;
 
-                worksheet.Range("A1:K1").Style.Font.FontColor =
+                worksheet.Range("A1:H1").Style.Font.FontColor =
                     XLColor.White;
 
                 worksheet.Row(1).Height = 30;
@@ -202,23 +202,15 @@ namespace Globla_Classes
                 worksheet.Column("H").Style.Alignment.Horizontal =
                     XLAlignmentHorizontalValues.Center;
 
-                // I = Lu Status
-                worksheet.Column("I").Style.Alignment.Horizontal =
-                    XLAlignmentHorizontalValues.Center;
-
-                // J = Exportation
-                worksheet.Column("J").Style.Alignment.Horizontal =
-                    XLAlignmentHorizontalValues.Center;
-
 
                 // ==========================================
                 // 7. Format dates
                 // ==========================================
 
-                worksheet.Column("F").Style.DateFormat.Format =
+                worksheet.Column("E").Style.DateFormat.Format =
                     "dd/MM/yyyy";
 
-                worksheet.Column("G").Style.DateFormat.Format =
+                worksheet.Column("F").Style.DateFormat.Format =
                     "dd/MM/yyyy";
 
 
@@ -227,9 +219,9 @@ namespace Globla_Classes
                 // ==========================================
 
                 // K = Message
-                worksheet.Column("K").Style.Alignment.WrapText = true;
+                worksheet.Column("H").Style.Alignment.WrapText = true;
 
-                worksheet.Column("K").Width = 40;
+                worksheet.Column("H").Width = 40;
 
 
                 // ==========================================
@@ -238,17 +230,14 @@ namespace Globla_Classes
 
                 worksheet.Columns().AdjustToContents();
 
-                worksheet.Column("A").Width = 15; // NotificationID
-                worksheet.Column("B").Width = 25; // Adhérent
-                worksheet.Column("C").Width = 20; // Numéro de Téléphone
-                worksheet.Column("D").Width = 18; // Sport
-                worksheet.Column("E").Width = 25; // Type d'Abonnement
-                worksheet.Column("F").Width = 15; // DateDebut
-                worksheet.Column("G").Width = 15; // DateFin
-                worksheet.Column("H").Width = 22; // Status d'Abonnement
-                worksheet.Column("I").Width = 15; // Lu Status
-                worksheet.Column("J").Width = 18; // Exportation
-                worksheet.Column("K").Width = 40; // Message
+                worksheet.Column("A").Width = 25; // Adhérent
+                worksheet.Column("B").Width = 20; // Numéro de Téléphone
+                worksheet.Column("C").Width = 18; // Sport
+                worksheet.Column("D").Width = 25; // Type d'Abonnement
+                worksheet.Column("E").Width = 15; // DateDebut
+                worksheet.Column("F").Width = 15; // DateFin
+                worksheet.Column("G").Width = 22; // Status d'Abonnement
+                worksheet.Column("H").Width = 40; // Message
 
 
                 // ==========================================
