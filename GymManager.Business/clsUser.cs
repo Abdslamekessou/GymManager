@@ -135,5 +135,10 @@ namespace GymManager.Business
         {
             return clsUserData.IsUserExistsForPerson(PersonID);
         }
+
+        public static bool DeleteUser(int UserID)
+        {
+            return clsUserData.DeleteUser(UserID);
+        }
     }
 }
