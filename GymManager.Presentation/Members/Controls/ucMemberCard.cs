@@ -45,6 +45,7 @@ namespace GymManager.Presentation.Members.Controls
                 return;
             }
 
+            _MemberID = MemberID;
 
             ucPersonCard1.Tilte = "DE MEMBRE";
 

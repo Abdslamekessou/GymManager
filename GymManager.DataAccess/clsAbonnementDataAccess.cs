@@ -167,7 +167,6 @@ namespace GymManager.DataAccess
             return dt;
         }
 
-
         public static int AddNewAbonnement(int AdherentID, int TypeAbonnementID,
             DateTime DateDebut, DateTime DateFin, int CreePar, decimal PrixPaye, byte EtatAbonnement)
         {

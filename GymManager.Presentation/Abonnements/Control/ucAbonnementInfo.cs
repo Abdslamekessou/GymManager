@@ -133,8 +133,9 @@ namespace GymManager.Presentation.Abonnements.Control
         public bool SaveAbonnementInfo(int MemberID , int UserID)
         {
             AbonnementInfo = new clsAbonnement();
+            TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
 
-            if(MemberID == -1)
+            if (MemberID == -1)
             {
                 MessageBox.Show("C'est obliger de selectioner une Personne !!!");
 
@@ -148,7 +149,7 @@ namespace GymManager.Presentation.Abonnements.Control
 
             }
 
-            TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
+            
             AbonnementInfo.TypeAbonnementID = TypeAbonnement.TypeAbonnementID;
             AbonnementInfo.AdherentID = MemberID;
             AbonnementInfo.DateDebut = dtpDateDebut.Value;

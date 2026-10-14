@@ -1,5 +1,8 @@
 ﻿using GymManager.Business;
+using GymManager.Presentation.Abonnements;
+using GymManager.Presentation.Personnes.Controls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,8 +24,18 @@ namespace GymManager.Presentation
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //ucListePersons ucList = new ucListePersons();
+
+            //ucList.Dock = DockStyle.Fill;
+
+
+
+            //panel1.Controls.Clear();
+            //panel1.Controls.Add(ucList);
+
         }
 
+  
     }
 
 }

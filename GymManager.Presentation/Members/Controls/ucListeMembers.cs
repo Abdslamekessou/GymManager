@@ -182,6 +182,8 @@ namespace GymManager.Presentation.Members.Controls
             frmAddUpdateMember frm = new frmAddUpdateMember();
 
             frm.ShowDialog();
+
+            _RefreshListMembers();
         }
 
         private void AddNewToolStripMenuItem_Click(object sender, EventArgs e)

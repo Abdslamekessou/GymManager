@@ -270,12 +270,12 @@ namespace GymManager.Presentation.Members.Controls
             this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.cmsMember.Name = "contextMenuStrip1";
-            this.cmsMember.Size = new System.Drawing.Size(211, 56);
+            this.cmsMember.Size = new System.Drawing.Size(148, 28);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
             this.deleteToolStripMenuItem.Text = "Supprimer";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -288,7 +288,7 @@ namespace GymManager.Presentation.Members.Controls
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.grpHeader);
             this.Name = "ucListeMembers";
-            this.Size = new System.Drawing.Size(1357, 598);
+            this.Size = new System.Drawing.Size(1355, 590);
             this.Load += new System.EventHandler(this.ucListeMembers_Load);
             this.grpHeader.ResumeLayout(false);
             this.grpHeader.PerformLayout();
