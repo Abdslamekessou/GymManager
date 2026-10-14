@@ -37,9 +37,11 @@
             this.uctrlShowListSports1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.uctrlShowListSports1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.uctrlShowListSports1.Location = new System.Drawing.Point(10, 16);
+            this.uctrlShowListSports1.MinimumSize = new System.Drawing.Size(600, 400);
             this.uctrlShowListSports1.Name = "uctrlShowListSports1";
             this.uctrlShowListSports1.Size = new System.Drawing.Size(1200, 780);
             this.uctrlShowListSports1.TabIndex = 0;
+            this.uctrlShowListSports1.Load += new System.EventHandler(this.uctrlShowListSports1_Load);
             // 
             // frmShowListSportsTest
             // 
@@ -49,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(1234, 826);
             this.Controls.Add(this.uctrlShowListSports1);
             this.Name = "frmShowListSportsTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmShowListSports";
             this.Load += new System.EventHandler(this.frmShowListSports_Load);
             this.ResumeLayout(false);

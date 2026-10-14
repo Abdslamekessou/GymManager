@@ -127,7 +127,7 @@ namespace GymManager.Business
             return sportID;
         }
 
-        public static bool UpdateSport(int SportID, string Nom, 
+        public static bool UpdateSport(int SportID, string Nom,
             string Description, bool EstActif)
         {
             int rowsAffected = 0;
@@ -166,5 +166,75 @@ namespace GymManager.Business
             return (rowsAffected > 0);
         }
 
+
+        public static bool DoesSportExist(string sportName)
+        {
+            bool isFound = false;
+
+            SqlConnection connection =
+                new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"
+                SELECT 1
+                FROM Sports
+                WHERE Nom = @Nom;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Nom", sportName);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                isFound = result != null;
+            }
+            catch (Exception)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
+        public static bool DeletSport(int sportID)
+        {
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"Delete Sports 
+                                where SportID = @SportID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@SportID", sportID);
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+
+                connection.Close();
+
+            }
+
+            return (rowsAffected > 0);
+        }
     }
+
 }

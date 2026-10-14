@@ -217,11 +217,23 @@
     <EmbeddedResource Include="Notifications\frmNotificationTest.resx">
       <DependentUpon>frmNotificationTest.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Sports\frmAjouterModifierTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sports\frmAjouterModifierTest.Designer.cs">
+      <DependentUpon>frmAjouterModifierTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sports\frmShowListSportsTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sports\frmShowListSportsTest.Designer.cs">
       <DependentUpon>frmShowListSportsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sports\uctrlAjouterModifierSport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sports\uctrlAjouterModifierSport.Designer.cs">
+      <DependentUpon>uctrlAjouterModifierSport.cs</DependentUpon>
     </Compile>
     <Compile Include="Sports\uctrlShowListSports.cs">
       <SubType>UserControl</SubType>
@@ -302,8 +314,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sports\frmAjouterModifierTest.resx">
+      <DependentUpon>frmAjouterModifierTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sports\frmShowListSportsTest.resx">
       <DependentUpon>frmShowListSportsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sports\uctrlAjouterModifierSport.resx">
+      <DependentUpon>uctrlAjouterModifierSport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sports\uctrlShowListSports.resx">
       <DependentUpon>uctrlShowListSports.cs</DependentUpon>

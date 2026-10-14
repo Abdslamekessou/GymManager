@@ -75,6 +75,10 @@ namespace GymManager.Business
             }
         }
 
+        public static bool DoesSportExist(string Nom)
+        {
+            return clsSportDataAccess.DoesSportExist(Nom);
+        }
         public static DataTable GetAllSports()
         {
             return clsSportDataAccess.GetAllSports();
@@ -100,6 +104,11 @@ namespace GymManager.Business
             }
 
             return false;
+        }
+
+        public static bool DeletSport(int v)
+        {
+            return clsSportDataAccess.DeletSport(v);
         }
     }
 }

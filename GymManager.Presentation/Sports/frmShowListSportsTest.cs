@@ -21,5 +21,10 @@ namespace GymManager.Presentation.Sports
         {
 
         }
+
+        private void uctrlShowListSports1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
