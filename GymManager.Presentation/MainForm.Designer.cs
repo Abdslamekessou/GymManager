@@ -82,6 +82,7 @@
             this.ibtnNotifications.Size = new System.Drawing.Size(115, 70);
             this.ibtnNotifications.TabIndex = 7;
             this.ibtnNotifications.UseVisualStyleBackColor = true;
+            this.ibtnNotifications.Click += new System.EventHandler(this.ibtnNotifications_Click);
             this.ibtnNotifications.Paint += new System.Windows.Forms.PaintEventHandler(this.ibtnNotifications_Paint);
             // 
             // pictureBox1

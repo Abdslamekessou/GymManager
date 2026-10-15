@@ -10,6 +10,13 @@ namespace GymManager.Presentation.Notifications
 {
     public partial class ctrlNotifications : UserControl
     {
+
+        // Create a delegate for the notification
+        public delegate void NotificationCountTrackingHandler(bool IsAllRead);
+
+        public event NotificationCountTrackingHandler NotificationCount;
+
+
         static DataTable _AllNotifications = clsNotification.AllNotifications();
         int _LastRowIndex = -1;
         public ctrlNotifications()
@@ -34,6 +41,8 @@ namespace GymManager.Presentation.Notifications
                 if (dgvNotifications[ReadStatus.Index, e.RowIndex].FormattedValue.ToString() != "Lu")
                 {
                     _MarkAsReadHandler(e.RowIndex);
+                    NotificationCount?.Invoke(false);
+
 
                 }
             }
@@ -43,20 +52,22 @@ namespace GymManager.Presentation.Notifications
                 _LastRowIndex = e.RowIndex;
                 clsNotification Notification = _FillNotificationInfo(e.RowIndex);
                 frmNotificationDetailsTest frm = new frmNotificationDetailsTest(Notification);
-                frm.NotificationMarkedAsRead += Frm_NotificationMarkedAsReadChangeMessage;
+                frm.NotificationMarkedAsRead += Frm_NotificationMarkedAsRead;
                 frm.ShowDialog();
                 btnSearch.PerformClick();
             }
 
         }
 
-        private void Frm_NotificationMarkedAsReadChangeMessage(clsNotification Notification)
+        private void Frm_NotificationMarkedAsRead(clsNotification Notification)
         {
             if (Notification.IsRead)
             {
                 _AllNotifications.Columns["Lu Status"].ReadOnly = false;
                 _AllNotifications.Rows[_LastRowIndex]["Lu Status"] = "Lu";
                 _AllNotifications.Columns["Lu Status"].ReadOnly = true;
+                NotificationCount?.Invoke(false);
+
             }
 
             _AllNotifications.Columns["Message"].ReadOnly = false;
@@ -110,6 +121,8 @@ namespace GymManager.Presentation.Notifications
                 {
                     MessageBox.Show("C'est terminé avec successé", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _LoadNotifications();
+                    NotificationCount?.Invoke(true);
+
                 }
                 else
                     MessageBox.Show("Il y a Un probleme ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);

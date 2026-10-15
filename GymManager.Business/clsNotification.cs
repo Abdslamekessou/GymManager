@@ -97,5 +97,10 @@ namespace GymManager.Business
         {
             return clsNotificationData.CreateNotfication(abonnementID);
         }
+
+        public static int GetNumberOfUnreadNotifications()
+        {
+            return clsNotificationData.GetNumberOfUnreadNotifications();
+        }
     }
 }

@@ -40,25 +40,25 @@ namespace GymManager.Presentation.Members.Controls
             colFullName.HeaderText = "Nom";
             colFullName.Name = "colFullName";
             colFullName.DataPropertyName = "NomComplet";
-            colFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //colFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Phone Number
             colPhoneNumber.HeaderText = "Téléphone";
             colPhoneNumber.Name = "colPhoneNumber";
             colPhoneNumber.DataPropertyName = "NumeroTelephone";
-            colPhoneNumber.Width = 120;
+            //colPhoneNumber.Width = 120;
 
             // Email
             colEmail.HeaderText = "Email";
             colEmail.Name = "colEmail";
             colEmail.DataPropertyName = "Email";
-            colEmail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //colEmail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Gender
             colGendor.HeaderText = "Genre";
             colGendor.Name = "colGendor";
             colGendor.DataPropertyName = "GendorCaption";
-            colGendor.Width = 90;
+            //colGendor.Width = 90;
 
             // Details
             colMemberDetails.HeaderText = "Details";
@@ -71,14 +71,14 @@ namespace GymManager.Presentation.Members.Controls
             colUpdateMember.Name = "colUpdateMember";
             colUpdateMember.Text = "Modifier";
             colUpdateMember.UseColumnTextForButtonValue = true;
-            colUpdateMember.Width = 100;
+            //colUpdateMember.Width = 100;
 
             // Manage Subscriptions
             colManagesubscriptions.HeaderText = "Abonnements";
             colManagesubscriptions.Name = "colManagesubscriptions";
             colManagesubscriptions.Text = "Gérer";
             colManagesubscriptions.UseColumnTextForButtonValue = true;
-            colManagesubscriptions.Width = 100;
+            //colManagesubscriptions.Width = 100;
         }
 
         // ===============================================================================

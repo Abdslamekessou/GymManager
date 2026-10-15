@@ -183,5 +183,31 @@ namespace GymManager.DataAccess
 
             return NumberOfRowsAffected > 0;
         }
+
+        public static int GetNumberOfUnreadNotifications()
+        {
+
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"select count(*) as Num from Notifications where EstVue = 0;";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            int Num = 0;
+
+            try
+            {
+                connection.Open();
+                Num = (int)cmd.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+
+            return Num;
+        }
     }
 }

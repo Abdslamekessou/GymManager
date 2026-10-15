@@ -2,9 +2,6 @@
 {
     partial class ctrlNotifications
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         private System.Windows.Forms.Label lblTitle;
@@ -14,8 +11,6 @@
         private System.Windows.Forms.Label lblExportStatus;
         private System.Windows.Forms.ComboBox cbExportStatus;
         private System.Windows.Forms.Button btnMarkAllRead;
-        private System.Windows.Forms.Button btnExport;
-
         private System.Windows.Forms.DataGridView dgvNotifications;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemberName;
@@ -25,9 +20,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colReadStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExportStatus;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
+        private System.Windows.Forms.DataGridViewTextBoxColumn MemberName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubscriptionType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReadStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Exportation;
+        private System.Windows.Forms.DataGridViewButtonColumn colMarkAsRead;
+        private System.Windows.Forms.DataGridViewButtonColumn colDetails;
+
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.FolderBrowserDialog fbdExportExcel;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -40,13 +45,14 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle headerStyle =
+                new System.Windows.Forms.DataGridViewCellStyle();
+
+            System.Windows.Forms.DataGridViewCellStyle cellStyle =
+                new System.Windows.Forms.DataGridViewCellStyle();
+
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlFilters = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -57,6 +63,7 @@
             this.btnMarkAllRead = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvNotifications = new System.Windows.Forms.DataGridView();
+
             this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubscriptionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,22 +72,27 @@
             this.Exportation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarkAsRead = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+
             this.fbdExportExcel = new System.Windows.Forms.FolderBrowserDialog();
+
             this.pnlFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).BeginInit();
             this.SuspendLayout();
+
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            this.lblTitle.Location = new System.Drawing.Point(39, 33);
+            this.lblTitle.Font = new System.Drawing.Font(
+                "Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            this.lblTitle.Location = new System.Drawing.Point(32, 24);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(525, 48);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "GESTION DES NOTIFICATIONS";
+
             // 
             // pnlFilters
             // 
@@ -93,262 +105,333 @@
             this.pnlFilters.Controls.Add(this.cbExportStatus);
             this.pnlFilters.Controls.Add(this.btnMarkAllRead);
             this.pnlFilters.Controls.Add(this.btnExport);
-            this.pnlFilters.Location = new System.Drawing.Point(39, 100);
+            this.pnlFilters.Location = new System.Drawing.Point(32, 82);
             this.pnlFilters.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFilters.Name = "pnlFilters";
-            this.pnlFilters.Size = new System.Drawing.Size(1388, 166);
+            this.pnlFilters.Size = new System.Drawing.Size(1523, 130);
             this.pnlFilters.TabIndex = 1;
+            this.pnlFilters.Anchor =
+                System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Left |
+                System.Windows.Forms.AnchorStyles.Right;
+
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(80, 80, 80);
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(557, 53);
+            this.btnSearch.Location = new System.Drawing.Point(530, 48);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(120, 38);
+            this.btnSearch.Size = new System.Drawing.Size(120, 36);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Chercher";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblStatus.Location = new System.Drawing.Point(26, 24);
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblStatus.Location = new System.Drawing.Point(24, 18);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(144, 25);
             this.lblStatus.TabIndex = 0;
             this.lblStatus.Text = "Statut de Lecture";
+
             // 
             // cbStatus
             // 
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.DropDownStyle =
+                System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Tous",
-            "Lu",
-            "Non Lu"});
-            this.cbStatus.Location = new System.Drawing.Point(26, 53);
+            this.cbStatus.Items.AddRange(new object[]
+            {
+                "Tous",
+                "Lu",
+                "Non Lu"
+            });
+            this.cbStatus.Location = new System.Drawing.Point(24, 47);
             this.cbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(230, 28);
+            this.cbStatus.Size = new System.Drawing.Size(230, 30);
             this.cbStatus.TabIndex = 1;
+
             // 
             // lblExportStatus
             // 
             this.lblExportStatus.AutoSize = true;
-            this.lblExportStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblExportStatus.Location = new System.Drawing.Point(296, 24);
+            this.lblExportStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblExportStatus.Location = new System.Drawing.Point(280, 18);
             this.lblExportStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExportStatus.Name = "lblExportStatus";
             this.lblExportStatus.Size = new System.Drawing.Size(174, 25);
             this.lblExportStatus.TabIndex = 2;
-            this.lblExportStatus.Text = "Statut d\' Exportation";
+            this.lblExportStatus.Text = "Statut d' Exportation";
+
             // 
             // cbExportStatus
             // 
-            this.cbExportStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbExportStatus.DropDownStyle =
+                System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExportStatus.FormattingEnabled = true;
-            this.cbExportStatus.Items.AddRange(new object[] {
-            "Tous",
-            "Exporté",
-            "Non Exporté"});
-            this.cbExportStatus.Location = new System.Drawing.Point(296, 53);
+            this.cbExportStatus.Items.AddRange(new object[]
+            {
+                "Tous",
+                "Exporté",
+                "Non Exporté"
+            });
+            this.cbExportStatus.Location = new System.Drawing.Point(280, 47);
             this.cbExportStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbExportStatus.Name = "cbExportStatus";
-            this.cbExportStatus.Size = new System.Drawing.Size(230, 28);
+            this.cbExportStatus.Size = new System.Drawing.Size(230, 30);
             this.cbExportStatus.TabIndex = 3;
+
             // 
             // btnMarkAllRead
             // 
-            this.btnMarkAllRead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
+            this.btnMarkAllRead.BackColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            this.btnMarkAllRead.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarkAllRead.FlatAppearance.BorderSize = 0;
             this.btnMarkAllRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarkAllRead.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.btnMarkAllRead.ForeColor = System.Drawing.Color.White;
-            this.btnMarkAllRead.Location = new System.Drawing.Point(924, 53);
+            this.btnMarkAllRead.Location = new System.Drawing.Point(990, 47);
             this.btnMarkAllRead.Margin = new System.Windows.Forms.Padding(4);
             this.btnMarkAllRead.Name = "btnMarkAllRead";
-            this.btnMarkAllRead.Size = new System.Drawing.Size(219, 40);
+            this.btnMarkAllRead.Size = new System.Drawing.Size(230, 38);
             this.btnMarkAllRead.TabIndex = 6;
             this.btnMarkAllRead.Text = "Tout marquer comme lu";
             this.btnMarkAllRead.UseVisualStyleBackColor = false;
-            this.btnMarkAllRead.Click += new System.EventHandler(this.btnMarkAllRead_Click);
+            this.btnMarkAllRead.Click +=
+                new System.EventHandler(this.btnMarkAllRead_Click);
+
             // 
             // btnExport
             // 
-            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(80, 80, 80);
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.FlatAppearance.BorderSize = 0;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(1169, 53);
+            this.btnExport.Location = new System.Drawing.Point(1240, 47);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(206, 40);
+            this.btnExport.Size = new System.Drawing.Size(240, 38);
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Exporter vers Excel";
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+
             // 
             // dgvNotifications
             // 
             this.dgvNotifications.AllowUserToAddRows = false;
             this.dgvNotifications.AllowUserToDeleteRows = false;
             this.dgvNotifications.AllowUserToResizeRows = false;
-            this.dgvNotifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvNotifications.AutoSizeColumnsMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNotifications.BackgroundColor = System.Drawing.Color.White;
-            this.dgvNotifications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvNotifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNotifications.ColumnHeadersHeight = 40;
-            this.dgvNotifications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MemberName,
-            this.Sport,
-            this.SubscriptionType,
-            this.Status,
-            this.ReadStatus,
-            this.Exportation,
-            this.colMarkAsRead,
-            this.colDetails});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(75)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNotifications.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvNotifications.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvNotifications.CellBorderStyle =
+                System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvNotifications.ColumnHeadersBorderStyle =
+                System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+
+            headerStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            headerStyle.BackColor = System.Drawing.Color.FromArgb(240, 239, 234);
+            headerStyle.Font = new System.Drawing.Font(
+                "Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            headerStyle.ForeColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            headerStyle.SelectionBackColor = System.Drawing.Color.FromArgb(240, 239, 234);
+            headerStyle.SelectionForeColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            headerStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+
+            this.dgvNotifications.ColumnHeadersDefaultCellStyle = headerStyle;
+            this.dgvNotifications.ColumnHeadersHeight = 44;
+            this.dgvNotifications.ColumnHeadersHeightSizeMode =
+                System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            this.dgvNotifications.Columns.AddRange(
+                new System.Windows.Forms.DataGridViewColumn[]
+                {
+                    this.MemberName,
+                    this.Sport,
+                    this.SubscriptionType,
+                    this.Status,
+                    this.ReadStatus,
+                    this.Exportation,
+                    this.colMarkAsRead,
+                    this.colDetails
+                });
+
+            cellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            cellStyle.BackColor = System.Drawing.Color.White;
+            cellStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            cellStyle.ForeColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            cellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(220, 224, 226);
+            cellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            cellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+
+            this.dgvNotifications.DefaultCellStyle = cellStyle;
             this.dgvNotifications.EnableHeadersVisualStyles = false;
-            this.dgvNotifications.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(226)))));
-            this.dgvNotifications.Location = new System.Drawing.Point(39, 300);
+            this.dgvNotifications.GridColor = System.Drawing.Color.FromArgb(208, 206, 206);
+            this.dgvNotifications.Location = new System.Drawing.Point(32, 235);
             this.dgvNotifications.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNotifications.Name = "dgvNotifications";
             this.dgvNotifications.ReadOnly = true;
             this.dgvNotifications.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvNotifications.RowHeadersVisible = false;
-            this.dgvNotifications.RowHeadersWidth = 62;
-            this.dgvNotifications.RowTemplate.Height = 50;
-            this.dgvNotifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotifications.Size = new System.Drawing.Size(1388, 644);
+            this.dgvNotifications.RowTemplate.Height = 44;
+            this.dgvNotifications.SelectionMode =
+                System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNotifications.MultiSelect = false;
+            this.dgvNotifications.Size = new System.Drawing.Size(1523, 650);
             this.dgvNotifications.TabIndex = 2;
+            this.dgvNotifications.Anchor =
+                System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Bottom |
+                System.Windows.Forms.AnchorStyles.Left |
+                System.Windows.Forms.AnchorStyles.Right;
+
             // 
             // MemberName
             // 
-            this.MemberName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MemberName.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MemberName.DataPropertyName = "Adhérent";
-            this.MemberName.HeaderText = "Nom d\'adhérent\n";
-            this.MemberName.MinimumWidth = 8;
+            this.MemberName.HeaderText = "Nom d'adhérent";
+            this.MemberName.MinimumWidth = 100;
             this.MemberName.Name = "MemberName";
             this.MemberName.ReadOnly = true;
+            this.MemberName.FillWeight = 120F;
+
             // 
             // Sport
             // 
-            this.Sport.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Sport.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Sport.DataPropertyName = "Sport";
             this.Sport.HeaderText = "Sport";
-            this.Sport.MinimumWidth = 8;
+            this.Sport.MinimumWidth = 80;
             this.Sport.Name = "Sport";
             this.Sport.ReadOnly = true;
+            this.Sport.FillWeight = 90F;
+
             // 
             // SubscriptionType
             // 
-            this.SubscriptionType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SubscriptionType.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SubscriptionType.DataPropertyName = "Type d'Abonnement";
-            this.SubscriptionType.HeaderText = "Type d\' Abonnement";
-            this.SubscriptionType.MinimumWidth = 8;
+            this.SubscriptionType.HeaderText = "Type d'abonnement";
+            this.SubscriptionType.MinimumWidth = 120;
             this.SubscriptionType.Name = "SubscriptionType";
             this.SubscriptionType.ReadOnly = true;
+            this.SubscriptionType.FillWeight = 120F;
+
             // 
             // Status
             // 
+            this.Status.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Status.DataPropertyName = "Status d'Abonnement";
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 8;
+            this.Status.HeaderText = "Statut";
+            this.Status.MinimumWidth = 90;
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
+            this.Status.FillWeight = 90F;
+
             // 
             // ReadStatus
             // 
+            this.ReadStatus.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ReadStatus.DataPropertyName = "Lu Status";
             this.ReadStatus.HeaderText = "Lecture";
-            this.ReadStatus.MinimumWidth = 8;
+            this.ReadStatus.MinimumWidth = 80;
             this.ReadStatus.Name = "ReadStatus";
             this.ReadStatus.ReadOnly = true;
-            this.ReadStatus.Width = 110;
+            this.ReadStatus.FillWeight = 80F;
+
             // 
             // Exportation
             // 
+            this.Exportation.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Exportation.DataPropertyName = "Exportation";
             this.Exportation.HeaderText = "Exportation";
-            this.Exportation.MinimumWidth = 8;
+            this.Exportation.MinimumWidth = 90;
             this.Exportation.Name = "Exportation";
             this.Exportation.ReadOnly = true;
-            this.Exportation.Width = 148;
+            this.Exportation.FillWeight = 90F;
+
             // 
             // colMarkAsRead
             // 
+            this.colMarkAsRead.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colMarkAsRead.HeaderText = "Actions";
-            this.colMarkAsRead.MinimumWidth = 8;
+            this.colMarkAsRead.MinimumWidth = 140;
             this.colMarkAsRead.Name = "colMarkAsRead";
             this.colMarkAsRead.ReadOnly = true;
             this.colMarkAsRead.Text = "Marquer comme lu";
             this.colMarkAsRead.UseColumnTextForButtonValue = true;
-            this.colMarkAsRead.Width = 81;
+            this.colMarkAsRead.FillWeight = 130F;
+            this.colMarkAsRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colMarkAsRead.DefaultCellStyle.BackColor =
+                System.Drawing.Color.FromArgb(240, 239, 234);
+            this.colMarkAsRead.DefaultCellStyle.ForeColor =
+                System.Drawing.Color.FromArgb(26, 26, 26);
+
             // 
             // colDetails
             // 
+            this.colDetails.AutoSizeMode =
+                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDetails.HeaderText = "Détails";
-            this.colDetails.MinimumWidth = 8;
+            this.colDetails.MinimumWidth = 75;
             this.colDetails.Name = "colDetails";
             this.colDetails.ReadOnly = true;
             this.colDetails.Text = "Détail";
             this.colDetails.UseColumnTextForButtonValue = true;
-            this.colDetails.Width = 75;
+            this.colDetails.FillWeight = 70F;
+            this.colDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDetails.DefaultCellStyle.BackColor =
+                System.Drawing.Color.FromArgb(240, 239, 234);
+            this.colDetails.DefaultCellStyle.ForeColor =
+                System.Drawing.Color.FromArgb(26, 26, 26);
+
             // 
             // ctrlNotifications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
+            this.AutoSize = false;
+            this.BackColor = System.Drawing.Color.FromArgb(240, 239, 234);
             this.Controls.Add(this.dgvNotifications);
             this.Controls.Add(this.pnlFilters);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ctrlNotifications";
-            this.Size = new System.Drawing.Size(1480, 969);
+            this.Size = new System.Drawing.Size(1587, 921);
             this.Load += new System.EventHandler(this.ctrlNotifications_Load);
+
             this.pnlFilters.ResumeLayout(false);
             this.pnlFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn MemberName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubscriptionType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReadStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Exportation;
-        private System.Windows.Forms.DataGridViewButtonColumn colMarkAsRead;
-        private System.Windows.Forms.DataGridViewButtonColumn colDetails;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.FolderBrowserDialog fbdExportExcel;
     }
 }

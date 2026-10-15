@@ -20,7 +20,7 @@ namespace GymManager.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNotificationTest());
+            Application.Run(new MainForm());
         }
 
     }

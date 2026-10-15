@@ -11,13 +11,17 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using GymManager.Presentation.Helpers;
 using System.Drawing.Drawing2D;
+using GymManager.Presentation.Notifications;
+using GymManager.Presentation.Members.Controls;
+using GymManager.Presentation.Personnes.Controls;
+using GymManager.Presentation.Sports;
 
 namespace GymManager.Presentation
 {
     public partial class MainForm : Form
     {
         private List<Panel> _sidebarIndicators;
-        private int notificationCount = 3; 
+        private int notificationCount = clsNotification.GetNumberOfUnreadNotifications(); 
         public MainForm()
         {
             InitializeComponent();
@@ -89,16 +93,23 @@ namespace GymManager.Presentation
         private void btnPersonnes_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnPersonnes, pnlPersonnesIndicator, _sidebarIndicators, pnlSidebar);
+            ucListePersons ucListePersons = new ucListePersons();
+            ShowUserControl(ucListePersons);    
         }
 
         private void btnAdherents_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnAdherents, pnlAdherentsIndicator, _sidebarIndicators, pnlSidebar);
+            ucListeMembers ucListeMembers = new ucListeMembers();
+            ShowUserControl( ucListeMembers );
+
         }
 
         private void btnSports_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnSports, pnlSportsIndicator, _sidebarIndicators, pnlSidebar);
+            uctrlShowListSports uctrlShowListSports = new uctrlShowListSports();
+            ShowUserControl (uctrlShowListSports);
         }
 
         private void btnTypesAbonnements_Click(object sender, EventArgs e)
@@ -169,6 +180,37 @@ namespace GymManager.Presentation
                 e.Graphics.DrawString(badgeText, font, textBrush
                    ,textX , textY);
             }
+        }
+
+        private void ShowUserControl(UserControl userControl)
+        {
+            pnlContent.Controls.Clear();
+
+            userControl.Dock = DockStyle.Fill;
+
+            pnlContent.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
+        private void ibtnNotifications_Click(object sender, EventArgs e)
+        {
+            ctrlNotifications ctrlNotifications = new ctrlNotifications();
+            ctrlNotifications.NotificationCount += CtrlNotifications_NotificationCount;
+            ShowUserControl(ctrlNotifications);
+        }
+
+        private void CtrlNotifications_NotificationCount(bool IsAllRead)
+        {
+
+            if (IsAllRead)
+                notificationCount = 0;
+            else
+                if (notificationCount!=0)
+                    notificationCount--;
+
+            ibtnNotifications.Refresh();
+
+
         }
     }
    }
