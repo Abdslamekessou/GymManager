@@ -107,6 +107,7 @@ namespace GymManager.Presentation.Members.Controls
             _dtAllMembers.DefaultView.RowFilter = _GenerateMemberSearchFilter() + " AND " + _GenerateGenderFilter();
         }
 
+
         private string _GenerateMemberSearchFilter()
         {
             string filterColumn = "";
