@@ -20,6 +20,7 @@ namespace GymManager.Business
         public enMode Mode = enMode.AddNew;
 
 
+
         // =========================================================
         // Properties
         // =========================================================
