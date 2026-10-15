@@ -44,8 +44,10 @@
     <Compile Include="clsAbonnement.cs" />
     <Compile Include="clsMember.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsRole.cs" />
     <Compile Include="clsSport.cs" />
     <Compile Include="clsTypesDabonnements.cs" />
+    <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
