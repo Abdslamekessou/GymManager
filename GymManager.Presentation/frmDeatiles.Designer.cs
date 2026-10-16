@@ -195,8 +195,7 @@ namespace GymManager.Presentation
             this.lblPrenomVal.Name = "lblPrenomVal";
             this.lblPrenomVal.Size = new System.Drawing.Size(59, 20);
             this.lblPrenomVal.TabIndex = 6;
-            this.lblPrenomVal.Text = "[????]";
-            // 
+            this.lblPrenomVal.Text = "[????]";            // 
             // lblPrenomLbl
             // 
             this.lblPrenomLbl.AutoSize = true;

@@ -27,7 +27,7 @@ namespace GymManager.Presentation
         private void frmListUser_Load(object sender, EventArgs e)
         {
             _dtAllUser = clsUser.GetAllUser();
-            dgvUsers.DataSource= _dtAllUser;
+            dgvUsers.DataSource = _dtAllUser;
             cbxSearchBy.SelectedIndex = 0;
             cbxFilterRole.SelectedIndex = 0;
             cbxFilterRole.Enabled = false;
@@ -56,7 +56,7 @@ namespace GymManager.Presentation
         {
             string Filtercolumn = "";
 
-            switch(cbxSearchBy.Text)
+            switch (cbxSearchBy.Text)
             {
                 case "Utilisateur ID":
                     Filtercolumn = "UtilisateurID";
@@ -81,8 +81,8 @@ namespace GymManager.Presentation
                 _dtAllUser.DefaultView.RowFilter = "";
                 return;
             }
-             
-            if(Filtercolumn != "NomComplet" && Filtercolumn != "NomUtilisateur")
+
+            if (Filtercolumn != "NomComplet" && Filtercolumn != "NomUtilisateur")
             {
                 _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", Filtercolumn, txtSearchValue.Text.Trim());
             }
@@ -94,15 +94,15 @@ namespace GymManager.Presentation
 
         private void txtSearchValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(cbxSearchBy.Text == "Utilisateur ID" || cbxSearchBy.Text == "Personne ID")
+            if (cbxSearchBy.Text == "Utilisateur ID" || cbxSearchBy.Text == "Personne ID")
             {
-                e.Handled=!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            }   
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            }
         }
 
         private void cbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxSearchBy.Text == "NomRole") 
+            if (cbxSearchBy.Text == "NomRole")
             {
                 txtSearchValue.Text = "";
                 txtSearchValue.Enabled = false;
@@ -123,7 +123,7 @@ namespace GymManager.Presentation
             string FilterColumn = "NomRole";
             string FilterValue = cbxFilterRole.Text;
 
-            switch(FilterValue)
+            switch (FilterValue)
             {
                 case "Tous les rôles":
                     FilterValue = "Tous les rôles";
@@ -139,7 +139,7 @@ namespace GymManager.Presentation
                     break;
             }
 
-            if (FilterValue == "Tous les rôles") 
+            if (FilterValue == "Tous les rôles")
             {
                 _dtAllUser.DefaultView.RowFilter = "";
             }
@@ -154,7 +154,6 @@ namespace GymManager.Presentation
             frmAddUpdateUser frm = new frmAddUpdateUser();
             frm.ShowDialog();
             frmListUser_Load(null, null);
-
         }
 
         private void tsmiAddUser_Click(object sender, EventArgs e)
@@ -163,6 +162,7 @@ namespace GymManager.Presentation
             frm.ShowDialog();
             frmListUser_Load(null, null);
         }
+
         private void tsmiShowDetails_Click(object sender, EventArgs e)
         {
             frmDeatiles frm = new frmDeatiles((int)dgvUsers.CurrentRow.Cells[0].Value);
@@ -186,7 +186,7 @@ namespace GymManager.Presentation
 
             if (User == null) return;
 
-            if(User.RoleInfo.RoleName == "Admin")
+            if (User.RoleInfo.RoleName == "Admin")
             {
                 MessageBox.Show("Aucun administrateur ne peut supprimer le compte d'un autre administrateur.", "Arretez le proccessus", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -240,5 +240,66 @@ namespace GymManager.Presentation
 
             }
         }
+
+        private void changerLeMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+            frmListUser_Load(null, null);
+        }
+
+        private void cmsUserOptions_Opening(object sender, CancelEventArgs e)
+        {
+
+            if (dgvUsers.CurrentRow == null)
+                return;
+
+            int userID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            clsUser SelectedUser = clsUser.Find(userID);
+
+            if (SelectedUser == null)
+                return;
+
+
+            string CurrentRoleName = clsGlobal.CurrentUser.RoleInfo.RoleName;
+
+
+            bool isHimself = (SelectedUser.UserID == clsGlobal.CurrentUser.UserID);
+
+            if (CurrentRoleName != "Admin")
+            {
+
+                if (isHimself)
+                {
+                    changerLeMotDePasseToolStripMenuItem.Enabled = true;
+                    tsmiEditUser.Enabled = true;
+                    tsmiShowDetails.Enabled = true;
+                    btnAddUser.Enabled = false;
+                }
+                else
+                {
+                    changerLeMotDePasseToolStripMenuItem.Enabled = false;
+                    tsmiShowDetails.Enabled = false;
+                    tsmiEditUser.Enabled = false;
+                    tsmiDeleteUser.Enabled = false;
+                    tsmiAddUser.Enabled = false;
+                    tsmiToggleStatus.Enabled = false;
+                    btnAddUser.Enabled = false;
+                }
+            }
+            else
+            {
+                tsmiToggleStatus.Enabled = true;
+                tsmiEditUser.Enabled = true;
+                changerLeMotDePasseToolStripMenuItem.Enabled = true;
+                tsmiDeleteUser.Enabled = true;
+                tsmiAddUser.Enabled = true;
+                tsmiShowDetails.Enabled = true;
+                btnAddUser.Enabled = true;
+            }
+        }
+
     }
 }

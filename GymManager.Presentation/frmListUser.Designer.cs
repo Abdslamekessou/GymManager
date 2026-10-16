@@ -47,8 +47,10 @@
             this.tsmiEditUser = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToggleStatus = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerLeMotDePasseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiDeleteUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.gbSearchFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.cmsUserOptions.SuspendLayout();
@@ -228,10 +230,12 @@
             this.tsmiEditUser,
             this.tsmiShowDetails,
             this.tsmiToggleStatus,
+            this.changerLeMotDePasseToolStripMenuItem,
             this.toolStripSeparator1,
             this.tsmiDeleteUser});
             this.cmsUserOptions.Name = "cmsUserOptions";
-            this.cmsUserOptions.Size = new System.Drawing.Size(509, 130);
+            this.cmsUserOptions.Size = new System.Drawing.Size(509, 182);
+            this.cmsUserOptions.Opening += new System.ComponentModel.CancelEventHandler(this.cmsUserOptions_Opening);
             // 
             // tsmiAddUser
             // 
@@ -261,6 +265,13 @@
             this.tsmiToggleStatus.Text = "🔄 Activer / Désactiver le compte utilisateur";
             this.tsmiToggleStatus.Click += new System.EventHandler(this.tsmiToggleStatus_Click);
             // 
+            // changerLeMotDePasseToolStripMenuItem
+            // 
+            this.changerLeMotDePasseToolStripMenuItem.Name = "changerLeMotDePasseToolStripMenuItem";
+            this.changerLeMotDePasseToolStripMenuItem.Size = new System.Drawing.Size(508, 24);
+            this.changerLeMotDePasseToolStripMenuItem.Text = "🔄Changer le mot de passe";
+            this.changerLeMotDePasseToolStripMenuItem.Click += new System.EventHandler(this.changerLeMotDePasseToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -272,6 +283,12 @@
             this.tsmiDeleteUser.Size = new System.Drawing.Size(508, 24);
             this.tsmiDeleteUser.Text = "🗑 Supprimer l\'utilisateur uniquement s\'il n\'a aucune donnée liée";
             this.tsmiDeleteUser.Click += new System.EventHandler(this.tsmiDeleteUser_Click);
+            // 
+            // tsmiChangePassword
+            // 
+            this.tsmiChangePassword.Name = "tsmiChangePassword";
+            this.tsmiChangePassword.Size = new System.Drawing.Size(214, 24);
+            this.tsmiChangePassword.Text = "Changer le mot de passe";
             // 
             // frmListUser
             // 
@@ -321,5 +338,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiToggleStatus;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteUser;
+        private System.Windows.Forms.ToolStripMenuItem tsmiChangePassword;
+        private ToolStripMenuItem changerLeMotDePasseToolStripMenuItem;
     }
 }

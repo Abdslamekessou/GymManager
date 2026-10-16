@@ -219,11 +219,11 @@
             // 
             this.ucPersonCardWithFilter1.AutoSize = true;
             this.ucPersonCardWithFilter1.FilterEnabled = true;
-            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(4, 27);
-            this.ucPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(5, 39);
+            this.ucPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
             this.ucPersonCardWithFilter1.ShowAddPerson = true;
-            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1080, 390);
+            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1389, 561);
             this.ucPersonCardWithFilter1.TabIndex = 0;
             this.ucPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ucPersonCardWithFilter1_OnPersonSelected);
             // 
@@ -269,7 +269,7 @@
         private System.Windows.Forms.CheckBox chkIsActive;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private Personnes.Controls.ucPersonCardWithFilter ucPersonCardWithFilter1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Personnes.Controls.ucPersonCardWithFilter ucPersonCardWithFilter1;
     }
 }

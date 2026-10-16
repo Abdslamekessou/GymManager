@@ -24,6 +24,11 @@ namespace GymManager.Presentation
             _UserID = UserID;
         }
 
+        public frmChangePassword()
+        {
+            InitializeComponent();
+        }
+
         private void _ResetDefualtValues()
         {
             txtCurrentPassword.Text = "";
@@ -44,6 +49,17 @@ namespace GymManager.Presentation
                 this.Close();
                 return;
             }
+
+            if (clsGlobal.CurrentUser.RoleInfo.RoleName != "Admin")
+            {
+                if (_User.UserID != clsGlobal.CurrentUser.UserID)
+                {
+                    MessageBox.Show("ésolé, vous ne pouvez modifier le mot de passe que de votre compte personnel.", "Autorisations Refusees", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                    return;
+                }
+            }
+
 
             lblFullNameValue.Text = _User.PersonInfo.FullName;
             lblUsernameValue.Text = _User.UserName;

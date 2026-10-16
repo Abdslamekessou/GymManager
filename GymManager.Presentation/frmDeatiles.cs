@@ -60,7 +60,8 @@ namespace GymManager.Presentation
         private void FillUserInfo()
         {
             lblIDPersonneVal.Text = _User.PersonInfo.PersonID.ToString();
-            lblNomVal.Text = _User.PersonInfo.FullName;
+            lblNomVal.Text = _User.PersonInfo.LastName;
+            lblPrenomVal.Text = _User.PersonInfo.FirstName;
             lblTelephoneVal.Text = _User.PersonInfo.PhoneNumber;
             lblEmailVal.Text = _User.PersonInfo.Email;
             lblBirthDateVal.Text = _User.PersonInfo.DateOfBirth.ToShortDateString();
@@ -101,5 +102,6 @@ namespace GymManager.Presentation
         {
             this.Close();
         }
+
     }
 }
