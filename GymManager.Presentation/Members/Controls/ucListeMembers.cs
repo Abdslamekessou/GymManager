@@ -107,6 +107,7 @@ namespace GymManager.Presentation.Members.Controls
             _dtAllMembers.DefaultView.RowFilter = _GenerateMemberSearchFilter() + " AND " + _GenerateGenderFilter();
         }
 
+
         private string _GenerateMemberSearchFilter()
         {
             string filterColumn = "";
@@ -182,6 +183,8 @@ namespace GymManager.Presentation.Members.Controls
             frmAddUpdateMember frm = new frmAddUpdateMember();
 
             frm.ShowDialog();
+
+            _RefreshListMembers();
         }
 
         private void AddNewToolStripMenuItem_Click(object sender, EventArgs e)

@@ -423,6 +423,22 @@ namespace GymManager.Presentation.Members.Controls
                 System.Drawing.Color.FromArgb(232, 230, 224); // #E8E6E0
             this.colManagesubscriptions.DefaultCellStyle.SelectionForeColor =
                 System.Drawing.Color.FromArgb(26, 26, 26); // #1A1A1A
+            this.colManagesubscriptions.Width = 125;
+            // 
+            // cmsMember
+            // 
+            this.cmsMember.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.cmsMember.Name = "contextMenuStrip1";
+            this.cmsMember.Size = new System.Drawing.Size(148, 28);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.deleteToolStripMenuItem.Text = "Supprimer";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // ucListeMembers
             // 

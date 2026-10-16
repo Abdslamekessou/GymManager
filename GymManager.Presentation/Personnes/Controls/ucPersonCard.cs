@@ -29,6 +29,12 @@ namespace GymManager.Presentation.Personnes.Controls
             get { return _Person; }
         }
 
+        public string Tilte
+        {
+            get { return lblTitle.Text; }
+            set { lblTitle.Text = "INFORMATIONS " + value; }
+        }
+
         public ucPersonCard()
         {
             InitializeComponent();

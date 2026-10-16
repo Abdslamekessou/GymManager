@@ -32,7 +32,10 @@ namespace GymManager.Presentation.Members
                 return;
             }
 
-            ucPersonCard1.LoadPersonInfo(_MemberInfo.PersonID);
+            ucMemberCardWithFilter1.LoadMemberInfo(_memberId);
+            ucMemberCardWithFilter1.FilterEnabled = false;
+
+            ucListAbonnmentPerson1.LoadAbonnementsPersonData(ucMemberCardWithFilter1.PersonInfo.LastName);
 
         }
 

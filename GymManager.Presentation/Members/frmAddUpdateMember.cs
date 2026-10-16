@@ -1,4 +1,5 @@
 ﻿using GymManager.Business;
+using GymManager.Presentation.Global_Classes;
 using GymManager.Presentation.Personnes.Controls;
 using System;
 using System.Collections.Generic;
@@ -100,7 +101,9 @@ namespace GymManager.Presentation.Members
 
             MemberInfo.PersonID = ucPersonCardWithFilter1.SelectedPersonInfo.PersonID;
             MemberInfo.CreatedAt = DateTime.Now;
-            MemberInfo.CreatedBy = 1;
+
+            // Make this condition temporary until we add the login functionality
+            MemberInfo.CreatedBy = (clsGlobal.CurrentUser == null) ? 1 : clsGlobal.CurrentUser.UserID ;
 
             if(rbActif.Checked)
                 MemberInfo.IsActif = true;
@@ -132,7 +135,8 @@ namespace GymManager.Presentation.Members
 
                 if(_Mode == enMode.AddNew)
                 {
-                    if (!ucAbonnementInfo1.SaveAbonnementInfo(MemberInfo.MemberID, 1))
+                    // Make this condition temporary until we add the login functionality
+                    if (!ucAbonnementInfo1.SaveAbonnementInfo(MemberInfo.MemberID, (clsGlobal.CurrentUser == null) ? 1 : clsGlobal.CurrentUser.UserID ))
                     {
                         MessageBox.Show(
                         "Une erreur s'est produite lors de l'enregistrement de l'abonnement.",

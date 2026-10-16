@@ -1,5 +1,8 @@
 ﻿using GymManager.Business;
+using GymManager.Presentation.Abonnements;
+using GymManager.Presentation.Personnes.Controls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
