@@ -138,7 +138,7 @@ namespace GymManager.DataAccess
             string query = @"select * from View_ListAbonnement
                         where Adherent = @Adherent";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
