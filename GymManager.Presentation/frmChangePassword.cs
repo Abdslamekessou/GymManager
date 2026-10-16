@@ -17,10 +17,11 @@ namespace GymManager.Presentation
         private int _UserID = -1;
 
         private clsUser _User;
-        public frmChangePassword()
+        public frmChangePassword(int UserID)
         {
             InitializeComponent();
 
+            _UserID = UserID;
         }
 
         private void _ResetDefualtValues()
@@ -77,11 +78,11 @@ namespace GymManager.Presentation
 
         private void txtNewPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (txtNewPassword.Text.Trim() != txtConfirmPassword.Text.Trim())
+            if (string.IsNullOrEmpty(txtNewPassword.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtConfirmPassword, "La confirmation du mot de passe ne correspond pas au nouveau mot de passe!");
-
+                errorProvider1.SetError(txtNewPassword, "Le mot de passe actuel ne peut pas être vide");
+                return;
             }
             else
             {
@@ -91,16 +92,16 @@ namespace GymManager.Presentation
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
-            //if (txtConfirmPassword.Text.Trim() != txtNewPassword.Text.Trim())
-            //{
-            //    e.Cancel = true;
-            //    errorProvider1.SetError(txtConfirmPassword, "La confirmation du mot de passe ne correspond pas au nouveau mot de passe!");
+            if (txtConfirmPassword.Text.Trim() != txtNewPassword.Text.Trim())
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtConfirmPassword, "La confirmation du mot de passe ne correspond pas au nouveau mot de passe!");
 
-            //}
-            //else
-            //{
-            //    errorProvider1.SetError(txtConfirmPassword, null);
-            //}
+            }
+            else
+            {
+                errorProvider1.SetError(txtConfirmPassword, null);
+            }
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
