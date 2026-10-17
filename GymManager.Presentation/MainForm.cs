@@ -118,16 +118,21 @@ namespace GymManager.Presentation
         private void btnTypesAbonnements_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnTypesAbonnements, pnlTypesAbonnementIndicator, _sidebarIndicators, pnlSidebar);
+            ucListTypesAbonnements ucListTypesAbonnements = new ucListTypesAbonnements();
+            ShowUserControl(ucListTypesAbonnements);
         }
 
         private void btnAbonnements_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnAbonnements, pnlAbonnementsIndicator, _sidebarIndicators, pnlSidebar);
+            ucListD_Abonnement ucList = new ucListD_Abonnement();
+            ShowUserControl(ucList);
         }
 
         private void btnUtilisateurs_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnUtilisateurs, pnlUtilisateurIndicator, _sidebarIndicators, pnlSidebar);
+            
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
