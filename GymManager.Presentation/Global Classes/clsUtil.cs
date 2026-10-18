@@ -65,7 +65,7 @@ namespace Globla_Classes
             // project images foldr after renaming it
             // with GUID with the same extention, then it will update the sourceFileName with the new name.
 
-            string DestinationFolder = @"E:\Images";
+            string DestinationFolder = @"C:\Gym-Images\";
             if (!CreateFolderIfDoesNotExist(DestinationFolder))
             {
                 return false;
