@@ -87,7 +87,7 @@
             this.lblTypeAbonnement.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTypeAbonnement.Location = new System.Drawing.Point(20, 35);
             this.lblTypeAbonnement.Name = "lblTypeAbonnement";
-            this.lblTypeAbonnement.Size = new System.Drawing.Size(171, 23);
+            this.lblTypeAbonnement.Size = new System.Drawing.Size(195, 28);
             this.lblTypeAbonnement.TabIndex = 0;
             this.lblTypeAbonnement.Text = "Type d\'abonnement :";
             // 
@@ -96,9 +96,9 @@
             this.cbTypeAbonnement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeAbonnement.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTypeAbonnement.FormattingEnabled = true;
-            this.cbTypeAbonnement.Location = new System.Drawing.Point(160, 32);
+            this.cbTypeAbonnement.Location = new System.Drawing.Point(214, 29);
             this.cbTypeAbonnement.Name = "cbTypeAbonnement";
-            this.cbTypeAbonnement.Size = new System.Drawing.Size(200, 29);
+            this.cbTypeAbonnement.Size = new System.Drawing.Size(200, 36);
             this.cbTypeAbonnement.TabIndex = 1;
             this.cbTypeAbonnement.SelectedIndexChanged += new System.EventHandler(this.cbTypeAbonnement_SelectedIndexChanged);
             // 
@@ -108,7 +108,7 @@
             this.lblDateDebut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateDebut.Location = new System.Drawing.Point(20, 75);
             this.lblDateDebut.Name = "lblDateDebut";
-            this.lblDateDebut.Size = new System.Drawing.Size(129, 23);
+            this.lblDateDebut.Size = new System.Drawing.Size(146, 28);
             this.lblDateDebut.TabIndex = 2;
             this.lblDateDebut.Text = "Date de début :";
             // 
@@ -118,7 +118,7 @@
             this.dtpDateDebut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateDebut.Location = new System.Drawing.Point(160, 72);
             this.dtpDateDebut.Name = "dtpDateDebut";
-            this.dtpDateDebut.Size = new System.Drawing.Size(200, 29);
+            this.dtpDateDebut.Size = new System.Drawing.Size(200, 33);
             this.dtpDateDebut.TabIndex = 3;
             this.dtpDateDebut.ValueChanged += new System.EventHandler(this.dtpDateDebut_ValueChanged);
             // 
@@ -128,7 +128,7 @@
             this.lblPrixPaye.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrixPaye.Location = new System.Drawing.Point(20, 115);
             this.lblPrixPaye.Name = "lblPrixPaye";
-            this.lblPrixPaye.Size = new System.Drawing.Size(88, 23);
+            this.lblPrixPaye.Size = new System.Drawing.Size(100, 28);
             this.lblPrixPaye.TabIndex = 4;
             this.lblPrixPaye.Text = "Prix payé :";
             // 
@@ -138,7 +138,7 @@
             this.txtPrixPaye.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrixPaye.Location = new System.Drawing.Point(160, 112);
             this.txtPrixPaye.Name = "txtPrixPaye";
-            this.txtPrixPaye.Size = new System.Drawing.Size(160, 29);
+            this.txtPrixPaye.Size = new System.Drawing.Size(160, 33);
             this.txtPrixPaye.TabIndex = 5;
             // 
             // lblDevise
@@ -147,7 +147,7 @@
             this.lblDevise.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDevise.Location = new System.Drawing.Point(328, 115);
             this.lblDevise.Name = "lblDevise";
-            this.lblDevise.Size = new System.Drawing.Size(33, 23);
+            this.lblDevise.Size = new System.Drawing.Size(39, 28);
             this.lblDevise.TabIndex = 6;
             this.lblDevise.Text = "DA";
             // 
@@ -157,7 +157,7 @@
             this.lblStatut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatut.Location = new System.Drawing.Point(20, 155);
             this.lblStatut.Name = "lblStatut";
-            this.lblStatut.Size = new System.Drawing.Size(64, 23);
+            this.lblStatut.Size = new System.Drawing.Size(73, 28);
             this.lblStatut.TabIndex = 7;
             this.lblStatut.Text = "Statut :";
             // 
@@ -172,7 +172,7 @@
             "Inactif"});
             this.cbStatut.Location = new System.Drawing.Point(160, 152);
             this.cbStatut.Name = "cbStatut";
-            this.cbStatut.Size = new System.Drawing.Size(200, 29);
+            this.cbStatut.Size = new System.Drawing.Size(200, 36);
             this.cbStatut.TabIndex = 8;
             // 
             // lblSport
@@ -181,7 +181,7 @@
             this.lblSport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSport.Location = new System.Drawing.Point(420, 35);
             this.lblSport.Name = "lblSport";
-            this.lblSport.Size = new System.Drawing.Size(60, 23);
+            this.lblSport.Size = new System.Drawing.Size(70, 28);
             this.lblSport.TabIndex = 9;
             this.lblSport.Text = "Sport :";
             // 
@@ -192,7 +192,7 @@
             this.txtSport.Location = new System.Drawing.Point(570, 32);
             this.txtSport.Name = "txtSport";
             this.txtSport.ReadOnly = true;
-            this.txtSport.Size = new System.Drawing.Size(200, 29);
+            this.txtSport.Size = new System.Drawing.Size(200, 33);
             this.txtSport.TabIndex = 10;
             // 
             // lblSportReadOnly
@@ -201,7 +201,7 @@
             this.lblSportReadOnly.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSportReadOnly.Location = new System.Drawing.Point(780, 37);
             this.lblSportReadOnly.Name = "lblSportReadOnly";
-            this.lblSportReadOnly.Size = new System.Drawing.Size(95, 20);
+            this.lblSportReadOnly.Size = new System.Drawing.Size(113, 25);
             this.lblSportReadOnly.TabIndex = 11;
             this.lblSportReadOnly.Text = "Lecture seule";
             // 
@@ -211,7 +211,7 @@
             this.lblDateFin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateFin.Location = new System.Drawing.Point(420, 75);
             this.lblDateFin.Name = "lblDateFin";
-            this.lblDateFin.Size = new System.Drawing.Size(103, 23);
+            this.lblDateFin.Size = new System.Drawing.Size(116, 28);
             this.lblDateFin.TabIndex = 12;
             this.lblDateFin.Text = "Date de fin :";
             // 
@@ -222,7 +222,7 @@
             this.dtpDateFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateFin.Location = new System.Drawing.Point(570, 72);
             this.dtpDateFin.Name = "dtpDateFin";
-            this.dtpDateFin.Size = new System.Drawing.Size(200, 29);
+            this.dtpDateFin.Size = new System.Drawing.Size(200, 33);
             this.dtpDateFin.TabIndex = 13;
             // 
             // lblDateFinAutomatique
@@ -231,7 +231,7 @@
             this.lblDateFinAutomatique.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateFinAutomatique.Location = new System.Drawing.Point(780, 77);
             this.lblDateFinAutomatique.Name = "lblDateFinAutomatique";
-            this.lblDateFinAutomatique.Size = new System.Drawing.Size(96, 20);
+            this.lblDateFinAutomatique.Size = new System.Drawing.Size(116, 25);
             this.lblDateFinAutomatique.TabIndex = 14;
             this.lblDateFinAutomatique.Text = "Automatique";
             // 
@@ -241,7 +241,7 @@
             this.lblNombreSeances.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreSeances.Location = new System.Drawing.Point(420, 115);
             this.lblNombreSeances.Name = "lblNombreSeances";
-            this.lblNombreSeances.Size = new System.Drawing.Size(170, 23);
+            this.lblNombreSeances.Size = new System.Drawing.Size(192, 28);
             this.lblNombreSeances.TabIndex = 15;
             this.lblNombreSeances.Text = "Nombre de séances :";
             // 
@@ -252,7 +252,7 @@
             this.txtNombreSeances.Location = new System.Drawing.Point(570, 112);
             this.txtNombreSeances.Name = "txtNombreSeances";
             this.txtNombreSeances.ReadOnly = true;
-            this.txtNombreSeances.Size = new System.Drawing.Size(200, 29);
+            this.txtNombreSeances.Size = new System.Drawing.Size(200, 33);
             this.txtNombreSeances.TabIndex = 16;
             // 
             // lblSeancesReadOnly
@@ -261,13 +261,13 @@
             this.lblSeancesReadOnly.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeancesReadOnly.Location = new System.Drawing.Point(780, 117);
             this.lblSeancesReadOnly.Name = "lblSeancesReadOnly";
-            this.lblSeancesReadOnly.Size = new System.Drawing.Size(95, 20);
+            this.lblSeancesReadOnly.Size = new System.Drawing.Size(113, 25);
             this.lblSeancesReadOnly.TabIndex = 17;
             this.lblSeancesReadOnly.Text = "Lecture seule";
             // 
             // ucAbonnementInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbInfoAbonnement);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
