@@ -11,7 +11,7 @@ namespace GymManager.DataAccess
         public static DataTable GetAllNotifications()
         {
             DataTable dt = new DataTable();
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"select * from Notifications_View";
 
@@ -41,7 +41,7 @@ namespace GymManager.DataAccess
 
         public static bool MarkAllAsRead()
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"UPDATE Notifications
                  SET EstVue = 1";
@@ -68,7 +68,7 @@ namespace GymManager.DataAccess
 
         public static bool MarkAsRead(int notificationID)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"UPDATE Notifications
                  SET EstVue = 1
@@ -96,7 +96,7 @@ namespace GymManager.DataAccess
 
         public static bool Save(int notificationID, bool isRead, string message)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"UPDATE Notifications
                  SET EstVue = @isRead,Message =@message
@@ -130,7 +130,7 @@ namespace GymManager.DataAccess
             if (notificationsID == null || notificationsID.Count == 0)
                 return false;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string set = string.Join(",", notificationsID);
             string query = $@"UPDATE Notifications
@@ -160,7 +160,7 @@ namespace GymManager.DataAccess
 
         public static bool CreateNotfication(int abonnementID)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"Insert into Notifications (AbonnementID,EstVue,EstExportee,Message)
                                 Values (@abonnementID,0,0,'');";
@@ -188,7 +188,7 @@ namespace GymManager.DataAccess
         {
 
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"select count(*) as Num from Notifications where EstVue = 0;";
 
