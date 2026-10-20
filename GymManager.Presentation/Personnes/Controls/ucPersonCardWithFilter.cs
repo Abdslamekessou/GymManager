@@ -51,7 +51,7 @@ namespace GymManager.Presentation.Personnes.Controls
             set
             {
                 _FilterEnabled = value;
-                gbFilters.Enabled = _FilterEnabled;
+                gbFilters.Visible = _FilterEnabled;
             }
         }
 

@@ -32,6 +32,7 @@ namespace GymManager.Presentation.Members
                 return;
             }
 
+            ucMemberCardWithFilter1.IsAddUpdateMode = false;
             ucMemberCardWithFilter1.LoadMemberInfo(_memberId);
             ucMemberCardWithFilter1.FilterEnabled = false;
 
