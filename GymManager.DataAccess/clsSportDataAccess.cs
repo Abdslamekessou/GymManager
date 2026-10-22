@@ -17,7 +17,7 @@ namespace GymManager.Business
             bool isFound = false;
             string query = @"SELECT * FROM Sports WHERE SportID = @SportID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -57,7 +57,7 @@ namespace GymManager.Business
             DataTable dt = new DataTable();
             string query = @"SELECT * FROM Sports";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -95,7 +95,7 @@ namespace GymManager.Business
                              VALUES (@Nom, @Description, @EstActif);
                              SELECT SCOPE_IDENTITY();";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -138,7 +138,7 @@ namespace GymManager.Business
                                  EstActif = @EstActif
                              WHERE SportID = @SportID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -172,7 +172,7 @@ namespace GymManager.Business
             bool isFound = false;
 
             SqlConnection connection =
-                new SqlConnection(clsDataAccessSetting.ConnectionString);
+                new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"
                 SELECT 1
@@ -206,7 +206,7 @@ namespace GymManager.Business
         {
             int rowsAffected = 0;
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"Delete Sports 
                                 where SportID = @SportID";

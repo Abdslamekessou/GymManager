@@ -34,7 +34,7 @@ namespace GymManager.Presentation.Members.Controls
             colMemberID.HeaderText = "MemberID";
             colMemberID.Name = "colMemberID";
             colMemberID.DataPropertyName = "AdherentID";
-            colMemberID.Visible = false;
+            colMemberID.Visible = true;
 
             // Full Name
             colFullName.HeaderText = "Nom";

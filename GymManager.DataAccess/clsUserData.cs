@@ -15,7 +15,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 string query = "SELECT * FROM Utilisateurs WHERE UtilisateurID = @UserID";
 
@@ -62,7 +62,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur AND MotDePasse = @MotDePasse";
 
@@ -107,7 +107,7 @@ namespace GymManager.DataAccess
         {
             int UserID = -1;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
                 string query = "INSERT INTO Utilisateurs (PersonneID, NomUtilisateur, MotDePasse, Role, Etat, DateDeCreation) " +
@@ -155,7 +155,7 @@ namespace GymManager.DataAccess
         {
             int rowsAffected = 0;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
                 string query = "UPDATE Utilisateurs SET " +
@@ -201,7 +201,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 string query = "SELECT Found = 1 FROM Utilisateurs WHERE NomUtilisateur = @UserName";
 
@@ -241,7 +241,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 string query = "SELECT Found = 1 FROM Utilisateurs Inner JOIN RoleUtilisateurs ON Utilisateurs.Role = RoleUtilisateurs.RoleID " +
                                "WHERE RoleUtilisateurs.NomRole = @RoleName";
@@ -281,7 +281,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 string query = "SELECT Found = 1 FROM Utilisateurs WHERE PersonneID = @PersonID";
 
@@ -322,7 +322,7 @@ namespace GymManager.DataAccess
                 "inner join RoleUtilisateurs R on U.Role = R.RoleID";
 
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
                 using (SqlCommand command = new SqlCommand(query, connection))

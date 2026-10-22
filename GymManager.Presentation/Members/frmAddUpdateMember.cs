@@ -156,6 +156,7 @@ namespace GymManager.Presentation.Members
                 //change form mode to update.
                 _Mode = enMode.Update;
                 lblTitle.Text = "👤 Modifier Le Membre";
+
                 ucPersonCardWithFilter1.FilterEnabled = false;
                 ucAbonnementInfo1.IsUpdateMode = true;
 
