@@ -165,6 +165,7 @@ namespace GymManager.Presentation.Personnes.Controls
             if (cbFilterBy.SelectedItem.ToString() == "Aucun")
             {
                 txtFilterValue.Visible = false;
+                _ApplyFilters();
             }
             else
             {
