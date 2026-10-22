@@ -37,7 +37,7 @@ namespace GymManager.Presentation.Members.Controls
             colMemberID.Visible = true;
 
             // Full Name
-            colFullName.HeaderText = "Nom";
+            colFullName.HeaderText = "Nom Complet";
             colFullName.Name = "colFullName";
             colFullName.DataPropertyName = "NomComplet";
             //colFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -114,7 +114,7 @@ namespace GymManager.Presentation.Members.Controls
 
             switch (cbMemberFilterBy.SelectedItem.ToString())
             {
-                case "Nom":
+                case "Nom Complet":
                     filterColumn = "NomComplet";
                     break;
                 case "Phone":
@@ -167,8 +167,6 @@ namespace GymManager.Presentation.Members.Controls
             }
 
         }
-
-
 
         private void txtSearchMember_TextChanged(object sender, EventArgs e)
         {
@@ -253,7 +251,33 @@ namespace GymManager.Presentation.Members.Controls
 
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+ 
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowMemberInfo frm = new frmShowMemberInfo((int)dgvMembers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+        }
+
+        private void AddNewtoolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember();
+
+            frm.ShowDialog();
+            _RefreshListMembers();
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember((int)dgvMembers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+            _RefreshListMembers();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Vous etes sur de supprimer ce membre [" + dgvMembers.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 
