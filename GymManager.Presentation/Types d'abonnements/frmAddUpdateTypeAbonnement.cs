@@ -69,7 +69,8 @@ namespace GymManager.Presentation.Types_d_abonnements
 
             foreach (DataRow row in dtSports.Rows)
             {
-                cbSport.Items.Add(row["Nom"]);
+                if (Convert.ToInt32(row["EstActif"])==1)
+                    cbSport.Items.Add(row["Nom"]);
             }
 
         }
@@ -207,5 +208,7 @@ namespace GymManager.Presentation.Types_d_abonnements
         {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+     
     }
 }

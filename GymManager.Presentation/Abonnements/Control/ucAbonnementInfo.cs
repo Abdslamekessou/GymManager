@@ -47,7 +47,8 @@ namespace GymManager.Presentation.Abonnements.Control
 
             foreach (DataRow row in dtTypeAbonnement.Rows)
             {
-                cbTypeAbonnement.Items.Add(row["Nom"]);
+                if (row["Statut"].ToString() == "Actif")
+                    cbTypeAbonnement.Items.Add(row["Nom"]);
             }
         }
 
@@ -130,7 +131,7 @@ namespace GymManager.Presentation.Abonnements.Control
         }
 
         // We use the parameter "UserID" temporary until we have the clsGlobal
-        public bool SaveAbonnementInfo(int MemberID , int UserID)
+        public bool SaveAbonnementInfo(int MemberID, int UserID)
         {
             AbonnementInfo = new clsAbonnement();
             TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
@@ -149,7 +150,7 @@ namespace GymManager.Presentation.Abonnements.Control
 
             }
 
-            
+
             AbonnementInfo.TypeAbonnementID = TypeAbonnement.TypeAbonnementID;
             AbonnementInfo.AdherentID = MemberID;
             AbonnementInfo.DateDebut = dtpDateDebut.Value;
@@ -174,7 +175,7 @@ namespace GymManager.Presentation.Abonnements.Control
             else
                 AbonnementInfo.EtatAbonnement = 0;
 
-                return AbonnementInfo.Save();
+            return AbonnementInfo.Save();
         }
 
 
@@ -185,7 +186,7 @@ namespace GymManager.Presentation.Abonnements.Control
 
         private void cbTypeAbonnement_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
             dtpDateDebut.Value = DateTime.Now;
 

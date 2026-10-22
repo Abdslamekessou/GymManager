@@ -78,11 +78,11 @@
             this.gbInfo.Controls.Add(this.btnAnnuler);
             this.gbInfo.Controls.Add(this.btnEnregistrer);
             this.gbInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInfo.Location = new System.Drawing.Point(18, 18);
+            this.gbInfo.Location = new System.Drawing.Point(18, 19);
             this.gbInfo.Margin = new System.Windows.Forms.Padding(4);
             this.gbInfo.Name = "gbInfo";
             this.gbInfo.Padding = new System.Windows.Forms.Padding(4);
-            this.gbInfo.Size = new System.Drawing.Size(1140, 614);
+            this.gbInfo.Size = new System.Drawing.Size(1140, 646);
             this.gbInfo.TabIndex = 0;
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "INFORMATIONS DU TYPE D\'ABONNEMENT";
@@ -90,7 +90,7 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(30, 51);
+            this.lblNom.Location = new System.Drawing.Point(30, 54);
             this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(65, 28);
@@ -99,7 +99,7 @@
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(270, 47);
+            this.txtNom.Location = new System.Drawing.Point(270, 49);
             this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(823, 34);
@@ -109,7 +109,7 @@
             // lblSport
             // 
             this.lblSport.AutoSize = true;
-            this.lblSport.Location = new System.Drawing.Point(30, 102);
+            this.lblSport.Location = new System.Drawing.Point(30, 107);
             this.lblSport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSport.Name = "lblSport";
             this.lblSport.Size = new System.Drawing.Size(70, 28);
@@ -120,7 +120,7 @@
             // 
             this.cbSport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSport.FormattingEnabled = true;
-            this.cbSport.Location = new System.Drawing.Point(270, 98);
+            this.cbSport.Location = new System.Drawing.Point(270, 103);
             this.cbSport.Margin = new System.Windows.Forms.Padding(4);
             this.cbSport.Name = "cbSport";
             this.cbSport.Size = new System.Drawing.Size(268, 36);
@@ -129,7 +129,7 @@
             // lblDuree
             // 
             this.lblDuree.AutoSize = true;
-            this.lblDuree.Location = new System.Drawing.Point(30, 153);
+            this.lblDuree.Location = new System.Drawing.Point(30, 161);
             this.lblDuree.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDuree.Name = "lblDuree";
             this.lblDuree.Size = new System.Drawing.Size(133, 28);
@@ -138,7 +138,7 @@
             // 
             // txtDureeEnJour
             // 
-            this.txtDureeEnJour.Location = new System.Drawing.Point(270, 149);
+            this.txtDureeEnJour.Location = new System.Drawing.Point(270, 157);
             this.txtDureeEnJour.Margin = new System.Windows.Forms.Padding(4);
             this.txtDureeEnJour.Name = "txtDureeEnJour";
             this.txtDureeEnJour.Size = new System.Drawing.Size(126, 34);
@@ -149,7 +149,7 @@
             // lblPrix
             // 
             this.lblPrix.AutoSize = true;
-            this.lblPrix.Location = new System.Drawing.Point(30, 205);
+            this.lblPrix.Location = new System.Drawing.Point(30, 216);
             this.lblPrix.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrix.Name = "lblPrix";
             this.lblPrix.Size = new System.Drawing.Size(53, 28);
@@ -158,7 +158,7 @@
             // 
             // txtPrix
             // 
-            this.txtPrix.Location = new System.Drawing.Point(270, 200);
+            this.txtPrix.Location = new System.Drawing.Point(270, 211);
             this.txtPrix.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrix.Name = "txtPrix";
             this.txtPrix.Size = new System.Drawing.Size(126, 34);
@@ -169,7 +169,7 @@
             // lblDA
             // 
             this.lblDA.AutoSize = true;
-            this.lblDA.Location = new System.Drawing.Point(408, 205);
+            this.lblDA.Location = new System.Drawing.Point(408, 216);
             this.lblDA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDA.Name = "lblDA";
             this.lblDA.Size = new System.Drawing.Size(54, 28);
@@ -179,7 +179,7 @@
             // lblTypeSeances
             // 
             this.lblTypeSeances.AutoSize = true;
-            this.lblTypeSeances.Location = new System.Drawing.Point(30, 256);
+            this.lblTypeSeances.Location = new System.Drawing.Point(30, 269);
             this.lblTypeSeances.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTypeSeances.Name = "lblTypeSeances";
             this.lblTypeSeances.Size = new System.Drawing.Size(160, 28);
@@ -190,7 +190,7 @@
             // 
             this.rbLimite.AutoSize = true;
             this.rbLimite.Checked = true;
-            this.rbLimite.Location = new System.Drawing.Point(270, 253);
+            this.rbLimite.Location = new System.Drawing.Point(270, 266);
             this.rbLimite.Margin = new System.Windows.Forms.Padding(4);
             this.rbLimite.Name = "rbLimite";
             this.rbLimite.Size = new System.Drawing.Size(90, 32);
@@ -203,7 +203,7 @@
             // rbIllimite
             // 
             this.rbIllimite.AutoSize = true;
-            this.rbIllimite.Location = new System.Drawing.Point(398, 253);
+            this.rbIllimite.Location = new System.Drawing.Point(398, 266);
             this.rbIllimite.Margin = new System.Windows.Forms.Padding(4);
             this.rbIllimite.Name = "rbIllimite";
             this.rbIllimite.Size = new System.Drawing.Size(96, 32);
@@ -215,7 +215,7 @@
             // lblNombreSeances
             // 
             this.lblNombreSeances.AutoSize = true;
-            this.lblNombreSeances.Location = new System.Drawing.Point(30, 307);
+            this.lblNombreSeances.Location = new System.Drawing.Point(30, 323);
             this.lblNombreSeances.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreSeances.Name = "lblNombreSeances";
             this.lblNombreSeances.Size = new System.Drawing.Size(192, 28);
@@ -224,7 +224,7 @@
             // 
             // txtNombreDeSeances
             // 
-            this.txtNombreDeSeances.Location = new System.Drawing.Point(270, 303);
+            this.txtNombreDeSeances.Location = new System.Drawing.Point(270, 319);
             this.txtNombreDeSeances.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreDeSeances.Name = "txtNombreDeSeances";
             this.txtNombreDeSeances.Size = new System.Drawing.Size(126, 34);
@@ -233,7 +233,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(30, 358);
+            this.lblDescription.Location = new System.Drawing.Point(30, 377);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(121, 28);
@@ -242,17 +242,17 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(270, 354);
+            this.txtDescription.Location = new System.Drawing.Point(270, 373);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(823, 115);
+            this.txtDescription.Size = new System.Drawing.Size(823, 121);
             this.txtDescription.TabIndex = 15;
             // 
             // lblStatut
             // 
             this.lblStatut.AutoSize = true;
-            this.lblStatut.Location = new System.Drawing.Point(30, 490);
+            this.lblStatut.Location = new System.Drawing.Point(30, 516);
             this.lblStatut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatut.Name = "lblStatut";
             this.lblStatut.Size = new System.Drawing.Size(73, 28);
@@ -266,7 +266,7 @@
             this.cbStatut.Items.AddRange(new object[] {
             "Actif",
             "InActif"});
-            this.cbStatut.Location = new System.Drawing.Point(270, 485);
+            this.cbStatut.Location = new System.Drawing.Point(270, 511);
             this.cbStatut.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatut.Name = "cbStatut";
             this.cbStatut.Size = new System.Drawing.Size(208, 36);
@@ -274,10 +274,10 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(788, 541);
+            this.btnAnnuler.Location = new System.Drawing.Point(788, 569);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(150, 47);
+            this.btnAnnuler.Size = new System.Drawing.Size(150, 49);
             this.btnAnnuler.TabIndex = 18;
             this.btnAnnuler.Text = "[ Annuler ]";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -285,10 +285,10 @@
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(945, 541);
+            this.btnEnregistrer.Location = new System.Drawing.Point(945, 569);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(150, 47);
+            this.btnEnregistrer.Size = new System.Drawing.Size(150, 49);
             this.btnEnregistrer.TabIndex = 19;
             this.btnEnregistrer.Text = "[ Enregistrer ]";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
@@ -300,10 +300,10 @@
             // 
             // frmAddUpdateTypeAbonnement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1176, 649);
+            this.ClientSize = new System.Drawing.Size(1176, 683);
             this.Controls.Add(this.gbInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);

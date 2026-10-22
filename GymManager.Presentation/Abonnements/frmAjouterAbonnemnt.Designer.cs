@@ -36,10 +36,10 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(939, 681);
+            this.btnAnnuler.Location = new System.Drawing.Point(939, 717);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(150, 47);
+            this.btnAnnuler.Size = new System.Drawing.Size(150, 49);
             this.btnAnnuler.TabIndex = 20;
             this.btnAnnuler.Text = "[ Annuler ]";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(1097, 681);
+            this.btnEnregistrer.Location = new System.Drawing.Point(1097, 717);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(150, 47);
+            this.btnEnregistrer.Size = new System.Drawing.Size(150, 49);
             this.btnEnregistrer.TabIndex = 21;
             this.btnEnregistrer.Text = "[ Enregistrer ]";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
@@ -59,33 +59,35 @@
             // ucMemberCardWithFilter1
             // 
             this.ucMemberCardWithFilter1.FilterEnabled = true;
-            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(24, 13);
+            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(24, 14);
             this.ucMemberCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
-            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1249, 372);
+            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1249, 392);
             this.ucMemberCardWithFilter1.TabIndex = 1;
             // 
             // ucAbonnementInfo1
             // 
             this.ucAbonnementInfo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucAbonnementInfo1.IsUpdateMode = false;
-            this.ucAbonnementInfo1.Location = new System.Drawing.Point(24, 392);
+            this.ucAbonnementInfo1.Location = new System.Drawing.Point(24, 413);
             this.ucAbonnementInfo1.Name = "ucAbonnementInfo1";
-            this.ucAbonnementInfo1.Size = new System.Drawing.Size(1223, 273);
+            this.ucAbonnementInfo1.Size = new System.Drawing.Size(1223, 287);
             this.ucAbonnementInfo1.TabIndex = 0;
+            this.ucAbonnementInfo1.Load += new System.EventHandler(this.ucAbonnementInfo1_Load);
             // 
             // frmAjouterAbonnemnt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1584, 758);
+            this.ClientSize = new System.Drawing.Size(1584, 798);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.ucMemberCardWithFilter1);
             this.Controls.Add(this.ucAbonnementInfo1);
             this.Name = "frmAjouterAbonnemnt";
             this.Text = "frmAjouterAbonnemnt";
+            this.Load += new System.EventHandler(this.frmAjouterAbonnemnt_Load);
             this.ResumeLayout(false);
 
         }

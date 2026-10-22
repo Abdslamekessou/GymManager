@@ -50,5 +50,15 @@ namespace GymManager.Presentation.Abonnements
 
 
         }
+
+        private void ucAbonnementInfo1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAjouterAbonnemnt_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
