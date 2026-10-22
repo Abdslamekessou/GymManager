@@ -118,9 +118,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(38, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(337, 28);
+            this.lblTitle.Size = new System.Drawing.Size(202, 28);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "INFORMATIONS DE LA PERSONNE";
+            this.lblTitle.Text = "LES INFORMATIONS";
             // 
             // btnEditPerson
             // 
@@ -128,11 +128,11 @@
             this.btnEditPerson.Enabled = false;
             this.btnEditPerson.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEditPerson.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditPerson.Location = new System.Drawing.Point(857, 21);
+            this.btnEditPerson.Location = new System.Drawing.Point(913, 21);
             this.btnEditPerson.Name = "btnEditPerson";
-            this.btnEditPerson.Size = new System.Drawing.Size(195, 32);
+            this.btnEditPerson.Size = new System.Drawing.Size(139, 32);
             this.btnEditPerson.TabIndex = 2;
-            this.btnEditPerson.Text = "Modifier la personne";
+            this.btnEditPerson.Text = "Modifier";
             this.btnEditPerson.UseVisualStyleBackColor = true;
             this.btnEditPerson.Click += new System.EventHandler(this.btnEditPerson_Click);
             // 
