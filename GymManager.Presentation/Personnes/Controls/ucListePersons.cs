@@ -15,7 +15,7 @@ namespace GymManager.Presentation.Personnes.Controls
     {
         private static DataTable _dtAllPersons = clsPerson.GetAllPersons();
 
-        private DataTable _dtPersons = _dtAllPersons.DefaultView.ToTable(false, "PersonneID", "Nom", "Prenom", "NumeroTelephone", "Email", "DateDeNaissance", "GendorCaption");
+        private DataTable _dtPersons = _dtAllPersons.DefaultView.ToTable(false, "PersonneID", "NomComplet", "NumeroTelephone", "Email", "DateDeNaissance", "GendorCaption");
 
 
         public ucListePersons()
@@ -27,7 +27,7 @@ namespace GymManager.Presentation.Personnes.Controls
         {
             _dtAllPersons = clsPerson.GetAllPersons();
 
-            _dtPersons = _dtAllPersons.DefaultView.ToTable(false, "PersonneID", "Nom", "Prenom", "NumeroTelephone", "Email", "DateDeNaissance", "GendorCaption");
+            _dtPersons = _dtAllPersons.DefaultView.ToTable(false, "PersonneID", "NomComplet" , "NumeroTelephone", "Email", "DateDeNaissance", "GendorCaption");
 
             dgvPersons.DataSource = _dtPersons;
 
@@ -96,12 +96,8 @@ namespace GymManager.Presentation.Personnes.Controls
                     filterColumn = "PersonneID";
                     break;
 
-                case "Prenom":
-                    filterColumn = "Prenom";
-                    break;
-
-                case "Nom":
-                    filterColumn = "Nom";
+                case "Nom Complet":
+                    filterColumn = "NomComplet";
                     break;
 
                 case "Numero de Telephone":
@@ -172,6 +168,7 @@ namespace GymManager.Presentation.Personnes.Controls
             }
             else
             {
+       
                 txtFilterValue.Visible = true;
                 txtFilterValue.Text = "";
             }

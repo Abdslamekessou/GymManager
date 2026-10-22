@@ -126,13 +126,13 @@
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="btnAddPerson.Location" type="System.Drawing.Point, System.Drawing">
-    <value>709, 116</value>
+    <value>1298, 14</value>
   </data>
   <data name="btnAddPerson.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="btnAddPerson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 57</value>
+    <value>169, 47</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAddPerson.TabIndex" type="System.Int32, mscorlib">
@@ -166,28 +166,22 @@
     <value>PersonneID</value>
   </data>
   <data name="cbFilterBy.Items2" xml:space="preserve">
-    <value>Prenom</value>
+    <value>Nom Complet</value>
   </data>
   <data name="cbFilterBy.Items3" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="cbFilterBy.Items4" xml:space="preserve">
     <value>Numero de Telephone</value>
   </data>
-  <data name="cbFilterBy.Items5" xml:space="preserve">
+  <data name="cbFilterBy.Items4" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="cbFilterBy.Items6" xml:space="preserve">
-    <value>Genre</value>
-  </data>
   <data name="cbFilterBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 58</value>
+    <value>147, 86</value>
   </data>
   <data name="cbFilterBy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="cbFilterBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 40</value>
+    <value>287, 36</value>
   </data>
   <data name="cbFilterBy.TabIndex" type="System.Int32, mscorlib">
     <value>127</value>
@@ -208,13 +202,13 @@
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="txtFilterValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 58</value>
+    <value>444, 88</value>
   </data>
   <data name="txtFilterValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 13, 7, 13</value>
+    <value>6, 11, 6, 11</value>
   </data>
   <data name="txtFilterValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 39</value>
+    <value>306, 34</value>
   </data>
   <data name="txtFilterValue.TabIndex" type="System.Int32, mscorlib">
     <value>126</value>
@@ -241,13 +235,13 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 60</value>
+    <value>9, 87</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 28</value>
+    <value>87, 23</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>125</value>
@@ -274,13 +268,13 @@
     <value>Segoe UI, 10pt, style=Bold</value>
   </data>
   <data name="lblRecordsCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>465, 1277</value>
+    <value>380, 1049</value>
   </data>
   <data name="lblRecordsCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblRecordsCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 28</value>
+    <value>24, 23</value>
   </data>
   <data name="lblRecordsCount.TabIndex" type="System.Int32, mscorlib">
     <value>123</value>
@@ -307,13 +301,13 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 1261</value>
+    <value>19, 1036</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 28</value>
+    <value>203, 23</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>122</value>
@@ -349,25 +343,13 @@
     <value>8</value>
   </data>
   <data name="PersonneID.Width" type="System.Int32, mscorlib">
-    <value>158</value>
+    <value>138</value>
   </data>
-  <metadata name="Nom.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Nom.HeaderText" xml:space="preserve">
-    <value>Nom</value>
+  <data name="NomComplet.HeaderText" xml:space="preserve">
+    <value>Nom Complet</value>
   </data>
-  <data name="Nom.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <metadata name="Prenom.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Prenom.HeaderText" xml:space="preserve">
-    <value>Prénom</value>
-  </data>
-  <data name="Prenom.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="NomComplet.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <metadata name="NumeroTelephone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -379,7 +361,7 @@
     <value>8</value>
   </data>
   <data name="NumeroTelephone.Width" type="System.Int32, mscorlib">
-    <value>249</value>
+    <value>217</value>
   </data>
   <metadata name="Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -400,7 +382,7 @@
     <value>8</value>
   </data>
   <data name="DateDeNaissance.Width" type="System.Int32, mscorlib">
-    <value>216</value>
+    <value>189</value>
   </data>
   <metadata name="Genre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -412,7 +394,7 @@
     <value>8</value>
   </data>
   <data name="Genre.Width" type="System.Int32, mscorlib">
-    <value>107</value>
+    <value>92</value>
   </data>
   <metadata name="cmsPeople.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 18</value>
@@ -420,68 +402,8 @@
   <data name="cmsPeople.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10pt</value>
   </data>
-  <data name="showDetailsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="showDetailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 40</value>
-  </data>
-  <data name="showDetailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Show Details</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
-  <data name="AddNewtoolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="AddNewtoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 40</value>
-  </data>
-  <data name="AddNewtoolStripMenuItem.Text" xml:space="preserve">
-    <value>Add &amp;New Person</value>
-  </data>
-  <data name="editToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 40</value>
-  </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
-  </data>
-  <data name="deleteToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 40</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Delete</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
-  <data name="sendEmailToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="sendEmailToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 40</value>
-  </data>
-  <data name="sendEmailToolStripMenuItem.Text" xml:space="preserve">
-    <value>Send E&amp;mail</value>
-  </data>
-  <data name="phoneCallToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="phoneCallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 40</value>
-  </data>
-  <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
-    <value>Phone &amp;Call</value>
-  </data>
   <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 256</value>
+    <value>223, 244</value>
   </data>
   <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
     <value>cmsPeople</value>
@@ -490,16 +412,16 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 465</value>
+    <value>18, 382</value>
   </data>
   <data name="dgvPersons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1800, 610</value>
+    <value>1473, 501</value>
   </data>
   <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
     <value>121</value>
@@ -515,6 +437,66 @@
   </data>
   <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="showDetailsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="showDetailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 38</value>
+  </data>
+  <data name="showDetailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Show Details</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 6</value>
+  </data>
+  <data name="AddNewtoolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="AddNewtoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 38</value>
+  </data>
+  <data name="AddNewtoolStripMenuItem.Text" xml:space="preserve">
+    <value>Add &amp;New Person</value>
+  </data>
+  <data name="editToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 38</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="deleteToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 38</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 6</value>
+  </data>
+  <data name="sendEmailToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="sendEmailToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 38</value>
+  </data>
+  <data name="sendEmailToolStripMenuItem.Text" xml:space="preserve">
+    <value>Send E&amp;mail</value>
+  </data>
+  <data name="phoneCallToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="phoneCallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 38</value>
+  </data>
+  <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Phone &amp;Call</value>
   </data>
   <data name="gpFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -538,13 +520,13 @@
     <value>Femme</value>
   </data>
   <data name="cmbGendor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 127</value>
+    <value>1181, 86</value>
   </data>
   <data name="cmbGendor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="cmbGendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 40</value>
+    <value>287, 36</value>
   </data>
   <data name="cmbGendor.TabIndex" type="System.Int32, mscorlib">
     <value>129</value>
@@ -565,16 +547,16 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="gpFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 182</value>
+    <value>23, 150</value>
   </data>
   <data name="gpFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="gpFilters.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="gpFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1793, 269</value>
+    <value>1476, 221</value>
   </data>
   <data name="gpFilters.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -601,7 +583,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>11, 28</value>
+    <value>9, 23</value>
   </data>
   <data name="lblManagerPersonnes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -610,13 +592,13 @@
     <value>Segoe UI, 20pt, style=Bold</value>
   </data>
   <data name="lblManagerPersonnes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 57</value>
+    <value>21, 47</value>
   </data>
   <data name="lblManagerPersonnes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblManagerPersonnes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 54</value>
+    <value>394, 46</value>
   </data>
   <data name="lblManagerPersonnes.TabIndex" type="System.Int32, mscorlib">
     <value>126</value>
@@ -643,49 +625,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1940, 1289</value>
-  </data>
-  <data name="&gt;&gt;PersonneID.Name" xml:space="preserve">
-    <value>PersonneID</value>
-  </data>
-  <data name="&gt;&gt;PersonneID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Nom.Name" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="&gt;&gt;Nom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Prenom.Name" xml:space="preserve">
-    <value>Prenom</value>
-  </data>
-  <data name="&gt;&gt;Prenom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NumeroTelephone.Name" xml:space="preserve">
-    <value>NumeroTelephone</value>
-  </data>
-  <data name="&gt;&gt;NumeroTelephone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Email.Name" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="&gt;&gt;Email.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DateDeNaissance.Name" xml:space="preserve">
-    <value>DateDeNaissance</value>
-  </data>
-  <data name="&gt;&gt;DateDeNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Genre.Name" xml:space="preserve">
-    <value>Genre</value>
-  </data>
-  <data name="&gt;&gt;Genre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>1587, 1059</value>
   </data>
   <data name="&gt;&gt;showDetailsToolStripMenuItem.Name" xml:space="preserve">
     <value>showDetailsToolStripMenuItem</value>
@@ -740,6 +680,42 @@
   </data>
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PersonneID.Name" xml:space="preserve">
+    <value>PersonneID</value>
+  </data>
+  <data name="&gt;&gt;PersonneID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NomComplet.Name" xml:space="preserve">
+    <value>NomComplet</value>
+  </data>
+  <data name="&gt;&gt;NomComplet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NumeroTelephone.Name" xml:space="preserve">
+    <value>NumeroTelephone</value>
+  </data>
+  <data name="&gt;&gt;NumeroTelephone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Email.Name" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="&gt;&gt;Email.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DateDeNaissance.Name" xml:space="preserve">
+    <value>DateDeNaissance</value>
+  </data>
+  <data name="&gt;&gt;DateDeNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Genre.Name" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="&gt;&gt;Genre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ucListePersons</value>
