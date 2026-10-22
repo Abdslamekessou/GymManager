@@ -124,12 +124,13 @@ namespace GymManager.Presentation.Members.Controls
                     filterColumn = "Email";
                     break;
                 default:
+                    filterColumn = "";
                     break;
             }
 
             if (filterColumn == "" || txtSearchMember.Text.Trim() == "")
             {
-                _dtAllMembers.DefaultView.RowFilter = string.Empty;
+                //_dtAllMembers.DefaultView.RowFilter = string.Empty;
                 return "1=1";
             }
 
@@ -139,14 +140,16 @@ namespace GymManager.Presentation.Members.Controls
 
         private string _GenerateGenderFilter()
         {
-            if (cmbGender.SelectedItem.ToString() == "Tous")
+            if (cmbGender.SelectedItem != null)
             {
-                return "1=1";
+                if (cmbGender.SelectedItem.ToString() == "Tous")
+                    return "1=1";
+                else
+                    return $"[GendorCaption] = '{cmbGender.Text}'";
             }
             else
-            {
-                return $"[GendorCaption] = '{cmbGender.Text}'";
-            }
+                return "1=1";
+  
 
         }
 
@@ -155,6 +158,7 @@ namespace GymManager.Presentation.Members.Controls
             if (cbMemberFilterBy.SelectedItem.ToString() == "Aucun")
             {
                 txtSearchMember.Visible = false;
+                _ApplyFilters();
             }
             else
             {
