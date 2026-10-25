@@ -153,8 +153,13 @@ namespace GymManager.Presentation.Personnes.Controls
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
+            if (_dtPersons == null)
+                return;
 
-            _ApplyFilters();
+            _dtPersons.DefaultView.RowFilter = _GeneratePersonSearchFilter() ;
+
+            //_ApplyFilters();
+
             lblRecordsCount.Text = dgvPersons.Rows.Count.ToString();
 
         }
@@ -165,20 +170,36 @@ namespace GymManager.Presentation.Personnes.Controls
             if (cbFilterBy.SelectedItem.ToString() == "Aucun")
             {
                 txtFilterValue.Visible = false;
-                _ApplyFilters();
+                cmbGendor.Visible = false;
+
+                _dtPersons.DefaultView.RowFilter = "";
+                //_ApplyFilters();
             }
             else
             {
-       
-                txtFilterValue.Visible = true;
-                txtFilterValue.Text = "";
+                if (cbFilterBy.SelectedItem.ToString() == "Genre")
+                {
+                    txtFilterValue.Visible = false;
+                    cmbGendor.Visible = true;
+                }
+                else
+                {
+                    txtFilterValue.Visible = true;
+                    cmbGendor.Visible = false;
+                    txtFilterValue.Text = "";
+                }
+
             }
 
         }
 
         private void cmbGendor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _ApplyFilters();
+            if (_dtPersons == null)
+                return;
+
+            _dtPersons.DefaultView.RowFilter = _GenerateGenderFilter();
+            
             lblRecordsCount.Text = dgvPersons.Rows.Count.ToString();
         }
 

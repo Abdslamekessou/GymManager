@@ -158,25 +158,47 @@ namespace GymManager.Presentation.Members.Controls
             if (cbMemberFilterBy.SelectedItem.ToString() == "Aucun")
             {
                 txtSearchMember.Visible = false;
-                _ApplyFilters();
+                cmbGender.Visible = false;
+
+                _dtAllMembers.DefaultView.RowFilter = "";
+                //_ApplyFilters();
             }
             else
             {
-                txtSearchMember.Visible = true;
-                txtSearchMember.Text = "";
+                if (cbMemberFilterBy.SelectedItem.ToString() == "Genre")
+                {
+                    txtSearchMember.Visible = false;
+                    cmbGender.Visible = true;
+                }
+                else
+                {
+                    txtSearchMember.Visible = true;
+                    cmbGender.Visible = false;
+                    txtSearchMember.Text = "";
+                }
+
             }
 
         }
 
         private void txtSearchMember_TextChanged(object sender, EventArgs e)
         {
-            _ApplyFilters();
+            if (_dtAllMembers == null)
+                return;
+
+            _dtAllMembers.DefaultView.RowFilter = _GenerateMemberSearchFilter();
+
+            //_ApplyFilters();
         }
 
         private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_dtAllMembers == null)
+                return;
 
-            _ApplyFilters();
+            _dtAllMembers.DefaultView.RowFilter = _GenerateGenderFilter();
+
+            //_ApplyFilters();
 
         }
 

@@ -44,6 +44,12 @@ namespace GymManager.Presentation.Personnes.Controls
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPersons = new System.Windows.Forms.DataGridView();
+            this.PersonneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomComplet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateDeNaissance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsPeople = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,12 +63,6 @@ namespace GymManager.Presentation.Personnes.Controls
             this.cmbGendor = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblManagerPersonnes = new System.Windows.Forms.Label();
-            this.PersonneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomComplet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateDeNaissance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             this.cmsPeople.SuspendLayout();
             this.gpFilters.SuspendLayout();
@@ -94,7 +94,8 @@ namespace GymManager.Presentation.Personnes.Controls
             resources.GetString("cbFilterBy.Items1"),
             resources.GetString("cbFilterBy.Items2"),
             resources.GetString("cbFilterBy.Items3"),
-            resources.GetString("cbFilterBy.Items4")});
+            resources.GetString("cbFilterBy.Items4"),
+            resources.GetString("cbFilterBy.Items5")});
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
@@ -190,6 +191,54 @@ namespace GymManager.Presentation.Personnes.Controls
             this.dgvPersons.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPersons.RowTemplate.Height = 40;
             this.dgvPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // PersonneID
+            // 
+            this.PersonneID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PersonneID.DataPropertyName = "PersonneID";
+            resources.ApplyResources(this.PersonneID, "PersonneID");
+            this.PersonneID.Name = "PersonneID";
+            this.PersonneID.ReadOnly = true;
+            // 
+            // NomComplet
+            // 
+            this.NomComplet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomComplet.DataPropertyName = "NomComplet";
+            resources.ApplyResources(this.NomComplet, "NomComplet");
+            this.NomComplet.Name = "NomComplet";
+            this.NomComplet.ReadOnly = true;
+            // 
+            // NumeroTelephone
+            // 
+            this.NumeroTelephone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.NumeroTelephone.DataPropertyName = "NumeroTelephone";
+            resources.ApplyResources(this.NumeroTelephone, "NumeroTelephone");
+            this.NumeroTelephone.Name = "NumeroTelephone";
+            this.NumeroTelephone.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            resources.ApplyResources(this.Email, "Email");
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // DateDeNaissance
+            // 
+            this.DateDeNaissance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DateDeNaissance.DataPropertyName = "DateDeNaissance";
+            resources.ApplyResources(this.DateDeNaissance, "DateDeNaissance");
+            this.DateDeNaissance.Name = "DateDeNaissance";
+            this.DateDeNaissance.ReadOnly = true;
+            // 
+            // Genre
+            // 
+            this.Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Genre.DataPropertyName = "GendorCaption";
+            resources.ApplyResources(this.Genre, "Genre");
+            this.Genre.Name = "Genre";
+            this.Genre.ReadOnly = true;
             // 
             // cmsPeople
             // 
@@ -296,54 +345,6 @@ namespace GymManager.Presentation.Personnes.Controls
             this.lblManagerPersonnes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
             this.lblManagerPersonnes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.lblManagerPersonnes.Name = "lblManagerPersonnes";
-            // 
-            // PersonneID
-            // 
-            this.PersonneID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PersonneID.DataPropertyName = "PersonneID";
-            resources.ApplyResources(this.PersonneID, "PersonneID");
-            this.PersonneID.Name = "PersonneID";
-            this.PersonneID.ReadOnly = true;
-            // 
-            // NomComplet
-            // 
-            this.NomComplet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomComplet.DataPropertyName = "NomComplet";
-            resources.ApplyResources(this.NomComplet, "NomComplet");
-            this.NomComplet.Name = "NomComplet";
-            this.NomComplet.ReadOnly = true;
-            // 
-            // NumeroTelephone
-            // 
-            this.NumeroTelephone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.NumeroTelephone.DataPropertyName = "NumeroTelephone";
-            resources.ApplyResources(this.NumeroTelephone, "NumeroTelephone");
-            this.NumeroTelephone.Name = "NumeroTelephone";
-            this.NumeroTelephone.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            resources.ApplyResources(this.Email, "Email");
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // DateDeNaissance
-            // 
-            this.DateDeNaissance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DateDeNaissance.DataPropertyName = "DateDeNaissance";
-            resources.ApplyResources(this.DateDeNaissance, "DateDeNaissance");
-            this.DateDeNaissance.Name = "DateDeNaissance";
-            this.DateDeNaissance.ReadOnly = true;
-            // 
-            // Genre
-            // 
-            this.Genre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Genre.DataPropertyName = "GendorCaption";
-            resources.ApplyResources(this.Genre, "Genre");
-            this.Genre.Name = "Genre";
-            this.Genre.ReadOnly = true;
             // 
             // ucListePersons
             // 
