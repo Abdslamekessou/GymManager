@@ -65,13 +65,16 @@ namespace GymManager.Presentation.Types_d_abonnements
 
         private void _FillSportsInComboBox()
         {
-            DataTable dtSports = clsSport.GetAllSports();
+            DataTable dtAllSports = clsSport.GetAllSports();
+            //filter the table and get only actif sport
+            dtAllSports.DefaultView.RowFilter = "EstActif = 'True'";
+            
+            DataTable dtFilteredSports = dtAllSports.DefaultView.ToTable(false,"SportID","Nom");
 
-            foreach (DataRow row in dtSports.Rows)
-            {
-                if (Convert.ToInt32(row["EstActif"])==1)
-                    cbSport.Items.Add(row["Nom"]);
-            }
+            cbSport.DataSource = dtFilteredSports;
+            cbSport.DisplayMember = "Nom";
+            cbSport.ValueMember = "SportID";
+
 
         }
 
@@ -158,7 +161,7 @@ namespace GymManager.Presentation.Types_d_abonnements
 
 
             _TypeAbonnement.Nom = txtNom.Text.Trim();
-            _TypeAbonnement.SportID = cbSport.SelectedIndex + 1;
+            _TypeAbonnement.SportID = (int)cbSport.SelectedValue;
             _TypeAbonnement.DureeEnJour = Convert.ToByte(txtDureeEnJour.Text.Trim());
             _TypeAbonnement.Prix = Convert.ToDecimal(txtPrix.Text.Trim());
 
