@@ -322,7 +322,36 @@ namespace GymManager.DataAccess
             return (rowsAffected > 0);
         }
 
+        public static DataTable GetAllTypesAbonnements()
+        {
+            DataTable dt = new DataTable();
+            string query = @"select * from TypeAbonnements";
 
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dt.Load(reader);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
+            return dt;
+
+        }
     }
 
 }

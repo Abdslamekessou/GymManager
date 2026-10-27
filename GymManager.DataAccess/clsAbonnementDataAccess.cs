@@ -292,7 +292,33 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
+        public static void UpdateAbonnementsStatus()
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
+            string query = @"
+Update Abonnements
+set EtatAbonnement = 
+Case 
+when DateFin < GETDATE() then 1
+when DateFin > GETDATE() and DATEDIFF(DAY,GETDATE(),DateFin) <= 7  then 2
+else 0
+end
+where EtatAbonnement Not in (1,3);";
 
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+        }
     }
 }

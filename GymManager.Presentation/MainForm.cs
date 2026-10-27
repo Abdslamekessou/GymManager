@@ -18,6 +18,7 @@ using GymManager.Presentation.Notifications;
 using GymManager.Presentation.Members.Controls;
 using GymManager.Presentation.Personnes.Controls;
 using GymManager.Presentation.Sports;
+using GymManager.Business.GymManager.Business;
 
 namespace GymManager.Presentation
 {
@@ -25,11 +26,15 @@ namespace GymManager.Presentation
     {
         private List<Panel> _sidebarIndicators;
         private int notificationCount = clsNotification.GetNumberOfUnreadNotifications(); 
+
+        static MainForm()
+        {
+            clsAbonnement.UpdateAbonnementsStatus();
+            clsNotification.UpdateNotifications();
+        }
         public MainForm()
         {
             InitializeComponent();
-
-            
 
             _sidebarIndicators = new List<Panel>
             {
@@ -92,7 +97,11 @@ namespace GymManager.Presentation
 
         }
 
-
+        public void RefreshUnreadNotificationsIcon()
+        {
+            notificationCount = clsNotification.GetNumberOfUnreadNotifications();
+            ibtnNotifications.Refresh();
+        }
         private void btnPersonnes_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnPersonnes, pnlPersonnesIndicator, _sidebarIndicators, pnlSidebar);

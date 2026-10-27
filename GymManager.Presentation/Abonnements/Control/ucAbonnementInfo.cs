@@ -43,13 +43,17 @@ namespace GymManager.Presentation.Abonnements.Control
 
         private void _FullTypeAbonnementComboBox()
         {
-            DataTable dtTypeAbonnement = clsTypeAbonnement.GetAllTypesDabonnements();
+            DataTable dtTypeAbonnement = clsTypeAbonnement.GetAllTypesAbonnements();
 
-            foreach (DataRow row in dtTypeAbonnement.Rows)
-            {
-                if (row["Statut"].ToString() == "Actif")
-                    cbTypeAbonnement.Items.Add(row["Nom"]);
-            }
+            //filter the table and get only actif sport
+            dtTypeAbonnement.DefaultView.RowFilter = "EstActif = 'True'";
+
+            DataTable dtFilteredTypesAbonnement = dtTypeAbonnement.DefaultView.ToTable(false, "TypeAbonnementID", "Nom");
+
+            cbTypeAbonnement.DataSource = dtFilteredTypesAbonnement;
+            cbTypeAbonnement.DisplayMember = "Nom";
+            cbTypeAbonnement.ValueMember = "TypeAbonnementID";
+
         }
 
         private void _LoadDefaultValues()
@@ -58,7 +62,8 @@ namespace GymManager.Presentation.Abonnements.Control
 
             cbTypeAbonnement.SelectedIndex = 0;
             dtpDateDebut.Value = DateTime.Now;
-            TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
+            //TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
+            TypeAbonnement = clsTypeAbonnement.Find((int)cbTypeAbonnement.SelectedValue);
             txtPrixPaye.Text = $"{TypeAbonnement.Prix:0}";
 
             if (TypeAbonnement.EstActif)
@@ -88,7 +93,8 @@ namespace GymManager.Presentation.Abonnements.Control
             }
 
             TypeAbonnement = clsTypeAbonnement.Find(AbonnementInfo.TypeAbonnementID);
-            cbTypeAbonnement.SelectedIndex = TypeAbonnement.TypeAbonnementID - 1;
+            //cbTypeAbonnement.SelectedIndex = TypeAbonnement.TypeAbonnementID - 1;
+            cbTypeAbonnement.SelectedValue = TypeAbonnement.TypeAbonnementID;
             dtpDateDebut.Value = AbonnementInfo.DateDebut;
             dtpDateFin.Value = AbonnementInfo.DateFin;
             txtPrixPaye.Text = $"{AbonnementInfo.PrixPaye:0}";
@@ -116,7 +122,9 @@ namespace GymManager.Presentation.Abonnements.Control
                 return false;
             }
 
-            cbTypeAbonnement.SelectedIndex = TypeAbonnement.TypeAbonnementID - 1;
+            //cbTypeAbonnement.SelectedIndex = TypeAbonnement.TypeAbonnementID - 1;
+            cbTypeAbonnement.SelectedValue = TypeAbonnement.TypeAbonnementID;
+
             dtpDateDebut.Value = AbonnementInfo.DateDebut;
             dtpDateFin.Value = AbonnementInfo.DateFin;
             txtPrixPaye.Text = $"{AbonnementInfo.PrixPaye:0}";
@@ -134,7 +142,7 @@ namespace GymManager.Presentation.Abonnements.Control
         public bool SaveAbonnementInfo(int MemberID, int UserID)
         {
             AbonnementInfo = new clsAbonnement();
-            TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
+            TypeAbonnement = clsTypeAbonnement.Find((int)cbTypeAbonnement.SelectedValue);
 
             if (MemberID == -1)
             {
@@ -187,7 +195,10 @@ namespace GymManager.Presentation.Abonnements.Control
         private void cbTypeAbonnement_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            TypeAbonnement = clsTypeAbonnement.Find(cbTypeAbonnement.SelectedIndex + 1);
+            cbTypeAbonnement.DisplayMember = "Nom";
+            cbTypeAbonnement.ValueMember = "TypeAbonnementID";
+
+            TypeAbonnement = clsTypeAbonnement.Find((int)cbTypeAbonnement.SelectedValue);
             dtpDateDebut.Value = DateTime.Now;
 
             txtPrixPaye.Text = $"{TypeAbonnement.Prix:0}";
@@ -209,7 +220,7 @@ namespace GymManager.Presentation.Abonnements.Control
 
         private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
         {
-            dtpDateFin.Value = dtpDateDebut.Value.AddDays(TypeAbonnement.DureeEnJour);
+                dtpDateFin.Value = dtpDateDebut.Value.AddDays(TypeAbonnement.DureeEnJour);
         }
 
         private void gbInfoAbonnement_Enter(object sender, EventArgs e)
