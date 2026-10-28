@@ -178,10 +178,7 @@ namespace GymManager.Presentation.Abonnements.Control
                 return false;
             }
 
-            if (cbStatut.SelectedItem.ToString() == "Actif")
-                AbonnementInfo.EtatAbonnement = 1;
-            else
-                AbonnementInfo.EtatAbonnement = 0;
+            AbonnementInfo.EtatAbonnement = 0;
 
             return AbonnementInfo.Save();
         }
@@ -220,7 +217,7 @@ namespace GymManager.Presentation.Abonnements.Control
 
         private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
         {
-                dtpDateFin.Value = dtpDateDebut.Value.AddDays(TypeAbonnement.DureeEnJour);
+            dtpDateFin.Value = dtpDateDebut.Value.AddDays(TypeAbonnement.DureeEnJour);
         }
 
         private void gbInfoAbonnement_Enter(object sender, EventArgs e)

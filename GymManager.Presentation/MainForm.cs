@@ -32,6 +32,7 @@ namespace GymManager.Presentation
             clsAbonnement.UpdateAbonnementsStatus();
             clsNotification.UpdateNotifications();
         }
+
         public MainForm()
         {
             InitializeComponent();
@@ -47,8 +48,6 @@ namespace GymManager.Presentation
             };
 
         }
-
-
 
         private void MainForm_Load(object sender, EventArgs e)
         {
