@@ -129,6 +129,10 @@ namespace GymManager.Business
         {
             return clsTypesDabonnementsData.GetAllTypesDabonnements();
         }
+        public static DataTable GetAllTypesAbonnements()
+        {
+            return clsTypesDabonnementsData.GetAllTypesAbonnements();
+        }
 
         public bool Save()
         {

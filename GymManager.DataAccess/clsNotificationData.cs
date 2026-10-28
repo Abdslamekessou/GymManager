@@ -209,5 +209,80 @@ namespace GymManager.DataAccess
 
             return Num;
         }
+
+        public static void UpdateNotifications()
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"  INSERT INTO Notifications
+    (AbonnementID, EstVue, EstExportee,Message)
+SELECT
+    A.AbonnementID,
+    0,
+	0,
+	 'Bonjour ' + P.Nom + ' ' + P.Prenom + ', ' + 'votre abonnement ""' + T.Nom + '"" pour l''activité ' + S.Nom + ' a expiré le ' + CONVERT(VARCHAR(10), A.DateFin, 103) 
+             + '. ' + 'Vous pouvez nous contacter ou visiter la salle pour renouveler votre abonnement. ' + 'Merci pour votre confiance.' AS Message
+
+FROM 
+        dbo.Abonnements AS A INNER JOIN dbo.Adherents AS AD ON A.AdherentID = AD.AdherentID and A.EtatAbonnement = 1
+		INNER JOIN dbo.Personnes AS P ON AD.PersonneID = P.PersonneID 
+        INNER JOIN dbo.TypeAbonnements AS T ON A.TypeAbonnementID = T.TypeAbonnementID INNER JOIN
+        dbo.Sports AS S ON T.SportID = S.SportID
+WHERE A.EtatAbonnement = 1
+  AND NOT EXISTS
+  (
+      SELECT 1
+      FROM Notifications AS N
+      WHERE N.AbonnementID = A.AbonnementID
+  );
+";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+
+        }
+
+        public static void DeleteNotificationByAbonnementID(int ID)
+        {
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"Delete Notifications 
+                                where AbonnementID = @AbonnementID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@AbonnementID", ID);
+
+            try
+            {
+                connection.Open();
+
+               command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+
+                connection.Close();
+
+            }
+
+        }
     }
 }

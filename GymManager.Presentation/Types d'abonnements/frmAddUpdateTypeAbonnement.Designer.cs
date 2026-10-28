@@ -125,6 +125,7 @@
             this.cbSport.Name = "cbSport";
             this.cbSport.Size = new System.Drawing.Size(268, 36);
             this.cbSport.TabIndex = 3;
+            this.cbSport.SelectedIndexChanged += new System.EventHandler(this.cbSport_SelectedIndexChanged);
             // 
             // lblDuree
             // 

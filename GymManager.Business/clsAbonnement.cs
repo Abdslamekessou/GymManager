@@ -34,7 +34,7 @@ namespace GymManager.Business
                 this.DateFin = DateTime.Now;
                 this.CreePar = -1;
                 this.PrixPaye = 0;
-                this.EtatAbonnement = 1; // 1: Actif, 0: Inactif, 2: Expiré par exemple
+                this.EtatAbonnement = 0; // 1: Actif, 0: Inactif, 2: Expiré par exemple
 
                 this.Mode = enMode.AddNew;
             }
@@ -163,7 +163,7 @@ namespace GymManager.Business
                 clsAbonnement abonnement = clsAbonnement.Find(abonnementID);
                 if (abonnement == null) return false;
 
-                abonnement.EtatAbonnement = 0;
+                abonnement.EtatAbonnement = 3;
 
                 return abonnement.Save();
             }
@@ -175,11 +175,15 @@ namespace GymManager.Business
 
                 abonnement.DateDebut = DateTime.Now;
                 abonnement.DateFin = DateTime.Now.AddDays(dureeEnJours);
-                abonnement.EtatAbonnement = 1; 
+                abonnement.EtatAbonnement = 0; 
 
                 return abonnement.Save();
             }
 
+            public static void UpdateAbonnementsStatus()
+            {
+                clsAbonnementDataAccess.UpdateAbonnementsStatus();
+            }
         }
     }
 }

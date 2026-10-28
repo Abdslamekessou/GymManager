@@ -241,12 +241,21 @@ namespace GymManager.Presentation.Abonnements
         {
             if (dgvAbonnements.CurrentRow != null)
             {
-                frmAnnuler frm = new frmAnnuler(dgvAbonnements.CurrentRow);
-
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString() == "Actif" || dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString() == "Expire bientôt")
                 {
-                    _LoadAbonnementsData();
+                    frmAnnuler frm = new frmAnnuler(dgvAbonnements.CurrentRow);
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        _LoadAbonnementsData();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Vou ne pouvez pas Annuler un Abonnement avec statut : " + dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString(), "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
         }
 
@@ -254,21 +263,35 @@ namespace GymManager.Presentation.Abonnements
         {
             if (dgvAbonnements.CurrentRow != null)
             {
-                frmRenouveler frm = new frmRenouveler(dgvAbonnements.CurrentRow);
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString() == "Expiré" )
                 {
-                    _LoadAbonnementsData();
+                    frmRenouveler frm = new frmRenouveler(dgvAbonnements.CurrentRow);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        clsNotification.DeleteNotificationByAbonnementID((int)dgvAbonnements.SelectedRows[0].Cells["AbonnementID"].Value);
+                        _LoadAbonnementsData();
+                        MainForm f = (MainForm)this.ParentForm;
+                        f.RefreshUnreadNotificationsIcon();
+
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Vou ne pouvez pas Renouvler un Abonnement avec statut : " + dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString(), "Error",
+    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
         }
 
         private void tsmiDetails_Click_1(object sender, EventArgs e)
         {
+
             if (dgvAbonnements.CurrentRow != null && dgvAbonnements.Columns.Contains("AbonnementID"))
             {
                 int selectedID = Convert.ToInt32(dgvAbonnements.CurrentRow.Cells["AbonnementID"].Value);
-                
-               frmDetailsAbonnemnt frm = new frmDetailsAbonnemnt(selectedID);
+
+                frmDetailsAbonnemnt frm = new frmDetailsAbonnemnt(selectedID);
                 frm.ShowDialog();
             }
         }

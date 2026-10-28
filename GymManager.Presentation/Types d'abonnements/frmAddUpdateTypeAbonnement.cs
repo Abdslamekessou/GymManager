@@ -212,6 +212,9 @@ namespace GymManager.Presentation.Types_d_abonnements
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-     
+        private void cbSport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
