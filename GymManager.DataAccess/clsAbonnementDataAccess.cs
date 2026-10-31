@@ -122,7 +122,7 @@ namespace GymManager.DataAccess
                     }
                     catch (Exception)
                     {
-                        
+
                         connection.Close();
                         return null;
                     }
@@ -257,7 +257,7 @@ namespace GymManager.DataAccess
             return (rowsAffected > 0);
         }
 
-        
+
         public static bool IsAbonnementExist(int AbonnementID)
         {
             bool isFound = false;
@@ -319,6 +319,36 @@ where EtatAbonnement Not in (1,3);";
 
             }
             finally { connection.Close(); }
+        }
+
+        public static int GetActifAbonnementByMemberIDAndTypeAbonnement(int adherentID, int typeAbonnementID)
+        {
+            int AbonnementID = -1;
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"select A.AbonnementID from Abonnements as A 
+                            where A.AdherentID =@AdherentID and A.TypeAbonnementID = @TypeAbonnementID and A.EtatAbonnement= 0;";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@AdherentID", adherentID);
+            cmd.Parameters.AddWithValue("@TypeAbonnementID", typeAbonnementID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    AbonnementID = (int)reader["AbonnementID"];
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+
+            return AbonnementID;
         }
     }
 }

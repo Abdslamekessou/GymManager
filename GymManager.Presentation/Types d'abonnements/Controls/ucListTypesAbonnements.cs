@@ -1,21 +1,16 @@
-﻿using GymManager.Business;
+﻿
+using GymManager.Business;
 using GymManager.Presentation.Types_d_abonnements;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace GymManager.Presentation
 {
     public partial class ucListTypesAbonnements : UserControl
     {
-        private static DataTable _dtAllTypesAbonnement;
+        private DataTable _dtAllTypesAbonnement;
 
         public ucListTypesAbonnements()
         {
@@ -24,16 +19,25 @@ namespace GymManager.Presentation
 
         private void ucListTypesAbonnements_Load(object sender, EventArgs e)
         {
+            _LoadTypesAbonnements();
+        }
+
+        private void _LoadTypesAbonnements()
+        {
             _dtAllTypesAbonnement = clsTypeAbonnement.GetAllTypesDabonnements();
-            cbFilter.SelectedIndex = 0;
-            cbRechercher.SelectedIndex = 0;
+
             dgvListTypeAbonnement.DataSource = _dtAllTypesAbonnement;
-            cbFilter.SelectedIndex = 0;
-           
 
-            if (_dtAllTypesAbonnement.Rows.Count > 0)
+            // Initialize search and status filters
+            if (cbFilter.Items.Count > 0)
+                cbFilter.SelectedIndex = 0;
+
+            if (cbRechercher.Items.Count > 0)
+                cbRechercher.SelectedIndex = 0;
+
+            // Configure columns
+            if (dgvListTypeAbonnement.Columns.Count > 0)
             {
-
                 dgvListTypeAbonnement.Columns[0].HeaderText = "ID";
                 dgvListTypeAbonnement.Columns[0].Width = 60;
 
@@ -54,192 +58,249 @@ namespace GymManager.Presentation
 
                 dgvListTypeAbonnement.Columns[6].HeaderText = "Statut";
                 dgvListTypeAbonnement.Columns[6].Width = 155;
-
-
             }
 
+            _ApplyFilter();
+        }
+
+        // Centralized filtering method
+        private void _ApplyFilter()
+        {
+            if (_dtAllTypesAbonnement == null)
+                return;
+
+            // Search mode
+            if (cbRechercher.Text!="Statut")
+            {
+                string filterColumn = "";
+
+                switch (cbRechercher.Text)
+                {
+                    case "Nom du type d'abonnement":
+                        filterColumn = "Nom";
+                        break;
+
+                    case "ID Type d'abonnement":
+                        filterColumn = "ID";
+                        break;
+                }
+
+                // No search value: show all records
+                if (string.IsNullOrWhiteSpace(txtValeur.Text))
+                {
+                    _dtAllTypesAbonnement.DefaultView.RowFilter = "";
+                    return;
+                }
+
+                if (filterColumn == "ID")
+                {
+                    if (int.TryParse(txtValeur.Text.Trim(), out int id))
+                    {
+                        _dtAllTypesAbonnement.DefaultView.RowFilter =
+                            string.Format("[{0}] = {1}", filterColumn, id);
+                    }
+                    else
+                    {
+                        _dtAllTypesAbonnement.DefaultView.RowFilter = "[ID] = -1";
+                    }
+                }
+                else if (filterColumn == "Nom")
+                {
+                    string safeSearchText = txtValeur.Text.Trim()
+                        .Replace("'", "''");
+
+                    _dtAllTypesAbonnement.DefaultView.RowFilter =
+                        string.Format(
+                            "[{0}] LIKE '{1}%'",
+                            filterColumn,
+                            safeSearchText);
+                }
+            }
+            // Status filter mode
+            else
+            {
+                if (cbFilter.Text == "Actif")
+                {
+                    _dtAllTypesAbonnement.DefaultView.RowFilter =
+                        "[Statut] = 'Actif'";
+                }
+                else if (cbFilter.Text == "InActif")
+                {
+                    _dtAllTypesAbonnement.DefaultView.RowFilter =
+                        "[Statut] = 'InActif'";
+                }
+                else
+                {
+                    _dtAllTypesAbonnement.DefaultView.RowFilter = "";
+                }
+            }
         }
 
         private void btnAjouterType_Click(object sender, EventArgs e)
         {
-            frmAddUpdateTypeAbonnement frm = new frmAddUpdateTypeAbonnement();
+            frmAddUpdateTypeAbonnement frm =
+                new frmAddUpdateTypeAbonnement();
+
             frm.ShowDialog();
-            ucListTypesAbonnements_Load(null, null);
+
+            _LoadTypesAbonnements();
         }
 
-        private void voirLesDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void voirLesDetailsToolStripMenuItem_Click(
+            object sender, EventArgs e)
         {
             if (dgvListTypeAbonnement.CurrentRow != null)
             {
-                int selectedID = Convert.ToInt32(dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
+                int selectedID = Convert.ToInt32(
+                    dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
 
-                frmDetailsTypeAbonnement frmDetails = new frmDetailsTypeAbonnement(selectedID);
+                frmDetailsTypeAbonnement frmDetails =
+                    new frmDetailsTypeAbonnement(selectedID);
+
                 frmDetails.ShowDialog();
 
-                ucListTypesAbonnements_Load(null, null);
+                _LoadTypesAbonnements();
             }
         }
 
-        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        private void modifierToolStripMenuItem_Click(
+            object sender, EventArgs e)
         {
             if (dgvListTypeAbonnement.CurrentRow != null)
             {
-                int selectedID = Convert.ToInt32(dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
+                int selectedID = Convert.ToInt32(
+                    dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
 
-                frmAddUpdateTypeAbonnement frm = new frmAddUpdateTypeAbonnement(selectedID);
+                frmAddUpdateTypeAbonnement frm =
+                    new frmAddUpdateTypeAbonnement(selectedID);
+
                 frm.ShowDialog();
 
-                ucListTypesAbonnements_Load(null, null);
-
+                _LoadTypesAbonnements();
             }
         }
 
-        private void désactiverToolStripMenuItem_Click(object sender, EventArgs e)
+        private void désactiverToolStripMenuItem_Click(
+            object sender, EventArgs e)
         {
-            if(MessageBox.Show("Êtes-vous sûr de vouloir désactiver ce type d'abonnement",
-                "Confirmation de désactivation", MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
+            if (dgvListTypeAbonnement.CurrentRow == null)
+                return;
+
+            if (MessageBox.Show(
+                "Êtes-vous sûr de vouloir désactiver ce type d'abonnement",
+                "Confirmation de désactivation",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information) == DialogResult.OK)
             {
-                int selectedID = Convert.ToInt32(dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
+                int selectedID = Convert.ToInt32(
+                    dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
 
-                ;
-
-                if(clsTypeAbonnement.DeactivateTypeAbonnement(selectedID))
+                if (clsTypeAbonnement.DeactivateTypeAbonnement(selectedID))
                 {
-                    MessageBox.Show("Le type d'abonnement a été désactivé avec succès.", "Succès",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(
+                        "Le type d'abonnement a été désactivé avec succès.",
+                        "Succès",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("L'opération a échoué.", "Erreur", MessageBoxButtons.OK,
+                    MessageBox.Show(
+                        "L'opération a échoué.",
+                        "Erreur",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
 
+                _LoadTypesAbonnements();
             }
-
-            ucListTypesAbonnements_Load(null, null);
-
         }
 
-        private void cbRechercher_SelectedIndexChanged(object sender, EventArgs e)
+        // Search criteria changed
+        private void cbRechercher_SelectedIndexChanged(
+            object sender, EventArgs e)
         {
-            if(cbRechercher.Text == "None")
+            txtValeur.Text = "";
+
+            if (cbRechercher.Text == "Statut")
             {
-                txtValeur.Text = "";
                 txtValeur.Enabled = false;
-                btnRechercher.Enabled = false;
+                txtValeur.Visible = false;
                 cbFilter.Enabled = true;
-
+                cbFilter.Visible = true;
             }
-
             else
             {
-                txtValeur.Text = "";
                 txtValeur.Enabled = true;
+                txtValeur.Visible = true;
+
                 cbFilter.Enabled = false;
-                btnRechercher.Enabled = true;
+                cbFilter.Visible = false;
                 txtValeur.Focus();
             }
 
-            _dtAllTypesAbonnement.DefaultView.RowFilter = "";
+            _ApplyFilter();
         }
 
-        private void btnRechercher_Click(object sender, EventArgs e)
+        // Automatically search while typing
+        private void txtValeur_TextChanged(
+            object sender, EventArgs e)
         {
-
-            if (txtValeur.Text == "")
-            {
-                MessageBox.Show("Veuillez saisir une valeur de recherche.", "Champ obligatoire",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string FilterColumn = "";
-            //Map Selected Filter to real Column name 
-            switch (cbRechercher.Text)
-            {
-                case "Nom du type d'abonnement":
-                    FilterColumn = "Nom";
-                    break;
-
-                case "ID Type d'abonnement":
-                    FilterColumn = "ID";
-                    break;
-
-                default:
-                    FilterColumn = "None";
-                    break;
-            }
-
-            //Reset the filters in case nothing selected or filter value conains nothing.
-            if (txtValeur.Text.Trim() == "" || FilterColumn == "None")
-            {
-                _dtAllTypesAbonnement.DefaultView.RowFilter = "";
-                return;
-            }
-
-
-            if (FilterColumn != "Nom")
-                //in this case we deal with numbers not string.
-                _dtAllTypesAbonnement.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtValeur.Text.Trim());
-            else
-                _dtAllTypesAbonnement.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtValeur.Text.Trim());
-
+            _ApplyFilter();
         }
 
-        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbFilter.Text == "Actif")
-            {
-                _dtAllTypesAbonnement.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", "Statut", "Actif");
-            }
-
-            else if(cbFilter.Text == "InActif")
-            {
-                _dtAllTypesAbonnement.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", "Statut", "InActif");
-            }
-
-            else
-            {
-                _dtAllTypesAbonnement.DefaultView.RowFilter = "";
-            }
-
-            
-        }
-
-        private void txtValeur_TextChanged(object sender, EventArgs e)
-        {
-            if(txtValeur.Text == "")
-                _dtAllTypesAbonnement.DefaultView.RowFilter = "";
-
-        }
-
-        private void txtValeur_KeyPress(object sender, KeyPressEventArgs e)
+        // Allow only digits when searching by ID
+        private void txtValeur_KeyPress(
+            object sender, KeyPressEventArgs e)
         {
             if (cbRechercher.Text == "ID Type d'abonnement")
-                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            {
+                e.Handled =
+                    !char.IsDigit(e.KeyChar) &&
+                    !char.IsControl(e.KeyChar);
+            }
         }
 
-        private void activerToolStripMenuItem_Click(object sender, EventArgs e)
+        // Status filter changed
+        private void cbFilter_SelectedIndexChanged(
+            object sender, EventArgs e)
         {
-            if (MessageBox.Show("Êtes-vous sûr de vouloir activer ce type d'abonnement ?",
-                "Confirmation d'activation", MessageBoxButtons.OKCancel, 
-                MessageBoxIcon.Information) == DialogResult.OK)
+            _ApplyFilter();
+        }
 
+        private void activerToolStripMenuItem_Click(
+            object sender, EventArgs e)
+        {
+            if (dgvListTypeAbonnement.CurrentRow == null)
+                return;
+
+            if (MessageBox.Show(
+                "Êtes-vous sûr de vouloir activer ce type d'abonnement ?",
+                "Confirmation d'activation",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information) == DialogResult.OK)
             {
-                int selectedID = Convert.ToInt32(dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
+                int selectedID = Convert.ToInt32(
+                    dgvListTypeAbonnement.CurrentRow.Cells[0].Value);
 
                 if (clsTypeAbonnement.ActivateTypeAbonnement(selectedID))
                 {
-                    MessageBox.Show("Le type d'abonnement a été activé avec succès.", "Succès",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(
+                        "Le type d'abonnement a été activé avec succès.",
+                        "Succès",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("L'opération a échoué.", "Erreur", MessageBoxButtons.OK,
+                    MessageBox.Show(
+                        "L'opération a échoué.",
+                        "Erreur",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
 
-                ucListTypesAbonnements_Load(null, null);
+                _LoadTypesAbonnements();
             }
         }
     }
