@@ -16,7 +16,7 @@ namespace GymManager.DataAccess
             bool isFound = false;
             string query = @"SELECT * FROM Abonnements WHERE AbonnementID = @AbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -61,7 +61,7 @@ namespace GymManager.DataAccess
             bool isFound = false;
             string query = @"SELECT * FROM Abonnements WHERE AdherentID = @MemberID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -105,7 +105,7 @@ namespace GymManager.DataAccess
             DataTable dt = new DataTable();
             string query = @"select * from View_ListAbonnement";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -138,7 +138,7 @@ namespace GymManager.DataAccess
             string query = @"select * from View_ListAbonnement
                         where Adherent = @Adherent";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -178,7 +178,7 @@ namespace GymManager.DataAccess
                             (@AdherentID, @TypeAbonnementID, @DateDebut, @DateFin, @CreePar, @PrixPaye, @EtatAbonnement); 
                         SELECT SCOPE_IDENTITY();";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -225,7 +225,7 @@ namespace GymManager.DataAccess
                                  EtatAbonnement = @EtatAbonnement
                              WHERE AbonnementID = @AbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -264,7 +264,7 @@ namespace GymManager.DataAccess
 
             string query = @"SELECT Found = 1 FROM Abonnements WHERE AbonnementID = @AbonnementID";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -294,7 +294,7 @@ namespace GymManager.DataAccess
 
         public static void UpdateAbonnementsStatus()
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"
 Update Abonnements
@@ -324,7 +324,7 @@ where EtatAbonnement Not in (1,3);";
         public static int GetActifAbonnementByMemberIDAndTypeAbonnement(int adherentID, int typeAbonnementID)
         {
             int AbonnementID = -1;
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"select A.AbonnementID from Abonnements as A 
                             where A.AdherentID =@AdherentID and A.TypeAbonnementID = @TypeAbonnementID and A.EtatAbonnement= 0;";

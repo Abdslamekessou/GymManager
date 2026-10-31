@@ -16,7 +16,7 @@ namespace GymManager.DataAccess
         {
             bool isFound = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 string query = "SELECT * FROM RoleUtilisateurs WHERE RoleID = @RoleID";
 
@@ -60,7 +60,7 @@ namespace GymManager.DataAccess
         {
             int RoleID = -1;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
                 string query = @"INSERT INTO RoleUtilisateurs (NomRole, DescriptionRole)
@@ -103,7 +103,7 @@ namespace GymManager.DataAccess
         {
             int rowsAffected = 0;
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
                 string query = @"Update  RoleUtilisateurs  
@@ -146,7 +146,7 @@ namespace GymManager.DataAccess
             string query = "select * from RoleUtilisateurs";
 
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
                 using (SqlCommand command = new SqlCommand(query, connection))
