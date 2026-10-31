@@ -14,12 +14,9 @@ namespace GymManager.Presentation.Members.Controls
         private ComboBox cbMemberFilterBy;
         private Label lblSearch;
         private TextBox txtSearchMember;
-        private Label lblGender;
         private ComboBox cmbGender;
         private GroupBox grpMembersTable;
         private DataGridView dgvMembers;
-        private ContextMenuStrip cmsMember;
-        private ToolStripMenuItem deleteToolStripMenuItem;
 
         private readonly Color _backgroundColor =
             Color.FromArgb(240, 239, 234);
@@ -51,12 +48,12 @@ namespace GymManager.Presentation.Members.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpHeader = new System.Windows.Forms.GroupBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddMember = new System.Windows.Forms.Button();
@@ -64,12 +61,9 @@ namespace GymManager.Presentation.Members.Controls
             this.cbMemberFilterBy = new System.Windows.Forms.ComboBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearchMember = new System.Windows.Forms.TextBox();
-            this.lblGender = new System.Windows.Forms.Label();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.grpMembersTable = new System.Windows.Forms.GroupBox();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
-            this.cmsMember = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colMemberID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +72,15 @@ namespace GymManager.Presentation.Members.Controls
             this.colMemberDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colUpdateMember = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colManagesubscriptions = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cmsMember = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.AddNewtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpHeader.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.grpMembersTable.SuspendLayout();
@@ -104,10 +107,10 @@ namespace GymManager.Presentation.Members.Controls
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(0, 27);
+            this.lblTitle.Location = new System.Drawing.Point(0, 23);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(400, 45);
+            this.lblTitle.Size = new System.Drawing.Size(400, 49);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "GESTION DES MEMBRES";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,7 +137,6 @@ namespace GymManager.Presentation.Members.Controls
             this.grpSearch.Controls.Add(this.cbMemberFilterBy);
             this.grpSearch.Controls.Add(this.lblSearch);
             this.grpSearch.Controls.Add(this.txtSearchMember);
-            this.grpSearch.Controls.Add(this.lblGender);
             this.grpSearch.Controls.Add(this.cmbGender);
             this.grpSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.grpSearch.Location = new System.Drawing.Point(24, 92);
@@ -153,13 +155,14 @@ namespace GymManager.Presentation.Members.Controls
             this.cbMemberFilterBy.FormattingEnabled = true;
             this.cbMemberFilterBy.Items.AddRange(new object[] {
             "Aucun",
-            "Nom",
+            "Nom Complet",
             "Phone",
-            "Email"});
+            "Email",
+            "Genre"});
             this.cbMemberFilterBy.Location = new System.Drawing.Point(20, 64);
             this.cbMemberFilterBy.Margin = new System.Windows.Forms.Padding(0);
             this.cbMemberFilterBy.Name = "cbMemberFilterBy";
-            this.cbMemberFilterBy.Size = new System.Drawing.Size(180, 36);
+            this.cbMemberFilterBy.Size = new System.Drawing.Size(180, 31);
             this.cbMemberFilterBy.TabIndex = 128;
             this.cbMemberFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbMemberFilterBy_SelectedIndexChanged);
             // 
@@ -169,7 +172,7 @@ namespace GymManager.Presentation.Members.Controls
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblSearch.Location = new System.Drawing.Point(16, 32);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(291, 28);
+            this.lblSearch.Size = new System.Drawing.Size(246, 23);
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Rechercher les membres par :";
             // 
@@ -180,20 +183,9 @@ namespace GymManager.Presentation.Members.Controls
             this.txtSearchMember.Location = new System.Drawing.Point(208, 65);
             this.txtSearchMember.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearchMember.Name = "txtSearchMember";
-            this.txtSearchMember.Size = new System.Drawing.Size(300, 34);
+            this.txtSearchMember.Size = new System.Drawing.Size(300, 30);
             this.txtSearchMember.TabIndex = 1;
             this.txtSearchMember.TextChanged += new System.EventHandler(this.txtSearchMember_TextChanged);
-            // 
-            // lblGender
-            // 
-            this.lblGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblGender.Location = new System.Drawing.Point(1070, 32);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(68, 28);
-            this.lblGender.TabIndex = 2;
-            this.lblGender.Text = "Genre";
             // 
             // cmbGender
             // 
@@ -205,10 +197,10 @@ namespace GymManager.Presentation.Members.Controls
             "Tous",
             "Homme",
             "Femme"});
-            this.cmbGender.Location = new System.Drawing.Point(1070, 64);
+            this.cmbGender.Location = new System.Drawing.Point(208, 65);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(0);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(382, 36);
+            this.cmbGender.Size = new System.Drawing.Size(382, 31);
             this.cmbGender.TabIndex = 3;
             this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
@@ -233,8 +225,8 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.AllowUserToAddRows = false;
             this.dgvMembers.AllowUserToDeleteRows = false;
             this.dgvMembers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(249)))), ((int)(((byte)(246)))));
-            this.dgvMembers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(249)))), ((int)(((byte)(246)))));
+            this.dgvMembers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -243,10 +235,10 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMembers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvMembers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMembers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMembers.ColumnHeadersHeight = 42;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -259,15 +251,15 @@ namespace GymManager.Presentation.Members.Controls
             this.colUpdateMember,
             this.colManagesubscriptions});
             this.dgvMembers.ContextMenuStrip = this.cmsMember;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMembers.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMembers.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvMembers.EnableHeadersVisualStyles = false;
             this.dgvMembers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.dgvMembers.Location = new System.Drawing.Point(12, 40);
@@ -282,29 +274,15 @@ namespace GymManager.Presentation.Members.Controls
             this.dgvMembers.TabIndex = 0;
             this.dgvMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellContentClick);
             // 
-            // cmsMember
-            // 
-            this.cmsMember.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmsMember.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
-            this.cmsMember.Name = "cmsMember";
-            this.cmsMember.Size = new System.Drawing.Size(177, 38);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
-            this.deleteToolStripMenuItem.Text = "Supprimer";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
             // colMemberID
             // 
+            this.colMemberID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colMemberID.FillWeight = 55F;
             this.colMemberID.HeaderText = "Member ID";
             this.colMemberID.MinimumWidth = 70;
             this.colMemberID.Name = "colMemberID";
             this.colMemberID.ReadOnly = true;
+            this.colMemberID.Width = 136;
             // 
             // colFullName
             // 
@@ -322,7 +300,7 @@ namespace GymManager.Presentation.Members.Controls
             this.colPhoneNumber.MinimumWidth = 100;
             this.colPhoneNumber.Name = "colPhoneNumber";
             this.colPhoneNumber.ReadOnly = true;
-            this.colPhoneNumber.Width = 148;
+            this.colPhoneNumber.Width = 128;
             // 
             // colEmail
             // 
@@ -341,108 +319,152 @@ namespace GymManager.Presentation.Members.Controls
             this.colGendor.MinimumWidth = 65;
             this.colGendor.Name = "colGendor";
             this.colGendor.ReadOnly = true;
-            this.colGendor.Width = 111;
+            this.colGendor.Width = 96;
             // 
             // colMemberDetails
             // 
-            this.colMemberDetails.AutoSizeMode =
-                System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMemberDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(230)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.colMemberDetails.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colMemberDetails.FillWeight = 70F;
+            this.colMemberDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colMemberDetails.HeaderText = "Détails";
             this.colMemberDetails.MinimumWidth = 75;
             this.colMemberDetails.Name = "colMemberDetails";
             this.colMemberDetails.ReadOnly = true;
             this.colMemberDetails.Text = "Détail";
             this.colMemberDetails.UseColumnTextForButtonValue = true;
-            this.colMemberDetails.FillWeight = 70F;
-            this.colMemberDetails.FlatStyle =
-                System.Windows.Forms.FlatStyle.Flat;
-            this.colMemberDetails.DefaultCellStyle.Alignment =
-                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colMemberDetails.DefaultCellStyle.Font =
-                new System.Drawing.Font("Segoe UI", 9F);
-            this.colMemberDetails.DefaultCellStyle.BackColor =
-                System.Drawing.Color.FromArgb(240, 239, 234);
-            this.colMemberDetails.DefaultCellStyle.ForeColor =
-                System.Drawing.Color.FromArgb(26, 26, 26);
-            this.colMemberDetails.DefaultCellStyle.SelectionBackColor =
-                System.Drawing.Color.FromArgb(232, 230, 224);
-            this.colMemberDetails.DefaultCellStyle.SelectionForeColor =
-                System.Drawing.Color.FromArgb(26, 26, 26);
+            this.colMemberDetails.Visible = false;
             // 
             // colUpdateMember
             // 
-            this.colUpdateMember.AutoSizeMode =
-                System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colUpdateMember.FlatStyle =
-                System.Windows.Forms.FlatStyle.Flat;
+            this.colUpdateMember.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(230)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.colUpdateMember.DefaultCellStyle = dataGridViewCellStyle13;
+            this.colUpdateMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colUpdateMember.HeaderText = "Modifier";
             this.colUpdateMember.MinimumWidth = 75;
             this.colUpdateMember.Name = "colUpdateMember";
             this.colUpdateMember.ReadOnly = true;
             this.colUpdateMember.Text = "Modifier";
             this.colUpdateMember.UseColumnTextForButtonValue = true;
-            this.colUpdateMember.Width = 104;
-
-            this.colUpdateMember.DefaultCellStyle.Alignment =
-                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colUpdateMember.DefaultCellStyle.Font =
-                new System.Drawing.Font("Segoe UI", 9F);
-            this.colUpdateMember.DefaultCellStyle.BackColor =
-                System.Drawing.Color.FromArgb(240, 239, 234); // #F0EFEA
-            this.colUpdateMember.DefaultCellStyle.ForeColor =
-                System.Drawing.Color.FromArgb(26, 26, 26); // #1A1A1A
-            this.colUpdateMember.DefaultCellStyle.SelectionBackColor =
-                System.Drawing.Color.FromArgb(232, 230, 224); // #E8E6E0
-            this.colUpdateMember.DefaultCellStyle.SelectionForeColor =
-                System.Drawing.Color.FromArgb(26, 26, 26); // #1A1A1A
-
+            this.colUpdateMember.Visible = false;
+            this.colUpdateMember.Width = 79;
             // 
             // colManagesubscriptions
             // 
-            this.colManagesubscriptions.AutoSizeMode =
-                System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colManagesubscriptions.FlatStyle =
-                System.Windows.Forms.FlatStyle.Flat;
+            this.colManagesubscriptions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(230)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.colManagesubscriptions.DefaultCellStyle = dataGridViewCellStyle14;
+            this.colManagesubscriptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colManagesubscriptions.HeaderText = "Abonnements";
             this.colManagesubscriptions.MinimumWidth = 100;
             this.colManagesubscriptions.Name = "colManagesubscriptions";
             this.colManagesubscriptions.ReadOnly = true;
             this.colManagesubscriptions.Text = "Gérer";
             this.colManagesubscriptions.UseColumnTextForButtonValue = true;
-            this.colManagesubscriptions.Width = 151;
-
-            this.colManagesubscriptions.DefaultCellStyle.Alignment =
-                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colManagesubscriptions.DefaultCellStyle.Font =
-                new System.Drawing.Font("Segoe UI", 9F);
-            this.colManagesubscriptions.DefaultCellStyle.BackColor =
-                System.Drawing.Color.FromArgb(240, 239, 234); // #F0EFEA
-            this.colManagesubscriptions.DefaultCellStyle.ForeColor =
-                System.Drawing.Color.FromArgb(26, 26, 26); // #1A1A1A
-            this.colManagesubscriptions.DefaultCellStyle.SelectionBackColor =
-                System.Drawing.Color.FromArgb(232, 230, 224); // #E8E6E0
-            this.colManagesubscriptions.DefaultCellStyle.SelectionForeColor =
-                System.Drawing.Color.FromArgb(26, 26, 26); // #1A1A1A
-            this.colManagesubscriptions.Width = 125;
+            this.colManagesubscriptions.Visible = false;
+            this.colManagesubscriptions.Width = 123;
             // 
             // cmsMember
             // 
+            this.cmsMember.BackColor = System.Drawing.Color.White;
+            this.cmsMember.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmsMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.cmsMember.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
+            this.showDetailsToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.AddNewtoolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.toolStripSeparator1,
+            this.sendEmailToolStripMenuItem,
+            this.phoneCallToolStripMenuItem});
             this.cmsMember.Name = "contextMenuStrip1";
-            this.cmsMember.Size = new System.Drawing.Size(148, 28);
+            this.cmsMember.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.cmsMember.Size = new System.Drawing.Size(236, 244);
             // 
-            // deleteToolStripMenuItem
+            // showDetailsToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
-            this.deleteToolStripMenuItem.Text = "Supprimer";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            this.showDetailsToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.PersonDetails_32;
+            this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.showDetailsToolStripMenuItem.Text = "&Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(232, 6);
+            // 
+            // AddNewtoolStripMenuItem
+            // 
+            this.AddNewtoolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.AddPerson_32;
+            this.AddNewtoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AddNewtoolStripMenuItem.Name = "AddNewtoolStripMenuItem";
+            this.AddNewtoolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.AddNewtoolStripMenuItem.Text = "Add &New Member";
+            this.AddNewtoolStripMenuItem.Click += new System.EventHandler(this.AddNewtoolStripMenuItem_Click_1);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.edit_32;
+            this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.editToolStripMenuItem.Text = "&Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::GymManager.Presentation.Properties.Resources.Delete_32;
+            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(235, 38);
+            this.toolStripMenuItem1.Text = "&Delete";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(232, 6);
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            this.sendEmailToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.send_email_32;
+            this.sendEmailToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.sendEmailToolStripMenuItem.Text = "Send E&mail";
+            // 
+            // phoneCallToolStripMenuItem
+            // 
+            this.phoneCallToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.Phone_32;
+            this.phoneCallToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(235, 38);
+            this.phoneCallToolStripMenuItem.Text = "Phone &Call";
             // 
             // ucListeMembers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(234)))));
             this.Controls.Add(this.grpMembersTable);
@@ -473,5 +495,14 @@ namespace GymManager.Presentation.Members.Controls
         private DataGridViewButtonColumn colMemberDetails;
         private DataGridViewButtonColumn colUpdateMember;
         private DataGridViewButtonColumn colManagesubscriptions;
+        private ContextMenuStrip cmsMember;
+        private ToolStripMenuItem showDetailsToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem AddNewtoolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem sendEmailToolStripMenuItem;
+        private ToolStripMenuItem phoneCallToolStripMenuItem;
     }
 }

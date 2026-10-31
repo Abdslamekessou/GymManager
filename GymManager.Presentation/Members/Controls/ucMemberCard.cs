@@ -1,4 +1,5 @@
-﻿using GymManager.Business;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using GymManager.Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,31 @@ namespace GymManager.Presentation.Members.Controls
             get { return ucPersonCard1.SelectedPersonInfo; }
         }
 
+
+        private bool _isAddUpdateMode = true;
+        public bool IsAddUpdateMode
+        {
+
+            get
+            {
+                return _isAddUpdateMode;
+            }
+            set
+            {
+                _isAddUpdateMode = value;
+
+                if(!_isAddUpdateMode)
+                {
+                    lblStatusTitle.Visible = true;
+                    lblStatus.Visible = true;
+
+                    rbActif.Visible = false;
+                    rbInActif.Visible = false;
+                }
+ 
+            }
+        }
+
         public ucMemberCard()
         {
             InitializeComponent();
@@ -45,22 +71,26 @@ namespace GymManager.Presentation.Members.Controls
                 return;
             }
 
+
             _MemberID = MemberID;
 
             ucPersonCard1.Tilte = "DE MEMBRE";
 
             ucPersonCard1.LoadPersonInfo(_Member.PersonID);
 
-            if (_Member.IsActif)
-                rbActif.Checked = true;
+            if(_isAddUpdateMode)
+            {
+                if (_Member.IsActif)
+                    rbActif.Checked = true;
+                else
+                    rbInActif.Checked = true;
+            }
             else
-                rbInActif.Checked = true;
+            {
+                lblStatus.Text = (_Member.IsActif) ? "Actif" : "N'est Pas Actif";
+            }
 
         }
 
-        private void ucMemberCard_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

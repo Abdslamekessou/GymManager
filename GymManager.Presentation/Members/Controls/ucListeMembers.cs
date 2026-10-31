@@ -34,10 +34,10 @@ namespace GymManager.Presentation.Members.Controls
             colMemberID.HeaderText = "MemberID";
             colMemberID.Name = "colMemberID";
             colMemberID.DataPropertyName = "AdherentID";
-            colMemberID.Visible = false;
+            colMemberID.Visible = true;
 
             // Full Name
-            colFullName.HeaderText = "Nom";
+            colFullName.HeaderText = "Nom Complet";
             colFullName.Name = "colFullName";
             colFullName.DataPropertyName = "NomComplet";
             //colFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -114,7 +114,7 @@ namespace GymManager.Presentation.Members.Controls
 
             switch (cbMemberFilterBy.SelectedItem.ToString())
             {
-                case "Nom":
+                case "Nom Complet":
                     filterColumn = "NomComplet";
                     break;
                 case "Phone":
@@ -124,12 +124,13 @@ namespace GymManager.Presentation.Members.Controls
                     filterColumn = "Email";
                     break;
                 default:
+                    filterColumn = "";
                     break;
             }
 
             if (filterColumn == "" || txtSearchMember.Text.Trim() == "")
             {
-                _dtAllMembers.DefaultView.RowFilter = string.Empty;
+                //_dtAllMembers.DefaultView.RowFilter = string.Empty;
                 return "1=1";
             }
 
@@ -139,14 +140,16 @@ namespace GymManager.Presentation.Members.Controls
 
         private string _GenerateGenderFilter()
         {
-            if (cmbGender.SelectedItem.ToString() == "Tous")
+            if (cmbGender.SelectedItem != null)
             {
-                return "1=1";
+                if (cmbGender.SelectedItem.ToString() == "Tous")
+                    return "1=1";
+                else
+                    return $"[GendorCaption] = '{cmbGender.Text}'";
             }
             else
-            {
-                return $"[GendorCaption] = '{cmbGender.Text}'";
-            }
+                return "1=1";
+  
 
         }
 
@@ -155,26 +158,47 @@ namespace GymManager.Presentation.Members.Controls
             if (cbMemberFilterBy.SelectedItem.ToString() == "Aucun")
             {
                 txtSearchMember.Visible = false;
+                cmbGender.Visible = false;
+
+                _dtAllMembers.DefaultView.RowFilter = "";
+                //_ApplyFilters();
             }
             else
             {
-                txtSearchMember.Visible = true;
-                txtSearchMember.Text = "";
+                if (cbMemberFilterBy.SelectedItem.ToString() == "Genre")
+                {
+                    txtSearchMember.Visible = false;
+                    cmbGender.Visible = true;
+                }
+                else
+                {
+                    txtSearchMember.Visible = true;
+                    cmbGender.Visible = false;
+                    txtSearchMember.Text = "";
+                }
+
             }
 
         }
 
-
-
         private void txtSearchMember_TextChanged(object sender, EventArgs e)
         {
-            _ApplyFilters();
+            if (_dtAllMembers == null)
+                return;
+
+            _dtAllMembers.DefaultView.RowFilter = _GenerateMemberSearchFilter();
+
+            //_ApplyFilters();
         }
 
         private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_dtAllMembers == null)
+                return;
 
-            _ApplyFilters();
+            _dtAllMembers.DefaultView.RowFilter = _GenerateGenderFilter();
+
+            //_ApplyFilters();
 
         }
 
@@ -249,7 +273,33 @@ namespace GymManager.Presentation.Members.Controls
 
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+ 
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowMemberInfo frm = new frmShowMemberInfo((int)dgvMembers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+        }
+
+        private void AddNewtoolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember();
+
+            frm.ShowDialog();
+            _RefreshListMembers();
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateMember frm = new frmAddUpdateMember((int)dgvMembers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+            _RefreshListMembers();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Vous etes sur de supprimer ce membre [" + dgvMembers.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 

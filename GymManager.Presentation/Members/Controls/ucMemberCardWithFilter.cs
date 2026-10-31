@@ -30,6 +30,7 @@ namespace GymManager.Presentation.Members.Controls
         private bool _FilterEnabled = true;
         public bool FilterEnabled
         {
+            
             get
             {
                 return _FilterEnabled;
@@ -37,9 +38,25 @@ namespace GymManager.Presentation.Members.Controls
             set
             {
                 _FilterEnabled = value;
-                gbFilters.Enabled = _FilterEnabled;
+                gbFilters.Visible = _FilterEnabled;
             }
         }
+
+        private bool _isAddUpdateMode = true;
+        public bool IsAddUpdateMode
+        {
+
+            get
+            {
+                return _isAddUpdateMode;
+            }
+            set
+            {
+                _isAddUpdateMode = value;
+                ucMemberCard1.IsAddUpdateMode = _isAddUpdateMode;
+            }
+        }
+
         public ucMemberCardWithFilter()
         {
             InitializeComponent();
@@ -98,6 +115,7 @@ namespace GymManager.Presentation.Members.Controls
 
             }
 
+            
             FindNow();
         }
 
