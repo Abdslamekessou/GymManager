@@ -50,14 +50,14 @@ namespace GymManager.Presentation
                 return;
             }
 
-            if (clsGlobal.CurrentUser.RoleInfo.RoleName != "Admin")
+            if (clsGlobal.CurrentUser.RoleInfo.RoleName != "Administrateur")
             {
-                if (_User.UserID != clsGlobal.CurrentUser.UserID)
-                {
-                    MessageBox.Show("ésolé, vous ne pouvez modifier le mot de passe que de votre compte personnel.", "Autorisations Refusees", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
-                    return;
-                }
+                MessageBox.Show("Vous n'êtes pas administrateur, vous ne pouvez pas modifier le mot de passe.",
+                                     "Accès refusé",
+                                     MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+                this.Close();
+                return;
             }
 
 
@@ -65,6 +65,8 @@ namespace GymManager.Presentation
             lblUsernameValue.Text = _User.UserName;
         }
 
+
+        
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txtCurrentPassword.Text.Trim()))
@@ -102,7 +104,7 @@ namespace GymManager.Presentation
             }
             else
             {
-                errorProvider1.SetError(txtConfirmPassword, null);
+                errorProvider1.SetError(txtNewPassword, null);
             }
         }
 

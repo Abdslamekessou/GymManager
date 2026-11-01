@@ -42,13 +42,13 @@ namespace GymManager.DataAccess
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UtilisateurID: {UtilisateurID}", EventLogEntryType.Information);
+
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for UtilisateurID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
 
                         isFound = false;
                     }
@@ -88,14 +88,13 @@ namespace GymManager.DataAccess
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UserName: {NomUtilisateur}", EventLogEntryType.Information);
+                       
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for UserName: {NomUtilisateur}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
                         isFound = false;
                     }
                 }
@@ -134,7 +133,7 @@ namespace GymManager.DataAccess
                         {
                             UserID = insertID;
 
-                            clsEventLog.LogEvent($"User added successfully. New UserID: {UserID}", EventLogEntryType.Information);
+                            
                         }
 
                     }
@@ -143,7 +142,7 @@ namespace GymManager.DataAccess
                         // Handle exception
                         clsEventLog.LogEvent($"Error adding User data for PersonID: {PersonID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
+                      
                     }
                 }
             }
@@ -182,13 +181,13 @@ namespace GymManager.DataAccess
                         rowsAffected = command.ExecuteNonQuery();
 
 
-                        clsEventLog.LogEvent($"User updated successfully. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                        
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error updating User data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                       
                         return false;
                     }
                 }
@@ -252,13 +251,13 @@ namespace GymManager.DataAccess
                         }
 
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UserName: {UserName}", EventLogEntryType.Information);
+                        
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for UserName: {UserName}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
 
                         isFound = false;
                     }
@@ -281,6 +280,7 @@ namespace GymManager.DataAccess
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@RoleName", RoleName);
+
                     try
                     {
                         connection.Open();
@@ -293,13 +293,13 @@ namespace GymManager.DataAccess
                         }
 
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for RoleName: {RoleName}", EventLogEntryType.Information);
+                       
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for RoleName: {RoleName}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
 
                         isFound = false;
                     }
@@ -335,7 +335,6 @@ namespace GymManager.DataAccess
                     {
                         clsEventLog.LogEvent($"Error checking user existence for PersonID: {PersonID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
                         isFound = false;
                     }
                 }
@@ -374,13 +373,13 @@ namespace GymManager.DataAccess
                             }
                         }
 
-                       clsEventLog.LogEvent($"Data retrieved successfully. Rows: {dt.Rows.Count}", EventLogEntryType.Information);
+                       
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching User data.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
                     }
                 }
             }
@@ -414,7 +413,7 @@ namespace GymManager.DataAccess
                         // Handle exception
                         clsEventLog.LogEvent($"Error changing password for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
+                       
                         return false;
                     }
                 }
@@ -440,14 +439,14 @@ namespace GymManager.DataAccess
 
                         rowsAffected = command.ExecuteNonQuery();
 
-                        clsEventLog.LogEvent($"User activation status changed successfully for UserID: {UtilisateurID}. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                        
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
+                       
                         return false;
                     }
                 }

@@ -38,7 +38,7 @@ namespace GymManager.Presentation
         {
             if (_Mode == enMode.AddNew)
             {
-                this.Text = "Ajouter pqr Utilisateur";
+                this.Text = "Ajouter Utilisateur";
                 _User = new clsUser();
 
                 gbUserInfo.Enabled = false;
@@ -187,13 +187,8 @@ namespace GymManager.Presentation
             _User.UserName = txtUsername.Text.Trim();
             _User.Password = Password;
             _User.IsActive = chkIsActive.Checked;
-            _User.RoleID = (cbxRole.SelectedItem?.ToString() == "Admin") ? 1 : 2;
+            _User.RoleID = (cbxRole.SelectedItem?.ToString() == "Administrateur") ? 1 : 2;
 
-            if (cbxRole.SelectedItem?.ToString() == "Admin" && clsUser.IsAdminExists(cbxRole.SelectedItem.ToString()))
-            {
-                MessageBox.Show("Le rôle 'Admin' existe déjà. Veuillez choisir un autre rôle.", "Erreur de rôle", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if (_User.Save())
             {
@@ -201,8 +196,6 @@ namespace GymManager.Presentation
                 this.Text = "Mise à jour Utilisateur";
 
                 MessageBox.Show("Utilisateur enregistré avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                gbUserInfo.Enabled = false;
-                btnSave.Enabled = false;
                 ucPersonCardWithFilter1.Enabled = false;
             }
             else

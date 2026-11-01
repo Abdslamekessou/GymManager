@@ -13,10 +13,12 @@ namespace GymManager.Presentation
 {
     public partial class MainForm : Form
     {
+        public frmLogin _frmLogin;
 
-        public MainForm()
+        public MainForm(frmLogin frm)
         {
             InitializeComponent();
+            _frmLogin = frm;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -24,6 +26,16 @@ namespace GymManager.Presentation
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmListUser frm = new frmListUser();
+            frm.ShowDialog();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _frmLogin.Show();
+        }
     }
 }

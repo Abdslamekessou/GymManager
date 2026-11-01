@@ -28,34 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucListePersons1 = new GymManager.Presentation.Personnes.Controls.ucListePersons();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // ucListePersons1
+            // button1
             // 
-            this.ucListePersons1.AutoSize = true;
-            this.ucListePersons1.Location = new System.Drawing.Point(60, 12);
-            this.ucListePersons1.Name = "ucListePersons1";
-            this.ucListePersons1.Size = new System.Drawing.Size(1087, 470);
-            this.ucListePersons1.TabIndex = 0;
+            this.button1.Location = new System.Drawing.Point(196, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 81);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(592, 104);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(179, 81);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 588);
-            this.Controls.Add(this.ucListePersons1);
+            this.ClientSize = new System.Drawing.Size(1393, 735);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Personnes.Controls.ucListePersons ucListePersons1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

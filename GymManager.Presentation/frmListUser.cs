@@ -14,12 +14,12 @@ namespace GymManager.Presentation
 {
     public partial class frmListUser : Form
     {
-        public frmLogin _frmLogin;
-        public frmListUser(frmLogin frm)
+        
+        public frmListUser()
         {
             InitializeComponent();
 
-            _frmLogin = frm;
+            
         }
 
         private static DataTable _dtAllUser;
@@ -28,6 +28,7 @@ namespace GymManager.Presentation
         {
             _dtAllUser = clsUser.GetAllUser();
             dgvUsers.DataSource = _dtAllUser;
+
             cbxSearchBy.SelectedIndex = 0;
             cbxFilterRole.SelectedIndex = 0;
             cbxFilterRole.Enabled = false;
@@ -41,7 +42,7 @@ namespace GymManager.Presentation
                 dgvUsers.Columns[1].Width = 110;
 
                 dgvUsers.Columns[2].HeaderText = "Nom Complet";
-                dgvUsers.Columns[2].Width = 350;
+                dgvUsers.Columns[2].Width = 300;
 
                 dgvUsers.Columns[3].HeaderText = "Nom d'utilisateur";
                 dgvUsers.Columns[3].Width = 110;
@@ -82,7 +83,7 @@ namespace GymManager.Presentation
                 return;
             }
 
-            if (Filtercolumn != "NomComplet" && Filtercolumn != "NomUtilisateur")
+            if (Filtercolumn == "UtilisateurID")
             {
                 _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", Filtercolumn, txtSearchValue.Text.Trim());
             }
@@ -129,10 +130,10 @@ namespace GymManager.Presentation
                     FilterValue = "Tous les rôles";
                     break;
                 case "Admin":
-                    FilterValue = "Admin";
+                    FilterValue = "Administrateur";
                     break;
                 case "Récep":
-                    FilterValue = "Récep";
+                    FilterValue = "Receptionniste";
                     break;
                 default:
                     FilterValue = "Tous les rôles";
@@ -176,41 +177,9 @@ namespace GymManager.Presentation
             frmListUser_Load(null, null);
         }
 
-        private void tsmiToggleStatus_Click(object sender, EventArgs e)
-        {
-            if (dgvUsers.CurrentRow == null) return;
 
-            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
-
-            clsUser User = clsUser.Find(UserID);
-
-            if (User == null) return;
-
-            if (User.RoleInfo.RoleName == "Admin")
-            {
-                MessageBox.Show("Aucun administrateur ne peut supprimer le compte d'un autre administrateur.", "Arretez le proccessus", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            if (MessageBox.Show("Etes-vous sur de vouloir desactiver cet utilisateur?", "Confirmation de l'atmosphere", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-
-                bool IsDesActivated = clsUser.DesActivateUser(UserID);
-
-                if (IsDesActivated)
-                {
-                    MessageBox.Show("L'utilisateur A Ete Desacitve Avec Succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmListUser_Load(null, null);
-                }
-                else
-                {
-                    MessageBox.Show("L'utilisateur par l'utilisateur a Echoue.", "Echouer", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
-
+        
+      
         private void tsmiDeleteUser_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Etes-vous sur de vouloir supprimer l'utilisateur?", "Supprimer", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -222,17 +191,11 @@ namespace GymManager.Presentation
                 if (User == null) return;
 
 
-                if (User.RoleInfo.RoleName == "Admin")
-                {
-                    MessageBox.Show("le compte administrateur ne peut pas etre desactive.", "Rejete", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 bool IsDeleted = clsUser.DeleteUser(UserID);
 
                 if (IsDeleted)
                 {
-                    MessageBox.Show("Voulez-vous supprimer le nom d'utilisateur?.", "Supprimer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("L'utilisateur a été supprimé avec succès." , "Suppression réussie",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmListUser_Load(null, null);
                 }
                 else
@@ -246,60 +209,18 @@ namespace GymManager.Presentation
             frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
 
-            frmListUser_Load(null, null);
         }
 
-        private void cmsUserOptions_Opening(object sender, CancelEventArgs e)
+        
+
+        private void tsmiActiver_Click(object sender, EventArgs e)
         {
 
-            if (dgvUsers.CurrentRow == null)
-                return;
-
-            int userID = (int)dgvUsers.CurrentRow.Cells[0].Value;
-
-            clsUser SelectedUser = clsUser.Find(userID);
-
-            if (SelectedUser == null)
-                return;
-
-
-            string CurrentRoleName = clsGlobal.CurrentUser.RoleInfo.RoleName;
-
-
-            bool isHimself = (SelectedUser.UserID == clsGlobal.CurrentUser.UserID);
-
-            if (CurrentRoleName != "Admin")
-            {
-
-                if (isHimself)
-                {
-                    changerLeMotDePasseToolStripMenuItem.Enabled = true;
-                    tsmiEditUser.Enabled = true;
-                    tsmiShowDetails.Enabled = true;
-                    btnAddUser.Enabled = false;
-                }
-                else
-                {
-                    changerLeMotDePasseToolStripMenuItem.Enabled = false;
-                    tsmiShowDetails.Enabled = false;
-                    tsmiEditUser.Enabled = false;
-                    tsmiDeleteUser.Enabled = false;
-                    tsmiAddUser.Enabled = false;
-                    tsmiToggleStatus.Enabled = false;
-                    btnAddUser.Enabled = false;
-                }
-            }
-            else
-            {
-                tsmiToggleStatus.Enabled = true;
-                tsmiEditUser.Enabled = true;
-                changerLeMotDePasseToolStripMenuItem.Enabled = true;
-                tsmiDeleteUser.Enabled = true;
-                tsmiAddUser.Enabled = true;
-                tsmiShowDetails.Enabled = true;
-                btnAddUser.Enabled = true;
-            }
         }
 
+        private void tsmiDesactiver_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

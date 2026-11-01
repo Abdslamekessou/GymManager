@@ -40,13 +40,13 @@ namespace GymManager.DataAccess
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for RoleID: {RoleID}", EventLogEntryType.Information);
+                       
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for RoleID: {RoleID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
 
                         isFound = false;
                     }
@@ -84,14 +84,14 @@ namespace GymManager.DataAccess
                         if (result != null && int.TryParse(result.ToString(), out int insertID))
                         {
                             RoleID = insertID;
-                            clsEventLog.LogEvent($"New Role added successfully. RoleID: {RoleID}", EventLogEntryType.Information);
+                           
                         }
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error adding new Role.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
                     }
                 }
             }
@@ -126,7 +126,7 @@ namespace GymManager.DataAccess
 
                         rowsAffected = command.ExecuteNonQuery();
 
-                        clsEventLog.LogEvent("Role updated successfully. RoleID: " + RoleID, EventLogEntryType.Information);
+                       
                     }
                     catch(Exception ex)
                     {
@@ -166,13 +166,13 @@ namespace GymManager.DataAccess
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully. Rows: {dt.Rows.Count}", EventLogEntryType.Information);
+                       
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching User data.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                       
                     }
                 }
             }
