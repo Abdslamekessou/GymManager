@@ -31,7 +31,7 @@ namespace GymManager.Presentation
 
             cbxSearchBy.SelectedIndex = 0;
             cbxFilterRole.SelectedIndex = 0;
-            cbxFilterRole.Enabled = false;
+           
 
             if (dgvUsers.Rows.Count > 0)
             {
@@ -47,7 +47,7 @@ namespace GymManager.Presentation
                 dgvUsers.Columns[3].HeaderText = "Nom d'utilisateur";
                 dgvUsers.Columns[3].Width = 110;
 
-                dgvUsers.Columns[4].HeaderText = "NomRole";
+                dgvUsers.Columns[4].HeaderText = "Role";
                 dgvUsers.Columns[4].Width = 110;
 
             }
@@ -103,19 +103,26 @@ namespace GymManager.Presentation
 
         private void cbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxSearchBy.Text == "NomRole")
+            if(cbxSearchBy.Text == "None")
+            {
+                txtSearchValue.Visible = false;
+                cbxFilterRole.Visible = false;
+                return;
+            }
+            else if (cbxSearchBy.Text == "Role")
             {
                 txtSearchValue.Text = "";
-                txtSearchValue.Enabled = false;
-                cbxFilterRole.Enabled = true;
+                txtSearchValue.Visible = false;
+                cbxFilterRole.Visible = true;
                 cbxFilterRole.Focus();
                 cbxFilterRole.SelectedIndex = 0;
+                return;
             }
             else
             {
-                txtSearchValue.Enabled = true;
+                txtSearchValue.Visible = true;
                 txtSearchValue.Focus();
-                cbxFilterRole.Enabled = false;
+                cbxFilterRole.Visible = false;
             }
         }
 

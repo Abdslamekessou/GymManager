@@ -35,9 +35,7 @@
             this.gbSearchFilter = new System.Windows.Forms.GroupBox();
             this.lblSearchBy = new System.Windows.Forms.Label();
             this.cbxSearchBy = new System.Windows.Forms.ComboBox();
-            this.lblValue = new System.Windows.Forms.Label();
             this.txtSearchValue = new System.Windows.Forms.TextBox();
-            this.lblFilterRole = new System.Windows.Forms.Label();
             this.cbxFilterRole = new System.Windows.Forms.ComboBox();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
@@ -85,15 +83,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbSearchFilter.Controls.Add(this.lblSearchBy);
             this.gbSearchFilter.Controls.Add(this.cbxSearchBy);
-            this.gbSearchFilter.Controls.Add(this.lblValue);
             this.gbSearchFilter.Controls.Add(this.txtSearchValue);
-            this.gbSearchFilter.Controls.Add(this.lblFilterRole);
             this.gbSearchFilter.Controls.Add(this.cbxFilterRole);
             this.gbSearchFilter.Location = new System.Drawing.Point(30, 115);
             this.gbSearchFilter.Margin = new System.Windows.Forms.Padding(5);
             this.gbSearchFilter.Name = "gbSearchFilter";
             this.gbSearchFilter.Padding = new System.Windows.Forms.Padding(5);
-            this.gbSearchFilter.Size = new System.Drawing.Size(1416, 146);
+            this.gbSearchFilter.Size = new System.Drawing.Size(1416, 120);
             this.gbSearchFilter.TabIndex = 2;
             this.gbSearchFilter.TabStop = false;
             // 
@@ -104,9 +100,9 @@
             this.lblSearchBy.Location = new System.Drawing.Point(23, 34);
             this.lblSearchBy.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSearchBy.Name = "lblSearchBy";
-            this.lblSearchBy.Size = new System.Drawing.Size(148, 25);
+            this.lblSearchBy.Size = new System.Drawing.Size(96, 25);
             this.lblSearchBy.TabIndex = 0;
-            this.lblSearchBy.Text = "Rechercher par :";
+            this.lblSearchBy.Text = "Filtre par :";
             // 
             // cbxSearchBy
             // 
@@ -118,46 +114,24 @@
             "Nom d\'utilisateur",
             "Nom complet",
             "Utilisateur ID",
-            "NomRole"});
-            this.cbxSearchBy.Location = new System.Drawing.Point(180, 29);
+            "Role"});
+            this.cbxSearchBy.Location = new System.Drawing.Point(141, 31);
             this.cbxSearchBy.Margin = new System.Windows.Forms.Padding(5);
             this.cbxSearchBy.Name = "cbxSearchBy";
-            this.cbxSearchBy.Size = new System.Drawing.Size(223, 33);
+            this.cbxSearchBy.Size = new System.Drawing.Size(260, 33);
             this.cbxSearchBy.TabIndex = 1;
             this.cbxSearchBy.SelectedIndexChanged += new System.EventHandler(this.cbxSearchBy_SelectedIndexChanged);
-            // 
-            // lblValue
-            // 
-            this.lblValue.AutoSize = true;
-            this.lblValue.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblValue.Location = new System.Drawing.Point(427, 34);
-            this.lblValue.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(75, 25);
-            this.lblValue.TabIndex = 2;
-            this.lblValue.Text = "Valeur :";
             // 
             // txtSearchValue
             // 
             this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.txtSearchValue.Location = new System.Drawing.Point(510, 29);
+            this.txtSearchValue.Location = new System.Drawing.Point(479, 31);
             this.txtSearchValue.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearchValue.Name = "txtSearchValue";
-            this.txtSearchValue.Size = new System.Drawing.Size(448, 33);
+            this.txtSearchValue.Size = new System.Drawing.Size(364, 33);
             this.txtSearchValue.TabIndex = 3;
             this.txtSearchValue.TextChanged += new System.EventHandler(this.txtSearchValue_TextChanged);
             this.txtSearchValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchValue_KeyPress);
-            // 
-            // lblFilterRole
-            // 
-            this.lblFilterRole.AutoSize = true;
-            this.lblFilterRole.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblFilterRole.Location = new System.Drawing.Point(23, 89);
-            this.lblFilterRole.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblFilterRole.Name = "lblFilterRole";
-            this.lblFilterRole.Size = new System.Drawing.Size(141, 25);
-            this.lblFilterRole.TabIndex = 5;
-            this.lblFilterRole.Text = "Filtrer par rôle :";
             // 
             // cbxFilterRole
             // 
@@ -168,10 +142,10 @@
             "Tous les rôles",
             "Admin",
             "Récep"});
-            this.cbxFilterRole.Location = new System.Drawing.Point(180, 85);
+            this.cbxFilterRole.Location = new System.Drawing.Point(479, 31);
             this.cbxFilterRole.Margin = new System.Windows.Forms.Padding(5);
             this.cbxFilterRole.Name = "cbxFilterRole";
-            this.cbxFilterRole.Size = new System.Drawing.Size(223, 33);
+            this.cbxFilterRole.Size = new System.Drawing.Size(364, 33);
             this.cbxFilterRole.TabIndex = 6;
             this.cbxFilterRole.SelectedIndexChanged += new System.EventHandler(this.cbxFilterRole_SelectedIndexChanged);
             // 
@@ -319,9 +293,7 @@
         private System.Windows.Forms.GroupBox gbSearchFilter;
         private System.Windows.Forms.Label lblSearchBy;
         private System.Windows.Forms.ComboBox cbxSearchBy;
-        private System.Windows.Forms.Label lblValue;
         private System.Windows.Forms.TextBox txtSearchValue;
-        private System.Windows.Forms.Label lblFilterRole;
         private System.Windows.Forms.ComboBox cbxFilterRole;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.DataGridView dgvUsers;
