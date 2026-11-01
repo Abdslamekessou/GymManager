@@ -370,7 +370,7 @@ namespace GymManager.Presentation.Personnes
             if (string.IsNullOrEmpty(Temp.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(Temp, "This field is required!");
+                errorProvider1.SetError(Temp, "Ce champ est obligatoire !");
             }
             else
             {

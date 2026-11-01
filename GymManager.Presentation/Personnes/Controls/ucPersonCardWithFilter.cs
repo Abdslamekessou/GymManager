@@ -149,7 +149,7 @@ namespace GymManager.Presentation.Personnes.Controls
             if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtFilterValue, "This field is required!");
+                errorProvider1.SetError(txtFilterValue, "Ce Champ est obligatoire !");
             }
             else
             {
