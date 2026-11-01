@@ -231,8 +231,6 @@ namespace GymManager.Presentation.Personnes.Controls
 
         }
 
-
-
     }
 
 }

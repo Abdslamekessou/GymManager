@@ -165,7 +165,10 @@ namespace GymManager.Presentation.Members.Controls
 
         }
 
+        private void ucMemberCard1_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 
 

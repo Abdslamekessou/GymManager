@@ -123,41 +123,41 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAddPerson.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Segoe UI, 10pt, style=Bold</value>
+  </data>
+  <data name="btnAddPerson.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="btnAddPerson.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1298, 14</value>
-  </data>
-  <data name="btnAddPerson.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+    <value>1358, 25</value>
   </data>
   <data name="btnAddPerson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 47</value>
+    <value>120, 59</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAddPerson.TabIndex" type="System.Int32, mscorlib">
-    <value>128</value>
+    <value>4</value>
   </data>
   <data name="btnAddPerson.Text" xml:space="preserve">
-    <value>Ajouter Personne</value>
+    <value>Ajouter</value>
+  </data>
+  <data name="btnAddPerson.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;btnAddPerson.Name" xml:space="preserve">
     <value>btnAddPerson</value>
   </data>
   <data name="&gt;&gt;btnAddPerson.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
   </data>
   <data name="&gt;&gt;btnAddPerson.Parent" xml:space="preserve">
     <value>gpFilters</value>
   </data>
   <data name="&gt;&gt;btnAddPerson.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbFilterBy.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+    <value>4</value>
   </data>
   <data name="cbFilterBy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Segoe UI, 14pt</value>
   </data>
   <data name="cbFilterBy.Items" xml:space="preserve">
     <value>Aucun</value>
@@ -178,16 +178,13 @@
     <value>Genre</value>
   </data>
   <data name="cbFilterBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 86</value>
-  </data>
-  <data name="cbFilterBy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+    <value>22, 46</value>
   </data>
   <data name="cbFilterBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 36</value>
+    <value>205, 46</value>
   </data>
   <data name="cbFilterBy.TabIndex" type="System.Int32, mscorlib">
-    <value>127</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbFilterBy.Name" xml:space="preserve">
     <value>cbFilterBy</value>
@@ -199,25 +196,19 @@
     <value>gpFilters</value>
   </data>
   <data name="&gt;&gt;cbFilterBy.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="txtFilterValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Segoe UI, 10pt</value>
   </data>
   <data name="txtFilterValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 88</value>
-  </data>
-  <data name="txtFilterValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 11, 6, 11</value>
+    <value>245, 46</value>
   </data>
   <data name="txtFilterValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>306, 34</value>
+    <value>290, 34</value>
   </data>
   <data name="txtFilterValue.TabIndex" type="System.Int32, mscorlib">
-    <value>126</value>
-  </data>
-  <data name="txtFilterValue.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtFilterValue.Name" xml:space="preserve">
     <value>txtFilterValue</value>
@@ -229,28 +220,25 @@
     <value>gpFilters</value>
   </data>
   <data name="&gt;&gt;txtFilterValue.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI, 11pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 87</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>22, 15</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
+    <value>128, 30</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>0</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Filtrer par:</value>
+    <value>Filtrer par :</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -262,7 +250,7 @@
     <value>gpFilters</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="lblRecordsCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,19 +259,16 @@
     <value>Segoe UI, 10pt, style=Bold</value>
   </data>
   <data name="lblRecordsCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 1049</value>
-  </data>
-  <data name="lblRecordsCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>193, 225</value>
   </data>
   <data name="lblRecordsCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 23</value>
+    <value>24, 28</value>
   </data>
   <data name="lblRecordsCount.TabIndex" type="System.Int32, mscorlib">
-    <value>123</value>
+    <value>4</value>
   </data>
   <data name="lblRecordsCount.Text" xml:space="preserve">
-    <value>??</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblRecordsCount.Name" xml:space="preserve">
     <value>lblRecordsCount</value>
@@ -304,19 +289,16 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 1036</value>
-  </data>
-  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>30, 225</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 23</value>
+    <value>157, 28</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>122</value>
+    <value>5</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value># Nombre de Personnes :</value>
+    <value>Total personnes :</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -334,37 +316,37 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="dgvPersons.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>42</value>
+    <value>44</value>
   </data>
   <metadata name="PersonneID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="PersonneID.HeaderText" xml:space="preserve">
-    <value>Personne ID</value>
+    <value>ID</value>
   </data>
   <data name="PersonneID.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>65</value>
   </data>
   <data name="PersonneID.Width" type="System.Int32, mscorlib">
-    <value>138</value>
+    <value>84</value>
   </data>
   <data name="NomComplet.HeaderText" xml:space="preserve">
-    <value>Nom Complet</value>
+    <value>Nom complet</value>
   </data>
   <data name="NomComplet.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>150</value>
   </data>
   <metadata name="NumeroTelephone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="NumeroTelephone.HeaderText" xml:space="preserve">
-    <value>Numéro du Téléphone</value>
+    <value>Téléphone</value>
   </data>
   <data name="NumeroTelephone.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>130</value>
   </data>
   <data name="NumeroTelephone.Width" type="System.Int32, mscorlib">
-    <value>217</value>
+    <value>160</value>
   </data>
   <metadata name="Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -373,19 +355,19 @@
     <value>Email</value>
   </data>
   <data name="Email.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>170</value>
   </data>
   <metadata name="DateDeNaissance.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="DateDeNaissance.HeaderText" xml:space="preserve">
-    <value>Date De Naissance</value>
+    <value>Date de naissance</value>
   </data>
   <data name="DateDeNaissance.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>140</value>
   </data>
   <data name="DateDeNaissance.Width" type="System.Int32, mscorlib">
-    <value>189</value>
+    <value>234</value>
   </data>
   <metadata name="Genre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -394,19 +376,58 @@
     <value>Genre</value>
   </data>
   <data name="Genre.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>100</value>
   </data>
   <data name="Genre.Width" type="System.Int32, mscorlib">
-    <value>92</value>
+    <value>119</value>
   </data>
   <metadata name="cmsPeople.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 18</value>
   </metadata>
-  <data name="cmsPeople.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+  <data name="showDetailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 32</value>
+  </data>
+  <data name="showDetailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Afficher les détails</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 6</value>
+  </data>
+  <data name="AddNewtoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 32</value>
+  </data>
+  <data name="AddNewtoolStripMenuItem.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 32</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 32</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 6</value>
+  </data>
+  <data name="sendEmailToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 32</value>
+  </data>
+  <data name="sendEmailToolStripMenuItem.Text" xml:space="preserve">
+    <value>Envoyer un email</value>
+  </data>
+  <data name="phoneCallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 32</value>
+  </data>
+  <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Appeler</value>
   </data>
   <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 244</value>
+    <value>232, 208</value>
   </data>
   <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
     <value>cmsPeople</value>
@@ -415,19 +436,16 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 382</value>
-  </data>
-  <data name="dgvPersons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+    <value>30, 270</value>
   </data>
   <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>62</value>
   </data>
   <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1473, 501</value>
+    <value>1525, 570</value>
   </data>
   <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
-    <value>121</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
     <value>dgvPersons</value>
@@ -441,77 +459,8 @@
   <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="showDetailsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="showDetailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 38</value>
-  </data>
-  <data name="showDetailsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Show Details</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 6</value>
-  </data>
-  <data name="AddNewtoolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="AddNewtoolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 38</value>
-  </data>
-  <data name="AddNewtoolStripMenuItem.Text" xml:space="preserve">
-    <value>Add &amp;New Person</value>
-  </data>
-  <data name="editToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 38</value>
-  </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
-  </data>
-  <data name="deleteToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 38</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Delete</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 6</value>
-  </data>
-  <data name="sendEmailToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="sendEmailToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 38</value>
-  </data>
-  <data name="sendEmailToolStripMenuItem.Text" xml:space="preserve">
-    <value>Send E&amp;mail</value>
-  </data>
-  <data name="phoneCallToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="phoneCallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 38</value>
-  </data>
-  <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
-    <value>Phone &amp;Call</value>
-  </data>
-  <data name="gpFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="gpFilters.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cmbGendor.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="cmbGendor.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Segoe UI Black, 14pt, style=Bold</value>
   </data>
   <data name="cmbGendor.Items" xml:space="preserve">
     <value>Tous</value>
@@ -523,16 +472,13 @@
     <value>Femme</value>
   </data>
   <data name="cmbGendor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 88</value>
-  </data>
-  <data name="cmbGendor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+    <value>245, 45</value>
   </data>
   <data name="cmbGendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 36</value>
+    <value>190, 46</value>
   </data>
   <data name="cmbGendor.TabIndex" type="System.Int32, mscorlib">
-    <value>129</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cmbGendor.Name" xml:space="preserve">
     <value>cmbGendor</value>
@@ -544,28 +490,16 @@
     <value>gpFilters</value>
   </data>
   <data name="&gt;&gt;cmbGendor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gpFilters.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>3</value>
   </data>
   <data name="gpFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
-  </data>
-  <data name="gpFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="gpFilters.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+    <value>30, 90</value>
   </data>
   <data name="gpFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1476, 221</value>
+    <value>1525, 115</value>
   </data>
   <data name="gpFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="gpFilters.Text" xml:space="preserve">
-    <value>Filter</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;gpFilters.Name" xml:space="preserve">
     <value>gpFilters</value>
@@ -586,28 +520,25 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 23</value>
+    <value>9, 20</value>
   </data>
   <data name="lblManagerPersonnes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblManagerPersonnes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 20pt, style=Bold</value>
+    <value>Segoe UI, 21pt, style=Bold</value>
   </data>
   <data name="lblManagerPersonnes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 47</value>
-  </data>
-  <data name="lblManagerPersonnes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>30, 24</value>
   </data>
   <data name="lblManagerPersonnes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 46</value>
+    <value>548, 57</value>
   </data>
   <data name="lblManagerPersonnes.TabIndex" type="System.Int32, mscorlib">
-    <value>126</value>
+    <value>0</value>
   </data>
   <data name="lblManagerPersonnes.Text" xml:space="preserve">
-    <value>Manager Les Personnes</value>
+    <value>GESTION DES PERSONNES</value>
   </data>
   <data name="&gt;&gt;lblManagerPersonnes.Name" xml:space="preserve">
     <value>lblManagerPersonnes</value>
@@ -621,14 +552,8 @@
   <data name="&gt;&gt;lblManagerPersonnes.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1587, 1059</value>
+    <value>1587, 921</value>
   </data>
   <data name="&gt;&gt;PersonneID.Name" xml:space="preserve">
     <value>PersonneID</value>

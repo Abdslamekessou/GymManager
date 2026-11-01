@@ -303,5 +303,10 @@ namespace GymManager.Presentation
                 _LoadTypesAbonnements();
             }
         }
+
+        private void lblValeur_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
