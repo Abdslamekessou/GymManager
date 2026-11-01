@@ -153,7 +153,14 @@ namespace GymManager.Business
             return clsUserData.DesActivateUser(UserID);
         }
 
-          
+        public static bool  IsLastActiveAdmin()
+        {
+            return clsUserData.GetActiveAdminsCount() == 1;
+        }
+
+
+
+
     }
 
 }

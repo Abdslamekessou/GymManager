@@ -26,16 +26,20 @@ namespace GymManager.Presentation
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOpenUserList_Click(object sender, EventArgs e)
         {
             frmListUser frm = new frmListUser();
             frm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+      
+
+        private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
             _frmLogin.Show();
         }
+
+      
     }
 }

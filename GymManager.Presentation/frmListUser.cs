@@ -182,6 +182,18 @@ namespace GymManager.Presentation
       
         private void tsmiDeleteUser_Click(object sender, EventArgs e)
         {
+            string SelectedUserRoleName =(string) dgvUsers.CurrentRow.Cells[4].Value;
+
+            if(clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
+            {
+                MessageBox.Show("Vous ne pouvez pas supprimer le dernier administrateur actif.",
+                              "Suppression impossible",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
+                return;
+            }
+
+
             if (MessageBox.Show("Etes-vous sur de vouloir supprimer l'utilisateur?", "Supprimer", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
@@ -220,7 +232,15 @@ namespace GymManager.Presentation
 
         private void tsmiDesactiver_Click(object sender, EventArgs e)
         {
+            string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
 
+            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur"){ 
+                MessageBox.Show("Vous ne pouvez pas désactiver le dernier administrateur actif.",
+                                     "Désactivation impossible",
+                                     MessageBoxButtons.OK,
+                                     MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }

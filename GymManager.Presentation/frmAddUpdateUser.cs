@@ -75,8 +75,8 @@ namespace GymManager.Presentation
             }
 
             txtUsername.Text = _User.UserName;
-            txtPassword.Text = _User.Password;
-            txtConfirmPassword.Text = _User.Password;
+            //txtPassword.Text = _User.Password;
+            //txtConfirmPassword.Text = _User.Password;
             chkIsActive.Checked = _User.IsActive;
             cbxRole.Text = _User.RoleInfo.RoleName;
             ucPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);

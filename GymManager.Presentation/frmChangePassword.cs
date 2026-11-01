@@ -31,10 +31,10 @@ namespace GymManager.Presentation
 
         private void _ResetDefualtValues()
         {
-            txtCurrentPassword.Text = "";
+            
             txtNewPassword.Text = "";
             txtConfirmPassword.Text = "";
-            txtCurrentPassword.Focus();
+            txtNewPassword.Focus();
         }
 
         private void frmChangePassword_Load(object sender, EventArgs e)
@@ -67,32 +67,7 @@ namespace GymManager.Presentation
 
 
         
-        private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtCurrentPassword.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(txtCurrentPassword, "Le mot de passe actuel ne peut pas être vide");
-                return;
-            }
-            else
-            {
-                errorProvider1.SetError(txtCurrentPassword, null);
-            }
-
-            string CurrentPassword = clsUtil.ComputeHash(txtCurrentPassword.Text.Trim());
-
-            if (_User.Password != CurrentPassword)
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(txtCurrentPassword, "Le mot de passe actuel est incorrect");
-            }
-            else
-            {
-                errorProvider1.SetError(txtCurrentPassword, null);
-            }
-
-        }
+ 
 
         private void txtNewPassword_Validating(object sender, CancelEventArgs e)
         {
@@ -124,6 +99,16 @@ namespace GymManager.Presentation
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
+            if(clsGlobal.CurrentUser.RoleInfo.RoleName != "Administrateur")
+            {
+                MessageBox.Show("Vous n'avez pas accès à cette fonctionnalité.",
+                                "Accès refusé",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
+                return;
+            }
+
             if (!this.ValidateChildren())
             {
                 //Here we dont continue becuase the form is not valid

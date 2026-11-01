@@ -37,7 +37,6 @@
             this.cbxSearchBy = new System.Windows.Forms.ComboBox();
             this.lblValue = new System.Windows.Forms.Label();
             this.txtSearchValue = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.lblFilterRole = new System.Windows.Forms.Label();
             this.cbxFilterRole = new System.Windows.Forms.ComboBox();
             this.btnAddUser = new System.Windows.Forms.Button();
@@ -88,7 +87,6 @@
             this.gbSearchFilter.Controls.Add(this.cbxSearchBy);
             this.gbSearchFilter.Controls.Add(this.lblValue);
             this.gbSearchFilter.Controls.Add(this.txtSearchValue);
-            this.gbSearchFilter.Controls.Add(this.btnSearch);
             this.gbSearchFilter.Controls.Add(this.lblFilterRole);
             this.gbSearchFilter.Controls.Add(this.cbxFilterRole);
             this.gbSearchFilter.Location = new System.Drawing.Point(30, 115);
@@ -149,17 +147,6 @@
             this.txtSearchValue.TabIndex = 3;
             this.txtSearchValue.TextChanged += new System.EventHandler(this.txtSearchValue_TextChanged);
             this.txtSearchValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchValue_KeyPress);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSearch.Location = new System.Drawing.Point(975, 26);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(165, 45);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "🔍 Rechercher";
-            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // lblFilterRole
             // 
@@ -334,7 +321,6 @@
         private System.Windows.Forms.ComboBox cbxSearchBy;
         private System.Windows.Forms.Label lblValue;
         private System.Windows.Forms.TextBox txtSearchValue;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblFilterRole;
         private System.Windows.Forms.ComboBox cbxFilterRole;
         private System.Windows.Forms.Button btnAddUser;

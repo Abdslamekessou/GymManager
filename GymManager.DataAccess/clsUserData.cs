@@ -454,5 +454,34 @@ namespace GymManager.DataAccess
             return (rowsAffected > 0);
         }
 
+
+        public static int GetActiveAdminsCount()
+        {
+            int Count = 0;
+
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.connectionString))
+                {
+                    string Query = @"SELECT COUNT(*)
+                             FROM Utilisateurs
+                             WHERE Role = 1 AND Etat = 1";
+
+                    using (SqlCommand Command = new SqlCommand(Query, Connection))
+                    {
+                        Connection.Open();
+
+                        Count = (int)Command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               
+            }
+
+            return Count;
+        }
+
     }
 }
