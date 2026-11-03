@@ -1,0 +1,515 @@
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Runtime.Remoting.Messaging;
+using System.Diagnostics;
+using System.Globalization;
+
+
+namespace GymManager.DataAccess
+{
+    public class clsUserData
+    {
+        public static bool GetUserByID(int UtilisateurID, ref int PersonID, ref string UserName, ref string Password,
+            ref int Role, ref bool IsActive, ref DateTime CreatedDate)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "SELECT * FROM Utilisateurs WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                PersonID = (int)reader["PersonneID"];
+                                UserName = (string)reader["NomUtilisateur"];
+                                Password = (string)reader["MotDePasse"];
+                                Role = Convert.ToByte(reader["Role"]);
+                                IsActive = (bool)reader["Etat"];
+                                CreatedDate = (DateTime)reader["DateDeCreation"];
+
+                            }
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error fetching Role data for UtilisateurID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+                        
+
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+        }
+
+        public static bool GetUserInfoByUserName(string NomUtilisateur,ref string MotDePasse, ref int UserID, ref int PersonID, ref int Role, ref bool IsActive, ref DateTime CreatedDate)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NomUtilisateur", NomUtilisateur);
+                    
+
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                UserID = (int)reader["UtilisateurID"];
+                                MotDePasse = (string)reader["MotDePasse"];
+                                PersonID = (int)reader["PersonneID"];
+                                Role = Convert.ToByte( reader["Role"]);
+                                IsActive = (bool)reader["Etat"];
+                                CreatedDate = (DateTime)reader["DateDeCreation"];
+                            }
+                        }
+
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error fetching Role data for UserName: {NomUtilisateur}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        isFound = false;
+                    }
+                }
+            }
+            return isFound;
+        }
+
+        public static int AddUser(int PersonID, string UserName, string Password, int Role, bool IsActive, DateTime CreatedDate)
+        {
+            int UserID = -1;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+
+                string query = "INSERT INTO Utilisateurs (PersonneID, NomUtilisateur, MotDePasse, Role, Etat, DateDeCreation) " +
+                    "VALUES (@PersonneID, @NomUtilisateur, @MotDePasse, @Role, @Etat, @DateDeCreation)" +
+                    "SELECT SCOPE_IDENTITY(); ";
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PersonneID", PersonID);
+                    command.Parameters.AddWithValue("@NomUtilisateur", UserName);
+                    command.Parameters.AddWithValue("@MotDePasse", Password);
+                    command.Parameters.AddWithValue("@Role", Role);
+                    command.Parameters.AddWithValue("@Etat", IsActive);
+                    command.Parameters.AddWithValue("@DateDeCreation", CreatedDate);
+                    try
+                    {
+                        connection.Open();
+
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null && int.TryParse(result.ToString(), out int insertID))
+                        {
+                            UserID = insertID;
+
+                            
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error adding User data for PersonID: {PersonID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                      
+                    }
+                }
+            }
+
+            return UserID;
+        }
+
+        public static bool UpdateUser(int UserID, int PersonID, string UserName, int Role, bool IsActive)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+
+                string query = "UPDATE Utilisateurs SET " +
+                    "PersonneID = @PersonneID," +
+                    " NomUtilisateur = @NomUtilisateur," +
+                    " Role = @Role," +
+                    " Etat = @Etat" +
+                    " WHERE UtilisateurID = @UtilisateurID";
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UserID);
+                    command.Parameters.AddWithValue("@PersonneID", PersonID);
+                    command.Parameters.AddWithValue("@NomUtilisateur", UserName);
+                    
+                    command.Parameters.AddWithValue("@Role", Role);
+                    command.Parameters.AddWithValue("@Etat", IsActive);
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error updating User data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+                       
+                        return false;
+                    }
+                }
+            }
+
+            return (rowsAffected > 0);  
+        }
+
+        public static bool DeleteUser(int UserID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "DELETE FROM Utilisateurs WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UserID);
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"User deleted successfully. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error deleting User data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        Console.WriteLine("Error: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }
+
+        public static bool IsUserExists(string UserName)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "SELECT Found = 1 FROM Utilisateurs WHERE NomUtilisateur = @UserName";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserName", UserName);
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            isFound = reader.HasRows;
+
+                        }
+
+
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error fetching Role data for UserName: {UserName}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+                        
+
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+
+        }
+
+        public static bool IsAdminExists(string RoleName)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "SELECT Found = 1 FROM Utilisateurs Inner JOIN RoleUtilisateurs ON Utilisateurs.Role = RoleUtilisateurs.RoleID " +
+                               "WHERE RoleUtilisateurs.NomRole = @RoleName";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@RoleName", RoleName);
+
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            isFound = reader.HasRows;
+
+                        }
+
+
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error fetching Role data for RoleName: {RoleName}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+                        
+
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+        }
+
+        public static bool IsUserExistsForPerson(int PersonID)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "SELECT Found = 1 FROM Utilisateurs WHERE PersonneID = @PersonID";
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+                    try
+                    {
+                        connection.Open();
+
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            isFound = reader.HasRows;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLog.LogEvent($"Error checking user existence for PersonID: {PersonID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+        }
+
+        public static DataTable GetAllUser()
+        {
+            DataTable dt = new DataTable();
+
+            string query = "select * from vw_Utilisateurs";
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.HasRows)
+
+                            {
+                                dt.Load(reader);
+                            }
+                        }
+
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error fetching User data.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+                        
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        public static bool ChangePassword(int UtilisateurID, string NewPassword)
+        {
+            int rowsAffected = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "UPDATE Utilisateurs SET MotDePasse = @NewPassword WHERE UtilisateurID = @UtilisateurID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+                    command.Parameters.AddWithValue("@NewPassword", NewPassword);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"Password changed successfully for UserID: {UtilisateurID}. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error changing password for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                       
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }   
+
+        public static bool DesActivateUser(int UtilisateurID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "UPDATE Utilisateurs SET Etat = 0 WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                       
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }
+
+
+        public static bool ActivateUser(int UtilisateurID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "UPDATE Utilisateurs SET Etat = 1 WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        return false;
+                    }
+                }
+            }
+
+            return (rowsAffected > 0);
+        }
+
+
+        public static int GetActiveAdminsCount()
+        {
+            int Count = 0;
+
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.connectionString))
+                {
+                    string Query = @"SELECT COUNT(*)
+                             FROM Utilisateurs
+                             WHERE Role = 1 AND Etat = 1";
+
+                    using (SqlCommand Command = new SqlCommand(Query, Connection))
+                    {
+                        Connection.Open();
+
+                        Count = (int)Command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               
+            }
+
+            return Count;
+        }
+
+    }
+}
