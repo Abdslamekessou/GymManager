@@ -66,29 +66,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddUpdateUser.cs">
+    <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddUpdateUser.Designer.cs">
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateurs\Controls\ucListeUtilisateurs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utilisateurs\Controls\ucListeUtilisateurs.Designer.cs">
+      <DependentUpon>ucListeUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateurs\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilisateurs\frmAddUpdateUser.Designer.cs">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChangePassword.cs">
+    <Compile Include="Utilisateurs\frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChangePassword.Designer.cs">
+    <Compile Include="Utilisateurs\frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDeatiles.cs">
+    <Compile Include="Utilisateurs\frmDeatiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDeatiles.Designer.cs">
+    <Compile Include="Utilisateurs\frmDeatiles.Designer.cs">
       <DependentUpon>frmDeatiles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmListUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmListUser.Designer.cs">
-      <DependentUpon>frmListUser.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -143,17 +149,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAddUpdateUser.resx">
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilisateurs\Controls\ucListeUtilisateurs.resx">
+      <DependentUpon>ucListeUtilisateurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilisateurs\frmAddUpdateUser.resx">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChangePassword.resx">
+    <EmbeddedResource Include="Utilisateurs\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDeatiles.resx">
+    <EmbeddedResource Include="Utilisateurs\frmDeatiles.resx">
       <DependentUpon>frmDeatiles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmListUser.resx">
-      <DependentUpon>frmListUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -251,5 +260,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

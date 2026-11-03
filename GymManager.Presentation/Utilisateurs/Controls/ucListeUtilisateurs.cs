@@ -1,5 +1,4 @@
 ﻿using GymManager.Business;
-using GymManager.Presentation.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,21 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GymManager.Presentation
+namespace GymManager.Presentation.Utilisateurs.Controls
 {
-    public partial class frmListUser : Form
+    public partial class ucListeUtilisateurs : UserControl
     {
-
-        public frmListUser()
+        public ucListeUtilisateurs()
         {
             InitializeComponent();
-
-
         }
 
         private static DataTable _dtAllUser;
 
-        private void frmListUser_Load(object sender, EventArgs e)
+        private void ucListeUtilisateurs_Load(object sender, EventArgs e)
         {
             _dtAllUser = clsUser.GetAllUser();
             dgvUsers.DataSource = _dtAllUser;
@@ -161,14 +157,21 @@ namespace GymManager.Presentation
         {
             frmAddUpdateUser frm = new frmAddUpdateUser();
             frm.ShowDialog();
-            frmListUser_Load(null, null);
+            ucListeUtilisateurs_Load(null, null);
         }
 
         private void tsmiAddUser_Click(object sender, EventArgs e)
         {
             frmAddUpdateUser frm = new frmAddUpdateUser();
             frm.ShowDialog();
-            frmListUser_Load(null, null);
+            ucListeUtilisateurs_Load(null, null);
+        }
+
+        private void tsmiEditUser_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateUser frm = new frmAddUpdateUser((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            ucListeUtilisateurs_Load(null, null);
         }
 
         private void tsmiShowDetails_Click(object sender, EventArgs e)
@@ -177,132 +180,8 @@ namespace GymManager.Presentation
             frm.ShowDialog();
         }
 
-        private void tsmiEditUser_Click(object sender, EventArgs e)
-        {
-            frmAddUpdateUser frm = new frmAddUpdateUser((int)dgvUsers.CurrentRow.Cells[0].Value);
-            frm.ShowDialog();
-            frmListUser_Load(null, null);
-        }
-
-        private void tsmiDeleteUser_Click(object sender, EventArgs e)
-        {
-            string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
-
-            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
-            {
-                MessageBox.Show("Impossible de supprimer cet administrateur : il n'existe qu'un seul administrateur actif.",
-                              "Suppression impossible",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Warning);
-                return;
-            }
-
-
-            if (MessageBox.Show("Etes-vous sur de vouloir supprimer l'utilisateur?", "Supprimer", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
-
-                clsUser User = clsUser.Find(UserID);
-
-                if (User == null) return;
-
-
-                bool IsDeleted = clsUser.DeleteUser(UserID);
-
-                if (IsDeleted)
-                {
-                    MessageBox.Show("L'utilisateur a été supprimé avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmListUser_Load(null, null);
-                }
-                else
-                    MessageBox.Show("La suppression de l'utilisateur a echoue.", "Echouer", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-        }
-
-        private void changerLeMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
-            frm.ShowDialog();
-
-        }
-
-        private void tsmiDesactiver_Click(object sender, EventArgs e)
-        {
-            string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
-
-            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
-            {
-                MessageBox.Show("Impossible de désactiver cet administrateur : il n'existe qu'un seul administrateur actif.",
-                                     "Désactivation impossible",
-                                     MessageBoxButtons.OK,
-                                     MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (dgvUsers.CurrentRow == null) return;
-
-            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
-
-            clsUser User = clsUser.Find(UserID);
-
-            if (User == null) return;
-
-            if (User.IsActive == false)
-            {
-                MessageBox.Show("Cet utilisateur est déjà désactivé.",
-                                "Désactivation impossible",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                                
-                return;
-            }
-
-            if (MessageBox.Show("Êtes-vous sûr de vouloir désactiver cet utilisateur ?",
-                                "Confirmation de désactivation",
-                                MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                if (clsUser.DesActivateUser(UserID))
-                {
-                    MessageBox.Show("L'utilisateur a été désactivé avec succès.",
-                                    "Désactivation réussie",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
-                    frmListUser_Load(null, null);
-                }
-                else
-                {
-                    MessageBox.Show("Une erreur est survenue lors de la désactivation de l'utilisateur.",
-                                    "Échec de la désactivation",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void cmsUserOptions_Opening(object sender, CancelEventArgs e)
-        {
-            string Value = dgvUsers.CurrentRow.Cells[5].Value.ToString();
-
-            if (Value == "Désactivé")
-            {
-                tsmiDesactiver.Visible = false;
-                tsmiActiver.Visible = true;
-
-            }
-            else if (Value == "Activé")
-            {
-                tsmiDesactiver.Visible = true;
-                tsmiActiver.Visible = false;
-                
-            }
-        }
-
         private void tsmiActiver_Click(object sender, EventArgs e)
         {
-
             if (dgvUsers.CurrentRow == null) return;
 
             int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
@@ -333,7 +212,7 @@ namespace GymManager.Presentation
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
 
-                    frmListUser_Load(null, null);
+                    ucListeUtilisateurs_Load(null, null);
                 }
                 else
                 {
@@ -342,6 +221,123 @@ namespace GymManager.Presentation
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void tsmiDesactiver_Click(object sender, EventArgs e)
+        {
+            string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
+
+            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
+            {
+                MessageBox.Show("Impossible de désactiver cet administrateur : il n'existe qu'un seul administrateur actif.",
+                                     "Désactivation impossible",
+                                     MessageBoxButtons.OK,
+                                     MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dgvUsers.CurrentRow == null) return;
+
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            clsUser User = clsUser.Find(UserID);
+
+            if (User == null) return;
+
+            if (User.IsActive == false)
+            {
+                MessageBox.Show("Cet utilisateur est déjà désactivé.",
+                                "Désactivation impossible",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir désactiver cet utilisateur ?",
+                                "Confirmation de désactivation",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (clsUser.DesActivateUser(UserID))
+                {
+                    MessageBox.Show("L'utilisateur a été désactivé avec succès.",
+                                    "Désactivation réussie",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    ucListeUtilisateurs_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue lors de la désactivation de l'utilisateur.",
+                                    "Échec de la désactivation",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void changerLeMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
+
+        private void tsmiDeleteUser_Click(object sender, EventArgs e)
+        {
+            string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
+
+            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
+            {
+                MessageBox.Show("Impossible de supprimer cet administrateur : il n'existe qu'un seul administrateur actif.",
+                              "Suppression impossible",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            if (MessageBox.Show("Etes-vous sur de vouloir supprimer l'utilisateur?", "Supprimer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+                clsUser User = clsUser.Find(UserID);
+
+                if (User == null) return;
+
+
+                bool IsDeleted = clsUser.DeleteUser(UserID);
+
+                if (IsDeleted)
+                {
+                    MessageBox.Show("L'utilisateur a été supprimé avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ucListeUtilisateurs_Load(null, null);
+
+                }
+                else
+                    MessageBox.Show("La suppression de l'utilisateur a echoue.", "Echouer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private void cmsUserOptions_Opening(object sender, CancelEventArgs e)
+        {
+            string Value = dgvUsers.CurrentRow.Cells[5].Value.ToString();
+
+            if (Value == "Désactivé")
+            {
+                tsmiDesactiver.Visible = false;
+                tsmiActiver.Visible = true;
+
+            }
+            else if (Value == "Activé")
+            {
+                tsmiDesactiver.Visible = true;
+                tsmiActiver.Visible = false;
+
             }
         }
 
@@ -356,4 +352,3 @@ namespace GymManager.Presentation
         }
     }
 }
-

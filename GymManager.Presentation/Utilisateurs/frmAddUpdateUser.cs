@@ -199,7 +199,7 @@ namespace GymManager.Presentation
                 return;
             }
 
-            Stopwatch SW = Stopwatch.StartNew();
+            
 
             string Password = "";
 
@@ -209,8 +209,7 @@ namespace GymManager.Presentation
             }
             
 
-            SW.Stop();
-            MessageBox.Show($"Hashing took: {SW.ElapsedMilliseconds} ms");
+           
 
             _User.PersonID = ucPersonCardWithFilter1.PersonID;
             _User.Password = Password;

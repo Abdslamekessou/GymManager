@@ -34,17 +34,13 @@ namespace GymManager.Presentation
                 return;
                 
             }
-            
+
 
             if (!_User.IsActive)
             {
                 MessageBox.Show("Votre compte n'est pas actif, Contactez votre administrateur.", "Compte Inactif", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            Stopwatch SW = Stopwatch.StartNew();
-
-         
            
 
             if (!clsUtil.VerifyPassword(txtPassword.Text , _User.Password))
@@ -53,8 +49,7 @@ namespace GymManager.Presentation
                 return;
             }
 
-            SW.Stop();
-            MessageBox.Show($"Hashing took: {SW.ElapsedMilliseconds} ms");
+           
 
 
             clsGlobal.CurrentUser = _User;

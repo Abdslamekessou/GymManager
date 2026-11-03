@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOpenUserList = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnOpenUserList
-            // 
-            this.btnOpenUserList.Location = new System.Drawing.Point(196, 82);
-            this.btnOpenUserList.Name = "btnOpenUserList";
-            this.btnOpenUserList.Size = new System.Drawing.Size(179, 81);
-            this.btnOpenUserList.TabIndex = 0;
-            this.btnOpenUserList.Text = "Open Users List";
-            this.btnOpenUserList.UseVisualStyleBackColor = true;
-            this.btnOpenUserList.Click += new System.EventHandler(this.btnOpenUserList_Click);
             // 
             // btnLogout
             // 
@@ -52,13 +42,23 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 81);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1393, 735);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnOpenUserList);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -68,9 +68,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnOpenUserList;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button button1;
     }
 }
 

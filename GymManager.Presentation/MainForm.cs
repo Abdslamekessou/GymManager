@@ -26,12 +26,7 @@ namespace GymManager.Presentation
 
         }
 
-        private void btnOpenUserList_Click(object sender, EventArgs e)
-        {
-            frmListUser frm = new frmListUser();
-            frm.ShowDialog();
-        }
-
+      
       
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -40,6 +35,10 @@ namespace GymManager.Presentation
             _frmLogin.Show();
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Test test = new Test();
+            test.ShowDialog();
+        }
     }
 }

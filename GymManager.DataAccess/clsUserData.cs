@@ -394,7 +394,7 @@ namespace GymManager.DataAccess
                 string query = "UPDATE Utilisateurs SET MotDePasse = @NewPassword WHERE UtilisateurID = @UtilisateurID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@UserID", UtilisateurID);
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
                     command.Parameters.AddWithValue("@NewPassword", NewPassword);
 
                     try

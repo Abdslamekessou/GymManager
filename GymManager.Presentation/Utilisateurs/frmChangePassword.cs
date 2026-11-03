@@ -51,7 +51,7 @@ namespace GymManager.Presentation
                 return;
             }
 
-            if (clsGlobal.CurrentUser.RoleInfo.RoleName != "Administrateur")
+            if (clsGlobal.CurrentUser.RoleInfo.RoleName != "Administrateur") //System.NullReferenceException: 'La référence d'objet n'est pas définie à une instance d'un objet.'
             {
                 MessageBox.Show("Vous n'êtes pas administrateur, vous ne pouvez pas modifier le mot de passe.",
                                      "Accès refusé",
@@ -129,17 +129,15 @@ namespace GymManager.Presentation
                 return;
             }
 
-            Stopwatch SW = Stopwatch.StartNew();
+           
 
             string NewPassword = clsUtil.HashPassword(txtNewPassword.Text.Trim());
 
-            SW.Stop();
-            MessageBox.Show($"Hashing took: {SW.ElapsedMilliseconds} ms");
+           
 
-            //_User.Password = txtNewPassword.Text;
-            _User.Password = NewPassword;
+           
 
-            if (_User.Save())
+            if (clsUser.ChangePassword(_User.UserID , NewPassword))
             {
                 MessageBox.Show("Mot de passe modifié avec succès.",
                    "Enregistré .", MessageBoxButtons.OK, MessageBoxIcon.Information);
