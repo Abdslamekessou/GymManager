@@ -69,8 +69,9 @@
             this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(6, 49);
             this.ucPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
+            this.ucPersonCardWithFilter1.PersonCardEnabled = true;
             this.ucPersonCardWithFilter1.ShowAddPerson = true;
-            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1321, 701);
+            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1329, 701);
             this.ucPersonCardWithFilter1.TabIndex = 0;
             this.ucPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ucPersonCardWithFilter1_OnPersonSelected);
             // 
@@ -231,6 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1164, 718);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

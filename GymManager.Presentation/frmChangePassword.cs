@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -117,10 +118,26 @@ namespace GymManager.Presentation
                 return;
             }
 
-            string NewPasswoed = clsUtil.ComputeHash(txtNewPassword.Text.Trim());
+            if(txtNewPassword.Text.Length < 8)
+            {
+                MessageBox.Show(
+                         "Le mot de passe doit contenir au moins 8 caractères.",
+                         "Mot de passe invalide",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            Stopwatch SW = Stopwatch.StartNew();
+
+            string NewPassword = clsUtil.HashPassword(txtNewPassword.Text.Trim());
+
+            SW.Stop();
+            MessageBox.Show($"Hashing took: {SW.ElapsedMilliseconds} ms");
 
             //_User.Password = txtNewPassword.Text;
-            _User.Password = NewPasswoed;
+            _User.Password = NewPassword;
 
             if (_User.Save())
             {

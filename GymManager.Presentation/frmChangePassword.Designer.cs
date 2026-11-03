@@ -138,7 +138,7 @@ namespace GymManager.Presentation
             // txtNewPassword
             // 
             this.txtNewPassword.Location = new System.Drawing.Point(391, 368);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(523, 26);
@@ -159,7 +159,7 @@ namespace GymManager.Presentation
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(391, 437);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(523, 26);
@@ -170,7 +170,7 @@ namespace GymManager.Presentation
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(690, 592);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 49);
             this.btnCancel.TabIndex = 13;
@@ -182,7 +182,7 @@ namespace GymManager.Presentation
             // 
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.Location = new System.Drawing.Point(863, 592);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(5);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(285, 49);
             this.btnChangePassword.TabIndex = 14;
@@ -198,6 +198,7 @@ namespace GymManager.Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1185, 685);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnCancel);
@@ -213,7 +214,7 @@ namespace GymManager.Presentation
             this.Controls.Add(this.lblFullNameLabel);
             this.Controls.Add(this.lblAccountInfoTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "frmChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

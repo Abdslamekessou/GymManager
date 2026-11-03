@@ -67,13 +67,14 @@ namespace GymManager.Business
                 return null;
         }
 
-        public static clsUser FindByUserNameAndPassword(string UserName, string Password)
+        public static clsUser FindByUserName(string UserName)
         {
             int UserID = -1, PersonID = -1, RoleID = -1;
+            string Password = "";
             bool IsActive = true;
             DateTime CreatedDate = DateTime.Now;
 
-            bool IsFound = clsUserData.GetUserInfoByUserNameAndPassword(UserName, Password, ref UserID, ref PersonID,
+            bool IsFound = clsUserData.GetUserInfoByUserName(UserName, ref Password , ref UserID , ref PersonID,
                                                                         ref RoleID, ref IsActive, ref CreatedDate);
 
             if (IsFound)
@@ -91,7 +92,7 @@ namespace GymManager.Business
 
         private bool _UpdateUser()
         {
-            return clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.Password, this.RoleID, this.IsActive);
+            return clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.RoleID, this.IsActive);
         }
 
         public static bool DeleteUser(int UserID)
@@ -151,6 +152,11 @@ namespace GymManager.Business
         public static bool DesActivateUser(int UserID)
         {
             return clsUserData.DesActivateUser(UserID);
+        }
+
+        public static bool ActivateUser(int UserID)
+        {
+            return clsUserData.ActivateUser(UserID);
         }
 
         public static bool  IsLastActiveAdmin()

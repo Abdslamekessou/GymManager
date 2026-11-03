@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -83,15 +84,59 @@ namespace GymManager.Presentation.Global_Classes
             return true;
         }
 
-        public static string ComputeHash(string input)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
 
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+
+
+
+        public static string HashPassword(string Password)
+        {
+            int iterations = 100000;
+
+            byte[] Salt = new byte[16];
+
+            using (RandomNumberGenerator RNG = RandomNumberGenerator.Create())
+            {
+                RNG.GetBytes(Salt);
             }
+
+            byte[] Hash;
+
+            using (var PBKDF2 = new Rfc2898DeriveBytes(Password , Salt , iterations , HashAlgorithmName.SHA256))
+            {
+                Hash = PBKDF2.GetBytes(32);
+            }
+
+            return $"{iterations}.{Convert.ToBase64String(Salt)}.{Convert.ToBase64String(Hash)}";
         }
+
+
+
+        public static bool VerifyPassword(string Password , string StoredHash)
+        {
+            string[] Parts = StoredHash.Split('.');
+
+            int iterations = int.Parse(Parts[0]);
+
+            byte[] Salt = Convert.FromBase64String(Parts[1]);
+            byte[] OriginalHash = Convert.FromBase64String(Parts[2]);
+
+            byte[] NewHash;
+
+            using (var PBKDF2 = new Rfc2898DeriveBytes(Password, Salt, iterations, HashAlgorithmName.SHA256))
+            {
+                NewHash = PBKDF2.GetBytes(OriginalHash.Length);
+            }
+
+            int Difference = 0;
+
+            for (int i = 0; i < OriginalHash.Length; i++)
+            {
+                Difference |= OriginalHash[i] ^ NewHash[i];
+            }
+
+            return Difference == 0;
+        }
+
 
     }
 }

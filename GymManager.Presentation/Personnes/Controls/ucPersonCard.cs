@@ -19,6 +19,12 @@ namespace GymManager.Presentation.Personnes.Controls
 
         private int _PersonID = -1;
 
+        public bool EnablePersonneControl
+        {
+            get { return grpPersonneInfo.Enabled; }
+            set { grpPersonneInfo.Enabled = value; }
+        }
+
         public int PersonID
         {
             get { return _PersonID; }

@@ -58,18 +58,18 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
-        public static bool GetUserInfoByUserNameAndPassword(string NomUtilisateur, string MotDePasse, ref int UserID, ref int PersonID, ref int Role, ref bool IsActive, ref DateTime CreatedDate)
+        public static bool GetUserInfoByUserName(string NomUtilisateur,ref string MotDePasse, ref int UserID, ref int PersonID, ref int Role, ref bool IsActive, ref DateTime CreatedDate)
         {
             bool isFound = false;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
             {
-                string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur AND MotDePasse = @MotDePasse";
+                string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NomUtilisateur", NomUtilisateur);
-                    command.Parameters.AddWithValue("@MotDePasse", MotDePasse);
+                    
 
                     try
                     {
@@ -81,6 +81,7 @@ namespace GymManager.DataAccess
                             {
                                 isFound = true;
                                 UserID = (int)reader["UtilisateurID"];
+                                MotDePasse = (string)reader["MotDePasse"];
                                 PersonID = (int)reader["PersonneID"];
                                 Role = Convert.ToByte( reader["Role"]);
                                 IsActive = (bool)reader["Etat"];
@@ -150,7 +151,7 @@ namespace GymManager.DataAccess
             return UserID;
         }
 
-        public static bool UpdateUser(int UserID, int PersonID, string UserName, string Password, int Role, bool IsActive)
+        public static bool UpdateUser(int UserID, int PersonID, string UserName, int Role, bool IsActive)
         {
             int rowsAffected = 0;
 
@@ -160,7 +161,6 @@ namespace GymManager.DataAccess
                 string query = "UPDATE Utilisateurs SET " +
                     "PersonneID = @PersonneID," +
                     " NomUtilisateur = @NomUtilisateur," +
-                    " MotDePasse = @MotDePasse," +
                     " Role = @Role," +
                     " Etat = @Etat" +
                     " WHERE UtilisateurID = @UtilisateurID";
@@ -171,7 +171,7 @@ namespace GymManager.DataAccess
                     command.Parameters.AddWithValue("@UtilisateurID", UserID);
                     command.Parameters.AddWithValue("@PersonneID", PersonID);
                     command.Parameters.AddWithValue("@NomUtilisateur", UserName);
-                    command.Parameters.AddWithValue("@MotDePasse", Password);
+                    
                     command.Parameters.AddWithValue("@Role", Role);
                     command.Parameters.AddWithValue("@Etat", IsActive);
                     try
@@ -347,10 +347,7 @@ namespace GymManager.DataAccess
         {
             DataTable dt = new DataTable();
 
-            string query = "select U.UtilisateurID, U.PersonneID, P.Prenom + ' ' + P.Nom AS NomComplet, U.NomUtilisateur, R.NomRole" +
-                "\r\nfrom Utilisateurs U\r\n" +
-                "inner join Personnes P on U.PersonneID = P.PersonneID\r\n " +
-                "inner join RoleUtilisateurs R on U.Role = R.RoleID";
+            string query = "select * from vw_Utilisateurs";
 
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
@@ -451,6 +448,37 @@ namespace GymManager.DataAccess
                     }
                 }
             }
+            return (rowsAffected > 0);
+        }
+
+
+        public static bool ActivateUser(int UtilisateurID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                string query = "UPDATE Utilisateurs SET Etat = 1 WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        return false;
+                    }
+                }
+            }
+
             return (rowsAffected > 0);
         }
 

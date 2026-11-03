@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace GymManager.Presentation
 {
@@ -88,6 +89,11 @@ namespace GymManager.Presentation
 
             if (_Mode == enMode.Update)
                 _LoadData();
+            txtPassword.Enabled = false;
+            txtConfirmPassword.Enabled = false;
+            lblPassword.Enabled = false;
+            lblConfirmPassword.Enabled = false;
+
         }
 
         private void txtUsername_Validating(object sender, CancelEventArgs e)
@@ -137,7 +143,7 @@ namespace GymManager.Presentation
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            if(string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            if(string.IsNullOrEmpty(txtPassword.Text.Trim()) && _Mode != enMode.Update)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtPassword, "Mot de passe est requis.");
@@ -151,7 +157,7 @@ namespace GymManager.Presentation
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
-            if(txtConfirmPassword.Text.Trim() != txtPassword.Text.Trim())
+            if(txtConfirmPassword.Text.Trim() != txtPassword.Text.Trim() && _Mode != enMode.Update)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtConfirmPassword, "Mot de passe ne correspond pas.");
@@ -175,17 +181,40 @@ namespace GymManager.Presentation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(!ValidateChildren())
+
+            if(!ValidateChildren() && _Mode != enMode.Update)
             {
                 MessageBox.Show("Veuillez corriger les erreurs avant de continuer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            string Password = clsUtil.ComputeHash(txtPassword.Text.Trim());
+            if (txtPassword.Text.Length < 8 && _Mode != enMode.Update)
+            {
+                MessageBox.Show(
+                         "Le mot de passe doit contenir au moins 8 caractères.",
+                         "Mot de passe invalide",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            Stopwatch SW = Stopwatch.StartNew();
+
+            string Password = "";
+
+            if (_Mode != enMode.Update)
+            {
+                Password = clsUtil.HashPassword(txtPassword.Text.Trim());
+            }
+            
+
+            SW.Stop();
+            MessageBox.Show($"Hashing took: {SW.ElapsedMilliseconds} ms");
 
             _User.PersonID = ucPersonCardWithFilter1.PersonID;
-            _User.UserName = txtUsername.Text.Trim();
             _User.Password = Password;
+            _User.UserName = txtUsername.Text.Trim();
             _User.IsActive = chkIsActive.Checked;
             _User.RoleID = (cbxRole.SelectedItem?.ToString() == "Administrateur") ? 1 : 2;
 
@@ -196,7 +225,11 @@ namespace GymManager.Presentation
                 this.Text = "Mise à jour Utilisateur";
 
                 MessageBox.Show("Utilisateur enregistré avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ucPersonCardWithFilter1.Enabled = false;
+                ucPersonCardWithFilter1.Enabled = true;
+                txtPassword.Enabled = false;
+                txtConfirmPassword.Enabled = false;
+                lblPassword.Enabled = false;
+                lblConfirmPassword.Enabled = false;
             }
             else
             {
@@ -210,6 +243,7 @@ namespace GymManager.Presentation
 
             if(_Mode == enMode.Update)
             {
+                ucPersonCardWithFilter1.PersonCardEnabled = true;
                 btnSave.Enabled = true;
                 gbUserInfo.Enabled = true;
                 return;
@@ -220,14 +254,20 @@ namespace GymManager.Presentation
                 if (clsUser.IsUserExistedForPerson(PersonID))
                 {
                     MessageBox.Show("Un utilisateur existe déjà pour cette personne. Veuillez choisir une autre personne.", "Erreur de personne", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    // ucPersonCardWithFilter1.ClearPersonInfo();
+                    ucPersonCardWithFilter1.PersonCardEnabled = false;
                     gbUserInfo.Enabled = false;
                     btnSave.Enabled = false;
+                    return;
                 }
                 else
                 {
+                    ucPersonCardWithFilter1.PersonCardEnabled = true;
                     gbUserInfo.Enabled = true;
                     btnSave.Enabled = true;
+                    txtPassword.Enabled = true;
+                    txtConfirmPassword.Enabled = true;
+                    lblPassword.Enabled = true;
+                    lblConfirmPassword.Enabled = true;
                 }
             }
             else

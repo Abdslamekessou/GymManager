@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,31 +24,44 @@ namespace GymManager.Presentation
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string HashedPassword = clsUtil.ComputeHash(txtPassword.Text); 
+           
+            _User = clsUser.FindByUserName(txtUsername.Text);
 
-
-            _User = clsUser.FindByUserNameAndPassword(txtUsername.Text, HashedPassword);
-
-            if (_User != null)
-            {
-                if (!_User.IsActive)
-                {
-                    MessageBox.Show("Votre compte n'est pas actif, Contactez votre administrateur.", "Compte Inactif", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                clsGlobal.CurrentUser = _User;
-                this.Hide();
-                MainForm frm = new MainForm(this);
-                frm.ShowDialog();
-                //Add Parameter to MainForm constructor 
-            }
-            else
+            if (_User == null)
             {
                 MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.", "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsername.Focus();
-                txtPassword.Clear();
+                return;
+                
             }
+            
+
+            if (!_User.IsActive)
+            {
+                MessageBox.Show("Votre compte n'est pas actif, Contactez votre administrateur.", "Compte Inactif", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Stopwatch SW = Stopwatch.StartNew();
+
+         
+           
+
+            if (!clsUtil.VerifyPassword(txtPassword.Text , _User.Password))
+            {
+                MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.", "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            SW.Stop();
+            MessageBox.Show($"Hashing took: {SW.ElapsedMilliseconds} ms");
+
+
+            clsGlobal.CurrentUser = _User;
+            this.Hide();
+            MainForm frm = new MainForm(this);
+            frm.ShowDialog();
+            
         }
     }
 }
