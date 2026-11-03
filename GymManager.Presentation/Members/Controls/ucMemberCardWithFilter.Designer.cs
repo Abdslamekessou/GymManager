@@ -46,9 +46,11 @@
             this.gbFilters.Controls.Add(this.cbFilterBy);
             this.gbFilters.Controls.Add(this.txtFilterValue);
             this.gbFilters.Controls.Add(this.label1);
-            this.gbFilters.Location = new System.Drawing.Point(3, 24);
+            this.gbFilters.Location = new System.Drawing.Point(3, 4);
+            this.gbFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbFilters.Name = "gbFilters";
-            this.gbFilters.Size = new System.Drawing.Size(734, 77);
+            this.gbFilters.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbFilters.Size = new System.Drawing.Size(853, 96);
             this.gbFilters.TabIndex = 19;
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter";
@@ -57,9 +59,10 @@
             // 
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Image = global::GymManager.Presentation.Properties.Resources.SearchPerson;
-            this.btnFind.Location = new System.Drawing.Point(630, 21);
+            this.btnFind.Location = new System.Drawing.Point(761, 34);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(44, 37);
+            this.btnFind.Size = new System.Drawing.Size(50, 46);
             this.btnFind.TabIndex = 18;
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -70,19 +73,20 @@
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "Membre ID"});
-            this.cbFilterBy.Location = new System.Drawing.Point(170, 28);
+            this.cbFilterBy.Location = new System.Drawing.Point(243, 43);
+            this.cbFilterBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(210, 24);
+            this.cbFilterBy.Size = new System.Drawing.Size(236, 28);
             this.cbFilterBy.TabIndex = 16;
             this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 
             this.txtFilterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFilterValue.Location = new System.Drawing.Point(387, 28);
-            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFilterValue.Location = new System.Drawing.Point(487, 43);
+            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.Size = new System.Drawing.Size(214, 22);
+            this.txtFilterValue.Size = new System.Drawing.Size(240, 26);
             this.txtFilterValue.TabIndex = 17;
             this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
             this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilterValue_Validating);
@@ -90,10 +94,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 28);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 25);
+            this.label1.Size = new System.Drawing.Size(210, 32);
             this.label1.TabIndex = 19;
             this.label1.Text = "Chercher Par :";
             // 
@@ -103,19 +107,22 @@
             // 
             // ucMemberCard1
             // 
-            this.ucMemberCard1.Location = new System.Drawing.Point(0, 64);
+            this.ucMemberCard1.IsAddUpdateMode = true;
+            this.ucMemberCard1.Location = new System.Drawing.Point(0, 108);
+            this.ucMemberCard1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucMemberCard1.Name = "ucMemberCard1";
-            this.ucMemberCard1.Size = new System.Drawing.Size(1100, 253);
-            this.ucMemberCard1.TabIndex = 0;
+            this.ucMemberCard1.Size = new System.Drawing.Size(1579, 383);
+            this.ucMemberCard1.TabIndex = 20;
             // 
             // ucMemberCardWithFilter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gbFilters);
             this.Controls.Add(this.ucMemberCard1);
+            this.Controls.Add(this.gbFilters);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ucMemberCardWithFilter";
-            this.Size = new System.Drawing.Size(1110, 375);
+            this.Size = new System.Drawing.Size(1577, 500);
             this.Load += new System.EventHandler(this.ucMemberCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
@@ -125,13 +132,12 @@
         }
 
         #endregion
-
-        private ucMemberCard ucMemberCard1;
         private System.Windows.Forms.GroupBox gbFilters;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private ucMemberCard ucMemberCard1;
     }
 }

@@ -184,6 +184,16 @@ namespace GymManager.Business
             {
                 clsAbonnementDataAccess.UpdateAbonnementsStatus();
             }
+
+            public bool CanMemberHaveThisAbonnement()
+            {
+                return GetActifAbonnementByMemberIDAndTypeAbonnement(AdherentID, TypeAbonnementID) ==-1;
+            }
+
+            private int GetActifAbonnementByMemberIDAndTypeAbonnement(int adherentID, int typeAbonnementID)
+            {
+                return clsAbonnementDataAccess.GetActifAbonnementByMemberIDAndTypeAbonnement(adherentID, typeAbonnementID);
+            }
         }
     }
 }

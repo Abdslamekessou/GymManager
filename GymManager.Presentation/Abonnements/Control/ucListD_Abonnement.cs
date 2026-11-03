@@ -1,4 +1,5 @@
-﻿using GymManager.Business;
+﻿
+using GymManager.Business;
 using GymManager.Business.GymManager.Business;
 using System;
 using System.Collections;
@@ -33,6 +34,7 @@ namespace GymManager.Presentation.Abonnements
         private void _LoadAbonnementsData()
         {
             _dtListAbonnement = clsAbonnement.GetAllAbonnements();
+
             dgvAbonnements.DataSource = _dtListAbonnement;
 
             if (cbRechercherPar != null && cbRechercherPar.Items.Count > 0)
@@ -42,19 +44,21 @@ namespace GymManager.Presentation.Abonnements
                 cbFilterStatut.SelectedIndex = 0;
 
             _FormatDataGridViewColumns();
+
+            // Apply the initial filter
+            _ApplyFilter();
         }
 
         private void _FormatDataGridViewColumns()
         {
-            if (dgvAbonnements.Columns.Count == 0) return;
-
+            if (dgvAbonnements.Columns.Count == 0)
+                return;
 
             if (dgvAbonnements.Columns.Contains("AbonnementID"))
             {
                 dgvAbonnements.Columns["AbonnementID"].HeaderText = "ID";
                 dgvAbonnements.Columns["AbonnementID"].Width = 50;
             }
-
 
             if (dgvAbonnements.Columns.Contains("Adherent"))
             {
@@ -70,7 +74,9 @@ namespace GymManager.Presentation.Abonnements
 
             if (dgvAbonnements.Columns.Contains("Type d'abonnement"))
             {
-                dgvAbonnements.Columns["Type d'abonnement"].HeaderText = "Type d'abonnement";
+                dgvAbonnements.Columns["Type d'abonnement"].HeaderText =
+                    "Type d'abonnement";
+
                 dgvAbonnements.Columns["Type d'abonnement"].Width = 160;
             }
 
@@ -113,15 +119,21 @@ namespace GymManager.Presentation.Abonnements
             }
         }
 
-        private void dgvAbonnements_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dgvAbonnements_CellFormatting(
+            object sender,
+            DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex < 0 || e.Value == null) return;
+            if (e.RowIndex < 0 || e.Value == null)
+                return;
 
             string colName = dgvAbonnements.Columns[e.ColumnIndex].Name;
 
             if (colName == "Prix payé" && e.Value != DBNull.Value)
             {
-                e.Value = string.Format("{0} DA", Convert.ToDecimal(e.Value).ToString("0.##"));
+                e.Value = string.Format(
+                    "{0} DA",
+                    Convert.ToDecimal(e.Value).ToString("0.##"));
+
                 e.FormattingApplied = true;
             }
             else if (colName == "Durée" && e.Value != DBNull.Value)
@@ -139,13 +151,15 @@ namespace GymManager.Presentation.Abonnements
             }
         }
 
-
+        // Automatically applies all filters
         private void _ApplyFilter()
         {
-            if (_dtListAbonnement == null) return;
+            if (_dtListAbonnement == null)
+                return;
 
             List<string> filters = new List<string>();
 
+            // Search filter
             if (!string.IsNullOrWhiteSpace(txtValeur.Text))
             {
                 string filterColumn = "";
@@ -169,81 +183,108 @@ namespace GymManager.Presentation.Abonnements
                     {
                         if (int.TryParse(txtValeur.Text.Trim(), out int id))
                         {
-                            filters.Add(string.Format("[{0}] = {1}", filterColumn, id));
+                            filters.Add(
+                                string.Format("[{0}] = {1}", filterColumn, id));
+                        }
+                        else
+                        {
+                            // No results when the entered ID is invalid
+                            filters.Add("[AbonnementID] = -1");
                         }
                     }
                     else
                     {
-                        string safeSearchText = txtValeur.Text.Trim().Replace("'", "''");
-                        filters.Add(string.Format("[{0}] LIKE '{1}%'", filterColumn, safeSearchText));
+                        string safeSearchText = txtValeur.Text.Trim()
+                            .Replace("'", "''");
+
+                        filters.Add(
+                            string.Format(
+                                "[{0}] LIKE '{1}%'",
+                                filterColumn,
+                                safeSearchText));
                     }
                 }
             }
 
-            if (cbFilterStatut != null && cbFilterStatut.Text != "Tous" && !string.IsNullOrEmpty(cbFilterStatut.Text))
+            // Subscription status filter
+            if (cbFilterStatut != null &&
+                cbFilterStatut.Text != "Tous" &&
+                !string.IsNullOrEmpty(cbFilterStatut.Text))
             {
-                filters.Add(string.Format("[Statut] = '{0}'", cbFilterStatut.Text));
+                string safeStatus = cbFilterStatut.Text.Replace("'", "''");
+
+                filters.Add(
+                    string.Format("[Statut] = '{0}'", safeStatus));
             }
 
-
-            if (filters.Count > 0)
-            {
-                _dtListAbonnement.DefaultView.RowFilter = string.Join(" AND ", filters);
-            }
-            else
-            {
-                _dtListAbonnement.DefaultView.RowFilter = "";
-            }
+            // Combine filters using AND
+            _dtListAbonnement.DefaultView.RowFilter =
+                filters.Count > 0
+                    ? string.Join(" AND ", filters)
+                    : "";
         }
 
-        private void cbRechercherPar_SelectedIndexChanged_1(object sender, EventArgs e)
+        // Search criteria changed
+        private void cbRechercherPar_SelectedIndexChanged_1(
+            object sender,
+            EventArgs e)
         {
-
             txtValeur.Text = "";
             txtValeur.Focus();
 
-            if (_dtListAbonnement != null)
-                _dtListAbonnement.DefaultView.RowFilter = "";
+            _ApplyFilter();
         }
 
-        private void btnRechercher_Click_1(object sender, EventArgs e)
+        // Search automatically while typing
+        private void txtValeur_TextChanged_1(
+            object sender,
+            EventArgs e)
         {
             _ApplyFilter();
         }
 
-        private void cbFilterStatut_SelectedIndexChanged_1(object sender, EventArgs e)
+        // Status filter changed
+        private void cbFilterStatut_SelectedIndexChanged_1(
+            object sender,
+            EventArgs e)
         {
             _ApplyFilter();
         }
 
-        private void txtValeur_TextChanged_1(object sender, EventArgs e)
+        // Allow only digits when searching by ID
+        private void txtValeur_KeyPress_1(
+            object sender,
+            KeyPressEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtValeur.Text) && _dtListAbonnement != null)
-                _dtListAbonnement.DefaultView.RowFilter = "";
+            if (cbRechercherPar.Text == "ID" ||
+                cbRechercherPar.Text == "AbonnementID")
+            {
+                e.Handled =
+                    !char.IsDigit(e.KeyChar) &&
+                    !char.IsControl(e.KeyChar);
+            }
         }
-
-        private void txtValeur_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (cbRechercherPar.Text == "ID")
-                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
 
         private void btnAjouterAbonnement_Click(object sender, EventArgs e)
         {
             frmAjouterAbonnemnt frmAj = new frmAjouterAbonnemnt();
+
             frmAj.ShowDialog();
+
             _LoadAbonnementsData();
         }
-
 
         private void tsmiAnnuler_Click_1(object sender, EventArgs e)
         {
             if (dgvAbonnements.CurrentRow != null)
             {
-                if (dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString() == "Actif" || dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString() == "Expire bientôt")
+                string status = dgvAbonnements.CurrentRow
+                    .Cells["Statut"].Value.ToString();
+
+                if (status == "Actif" || status == "Expire bientôt")
                 {
-                    frmAnnuler frm = new frmAnnuler(dgvAbonnements.CurrentRow);
+                    frmAnnuler frm =
+                        new frmAnnuler(dgvAbonnements.CurrentRow);
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
@@ -252,10 +293,13 @@ namespace GymManager.Presentation.Abonnements
                 }
                 else
                 {
-                    MessageBox.Show("Vou ne pouvez pas Annuler un Abonnement avec statut : " + dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString(), "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(
+                        "Vou ne pouvez pas Annuler un Abonnement avec statut : "
+                        + status,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
-
             }
         }
 
@@ -263,35 +307,50 @@ namespace GymManager.Presentation.Abonnements
         {
             if (dgvAbonnements.CurrentRow != null)
             {
-                if (dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString() == "Expiré" )
+                string status = dgvAbonnements.CurrentRow
+                    .Cells["Statut"].Value.ToString();
+
+                if (status == "Expiré")
                 {
-                    frmRenouveler frm = new frmRenouveler(dgvAbonnements.CurrentRow);
+                    frmRenouveler frm =
+                        new frmRenouveler(dgvAbonnements.CurrentRow);
+
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        clsNotification.DeleteNotificationByAbonnementID((int)dgvAbonnements.SelectedRows[0].Cells["AbonnementID"].Value);
-                        _LoadAbonnementsData();
-                        MainForm f = (MainForm)this.ParentForm;
-                        f.RefreshUnreadNotificationsIcon();
+                        clsNotification.DeleteNotificationByAbonnementID(
+                            (int)dgvAbonnements.SelectedRows[0]
+                                .Cells["AbonnementID"].Value);
 
+                        _LoadAbonnementsData();
+
+                        MainForm f = (MainForm)this.ParentForm;
+
+                        f.RefreshUnreadNotificationsIcon();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vou ne pouvez pas Renouvler un Abonnement avec statut : " + dgvAbonnements.CurrentRow.Cells["Statut"].Value.ToString(), "Error",
-    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(
+                        "Vou ne pouvez pas Renouvler un Abonnement avec statut : "
+                        + status,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
-
             }
         }
 
         private void tsmiDetails_Click_1(object sender, EventArgs e)
         {
-
-            if (dgvAbonnements.CurrentRow != null && dgvAbonnements.Columns.Contains("AbonnementID"))
+            if (dgvAbonnements.CurrentRow != null &&
+                dgvAbonnements.Columns.Contains("AbonnementID"))
             {
-                int selectedID = Convert.ToInt32(dgvAbonnements.CurrentRow.Cells["AbonnementID"].Value);
+                int selectedID = Convert.ToInt32(
+                    dgvAbonnements.CurrentRow.Cells["AbonnementID"].Value);
 
-                frmDetailsAbonnemnt frm = new frmDetailsAbonnemnt(selectedID);
+                frmDetailsAbonnemnt frm =
+                    new frmDetailsAbonnemnt(selectedID);
+
                 frm.ShowDialog();
             }
         }

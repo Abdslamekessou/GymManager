@@ -160,11 +160,20 @@ namespace GymManager.Presentation.Abonnements.Control
 
 
             AbonnementInfo.TypeAbonnementID = TypeAbonnement.TypeAbonnementID;
+            AbonnementInfo.TypeAbonnementInfo = TypeAbonnement;
             AbonnementInfo.AdherentID = MemberID;
+            // Check whether the member has already an actif "Abonnement" on same "Sport"
+            if (!AbonnementInfo.CanMemberHaveThisAbonnement())
+            {
+                MessageBox.Show($"Vous ne pouvez pas ajouter cette Abonnement pour cette Adhérent \n" +
+                    $"Car Il a déja un abonnement actif dans le meme Type Abonnement", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             AbonnementInfo.DateDebut = dtpDateDebut.Value;
             AbonnementInfo.DateFin = dtpDateFin.Value;
 
-            // We user this temperary , until we the global variable "LogedInUser" which is inside "clsGloabal"
+            // We use this temperary , until we the global variable "LogedInUser" which is inside "clsGloabal"
             AbonnementInfo.CreePar = UserID;
 
 
@@ -182,8 +191,6 @@ namespace GymManager.Presentation.Abonnements.Control
 
             return AbonnementInfo.Save();
         }
-
-
         private void ucAbonnementInfo_Load(object sender, EventArgs e)
         {
             _LoadDefaultValues();

@@ -35,26 +35,31 @@
             // ucMemberCardWithFilter1
             // 
             this.ucMemberCardWithFilter1.FilterEnabled = true;
-            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(12, 12);
+            this.ucMemberCardWithFilter1.IsAddUpdateMode = true;
+            this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(12, 16);
+            this.ucMemberCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
-            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1110, 329);
-            this.ucMemberCardWithFilter1.TabIndex = 0;
+            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1577, 500);
+            this.ucMemberCardWithFilter1.TabIndex = 3;
             // 
             // ucListAbonnmentPerson1
             // 
             this.ucListAbonnmentPerson1.BackColor = System.Drawing.Color.White;
-            this.ucListAbonnmentPerson1.Location = new System.Drawing.Point(12, 313);
+            this.ucListAbonnmentPerson1.Location = new System.Drawing.Point(12, 524);
+            this.ucListAbonnmentPerson1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucListAbonnmentPerson1.Name = "ucListAbonnmentPerson1";
-            this.ucListAbonnmentPerson1.Size = new System.Drawing.Size(888, 430);
+            this.ucListAbonnmentPerson1.Size = new System.Drawing.Size(1562, 538);
             this.ucListAbonnmentPerson1.TabIndex = 1;
             // 
             // frmShowMemberInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 610);
-            this.Controls.Add(this.ucListAbonnmentPerson1);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1576, 1050);
             this.Controls.Add(this.ucMemberCardWithFilter1);
+            this.Controls.Add(this.ucListAbonnmentPerson1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmShowMemberInfo";
             this.Text = "frmShowMemberInfo";
             this.Load += new System.EventHandler(this.frmShowMemberInfo_Load);
@@ -63,8 +68,7 @@
         }
 
         #endregion
-
-        private Controls.ucMemberCardWithFilter ucMemberCardWithFilter1;
         private Abonnements.Control.ucListAbonnmentPerson ucListAbonnmentPerson1;
+        private Controls.ucMemberCardWithFilter ucMemberCardWithFilter1;
     }
 }

@@ -327,7 +327,7 @@ namespace GymManager.DataAccess
             DataTable dt = new DataTable();
             string query = @"select * from TypeAbonnements";
 
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

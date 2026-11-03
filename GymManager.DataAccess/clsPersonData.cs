@@ -290,15 +290,21 @@ WHERE PersonneID = @PersonID;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query =
-  @"select  Personnes.PersonneID , Personnes.Prenom , Personnes.Nom , Personnes.NumeroTelephone , Personnes.Email , 
-		Personnes.DateDeNaissance , Personnes.Genre , 				  CASE
-                  WHEN Personnes.Genre = 0 THEN 'Homme'
-
-                  ELSE 'Femme'
-
-                  END as GendorCaption , 
-				  Personnes.Image
-from Personnes";
+  @"SELECT
+    Personnes.PersonneID,
+    Personnes.Prenom,
+    Personnes.Nom,
+    CONCAT(Personnes.Nom, ' ', Personnes.Prenom) AS NomComplet,
+    Personnes.NumeroTelephone,
+    Personnes.Email,
+    Personnes.DateDeNaissance,
+    Personnes.Genre,
+    CASE
+        WHEN Personnes.Genre = 0 THEN 'Homme'
+        ELSE 'Femme'
+    END AS GendorCaption,
+    Personnes.Image
+FROM Personnes;";
 
 
             SqlCommand command = new SqlCommand(query, connection);

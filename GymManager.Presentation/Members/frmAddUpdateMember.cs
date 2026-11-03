@@ -50,12 +50,10 @@ namespace GymManager.Presentation.Members
 
             if (_Mode == enMode.AddNew)
             {
-                lblTitle.Text = "👤 AJOUTER Un Membre";
                 MemberInfo = new clsMember();
             }
             else
             {
-                lblTitle.Text = "👤 Modifier Le Membre";
                 ucAbonnementInfo1.IsUpdateMode = true;
             }
 
@@ -123,7 +121,7 @@ namespace GymManager.Presentation.Members
                 if (!SaveMember() )
                 {
                     MessageBox.Show(
-                        "Erreur dans le sauvgarde de ce 'Membre'",
+                        "Erreur , Ce 'Membre' existe deja !!!",
                         "Erreur",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error
@@ -155,7 +153,6 @@ namespace GymManager.Presentation.Members
 
                 //change form mode to update.
                 _Mode = enMode.Update;
-                lblTitle.Text = "👤 Modifier Le Membre";
 
                 ucPersonCardWithFilter1.FilterEnabled = false;
                 ucAbonnementInfo1.IsUpdateMode = true;
@@ -192,6 +189,11 @@ namespace GymManager.Presentation.Members
             Close();
         }
 
+        private void ucAbonnementInfo1_Load(object sender, EventArgs e)
+        {
 
+        }
+
+       
     }
 }

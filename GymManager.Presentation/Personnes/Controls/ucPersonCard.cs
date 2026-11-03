@@ -29,11 +29,11 @@ namespace GymManager.Presentation.Personnes.Controls
             get { return _Person; }
         }
 
-        public string Tilte
-        {
-            get { return lblTitle.Text; }
-            set { lblTitle.Text = "INFORMATIONS " + value; }
-        }
+        //public string Tilte
+        //{
+        //    get { return lblTitle.Text; }
+        //    set { lblTitle.Text = "INFORMATIONS " + value; }
+        //}
 
         public ucPersonCard()
         {
@@ -85,8 +85,8 @@ namespace GymManager.Presentation.Personnes.Controls
             lblFullName.Text = _Person.FullName;
             lblPhone.Text = _Person.PhoneNumber;
             lblEmail.Text = _Person.Email;
-            lblDateOfBirth.Text = _Person.DateOfBirth.ToString();
-            lblGender.Text = _Person.Gendor == 0 ? "Male" : "Female";
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+            lblGender.Text = _Person.Gendor == 0 ? "Homme" : "Femme";
             pbPersonImage.Image = (_Person.Gendor == 0) ? Resources.Male_512 : Resources.Female_512;
 
             _LoadPersonImage();
@@ -121,6 +121,11 @@ namespace GymManager.Presentation.Personnes.Controls
         }
 
         private void ucPersonCard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpPersonneInfo_Enter(object sender, EventArgs e)
         {
 
         }

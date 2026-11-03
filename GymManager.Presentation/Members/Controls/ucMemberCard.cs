@@ -74,7 +74,7 @@ namespace GymManager.Presentation.Members.Controls
 
             _MemberID = MemberID;
 
-            ucPersonCard1.Tilte = "DE MEMBRE";
+            //ucPersonCard1.Tilte = "DE MEMBRE";
 
             ucPersonCard1.LoadPersonInfo(_Member.PersonID);
 

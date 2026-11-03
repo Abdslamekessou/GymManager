@@ -212,7 +212,7 @@ namespace GymManager.DataAccess
 
         public static void UpdateNotifications()
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"  INSERT INTO Notifications
     (AbonnementID, EstVue, EstExportee,Message)
@@ -256,7 +256,7 @@ WHERE A.EtatAbonnement = 1
         public static void DeleteNotificationByAbonnementID(int ID)
         {
 
-            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"Delete Notifications 
                                 where AbonnementID = @AbonnementID";
