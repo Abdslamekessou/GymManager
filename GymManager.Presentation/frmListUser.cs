@@ -14,12 +14,12 @@ namespace GymManager.Presentation
 {
     public partial class frmListUser : Form
     {
-        
+
         public frmListUser()
         {
             InitializeComponent();
 
-            
+
         }
 
         private static DataTable _dtAllUser;
@@ -31,7 +31,7 @@ namespace GymManager.Presentation
 
             cbxSearchBy.SelectedIndex = 0;
             cbxFilterRole.SelectedIndex = 0;
-           
+
 
             if (dgvUsers.Rows.Count > 0)
             {
@@ -103,7 +103,7 @@ namespace GymManager.Presentation
 
         private void cbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbxSearchBy.Text == "None")
+            if (cbxSearchBy.Text == "None")
             {
                 txtSearchValue.Visible = false;
                 cbxFilterRole.Visible = false;
@@ -184,16 +184,13 @@ namespace GymManager.Presentation
             frmListUser_Load(null, null);
         }
 
-
-        
-      
         private void tsmiDeleteUser_Click(object sender, EventArgs e)
         {
-            string SelectedUserRoleName =(string) dgvUsers.CurrentRow.Cells[4].Value;
+            string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
 
-            if(clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
+            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
             {
-                MessageBox.Show("Vous ne pouvez pas supprimer le dernier administrateur actif.",
+                MessageBox.Show("Impossible de supprimer cet administrateur : il n'existe qu'un seul administrateur actif.",
                               "Suppression impossible",
                               MessageBoxButtons.OK,
                               MessageBoxIcon.Warning);
@@ -214,7 +211,7 @@ namespace GymManager.Presentation
 
                 if (IsDeleted)
                 {
-                    MessageBox.Show("L'utilisateur a été supprimé avec succès." , "Suppression réussie",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("L'utilisateur a été supprimé avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmListUser_Load(null, null);
                 }
                 else
@@ -230,24 +227,133 @@ namespace GymManager.Presentation
 
         }
 
-        
-
-        private void tsmiActiver_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsmiDesactiver_Click(object sender, EventArgs e)
         {
             string SelectedUserRoleName = (string)dgvUsers.CurrentRow.Cells[4].Value;
 
-            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur"){ 
-                MessageBox.Show("Vous ne pouvez pas désactiver le dernier administrateur actif.",
+            if (clsUser.IsLastActiveAdmin() && SelectedUserRoleName == "Administrateur")
+            {
+                MessageBox.Show("Impossible de désactiver cet administrateur : il n'existe qu'un seul administrateur actif.",
                                      "Désactivation impossible",
                                      MessageBoxButtons.OK,
                                      MessageBoxIcon.Warning);
                 return;
             }
+
+            if (dgvUsers.CurrentRow == null) return;
+
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            clsUser User = clsUser.Find(UserID);
+
+            if (User == null) return;
+
+            if (User.IsActive == false)
+            {
+                MessageBox.Show("Cet utilisateur est déjà désactivé.",
+                                "Désactivation impossible",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                                
+                return;
+            }
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir désactiver cet utilisateur ?",
+                                "Confirmation de désactivation",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (clsUser.DesActivateUser(UserID))
+                {
+                    MessageBox.Show("L'utilisateur a été désactivé avec succès.",
+                                    "Désactivation réussie",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    frmListUser_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue lors de la désactivation de l'utilisateur.",
+                                    "Échec de la désactivation",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cmsUserOptions_Opening(object sender, CancelEventArgs e)
+        {
+            string Value = dgvUsers.CurrentRow.Cells[5].Value.ToString();
+
+            if (Value == "Désactivé")
+            {
+                tsmiDesactiver.Visible = false;
+                tsmiActiver.Visible = true;
+
+            }
+            else if (Value == "Activé")
+            {
+                tsmiDesactiver.Visible = true;
+                tsmiActiver.Visible = false;
+                
+            }
+        }
+
+        private void tsmiActiver_Click(object sender, EventArgs e)
+        {
+
+            if (dgvUsers.CurrentRow == null) return;
+
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            clsUser User = clsUser.Find(UserID);
+
+            if (User == null) return;
+
+            if (User.IsActive == true)
+            {
+                MessageBox.Show("Cet utilisateur est déjà activé.",
+                  "Activation impossible",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir activer cet utilisateur ?",
+                                "Confirmation de activation",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (clsUser.ActivateUser(UserID))
+                {
+                    MessageBox.Show("L'utilisateur a été activé avec succès.",
+                                    "Désactivation réussie",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    frmListUser_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue lors de la activation de l'utilisateur.",
+                                    "Échec de la activation",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dgvUsers_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgvUsers.ClearSelection();
+                dgvUsers.Rows[e.RowIndex].Selected = true;
+                dgvUsers.CurrentCell = dgvUsers.Rows[e.RowIndex].Cells[0];
+            }
         }
     }
 }
+
