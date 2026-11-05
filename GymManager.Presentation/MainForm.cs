@@ -37,8 +37,7 @@ namespace GymManager.Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Test test = new Test();
-            test.ShowDialog();
+           
         }
     }
 }
