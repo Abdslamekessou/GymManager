@@ -10,18 +10,18 @@ namespace GymManager.DataAccess
 {
     public class clsUserData
     {
-        public static bool GetUserByID(int UserID, ref int PersonID, ref string UserName, ref string Password,
-            ref int Role, ref bool IsActive, ref DateTime CreatedDate)
+        public static bool GetUserByID(int UtilisateurID, ref int PersonID, ref string UserName, ref string Password,
+        ref int Role, ref bool IsActive, ref DateTime CreatedDate)
         {
             bool isFound = false;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                string query = "SELECT * FROM Utilisateurs WHERE UtilisateurID = @UserID";
+                string query = "SELECT * FROM Utilisateurs WHERE UtilisateurID = @UtilisateurID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@UtilisateurID", UserID);
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
                     try
                     {
                         connection.Open();
@@ -35,20 +35,20 @@ namespace GymManager.DataAccess
                                 PersonID = (int)reader["PersonneID"];
                                 UserName = (string)reader["NomUtilisateur"];
                                 Password = (string)reader["MotDePasse"];
-                                Role = (int)reader["Role"];     
+                                Role = Convert.ToByte(reader["Role"]);
                                 IsActive = (bool)reader["Etat"];
                                 CreatedDate = (DateTime)reader["DateDeCreation"];
 
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UserID: {UserID}", EventLogEntryType.Information);
+
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
-                        clsEventLog.LogEvent($"Error fetching Role data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        clsEventLog.LogEvent($"Error fetching Role data for UtilisateurID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
 
                         isFound = false;
                     }
@@ -58,18 +58,19 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
-        public static bool GetUserInfoByUserNameAndPassword(string NomUtilisateur, string MotDePasse, ref int UserID, ref int PersonID, ref int Role, ref bool IsActive, ref DateTime CreatedDate)
+
+        public static bool GetUserInfoByUserName(string NomUtilisateur, ref string MotDePasse, ref int UserID, ref int PersonID, ref int Role, ref bool IsActive, ref DateTime CreatedDate)
         {
             bool isFound = false;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur AND MotDePasse = @MotDePasse";
+                string query = "SELECT * FROM Utilisateurs WHERE NomUtilisateur = @NomUtilisateur";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NomUtilisateur", NomUtilisateur);
-                    command.Parameters.AddWithValue("@MotDePasse", MotDePasse);
+
 
                     try
                     {
@@ -81,21 +82,21 @@ namespace GymManager.DataAccess
                             {
                                 isFound = true;
                                 UserID = (int)reader["UtilisateurID"];
+                                MotDePasse = (string)reader["MotDePasse"];
                                 PersonID = (int)reader["PersonneID"];
-                                Role = Convert.ToByte( reader["Role"]);
+                                Role = Convert.ToByte(reader["Role"]);
                                 IsActive = (bool)reader["Etat"];
                                 CreatedDate = (DateTime)reader["DateDeCreation"];
                             }
                         }
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UserName: {NomUtilisateur}", EventLogEntryType.Information);
+
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for UserName: {NomUtilisateur}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
                         isFound = false;
                     }
                 }
@@ -134,7 +135,7 @@ namespace GymManager.DataAccess
                         {
                             UserID = insertID;
 
-                            clsEventLog.LogEvent($"User added successfully. New UserID: {UserID}", EventLogEntryType.Information);
+
                         }
 
                     }
@@ -143,7 +144,7 @@ namespace GymManager.DataAccess
                         // Handle exception
                         clsEventLog.LogEvent($"Error adding User data for PersonID: {PersonID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
+
                     }
                 }
             }
@@ -151,7 +152,8 @@ namespace GymManager.DataAccess
             return UserID;
         }
 
-        public static bool UpdateUser(int UserID, int PersonID, string UserName, string Password, int Role, bool IsActive)
+       
+        public static bool UpdateUser(int UserID, int PersonID, string UserName, int Role, bool IsActive)
         {
             int rowsAffected = 0;
 
@@ -161,7 +163,6 @@ namespace GymManager.DataAccess
                 string query = "UPDATE Utilisateurs SET " +
                     "PersonneID = @PersonneID," +
                     " NomUtilisateur = @NomUtilisateur," +
-                    " MotDePasse = @MotDePasse," +
                     " Role = @Role," +
                     " Etat = @Etat" +
                     " WHERE UtilisateurID = @UtilisateurID";
@@ -172,7 +173,7 @@ namespace GymManager.DataAccess
                     command.Parameters.AddWithValue("@UtilisateurID", UserID);
                     command.Parameters.AddWithValue("@PersonneID", PersonID);
                     command.Parameters.AddWithValue("@NomUtilisateur", UserName);
-                    command.Parameters.AddWithValue("@MotDePasse", Password);
+
                     command.Parameters.AddWithValue("@Role", Role);
                     command.Parameters.AddWithValue("@Etat", IsActive);
                     try
@@ -182,19 +183,51 @@ namespace GymManager.DataAccess
                         rowsAffected = command.ExecuteNonQuery();
 
 
-                        clsEventLog.LogEvent($"User updated successfully. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error updating User data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+
                         return false;
                     }
                 }
             }
 
-            return (rowsAffected > 0);  
+            return (rowsAffected > 0);
+        }
+
+        public static bool DeleteUser(int UserID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = "DELETE FROM Utilisateurs WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UserID);
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"User deleted successfully. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error deleting User data for UserID: {UserID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
         }
 
         public static bool IsUserExists(string UserName)
@@ -220,13 +253,13 @@ namespace GymManager.DataAccess
                         }
 
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for UserName: {UserName}", EventLogEntryType.Information);
+                        
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for UserName: {UserName}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                        
 
                         isFound = false;
                     }
@@ -261,13 +294,13 @@ namespace GymManager.DataAccess
                         }
 
 
-                        clsEventLog.LogEvent($"Data retrieved successfully for RoleName: {RoleName}", EventLogEntryType.Information);
+                       
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching Role data for RoleName: {RoleName}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+                       
 
                         isFound = false;
                     }
@@ -303,7 +336,7 @@ namespace GymManager.DataAccess
                     {
                         clsEventLog.LogEvent($"Error checking user existence for PersonID: {PersonID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
 
-                        Console.WriteLine("Error: " + ex.Message);
+                        
                         isFound = false;
                     }
                 }
@@ -312,14 +345,13 @@ namespace GymManager.DataAccess
             return isFound;
         }
 
+
+
         public static DataTable GetAllUser()
         {
             DataTable dt = new DataTable();
 
-            string query = "select U.UtilisateurID, U.PersonneID, P.Prenom + ' ' + P.Nom AS NomComplet, U.NomUtilisateur, R.NomRole" +
-                "\r\nfrom Utilisateurs U\r\n" +
-                "inner join Personnes P on U.PersonneID = P.PersonneID\r\n " +
-                "inner join RoleUtilisateurs R on U.Role = R.RoleID";
+            string query = "select * from vw_Utilisateurs";
 
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -342,19 +374,148 @@ namespace GymManager.DataAccess
                             }
                         }
 
-                       clsEventLog.LogEvent($"Data retrieved successfully. Rows: {dt.Rows.Count}", EventLogEntryType.Information);
+
                     }
                     catch (Exception ex)
                     {
                         // Handle exception
                         clsEventLog.LogEvent($"Error fetching User data.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
-                        Console.WriteLine("Error: " + ex.Message);
+
                     }
                 }
             }
 
             return dt;
         }
+
+
+        public static bool ChangePassword(int UtilisateurID, string NewPassword)
+        {
+            int rowsAffected = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = "UPDATE Utilisateurs SET MotDePasse = @NewPassword WHERE UtilisateurID = @UtilisateurID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+                    command.Parameters.AddWithValue("@NewPassword", NewPassword);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                        clsEventLog.LogEvent($"Password changed successfully for UserID: {UtilisateurID}. Rows affected: {rowsAffected}", EventLogEntryType.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error changing password for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }
+
+        public static bool DesActivateUser(int UtilisateurID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = "UPDATE Utilisateurs SET Etat = 0 WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exception
+                        clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+
+                        return false;
+                    }
+                }
+            }
+            return (rowsAffected > 0);
+        }
+
+
+        public static bool ActivateUser(int UtilisateurID)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = "UPDATE Utilisateurs SET Etat = 1 WHERE UtilisateurID = @UtilisateurID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UtilisateurID", UtilisateurID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLog.LogEvent($"Error changing activation status for UserID: {UtilisateurID}.\nMessage:{ex.Message}\nStackTrace: {ex.StackTrace}", EventLogEntryType.Error);
+
+                        return false;
+                    }
+                }
+            }
+
+            return (rowsAffected > 0);
+        }
+
+
+        public static int GetActiveAdminsCount()
+        {
+            int Count = 0;
+
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string Query = @"SELECT COUNT(*)
+                             FROM Utilisateurs
+                             WHERE Role = 1 AND Etat = 1";
+
+                    using (SqlCommand Command = new SqlCommand(Query, Connection))
+                    {
+                        Connection.Open();
+
+                        Count = (int)Command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return Count;
+        }
+
 
 
     }

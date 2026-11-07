@@ -15,6 +15,8 @@ namespace GymManager.Business
 
         public int UserID { get; set; }
         public int PersonID { get; set; }
+
+        public clsPerson PersonInfo;
         public string UserName { get; set; }
         public string Password { get; set; }
         public int RoleID { get; set; }
@@ -39,6 +41,7 @@ namespace GymManager.Business
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
+            this.PersonInfo = clsPerson.FindPerson(PersonID);
             this.UserName = UserName;
             this.Password = Password;
             this.RoleID = RoleID;
@@ -65,13 +68,14 @@ namespace GymManager.Business
                 return null;
         }
 
-        public static clsUser FindByUserNameAndPassword(string UserName, string Password)
+        public static clsUser FindByUserName(string UserName)
         {
             int UserID = -1, PersonID = -1, RoleID = -1;
+            string Password = "";
             bool IsActive = true;
             DateTime CreatedDate = DateTime.Now;
 
-            bool IsFound = clsUserData.GetUserInfoByUserNameAndPassword(UserName, Password, ref UserID, ref PersonID,
+            bool IsFound = clsUserData.GetUserInfoByUserName(UserName, ref Password, ref UserID, ref PersonID,
                                                                         ref RoleID, ref IsActive, ref CreatedDate);
 
             if (IsFound)
@@ -89,7 +93,12 @@ namespace GymManager.Business
 
         private bool _UpdateUser()
         {
-            return clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.Password, this.RoleID, this.IsActive);
+            return clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.RoleID, this.IsActive);
+        }
+
+        public static bool DeleteUser(int UserID)
+        {
+            return clsUserData.DeleteUser(UserID);
         }
 
         public bool Save()
@@ -134,6 +143,26 @@ namespace GymManager.Business
         public static bool IsUserExistedForPerson(int PersonID)
         {
             return clsUserData.IsUserExistsForPerson(PersonID);
+        }
+
+        public static bool ChangePassword(int UserID, string NewPassword)
+        {
+            return clsUserData.ChangePassword(UserID, NewPassword);
+        }
+
+        public static bool DesActivateUser(int UserID)
+        {
+            return clsUserData.DesActivateUser(UserID);
+        }
+
+        public static bool ActivateUser(int UserID)
+        {
+            return clsUserData.ActivateUser(UserID);
+        }
+
+        public static bool IsLastActiveAdmin()
+        {
+            return clsUserData.GetActiveAdminsCount() == 1;
         }
     }
 }
