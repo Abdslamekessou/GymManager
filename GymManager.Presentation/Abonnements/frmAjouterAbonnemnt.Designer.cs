@@ -59,17 +59,20 @@
             // ucMemberCardWithFilter1
             // 
             this.ucMemberCardWithFilter1.FilterEnabled = true;
+            this.ucMemberCardWithFilter1.IsAddUpdateMode = true;
             this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(24, 14);
             this.ucMemberCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
-            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1249, 392);
+            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1565, 392);
             this.ucMemberCardWithFilter1.TabIndex = 1;
             // 
             // ucAbonnementInfo1
             // 
+            this.ucAbonnementInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.ucAbonnementInfo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucAbonnementInfo1.IsUpdateMode = false;
             this.ucAbonnementInfo1.Location = new System.Drawing.Point(24, 413);
+            this.ucAbonnementInfo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucAbonnementInfo1.Name = "ucAbonnementInfo1";
             this.ucAbonnementInfo1.Size = new System.Drawing.Size(1223, 287);
             this.ucAbonnementInfo1.TabIndex = 0;
