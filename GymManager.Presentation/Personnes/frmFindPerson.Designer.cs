@@ -59,8 +59,9 @@ namespace GymManager.Presentation.Personnes
             this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(14, 75);
             this.ucPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
+            this.ucPersonCardWithFilter1.PersonCardEnabled = true;
             this.ucPersonCardWithFilter1.ShowAddPerson = true;
-            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1379, 502);
+            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1763, 652);
             this.ucPersonCardWithFilter1.TabIndex = 119;
             // 
             // frmFindPerson
@@ -70,7 +71,7 @@ namespace GymManager.Presentation.Personnes
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1366, 566);
+            this.ClientSize = new System.Drawing.Size(1812, 731);
             this.Controls.Add(this.ucPersonCardWithFilter1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblTitle);

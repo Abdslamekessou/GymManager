@@ -1,4 +1,4 @@
-﻿using Globla_Classes;
+﻿using Globlal_Classes;
 using GymManager.Business;
 using System;
 using System.Collections.Generic;

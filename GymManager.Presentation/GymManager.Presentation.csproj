@@ -138,6 +138,12 @@
     <Compile Include="Abonnements\frmRenouveler.Designer.cs">
       <DependentUpon>frmRenouveler.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global Classes\clsGlobal.cs" />
     <Compile Include="Global Classes\clsUtil.cs" />
     <Compile Include="Global Classes\clsValidatoin.cs" />
@@ -240,6 +246,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilisateurs\Controls\ucListeUtilisateurs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utilisateurs\Controls\ucListeUtilisateurs.Designer.cs">
+      <DependentUpon>ucListeUtilisateurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateurs\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilisateurs\frmAddUpdateUser.Designer.cs">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateurs\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilisateurs\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateurs\frmDeatiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilisateurs\frmDeatiles.Designer.cs">
+      <DependentUpon>frmDeatiles.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

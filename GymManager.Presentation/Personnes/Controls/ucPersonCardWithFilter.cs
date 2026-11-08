@@ -51,8 +51,14 @@ namespace GymManager.Presentation.Personnes.Controls
             set
             {
                 _FilterEnabled = value;
-                gbFilters.Visible = _FilterEnabled;
+                gbFilters.Enabled = _FilterEnabled;
             }
+        }
+
+        public bool PersonCardEnabled
+        {
+            get { return ucPersonCard1.EnablePersonneControl; }
+            set { ucPersonCard1.EnablePersonneControl = value; }
         }
 
         public ucPersonCardWithFilter()

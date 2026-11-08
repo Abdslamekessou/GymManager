@@ -18,12 +18,16 @@ using GymManager.Presentation.Notifications;
 using GymManager.Presentation.Members.Controls;
 using GymManager.Presentation.Personnes.Controls;
 using GymManager.Presentation.Sports;
+using GymManager.Presentation.Utilisateurs;
 using GymManager.Business.GymManager.Business;
+using GymManager.Presentation.Utilisateurs.Controls;
 
 namespace GymManager.Presentation
 {
     public partial class MainForm : Form
     {
+        public frmLogin _frmLogin;
+
         private List<Panel> _sidebarIndicators;
         private int notificationCount = clsNotification.GetNumberOfUnreadNotifications(); 
 
@@ -33,9 +37,11 @@ namespace GymManager.Presentation
             clsNotification.UpdateNotifications();
         }
 
-        public MainForm()
+        public MainForm(frmLogin frm)
         {
             InitializeComponent();
+
+            _frmLogin = frm;
 
             _sidebarIndicators = new List<Panel>
             {
@@ -140,7 +146,9 @@ namespace GymManager.Presentation
         private void btnUtilisateurs_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnUtilisateurs, pnlUtilisateurIndicator, _sidebarIndicators, pnlSidebar);
-            
+            ucListeUtilisateurs ucList = new ucListeUtilisateurs();
+            ShowUserControl(ucList);
+
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
@@ -148,6 +156,7 @@ namespace GymManager.Presentation
             if (MessageBox.Show("Êtes-vous sûr de vouloir vous déconnecter ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
+                _frmLogin.Show();
             }
         }
 

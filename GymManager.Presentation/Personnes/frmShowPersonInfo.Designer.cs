@@ -52,11 +52,13 @@ namespace GymManager.Presentation.Personnes
             // 
             // ucPersonCard1
             // 
+            this.ucPersonCard1.AutoSize = true;
             this.ucPersonCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.ucPersonCard1.EnablePersonneControl = true;
             this.ucPersonCard1.Location = new System.Drawing.Point(9, 94);
             this.ucPersonCard1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucPersonCard1.Name = "ucPersonCard1";
-            this.ucPersonCard1.Size = new System.Drawing.Size(1083, 205);
+            this.ucPersonCard1.Size = new System.Drawing.Size(1736, 466);
             this.ucPersonCard1.TabIndex = 2;
             // 
             // frmShowPersonInfo
@@ -65,7 +67,7 @@ namespace GymManager.Presentation.Personnes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1105, 315);
+            this.ClientSize = new System.Drawing.Size(1794, 692);
             this.Controls.Add(this.ucPersonCard1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblDescription);
