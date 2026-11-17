@@ -22,11 +22,61 @@ namespace GymManager.Presentation.Notifications
         public ctrlNotifications()
         {
             InitializeComponent();
-
+            BuildUI();
             dgvNotifications.AutoGenerateColumns = false;
             cbStatus.SelectedIndex = 0;
             cbExportStatus.SelectedIndex = 0;
             dgvNotifications.CellContentClick += DgvNotifications_CellContentClick;
+
+        }
+
+        private void BuildUI()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(23, 32, 51);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(23, 32, 51);
+
+            dgvNotifications.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            //-------------------------------------------------------
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(16, 26, 45);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(16, 26, 45);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+
+            dgvNotifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+
+            //--------------------------------------------------------------------------------
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(23, 32, 51);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(23, 32, 51);
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+
+            dgvNotifications.DefaultCellStyle = dataGridViewCellStyle4;
+            //-----------------------------------------------------
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(16, 26, 45);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(16, 26, 45);
+
+            colMarkAsRead.DefaultCellStyle = dataGridViewCellStyle3;
+            colDetails.DefaultCellStyle = dataGridViewCellStyle3;
+
 
         }
 

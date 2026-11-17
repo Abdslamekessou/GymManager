@@ -220,6 +220,7 @@ namespace GymManager.Presentation
             // 
             this.btnUtilisateurs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUtilisateurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUtilisateurs.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnUtilisateurs.IconColor = System.Drawing.Color.Black;
             this.btnUtilisateurs.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -250,6 +251,7 @@ namespace GymManager.Presentation
             // 
             this.btnAbonnements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbonnements.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAbonnements.IconColor = System.Drawing.Color.Black;
             this.btnAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -265,6 +267,7 @@ namespace GymManager.Presentation
             // 
             this.btnTypesAbonnements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTypesAbonnements.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTypesAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnTypesAbonnements.IconColor = System.Drawing.Color.Black;
             this.btnTypesAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -280,6 +283,7 @@ namespace GymManager.Presentation
             // 
             this.btnSports.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSports.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSports.IconColor = System.Drawing.Color.Black;
             this.btnSports.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -295,6 +299,7 @@ namespace GymManager.Presentation
             // 
             this.btnAdherents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdherents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdherents.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAdherents.IconColor = System.Drawing.Color.Black;
             this.btnAdherents.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -311,6 +316,7 @@ namespace GymManager.Presentation
             this.btnPersonnes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPersonnes.BackColor = System.Drawing.Color.Transparent;
+            this.btnPersonnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPersonnes.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnPersonnes.IconColor = System.Drawing.Color.Black;
             this.btnPersonnes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -341,7 +347,7 @@ namespace GymManager.Presentation
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlHeader);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1850, 1000);
+            this.MinimumSize = new System.Drawing.Size(1600, 950);
             this.Name = "MainForm";
             this.Text = "GymManager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
