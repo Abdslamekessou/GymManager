@@ -1,4 +1,5 @@
-﻿namespace GymManager.Presentation
+﻿
+namespace GymManager.Presentation
 {
     partial class MainForm
     {
@@ -74,6 +75,7 @@
             // 
             // ibtnNotifications
             // 
+            this.ibtnNotifications.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ibtnNotifications.IconChar = FontAwesome.Sharp.IconChar.None;
             this.ibtnNotifications.IconColor = System.Drawing.Color.Black;
             this.ibtnNotifications.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -97,6 +99,7 @@
             // 
             // ipbCurrentUser
             // 
+            this.ipbCurrentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ipbCurrentUser.BackColor = System.Drawing.Color.White;
             this.ipbCurrentUser.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ipbCurrentUser.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -111,6 +114,7 @@
             // 
             // lblCurrentUser
             // 
+            this.lblCurrentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentUser.AutoSize = true;
             this.lblCurrentUser.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentUser.Location = new System.Drawing.Point(1753, 19);
@@ -214,6 +218,8 @@
             // 
             // btnUtilisateurs
             // 
+            this.btnUtilisateurs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUtilisateurs.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnUtilisateurs.IconColor = System.Drawing.Color.Black;
             this.btnUtilisateurs.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -227,6 +233,8 @@
             // 
             // btnDeconnexion
             // 
+            this.btnDeconnexion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeconnexion.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDeconnexion.IconColor = System.Drawing.Color.Black;
             this.btnDeconnexion.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -240,6 +248,8 @@
             // 
             // btnAbonnements
             // 
+            this.btnAbonnements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAbonnements.IconColor = System.Drawing.Color.Black;
             this.btnAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -253,6 +263,8 @@
             // 
             // btnTypesAbonnements
             // 
+            this.btnTypesAbonnements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTypesAbonnements.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnTypesAbonnements.IconColor = System.Drawing.Color.Black;
             this.btnTypesAbonnements.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -266,6 +278,8 @@
             // 
             // btnSports
             // 
+            this.btnSports.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSports.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSports.IconColor = System.Drawing.Color.Black;
             this.btnSports.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -279,6 +293,8 @@
             // 
             // btnAdherents
             // 
+            this.btnAdherents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdherents.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAdherents.IconColor = System.Drawing.Color.Black;
             this.btnAdherents.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -292,6 +308,8 @@
             // 
             // btnPersonnes
             // 
+            this.btnPersonnes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPersonnes.BackColor = System.Drawing.Color.Transparent;
             this.btnPersonnes.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnPersonnes.IconColor = System.Drawing.Color.Black;
@@ -315,18 +333,17 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1000);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1850, 1000);
             this.Name = "MainForm";
             this.Text = "GymManager";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlHeader.ResumeLayout(false);
@@ -344,9 +361,12 @@
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlContent;
+
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCurrentUser;
+
         private FontAwesome.Sharp.IconPictureBox ipbCurrentUser;
+
         private FontAwesome.Sharp.IconButton btnDeconnexion;
         private FontAwesome.Sharp.IconButton btnAbonnements;
         private FontAwesome.Sharp.IconButton btnTypesAbonnements;
@@ -354,14 +374,16 @@
         private FontAwesome.Sharp.IconButton btnAdherents;
         private FontAwesome.Sharp.IconButton btnPersonnes;
         private FontAwesome.Sharp.IconButton btnUtilisateurs;
+
         private System.Windows.Forms.PictureBox pictureBox1;
+
         private System.Windows.Forms.Panel pnlPersonnesIndicator;
         private System.Windows.Forms.Panel pnlUtilisateurIndicator;
         private System.Windows.Forms.Panel pnlAbonnementsIndicator;
         private System.Windows.Forms.Panel pnlTypesAbonnementIndicator;
         private System.Windows.Forms.Panel pnlSportsIndicator;
         private System.Windows.Forms.Panel pnlAdherentsIndicator;
+
         private FontAwesome.Sharp.IconButton ibtnNotifications;
     }
 }
-
