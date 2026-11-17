@@ -55,6 +55,13 @@ namespace GymManager.Presentation.Personnes.Controls
             }
         }
 
+
+        public bool PersonCardEnabled
+        {
+            get { return ucPersonCard1.EnablePersonneControl; }
+            set { ucPersonCard1.EnablePersonneControl = value; }
+        }
+
         public ucPersonCardWithFilter()
         {
             InitializeComponent();
@@ -98,6 +105,7 @@ namespace GymManager.Presentation.Personnes.Controls
                 OnPersonSelected(ucPersonCard1.PersonID);
         }
 
+       
 
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -172,6 +180,8 @@ namespace GymManager.Presentation.Personnes.Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
         }
+
+        //know control is part of another control i want function or peperty that can handle the enabilty of persoone card
 
   
     }
