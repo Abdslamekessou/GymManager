@@ -1,4 +1,5 @@
-﻿using GymManager.Business;
+﻿using Globla_Classes;
+using GymManager.Business;
 using GymManager.Presentation.Global_Classes;
 using System;
 using System.Collections.Generic;
@@ -65,10 +66,6 @@ namespace GymManager.Presentation
             lblFullNameValue.Text = _User.PersonInfo.FullName;
             lblUsernameValue.Text = _User.UserName;
         }
-
-
-        
- 
 
         private void txtNewPassword_Validating(object sender, CancelEventArgs e)
         {

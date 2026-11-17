@@ -19,6 +19,7 @@ using GymManager.Presentation.Members.Controls;
 using GymManager.Presentation.Personnes.Controls;
 using GymManager.Presentation.Sports;
 using GymManager.Business.GymManager.Business;
+using GymManager.Presentation.Utilisateurs.Controls;
 
 namespace GymManager.Presentation
 {
@@ -140,6 +141,8 @@ namespace GymManager.Presentation
         private void btnUtilisateurs_Click(object sender, EventArgs e)
         {
             UIHelper.ActivateButton(btnUtilisateurs, pnlUtilisateurIndicator, _sidebarIndicators, pnlSidebar);
+            ucListeUtilisateurs ucList = new ucListeUtilisateurs();
+            ShowUserControl(ucList);
             
         }
 

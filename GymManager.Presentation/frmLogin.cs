@@ -1,14 +1,7 @@
-﻿using GymManager.Business;
+﻿using Globla_Classes;
+using GymManager.Business;
 using GymManager.Presentation.Global_Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GymManager.Presentation
@@ -24,7 +17,9 @@ namespace GymManager.Presentation
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
+            txtUsername.Text = "user1";
+            txtPassword.Text = "hocine2004";
             _User = clsUser.FindByUserName(txtUsername.Text);
 
             if (_User == null)
@@ -49,14 +44,14 @@ namespace GymManager.Presentation
                 return;
             }
 
-           
 
 
             clsGlobal.CurrentUser = _User;
             this.Hide();
-            MainForm frm = new MainForm(this);
-            frm.ShowDialog();
-            
+            MainForm frm = new MainForm();
+            frm.Show();
+
+
         }
     }
 }
