@@ -29,9 +29,10 @@ namespace GymManager.Presentation.Sports
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
@@ -48,7 +49,10 @@ namespace GymManager.Presentation.Sports
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cmsSports = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.supprimmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AjouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpMain.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.pnlSports.SuspendLayout();
@@ -93,7 +97,6 @@ namespace GymManager.Presentation.Sports
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "GESTION DES SPORTS";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // pnlSearch
             // 
@@ -148,25 +151,26 @@ namespace GymManager.Presentation.Sports
             // dgvSports
             // 
             this.dgvSports.AllowUserToAddRows = false;
+            this.dgvSports.ContextMenuStrip = cmsSports;
             this.dgvSports.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            this.dgvSports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
+            this.dgvSports.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvSports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSports.BackgroundColor = System.Drawing.Color.White;
             this.dgvSports.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSports.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSports.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSports.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvSports.ColumnHeadersHeight = 44;
             this.dgvSports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -174,15 +178,15 @@ namespace GymManager.Presentation.Sports
             this.SportName,
             this.Description,
             this.EstActif});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSports.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSports.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvSports.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSports.EnableHeadersVisualStyles = false;
             this.dgvSports.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
@@ -230,6 +234,10 @@ namespace GymManager.Presentation.Sports
             // 
             this.EstActif.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.EstActif.DataPropertyName = "EstActif";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.NullValue = false;
+            this.EstActif.DefaultCellStyle = dataGridViewCellStyle19;
             this.EstActif.HeaderText = "Est actif";
             this.EstActif.MinimumWidth = 90;
             this.EstActif.Name = "EstActif";
@@ -306,16 +314,41 @@ namespace GymManager.Presentation.Sports
             this.cmsSports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
             this.cmsSports.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.cmsSports.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.supprimmerToolStripMenuItem});
+            this.AjouterToolStripMenuItem,
+            this.modifierToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.supprimerToolStripMenuItem});
             this.cmsSports.Name = "contextMenuStrip1";
-            this.cmsSports.Size = new System.Drawing.Size(173, 36);
+            this.cmsSports.Size = new System.Drawing.Size(249, 139);
             // 
-            // supprimmerToolStripMenuItem
+            // AjouterToolStripMenuItem
             // 
-            this.supprimmerToolStripMenuItem.Name = "supprimmerToolStripMenuItem";
-            this.supprimmerToolStripMenuItem.Size = new System.Drawing.Size(172, 32);
-            this.supprimmerToolStripMenuItem.Text = "Supprimer";
-            this.supprimmerToolStripMenuItem.Click += new System.EventHandler(this.supprimmerToolStripMenuItem_Click);
+            this.AjouterToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.AddAppointment_32;
+            this.AjouterToolStripMenuItem.Name = "AjouterToolStripMenuItem";
+            this.AjouterToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.AjouterToolStripMenuItem.Text = "Ajouter";
+            this.AjouterToolStripMenuItem.Click += new System.EventHandler(this.AjouterToolStripMenuItem_Click);
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.Save_32;
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(245, 6);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Image = global::GymManager.Presentation.Properties.Resources.Delete_321;
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(248, 32);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // uctrlShowListSports
             // 
@@ -340,13 +373,15 @@ namespace GymManager.Presentation.Sports
         }
 
         #endregion
-
+        private System.Windows.Forms.ContextMenuStrip cmsSports;
+        private System.Windows.Forms.ToolStripMenuItem AjouterToolStripMenuItem;
+        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn SportID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SportName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewCheckBoxColumn EstActif;
-        private System.Windows.Forms.ContextMenuStrip cmsSports;
-        private System.Windows.Forms.ToolStripMenuItem supprimmerToolStripMenuItem;
-        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
     }
 }

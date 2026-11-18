@@ -57,14 +57,79 @@ namespace GymManager.Presentation.Sports
             dgvSports.DataSource = _AllSports;
         }
 
-        private void supprimmerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AjouterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAjouterModifierTest frm = new frmAjouterModifierTest(-1);
+            frm.ShowDialog();
+            _AllSports = clsSport.GetAllSports();
+            dgvSports.DataSource = _AllSports;
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmAjouterModifierTest frm = new frmAjouterModifierTest((int)dgvSports.SelectedRows[0].Cells[0].Value);
+            frm.ShowDialog();
 
+            _AllSports = clsSport.GetAllSports();
+            dgvSports.DataSource = _AllSports;
+        }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Check if a row is actually selected
+            if (dgvSports.SelectedRows.Count > 0)
+            {
+                // Get the Sport ID and Sport Name from the selected row 
+                // (Note: Adjust Cells[1] index if your sport name is in a different column)
+                int sportId = (int)dgvSports.SelectedRows[0].Cells[0].Value;
+                string sportName = dgvSports.SelectedRows[0].Cells[1].Value.ToString();
+
+                // 1. Ask the user to confirm deletion with a message box showing the sport name
+                DialogResult confirmResult = MessageBox.Show(
+                    $"Voulez-vous vraiment supprimer le sport \"{sportName}\" ?",
+                    "Confirmation de suppression",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // 2. Call the deletion method and check the result
+                    bool isDeleted = clsSport.DeletSport(sportId);
+
+                    if (isDeleted)
+                    {
+                        MessageBox.Show(
+                            "le sport a été supprimer",
+                            "Succès",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "le sport ne peut pas etre supprimer car il y a des abonnements qui dépend de ce sport",
+                            "Suppression impossible",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        );
+                    }
+
+                    // 3. Refresh the DataGridView with updated data
+                    _AllSports = clsSport.GetAllSports();
+                    dgvSports.DataSource = _AllSports;
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Veuillez sélectionner un sport à supprimer.",
+                    "Aucune sélection",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
         }
     }
 }

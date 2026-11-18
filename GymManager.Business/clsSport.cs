@@ -106,9 +106,9 @@ namespace GymManager.Business
             return false;
         }
 
-        public static bool DeletSport(int v)
+        public static bool DeletSport(int SportID)
         {
-            return clsSportDataAccess.DeletSport(v);
+            return clsSportDataAccess.DeletSport(SportID);
         }
     }
 }

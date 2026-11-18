@@ -73,6 +73,16 @@ namespace GymManager.Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddAppointment_32 {
+            get {
+                object obj = ResourceManager.GetObject("AddAppointment 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddPerson_32 {
             get {
                 object obj = ResourceManager.GetObject("AddPerson 32", resourceCulture);
@@ -93,6 +103,16 @@ namespace GymManager.Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delete_321 {
+            get {
+                object obj = ResourceManager.GetObject("Delete 321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_32 {
             get {
                 object obj = ResourceManager.GetObject("edit 32", resourceCulture);
@@ -106,6 +126,16 @@ namespace GymManager.Presentation.Properties {
         internal static System.Drawing.Bitmap Female_512 {
             get {
                 object obj = ResourceManager.GetObject("Female 512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GymManagerLogo512WithBlueBgColor {
+            get {
+                object obj = ResourceManager.GetObject("GymManagerLogo512WithBlueBgColor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +173,16 @@ namespace GymManager.Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Save_32 {
+            get {
+                object obj = ResourceManager.GetObject("Save 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SearchPerson {
             get {
                 object obj = ResourceManager.GetObject("SearchPerson", resourceCulture);
@@ -156,16 +196,6 @@ namespace GymManager.Presentation.Properties {
         internal static System.Drawing.Bitmap send_email_32 {
             get {
                 object obj = ResourceManager.GetObject("send email 32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap GymManagerLogo512WithBlueBgColor {
-            get {
-                object obj = ResourceManager.GetObject("GymManagerLogo512WithBlueBgColor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
