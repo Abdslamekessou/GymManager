@@ -236,6 +236,7 @@ namespace GymManager.Presentation
             // 
             this.btnDeconnexion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeconnexion.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDeconnexion.IconColor = System.Drawing.Color.Black;
             this.btnDeconnexion.IconFont = FontAwesome.Sharp.IconFont.Auto;
