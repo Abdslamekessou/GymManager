@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace GymManager.Presentation
 {
-    public partial class frmDeatiles : Form
+    public partial class frmDetails : Form
     {
         private int _UserID = -1;
 
         clsUser _User;
 
-        public frmDeatiles(int UserID)
+        public frmDetails(int UserID)
         {
             InitializeComponent();
 

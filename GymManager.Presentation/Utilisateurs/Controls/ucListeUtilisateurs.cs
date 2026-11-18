@@ -176,7 +176,7 @@ namespace GymManager.Presentation.Utilisateurs.Controls
 
         private void tsmiShowDetails_Click(object sender, EventArgs e)
         {
-            frmDeatiles frm = new frmDeatiles((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frmDetails frm = new frmDetails((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
         }
 
