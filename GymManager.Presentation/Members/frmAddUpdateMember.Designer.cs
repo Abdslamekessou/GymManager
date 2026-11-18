@@ -39,7 +39,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnCancel.Location = new System.Drawing.Point(1218, 890);
+            this.btnCancel.Location = new System.Drawing.Point(1048, 806);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(165, 50);
@@ -51,7 +51,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1405, 890);
+            this.btnSave.Location = new System.Drawing.Point(1233, 806);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 50);
@@ -65,7 +65,7 @@
             this.rbInActif.AutoSize = true;
             this.rbInActif.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInActif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.rbInActif.Location = new System.Drawing.Point(1069, 450);
+            this.rbInActif.Location = new System.Drawing.Point(1002, 431);
             this.rbInActif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbInActif.Name = "rbInActif";
             this.rbInActif.Size = new System.Drawing.Size(151, 36);
@@ -79,7 +79,7 @@
             this.rbActif.Checked = true;
             this.rbActif.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbActif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.rbActif.Location = new System.Drawing.Point(959, 450);
+            this.rbActif.Location = new System.Drawing.Point(847, 431);
             this.rbActif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbActif.Name = "rbActif";
             this.rbActif.Size = new System.Drawing.Size(95, 36);
@@ -93,10 +93,10 @@
             this.ucAbonnementInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.ucAbonnementInfo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucAbonnementInfo1.IsUpdateMode = false;
-            this.ucAbonnementInfo1.Location = new System.Drawing.Point(26, 505);
+            this.ucAbonnementInfo1.Location = new System.Drawing.Point(13, 467);
             this.ucAbonnementInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucAbonnementInfo1.Name = "ucAbonnementInfo1";
-            this.ucAbonnementInfo1.Size = new System.Drawing.Size(1559, 376);
+            this.ucAbonnementInfo1.Size = new System.Drawing.Size(1400, 330);
             this.ucAbonnementInfo1.TabIndex = 1;
             this.ucAbonnementInfo1.Load += new System.EventHandler(this.ucAbonnementInfo1_Load);
             // 
@@ -105,20 +105,21 @@
             this.ucPersonCardWithFilter1.AutoSize = true;
             this.ucPersonCardWithFilter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.ucPersonCardWithFilter1.FilterEnabled = true;
-            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(-1, -2);
+            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(-1, -3);
             this.ucPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
+            this.ucPersonCardWithFilter1.PersonCardEnabled = true;
             this.ucPersonCardWithFilter1.ShowAddPerson = true;
-            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1587, 522);
+            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(1454, 510);
             this.ucPersonCardWithFilter1.TabIndex = 0;
             // 
             // frmAddUpdateMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1598, 948);
+            this.ClientSize = new System.Drawing.Size(1442, 876);
             this.Controls.Add(this.rbActif);
             this.Controls.Add(this.rbInActif);
             this.Controls.Add(this.btnCancel);

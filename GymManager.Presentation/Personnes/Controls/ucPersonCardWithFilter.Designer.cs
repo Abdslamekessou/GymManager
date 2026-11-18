@@ -42,11 +42,11 @@ namespace GymManager.Presentation.Personnes.Controls
             this.gbFilters.Controls.Add(this.btnAddNewPerson);
             this.gbFilters.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.gbFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
-            this.gbFilters.Location = new System.Drawing.Point(21, 19);
+            this.gbFilters.Location = new System.Drawing.Point(12, 4);
             this.gbFilters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbFilters.Name = "gbFilters";
             this.gbFilters.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbFilters.Size = new System.Drawing.Size(1218, 106);
+            this.gbFilters.Size = new System.Drawing.Size(1000, 117);
             this.gbFilters.TabIndex = 18;
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "  RECHERCHER UNE PERSONNE";
@@ -132,23 +132,24 @@ namespace GymManager.Presentation.Personnes.Controls
             // 
             this.ucPersonCard1.AutoSize = true;
             this.ucPersonCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.ucPersonCard1.Location = new System.Drawing.Point(21, 144);
+            this.ucPersonCard1.EnablePersonneControl = true;
+            this.ucPersonCard1.Location = new System.Drawing.Point(12, 121);
             this.ucPersonCard1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucPersonCard1.Name = "ucPersonCard1";
-            this.ucPersonCard1.Size = new System.Drawing.Size(1563, 373);
+            this.ucPersonCard1.Size = new System.Drawing.Size(1439, 384);
             this.ucPersonCard1.TabIndex = 0;
             // 
             // ucPersonCardWithFilter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.Controls.Add(this.gbFilters);
             this.Controls.Add(this.ucPersonCard1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ucPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(1619, 542);
+            this.Size = new System.Drawing.Size(1454, 510);
             this.Load += new System.EventHandler(this.ucPersonCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
