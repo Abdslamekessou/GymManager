@@ -129,10 +129,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnAddPerson.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1358, 25</value>
+    <value>1291, 25</value>
   </data>
   <data name="btnAddPerson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 59</value>
+    <value>187, 84</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAddPerson.TabIndex" type="System.Int32, mscorlib">
@@ -178,7 +178,7 @@
     <value>Genre</value>
   </data>
   <data name="cbFilterBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 46</value>
+    <value>27, 63</value>
   </data>
   <data name="cbFilterBy.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 46</value>
@@ -202,7 +202,7 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="txtFilterValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 46</value>
+    <value>245, 63</value>
   </data>
   <data name="txtFilterValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 34</value>
@@ -384,6 +384,39 @@
   <metadata name="cmsPeople.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 18</value>
   </metadata>
+  <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 208</value>
+  </data>
+  <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
+    <value>cmsPeople</value>
+  </data>
+  <data name="&gt;&gt;cmsPeople.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 270</value>
+  </data>
+  <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1525, 570</value>
+  </data>
+  <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
+    <value>dgvPersons</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="showDetailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 32</value>
   </data>
@@ -426,38 +459,8 @@
   <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
     <value>Appeler</value>
   </data>
-  <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
-  </data>
-  <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
-    <value>cmsPeople</value>
-  </data>
-  <data name="&gt;&gt;cmsPeople.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 270</value>
-  </data>
-  <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1525, 570</value>
-  </data>
-  <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
-    <value>dgvPersons</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="gpFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="cmbGendor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 14pt, style=Bold</value>
@@ -472,7 +475,7 @@
     <value>Femme</value>
   </data>
   <data name="cmbGendor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 45</value>
+    <value>245, 63</value>
   </data>
   <data name="cmbGendor.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
@@ -493,7 +496,7 @@
     <value>3</value>
   </data>
   <data name="gpFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 90</value>
+    <value>30, 96</value>
   </data>
   <data name="gpFilters.Size" type="System.Drawing.Size, System.Drawing">
     <value>1525, 115</value>

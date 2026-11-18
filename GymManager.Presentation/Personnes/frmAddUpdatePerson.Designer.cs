@@ -102,7 +102,7 @@ namespace GymManager.Presentation.Personnes
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.lblDescription.Location = new System.Drawing.Point(43, 94);
+            this.lblDescription.Location = new System.Drawing.Point(44, 107);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(476, 28);
             this.lblDescription.TabIndex = 1;
@@ -155,12 +155,12 @@ namespace GymManager.Presentation.Personnes
             // 
             this.txtPersonID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.txtPersonID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPersonID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonID.Location = new System.Drawing.Point(338, 38);
             this.txtPersonID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPersonID.Name = "txtPersonID";
             this.txtPersonID.ReadOnly = true;
-            this.txtPersonID.Size = new System.Drawing.Size(292, 40);
+            this.txtPersonID.Size = new System.Drawing.Size(292, 39);
             this.txtPersonID.TabIndex = 1;
             this.txtPersonID.Visible = false;
             // 
@@ -178,11 +178,11 @@ namespace GymManager.Presentation.Personnes
             // txtFirstName
             // 
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(338, 107);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(309, 40);
+            this.txtFirstName.Size = new System.Drawing.Size(309, 39);
             this.txtFirstName.TabIndex = 3;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
@@ -200,11 +200,11 @@ namespace GymManager.Presentation.Personnes
             // txtLastName
             // 
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(917, 105);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(320, 40);
+            this.txtLastName.Size = new System.Drawing.Size(320, 39);
             this.txtLastName.TabIndex = 5;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
@@ -222,11 +222,11 @@ namespace GymManager.Presentation.Personnes
             // txtPhone
             // 
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(338, 182);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(309, 40);
+            this.txtPhone.Size = new System.Drawing.Size(309, 39);
             this.txtPhone.TabIndex = 7;
             this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmptyTextBox);
             // 
@@ -244,11 +244,11 @@ namespace GymManager.Presentation.Personnes
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(917, 180);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(320, 40);
+            this.txtEmail.Size = new System.Drawing.Size(320, 39);
             this.txtEmail.TabIndex = 9;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
@@ -266,13 +266,13 @@ namespace GymManager.Presentation.Personnes
             // dtpDateOfBirth
             // 
             this.dtpDateOfBirth.CustomFormat = "dd/MM/yyyy";
-            this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateOfBirth.Location = new System.Drawing.Point(338, 260);
             this.dtpDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDateOfBirth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(309, 40);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(309, 39);
             this.dtpDateOfBirth.TabIndex = 18;
             this.dtpDateOfBirth.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             // 
@@ -344,12 +344,12 @@ namespace GymManager.Presentation.Personnes
             this.btnSelectPhoto.FlatAppearance.BorderSize = 0;
             this.btnSelectPhoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnSelectPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectPhoto.ForeColor = System.Drawing.Color.White;
             this.btnSelectPhoto.Location = new System.Drawing.Point(416, 350);
             this.btnSelectPhoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelectPhoto.Name = "btnSelectPhoto";
-            this.btnSelectPhoto.Size = new System.Drawing.Size(276, 50);
+            this.btnSelectPhoto.Size = new System.Drawing.Size(276, 73);
             this.btnSelectPhoto.TabIndex = 16;
             this.btnSelectPhoto.Text = "Sélectionner une photo";
             this.btnSelectPhoto.UseVisualStyleBackColor = false;
@@ -360,9 +360,9 @@ namespace GymManager.Presentation.Personnes
             this.btnRemovePhoto.BackColor = System.Drawing.Color.White;
             this.btnRemovePhoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
             this.btnRemovePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemovePhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemovePhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemovePhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.btnRemovePhoto.Location = new System.Drawing.Point(416, 412);
+            this.btnRemovePhoto.Location = new System.Drawing.Point(413, 431);
             this.btnRemovePhoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemovePhoto.Name = "btnRemovePhoto";
             this.btnRemovePhoto.Size = new System.Drawing.Size(279, 50);
@@ -378,10 +378,10 @@ namespace GymManager.Presentation.Personnes
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            this.btnCancel.Location = new System.Drawing.Point(1019, 714);
+            this.btnCancel.Location = new System.Drawing.Point(956, 689);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(144, 64);
+            this.btnCancel.Size = new System.Drawing.Size(144, 89);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -396,10 +396,10 @@ namespace GymManager.Presentation.Personnes
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1193, 714);
+            this.btnSave.Location = new System.Drawing.Point(1116, 689);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(181, 64);
+            this.btnSave.Size = new System.Drawing.Size(258, 89);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Enregistrer";
             this.btnSave.UseVisualStyleBackColor = false;
