@@ -118,10 +118,10 @@ namespace GymManager.Presentation.Personnes.Controls
             this.btnEditPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditPerson.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnEditPerson.ForeColor = System.Drawing.Color.White;
-            this.btnEditPerson.Location = new System.Drawing.Point(1366, 17);
+            this.btnEditPerson.Location = new System.Drawing.Point(1322, 17);
             this.btnEditPerson.Name = "btnEditPerson";
             this.btnEditPerson.Padding = new System.Windows.Forms.Padding(2);
-            this.btnEditPerson.Size = new System.Drawing.Size(171, 59);
+            this.btnEditPerson.Size = new System.Drawing.Size(215, 59);
             this.btnEditPerson.TabIndex = 2;
             this.btnEditPerson.Text = "Modifier";
             this.btnEditPerson.UseVisualStyleBackColor = false;

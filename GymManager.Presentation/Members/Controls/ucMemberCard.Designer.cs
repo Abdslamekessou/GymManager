@@ -90,6 +90,7 @@
             // 
             this.ucPersonCard1.AutoSize = true;
             this.ucPersonCard1.BackColor = System.Drawing.SystemColors.Control;
+            this.ucPersonCard1.EnablePersonneControl = true;
             this.ucPersonCard1.Location = new System.Drawing.Point(3, 5);
             this.ucPersonCard1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucPersonCard1.Name = "ucPersonCard1";
@@ -98,8 +99,8 @@
             // 
             // ucMemberCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.lblStatusTitle);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.rbInActif);

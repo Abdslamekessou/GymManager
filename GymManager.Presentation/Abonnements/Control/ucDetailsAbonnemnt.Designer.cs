@@ -44,7 +44,7 @@
             this.gbAbonnementInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAbonnementInfo.Location = new System.Drawing.Point(5, 5);
             this.gbAbonnementInfo.Name = "gbAbonnementInfo";
-            this.gbAbonnementInfo.Size = new System.Drawing.Size(820, 220);
+            this.gbAbonnementInfo.Size = new System.Drawing.Size(840, 244);
             this.gbAbonnementInfo.TabIndex = 0;
             this.gbAbonnementInfo.TabStop = false;
             this.gbAbonnementInfo.Text = "💳 INFORMATIONS DE L\'ABONNEMENT";
@@ -53,7 +53,7 @@
             // 
             this.lblStatut.AutoSize = true;
             this.lblStatut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatut.Location = new System.Drawing.Point(15, 167);
+            this.lblStatut.Location = new System.Drawing.Point(15, 177);
             this.lblStatut.Name = "lblStatut";
             this.lblStatut.Size = new System.Drawing.Size(117, 28);
             this.lblStatut.TabIndex = 8;
@@ -73,7 +73,7 @@
             // 
             this.lblPrixPaye.AutoSize = true;
             this.lblPrixPaye.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrixPaye.Location = new System.Drawing.Point(256, 86);
+            this.lblPrixPaye.Location = new System.Drawing.Point(435, 130);
             this.lblPrixPaye.Name = "lblPrixPaye";
             this.lblPrixPaye.Size = new System.Drawing.Size(144, 28);
             this.lblPrixPaye.TabIndex = 6;
@@ -103,7 +103,7 @@
             // 
             this.lblDuree.AutoSize = true;
             this.lblDuree.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuree.Location = new System.Drawing.Point(256, 139);
+            this.lblDuree.Location = new System.Drawing.Point(435, 177);
             this.lblDuree.Name = "lblDuree";
             this.lblDuree.Size = new System.Drawing.Size(117, 28);
             this.lblDuree.TabIndex = 3;
@@ -113,7 +113,7 @@
             // 
             this.lblTypeAbonnement.AutoSize = true;
             this.lblTypeAbonnement.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeAbonnement.Location = new System.Drawing.Point(338, 41);
+            this.lblTypeAbonnement.Location = new System.Drawing.Point(435, 41);
             this.lblTypeAbonnement.Name = "lblTypeAbonnement";
             this.lblTypeAbonnement.Size = new System.Drawing.Size(239, 28);
             this.lblTypeAbonnement.TabIndex = 2;
@@ -141,13 +141,13 @@
             // 
             // ucDetailsAbonnemnt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbAbonnementInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucDetailsAbonnemnt";
-            this.Size = new System.Drawing.Size(828, 228);
+            this.Size = new System.Drawing.Size(848, 261);
             this.gbAbonnementInfo.ResumeLayout(false);
             this.gbAbonnementInfo.PerformLayout();
             this.ResumeLayout(false);

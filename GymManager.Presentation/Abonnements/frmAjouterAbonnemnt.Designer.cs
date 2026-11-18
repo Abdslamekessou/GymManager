@@ -36,29 +36,32 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(939, 717);
+            this.btnAnnuler.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.Location = new System.Drawing.Point(975, 744);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(150, 49);
             this.btnAnnuler.TabIndex = 20;
-            this.btnAnnuler.Text = "[ Annuler ]";
+            this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(1097, 717);
+            this.btnEnregistrer.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnregistrer.Location = new System.Drawing.Point(1133, 744);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(150, 49);
             this.btnEnregistrer.TabIndex = 21;
-            this.btnEnregistrer.Text = "[ Enregistrer ]";
+            this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // ucMemberCardWithFilter1
             // 
             this.ucMemberCardWithFilter1.FilterEnabled = true;
+            this.ucMemberCardWithFilter1.IsAddUpdateMode = true;
             this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(24, 14);
             this.ucMemberCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
@@ -67,28 +70,35 @@
             // 
             // ucAbonnementInfo1
             // 
+            this.ucAbonnementInfo1.AutoSize = true;
+            this.ucAbonnementInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.ucAbonnementInfo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucAbonnementInfo1.IsUpdateMode = false;
-            this.ucAbonnementInfo1.Location = new System.Drawing.Point(24, 413);
+            this.ucAbonnementInfo1.Location = new System.Drawing.Point(13, 401);
+            this.ucAbonnementInfo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucAbonnementInfo1.Name = "ucAbonnementInfo1";
-            this.ucAbonnementInfo1.Size = new System.Drawing.Size(1223, 287);
+            this.ucAbonnementInfo1.Size = new System.Drawing.Size(1270, 287);
             this.ucAbonnementInfo1.TabIndex = 0;
             this.ucAbonnementInfo1.Load += new System.EventHandler(this.ucAbonnementInfo1_Load);
             // 
             // frmAjouterAbonnemnt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1584, 798);
+            this.ClientSize = new System.Drawing.Size(1303, 806);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.ucMemberCardWithFilter1);
             this.Controls.Add(this.ucAbonnementInfo1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAjouterAbonnemnt";
             this.Text = "frmAjouterAbonnemnt";
             this.Load += new System.EventHandler(this.frmAjouterAbonnemnt_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
