@@ -67,6 +67,9 @@ namespace GymManager.Presentation.Notifications
 
         }
 
+        private void txtSubscriptionStatus_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

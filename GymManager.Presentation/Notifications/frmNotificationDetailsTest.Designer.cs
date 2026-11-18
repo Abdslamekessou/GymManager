@@ -55,12 +55,14 @@
             // 
             // frmNotificationDetailsTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1265, 879);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlNoficationDetails1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNotificationDetailsTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NotificationDetailsTest";

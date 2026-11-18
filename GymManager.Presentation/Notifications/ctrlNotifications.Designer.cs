@@ -134,7 +134,7 @@ namespace GymManager.Presentation.Notifications
             // cbStatus
             // 
             this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Tous",
@@ -142,7 +142,7 @@ namespace GymManager.Presentation.Notifications
             "Non Lu"});
             this.cbStatus.Location = new System.Drawing.Point(27, 66);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(225, 40);
+            this.cbStatus.Size = new System.Drawing.Size(225, 46);
             this.cbStatus.TabIndex = 1;
             // 
             // lblExportStatus
@@ -159,7 +159,7 @@ namespace GymManager.Presentation.Notifications
             // cbExportStatus
             // 
             this.cbExportStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbExportStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExportStatus.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbExportStatus.FormattingEnabled = true;
             this.cbExportStatus.Items.AddRange(new object[] {
             "Tous",
@@ -167,7 +167,7 @@ namespace GymManager.Presentation.Notifications
             "Non Exporté"});
             this.cbExportStatus.Location = new System.Drawing.Point(275, 66);
             this.cbExportStatus.Name = "cbExportStatus";
-            this.cbExportStatus.Size = new System.Drawing.Size(225, 40);
+            this.cbExportStatus.Size = new System.Drawing.Size(225, 46);
             this.cbExportStatus.TabIndex = 3;
             // 
             // btnMarkAllRead
