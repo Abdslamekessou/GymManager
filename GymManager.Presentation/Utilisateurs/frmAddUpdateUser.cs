@@ -1,16 +1,17 @@
-﻿using GymManager.Business;
+﻿using Globla_Classes;
+using GymManager.Business;
 using GymManager.Presentation.Global_Classes;
+using GymManager.Presentation.Personnes.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using Globla_Classes;
 
 namespace GymManager.Presentation
 {
@@ -45,7 +46,7 @@ namespace GymManager.Presentation
 
                 gbUserInfo.Enabled = false;
                 btnSave.Enabled = false;
-                ucPersonCardWithFilter1.FilterFocus();
+                ucPersonCardWithFilter2.FilterFocus();
             }
             else
             {
@@ -66,7 +67,7 @@ namespace GymManager.Presentation
         private void _LoadData()
         {
             _User = clsUser.Find(_UserID);
-            ucPersonCardWithFilter1.FilterEnabled = false;
+            ucPersonCardWithFilter2.FilterEnabled = false;
 
             if (_User == null)
             {
@@ -81,7 +82,7 @@ namespace GymManager.Presentation
             //txtConfirmPassword.Text = _User.Password;
             chkIsActive.Checked = _User.IsActive;
             cbxRole.Text = _User.RoleInfo.RoleName;
-            ucPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
+            ucPersonCardWithFilter2.LoadPersonInfo(_User.PersonID);
         }
 
         private void frmAddUpdateUser_Load(object sender, EventArgs e)
@@ -172,7 +173,7 @@ namespace GymManager.Presentation
 
         private void frmAddUpdateUser_Activated(object sender, EventArgs e)
         {
-            ucPersonCardWithFilter1.FilterFocus();
+            ucPersonCardWithFilter2.FilterFocus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -212,7 +213,7 @@ namespace GymManager.Presentation
 
            
 
-            _User.PersonID = ucPersonCardWithFilter1.PersonID;
+            _User.PersonID = ucPersonCardWithFilter2.PersonID;
             _User.Password = Password;
             _User.UserName = txtUsername.Text.Trim();
             _User.IsActive = chkIsActive.Checked;
@@ -225,7 +226,7 @@ namespace GymManager.Presentation
                 this.Text = "Mise à jour Utilisateur";
 
                 MessageBox.Show("Utilisateur enregistré avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ucPersonCardWithFilter1.Enabled = true;
+                ucPersonCardWithFilter2.Enabled = true;
                 txtPassword.Enabled = false;
                 txtConfirmPassword.Enabled = false;
                 lblPassword.Enabled = false;
@@ -237,31 +238,31 @@ namespace GymManager.Presentation
             }
         }
 
-        private void ucPersonCardWithFilter1_OnPersonSelected(int obj)
+        private void ucPersonCardWithFilter2_OnPersonSelected(int obj)
         {
             int PersonID = obj;
 
-            if(_Mode == enMode.Update)
+            if (_Mode == enMode.Update)
             {
-                ucPersonCardWithFilter1.PersonCardEnabled = true;
+                ucPersonCardWithFilter2.PersonCardEnabled = true;
                 btnSave.Enabled = true;
                 gbUserInfo.Enabled = true;
                 return;
             }
 
-            if(PersonID != -1)
+            if (PersonID != -1)
             {
                 if (clsUser.IsUserExistedForPerson(PersonID))
                 {
                     MessageBox.Show("Un utilisateur existe déjà pour cette personne. Veuillez choisir une autre personne.", "Erreur de personne", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ucPersonCardWithFilter1.PersonCardEnabled = false;
+                    ucPersonCardWithFilter2.PersonCardEnabled = false;
                     gbUserInfo.Enabled = false;
                     btnSave.Enabled = false;
                     return;
                 }
                 else
                 {
-                    ucPersonCardWithFilter1.PersonCardEnabled = true;
+                    ucPersonCardWithFilter2.PersonCardEnabled = true;
                     gbUserInfo.Enabled = true;
                     btnSave.Enabled = true;
                     txtPassword.Enabled = true;
@@ -276,6 +277,5 @@ namespace GymManager.Presentation
                 btnSave.Enabled = false;
             }
         }
-
     }
 }
