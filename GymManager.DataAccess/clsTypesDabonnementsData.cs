@@ -352,6 +352,40 @@ namespace GymManager.DataAccess
             return dt;
 
         }
+
+        public static bool DeletTypeAbonnement(int typeAbonnementID)
+        {
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Delete TypeAbonnements 
+                                where TypeAbonnementID = @TypeAbonnementID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@TypeAbonnementID", typeAbonnementID);
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+
+                connection.Close();
+
+            }
+
+            return (rowsAffected > 0);
+        }
     }
 
 }

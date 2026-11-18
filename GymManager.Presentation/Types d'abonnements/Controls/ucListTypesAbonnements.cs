@@ -304,9 +304,58 @@ namespace GymManager.Presentation
             }
         }
 
-        private void lblValeur_Click(object sender, EventArgs e)
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            if (dgvListTypeAbonnement.SelectedRows.Count > 0)
+            {
+                int ID = (int)dgvListTypeAbonnement.SelectedRows[0].Cells[0].Value;
+                string TAName = dgvListTypeAbonnement.SelectedRows[0].Cells[1].Value.ToString();
 
+                DialogResult confirmResult = MessageBox.Show(
+                    $"Voulez-vous vraiment supprimer le Type d'Abonnement \"{TAName}\" ?",
+                    "Confirmation de suppression",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    bool isDeleted = clsTypeAbonnement.DeletTypeAbonnement(ID);
+
+                    if (isDeleted)
+                    {
+                        MessageBox.Show(
+                            "le Type d'Abonnement a été supprimer",
+                            "Succès",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "le Type d'Abonnement ne peut pas etre supprimer car il y a des abonnements qui dépend de ce Type",
+                            "Suppression impossible",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        );
+                    }
+
+                    // 3. Refresh the DataGridView with updated data
+                    _dtAllTypesAbonnement = clsTypeAbonnement.GetAllTypesDabonnements();
+                    dgvListTypeAbonnement.DataSource = _dtAllTypesAbonnement;
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Veuillez sélectionner un Type Abonnement à supprimer.",
+                    "Aucune sélection",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
         }
     }
 }

@@ -117,7 +117,6 @@ namespace GymManager.Presentation.Types_d_abonnements
             this.cbSport.Name = "cbSport";
             this.cbSport.Size = new System.Drawing.Size(350, 40);
             this.cbSport.TabIndex = 3;
-            this.cbSport.SelectedIndexChanged += new System.EventHandler(this.cbSport_SelectedIndexChanged);
             // 
             // lblDuree
             // 
@@ -154,7 +153,7 @@ namespace GymManager.Presentation.Types_d_abonnements
             // 
             this.txtPrix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrix.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrix.Location = new System.Drawing.Point(814, 170);
+            this.txtPrix.Location = new System.Drawing.Point(828, 175);
             this.txtPrix.Name = "txtPrix";
             this.txtPrix.Size = new System.Drawing.Size(150, 37);
             this.txtPrix.TabIndex = 7;
@@ -166,7 +165,7 @@ namespace GymManager.Presentation.Types_d_abonnements
             this.lblDA.AutoSize = true;
             this.lblDA.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblDA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.lblDA.Location = new System.Drawing.Point(972, 174);
+            this.lblDA.Location = new System.Drawing.Point(998, 175);
             this.lblDA.Name = "lblDA";
             this.lblDA.Size = new System.Drawing.Size(39, 28);
             this.lblDA.TabIndex = 8;
@@ -222,7 +221,7 @@ namespace GymManager.Presentation.Types_d_abonnements
             // 
             this.txtNombreDeSeances.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreDeSeances.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreDeSeances.Location = new System.Drawing.Point(814, 232);
+            this.txtNombreDeSeances.Location = new System.Drawing.Point(828, 232);
             this.txtNombreDeSeances.Name = "txtNombreDeSeances";
             this.txtNombreDeSeances.Size = new System.Drawing.Size(150, 37);
             this.txtNombreDeSeances.TabIndex = 13;
@@ -309,8 +308,8 @@ namespace GymManager.Presentation.Types_d_abonnements
             // 
             // frmAddUpdateTypeAbonnement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(1176, 683);

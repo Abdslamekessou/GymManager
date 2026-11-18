@@ -37,6 +37,7 @@ namespace GymManager.Presentation
             this.désactiverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAjouterType = new System.Windows.Forms.Button();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListTypeAbonnement)).BeginInit();
             this.cmsabonnement.SuspendLayout();
@@ -94,7 +95,7 @@ namespace GymManager.Presentation
             "Tous",
             "Actif",
             "InActif"});
-            this.cbFilter.Location = new System.Drawing.Point(190, 64);
+            this.cbFilter.Location = new System.Drawing.Point(238, 73);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(285, 38);
             this.cbFilter.TabIndex = 7;
@@ -107,7 +108,7 @@ namespace GymManager.Presentation
             this.txtValeur.Enabled = false;
             this.txtValeur.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValeur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            this.txtValeur.Location = new System.Drawing.Point(599, 17);
+            this.txtValeur.Location = new System.Drawing.Point(669, 20);
             this.txtValeur.MaxLength = 2000;
             this.txtValeur.Name = "txtValeur";
             this.txtValeur.Size = new System.Drawing.Size(412, 39);
@@ -127,7 +128,7 @@ namespace GymManager.Presentation
             "Nom du type d\'abonnement",
             "ID Type d\'abonnement",
             "Statut"});
-            this.cbRechercher.Location = new System.Drawing.Point(190, 19);
+            this.cbRechercher.Location = new System.Drawing.Point(238, 29);
             this.cbRechercher.Name = "cbRechercher";
             this.cbRechercher.Size = new System.Drawing.Size(285, 38);
             this.cbRechercher.TabIndex = 6;
@@ -136,34 +137,33 @@ namespace GymManager.Presentation
             // lblValeur
             // 
             this.lblValeur.AutoSize = true;
-            this.lblValeur.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValeur.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValeur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.lblValeur.Location = new System.Drawing.Point(517, 19);
+            this.lblValeur.Location = new System.Drawing.Point(554, 19);
             this.lblValeur.Name = "lblValeur";
-            this.lblValeur.Size = new System.Drawing.Size(82, 28);
+            this.lblValeur.Size = new System.Drawing.Size(100, 32);
             this.lblValeur.TabIndex = 4;
             this.lblValeur.Text = "Valeur :";
-            this.lblValeur.Click += new System.EventHandler(this.lblValeur_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.label5.Location = new System.Drawing.Point(18, 68);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 28);
+            this.label5.Size = new System.Drawing.Size(214, 32);
             this.label5.TabIndex = 5;
             this.label5.Text = "Filtrer par statut :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.label3.Location = new System.Drawing.Point(18, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 28);
+            this.label3.Size = new System.Drawing.Size(199, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "Rechercher par :";
             // 
@@ -226,36 +226,37 @@ namespace GymManager.Presentation
             this.voirLesDetailsToolStripMenuItem,
             this.modifierToolStripMenuItem,
             this.désactiverToolStripMenuItem,
-            this.activerToolStripMenuItem});
+            this.activerToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
             this.cmsabonnement.Name = "cmsabonnement";
             this.cmsabonnement.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.cmsabonnement.Size = new System.Drawing.Size(207, 132);
+            this.cmsabonnement.Size = new System.Drawing.Size(241, 197);
             // 
             // voirLesDetailsToolStripMenuItem
             // 
             this.voirLesDetailsToolStripMenuItem.Name = "voirLesDetailsToolStripMenuItem";
-            this.voirLesDetailsToolStripMenuItem.Size = new System.Drawing.Size(206, 32);
+            this.voirLesDetailsToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.voirLesDetailsToolStripMenuItem.Text = "Voir les détails";
             this.voirLesDetailsToolStripMenuItem.Click += new System.EventHandler(this.voirLesDetailsToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(206, 32);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // désactiverToolStripMenuItem
             // 
             this.désactiverToolStripMenuItem.Name = "désactiverToolStripMenuItem";
-            this.désactiverToolStripMenuItem.Size = new System.Drawing.Size(206, 32);
+            this.désactiverToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.désactiverToolStripMenuItem.Text = "Désactiver";
             this.désactiverToolStripMenuItem.Click += new System.EventHandler(this.désactiverToolStripMenuItem_Click);
             // 
             // activerToolStripMenuItem
             // 
             this.activerToolStripMenuItem.Name = "activerToolStripMenuItem";
-            this.activerToolStripMenuItem.Size = new System.Drawing.Size(206, 32);
+            this.activerToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.activerToolStripMenuItem.Text = "Activer";
             this.activerToolStripMenuItem.Click += new System.EventHandler(this.activerToolStripMenuItem_Click);
             // 
@@ -277,6 +278,13 @@ namespace GymManager.Presentation
             this.btnAjouterType.Text = "+  Ajouter un type";
             this.btnAjouterType.UseVisualStyleBackColor = false;
             this.btnAjouterType.Click += new System.EventHandler(this.btnAjouterType_Click);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // ucListTypesAbonnements
             // 
@@ -320,5 +328,6 @@ namespace GymManager.Presentation
         private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem désactiverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
     }
 }

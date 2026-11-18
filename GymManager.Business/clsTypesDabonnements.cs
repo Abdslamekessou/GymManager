@@ -165,5 +165,11 @@ namespace GymManager.Business
         {
             return clsTypesDabonnementsData.ActivateTypeAbonnement(TypeAbonnementID);
         }
+        public static bool DeletTypeAbonnement(int TypeAbonnementID)
+        {
+            return clsTypesDabonnementsData.DeletTypeAbonnement(TypeAbonnementID);
+        }
+
+
     }
 }
