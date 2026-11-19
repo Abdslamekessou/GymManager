@@ -21,8 +21,8 @@ namespace GymManager.Presentation.Members
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pnlMemberInfo = new System.Windows.Forms.Panel();
-            this.pnlSubscriptions = new System.Windows.Forms.Panel();
             this.ucMemberCardWithFilter1 = new GymManager.Presentation.Members.Controls.ucMemberCardWithFilter();
+            this.pnlSubscriptions = new System.Windows.Forms.Panel();
             this.ucListAbonnmentPerson1 = new GymManager.Presentation.Abonnements.Control.ucListAbonnmentPerson();
             this.tlpMain.SuspendLayout();
             this.pnlMemberInfo.SuspendLayout();
@@ -39,7 +39,7 @@ namespace GymManager.Presentation.Members
             this.tlpMain.Location = new System.Drawing.Point(1, -1);
             this.tlpMain.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.Padding = new System.Windows.Forms.Padding(18, 18, 18, 18);
+            this.tlpMain.Padding = new System.Windows.Forms.Padding(18);
             this.tlpMain.RowCount = 2;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.39698F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.60302F));
@@ -54,21 +54,9 @@ namespace GymManager.Presentation.Members
             this.pnlMemberInfo.Location = new System.Drawing.Point(18, 18);
             this.pnlMemberInfo.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             this.pnlMemberInfo.Name = "pnlMemberInfo";
-            this.pnlMemberInfo.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            this.pnlMemberInfo.Size = new System.Drawing.Size(1455, 421);
+            this.pnlMemberInfo.Padding = new System.Windows.Forms.Padding(12);
+            this.pnlMemberInfo.Size = new System.Drawing.Size(1455, 420);
             this.pnlMemberInfo.TabIndex = 0;
-            // 
-            // pnlSubscriptions
-            // 
-            this.pnlSubscriptions.BackColor = System.Drawing.Color.White;
-            this.pnlSubscriptions.Controls.Add(this.ucListAbonnmentPerson1);
-            this.pnlSubscriptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSubscriptions.Location = new System.Drawing.Point(18, 463);
-            this.pnlSubscriptions.Margin = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.pnlSubscriptions.Name = "pnlSubscriptions";
-            this.pnlSubscriptions.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            this.pnlSubscriptions.Size = new System.Drawing.Size(1455, 351);
-            this.pnlSubscriptions.TabIndex = 1;
             // 
             // ucMemberCardWithFilter1
             // 
@@ -78,8 +66,20 @@ namespace GymManager.Presentation.Members
             this.ucMemberCardWithFilter1.Location = new System.Drawing.Point(12, 12);
             this.ucMemberCardWithFilter1.Margin = new System.Windows.Forms.Padding(0);
             this.ucMemberCardWithFilter1.Name = "ucMemberCardWithFilter1";
-            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1431, 397);
+            this.ucMemberCardWithFilter1.Size = new System.Drawing.Size(1431, 396);
             this.ucMemberCardWithFilter1.TabIndex = 0;
+            // 
+            // pnlSubscriptions
+            // 
+            this.pnlSubscriptions.BackColor = System.Drawing.Color.White;
+            this.pnlSubscriptions.Controls.Add(this.ucListAbonnmentPerson1);
+            this.pnlSubscriptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSubscriptions.Location = new System.Drawing.Point(18, 462);
+            this.pnlSubscriptions.Margin = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.pnlSubscriptions.Name = "pnlSubscriptions";
+            this.pnlSubscriptions.Padding = new System.Windows.Forms.Padding(12);
+            this.pnlSubscriptions.Size = new System.Drawing.Size(1455, 352);
+            this.pnlSubscriptions.TabIndex = 1;
             // 
             // ucListAbonnmentPerson1
             // 
@@ -88,7 +88,7 @@ namespace GymManager.Presentation.Members
             this.ucListAbonnmentPerson1.Location = new System.Drawing.Point(12, 12);
             this.ucListAbonnmentPerson1.Margin = new System.Windows.Forms.Padding(0);
             this.ucListAbonnmentPerson1.Name = "ucListAbonnmentPerson1";
-            this.ucListAbonnmentPerson1.Size = new System.Drawing.Size(1431, 327);
+            this.ucListAbonnmentPerson1.Size = new System.Drawing.Size(1431, 328);
             this.ucListAbonnmentPerson1.TabIndex = 0;
             // 
             // frmShowMemberInfo

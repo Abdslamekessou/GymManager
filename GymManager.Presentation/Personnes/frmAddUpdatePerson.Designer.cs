@@ -381,7 +381,7 @@ namespace GymManager.Presentation.Personnes
             this.btnCancel.Location = new System.Drawing.Point(956, 689);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(144, 89);
+            this.btnCancel.Size = new System.Drawing.Size(144, 75);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -399,7 +399,7 @@ namespace GymManager.Presentation.Personnes
             this.btnSave.Location = new System.Drawing.Point(1116, 689);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(258, 89);
+            this.btnSave.Size = new System.Drawing.Size(258, 75);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Enregistrer";
             this.btnSave.UseVisualStyleBackColor = false;

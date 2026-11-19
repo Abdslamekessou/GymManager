@@ -11,13 +11,6 @@
         private System.Windows.Forms.Panel pnlGrid;
         private System.Windows.Forms.DataGridView dgvAbonnements;
 
-        private System.Windows.Forms.DataGridViewTextBoxColumn AbonnementID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeAbonnement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateDebut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrixPaye;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Statut;
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && components != null)
@@ -210,10 +203,10 @@
             dataGridViewCellStyle3.Format = "dd/mm/yyyy";
             this.DateDebut.DefaultCellStyle = dataGridViewCellStyle3;
             this.DateDebut.HeaderText = "Début";
-            this.DateDebut.MinimumWidth = 100;
+            this.DateDebut.MinimumWidth = 200;
             this.DateDebut.Name = "DateDebut";
             this.DateDebut.ReadOnly = true;
-            this.DateDebut.Width = 120;
+            this.DateDebut.Width = 200;
             // 
             // DateFin
             // 
@@ -222,9 +215,10 @@
             dataGridViewCellStyle4.Format = "dd/mm/yyyy";
             this.DateFin.DefaultCellStyle = dataGridViewCellStyle4;
             this.DateFin.HeaderText = "Fin";
-            this.DateFin.MinimumWidth = 100;
+            this.DateFin.MinimumWidth = 200;
             this.DateFin.Name = "DateFin";
             this.DateFin.ReadOnly = true;
+            this.DateFin.Width = 200;
             // 
             // PrixPaye
             // 
@@ -265,5 +259,12 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn AbonnementID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeAbonnement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateDebut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrixPaye;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Statut;
     }
 }
