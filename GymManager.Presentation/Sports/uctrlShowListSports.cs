@@ -19,6 +19,7 @@ namespace GymManager.Presentation.Sports
         public uctrlShowListSports()
         {
             InitializeComponent();
+            dgvSports.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             dgvSports.DataSource = _AllSports;
             if (clsGlobal.CurrentUser.RoleID != 1)
             {
