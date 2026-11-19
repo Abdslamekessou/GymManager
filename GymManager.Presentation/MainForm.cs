@@ -20,6 +20,7 @@ using GymManager.Presentation.Personnes.Controls;
 using GymManager.Presentation.Sports;
 using GymManager.Business.GymManager.Business;
 using GymManager.Presentation.Utilisateurs.Controls;
+using GymManager.Presentation.Global_Classes;
 
 namespace GymManager.Presentation
 {
@@ -37,7 +38,12 @@ namespace GymManager.Presentation
         public MainForm()
         {
             InitializeComponent();
-
+            if (clsGlobal.CurrentUser.RoleID==1)
+            {
+                btnUtilisateurs.Enabled = false;
+                btnTypesAbonnements.Enabled = false;
+                btnSports.Enabled = false;
+            }
             _sidebarIndicators = new List<Panel>
             {
                     pnlPersonnesIndicator,

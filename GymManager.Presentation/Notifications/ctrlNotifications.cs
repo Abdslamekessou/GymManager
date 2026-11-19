@@ -1,5 +1,6 @@
 ﻿using Globla_Classes;
 using GymManager.Business;
+using GymManager.Presentation.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +28,15 @@ namespace GymManager.Presentation.Notifications
             cbStatus.SelectedIndex = 0;
             cbExportStatus.SelectedIndex = 0;
             dgvNotifications.CellContentClick += DgvNotifications_CellContentClick;
+
+            //
+            if (clsGlobal.CurrentUser.RoleID == 1)
+            {
+                btnExport.Enabled = false;
+                btnMarkAllRead.Enabled = false;
+                dgvNotifications.Enabled = false;
+            }
+
 
         }
 
