@@ -18,6 +18,7 @@ namespace GymManager.Presentation.Utilisateurs.Controls
             InitializeComponent();
         }
 
+
         private static DataTable _dtAllUser;
 
         private void ucListeUtilisateurs_Load(object sender, EventArgs e)
@@ -27,26 +28,6 @@ namespace GymManager.Presentation.Utilisateurs.Controls
 
             cbxSearchBy.SelectedIndex = 0;
             cbxFilterRole.SelectedIndex = 0;
-
-
-            if (dgvUsers.Rows.Count > 0)
-            {
-                dgvUsers.Columns[0].HeaderText = "Utilisateur ID";
-                dgvUsers.Columns[0].Width = 110;
-
-                dgvUsers.Columns[1].HeaderText = "Personne ID";
-                dgvUsers.Columns[1].Width = 110;
-
-                dgvUsers.Columns[2].HeaderText = "Nom Complet";
-                dgvUsers.Columns[2].Width = 300;
-
-                dgvUsers.Columns[3].HeaderText = "Nom d'utilisateur";
-                dgvUsers.Columns[3].Width = 110;
-
-                dgvUsers.Columns[4].HeaderText = "Role";
-                dgvUsers.Columns[4].Width = 110;
-
-            }
         }
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)

@@ -111,7 +111,7 @@ namespace GymManager.Presentation.Notifications
             this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
             this.btnSearch.Location = new System.Drawing.Point(587, 52);
             this.btnSearch.Name = "btnSearch";
@@ -179,9 +179,9 @@ namespace GymManager.Presentation.Notifications
             this.btnMarkAllRead.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
             this.btnMarkAllRead.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.btnMarkAllRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarkAllRead.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnMarkAllRead.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarkAllRead.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
-            this.btnMarkAllRead.Location = new System.Drawing.Point(900, 52);
+            this.btnMarkAllRead.Location = new System.Drawing.Point(878, 52);
             this.btnMarkAllRead.Name = "btnMarkAllRead";
             this.btnMarkAllRead.Size = new System.Drawing.Size(307, 63);
             this.btnMarkAllRead.TabIndex = 6;
@@ -197,11 +197,11 @@ namespace GymManager.Presentation.Notifications
             this.btnExport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
             this.btnExport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(26)))), ((int)(((byte)(45)))));
-            this.btnExport.Location = new System.Drawing.Point(1233, 51);
+            this.btnExport.Location = new System.Drawing.Point(1191, 51);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(240, 64);
+            this.btnExport.Size = new System.Drawing.Size(282, 64);
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Exporter vers Excel";
             this.btnExport.UseVisualStyleBackColor = false;
