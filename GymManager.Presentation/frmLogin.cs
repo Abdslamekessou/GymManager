@@ -20,11 +20,12 @@ namespace GymManager.Presentation
         {
             ////Admin
             //txtUsername.Text = "user1";
-            //txtPassword.Text = "hocine2004";
+            //txtPassword.Text = "20262026";
 
-            //Recepcioniste
-            txtUsername.Text = "user2";
-            txtPassword.Text = "hocine2004";
+            ////Recepcioniste
+            //txtUsername.Text = "user2";
+            //txtPassword.Text = "20262026";
+
             _User = clsUser.FindByUserName(txtUsername.Text);
 
             if (_User == null)
