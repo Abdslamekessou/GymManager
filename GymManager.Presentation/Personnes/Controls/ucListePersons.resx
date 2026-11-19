@@ -384,39 +384,6 @@
   <metadata name="cmsPeople.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 18</value>
   </metadata>
-  <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
-  </data>
-  <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
-    <value>cmsPeople</value>
-  </data>
-  <data name="&gt;&gt;cmsPeople.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 270</value>
-  </data>
-  <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1525, 570</value>
-  </data>
-  <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
-    <value>dgvPersons</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="showDetailsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 32</value>
   </data>
@@ -458,6 +425,39 @@
   </data>
   <data name="phoneCallToolStripMenuItem.Text" xml:space="preserve">
     <value>Appeler</value>
+  </data>
+  <data name="cmsPeople.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 208</value>
+  </data>
+  <data name="&gt;&gt;cmsPeople.Name" xml:space="preserve">
+    <value>cmsPeople</value>
+  </data>
+  <data name="&gt;&gt;cmsPeople.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvPersons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 270</value>
+  </data>
+  <data name="dgvPersons.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="dgvPersons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1525, 570</value>
+  </data>
+  <data name="dgvPersons.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Name" xml:space="preserve">
+    <value>dgvPersons</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvPersons.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="gpFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>

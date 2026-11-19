@@ -13,6 +13,7 @@ namespace GymManager.Presentation
         public frmLogin()
         {
             InitializeComponent();
+            txtUsername.Focus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -53,5 +54,7 @@ namespace GymManager.Presentation
 
 
         }
+
+       
     }
 }

@@ -57,7 +57,7 @@ namespace GymManager.Presentation.Notifications
 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(23, 32, 51);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(226, 232, 240);
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(23, 32, 51);
