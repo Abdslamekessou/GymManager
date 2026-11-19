@@ -30,7 +30,7 @@ namespace GymManager.Presentation.Notifications
             dgvNotifications.CellContentClick += DgvNotifications_CellContentClick;
 
             //
-            if (clsGlobal.CurrentUser.RoleID == 1)
+            if (clsGlobal.CurrentUser.RoleID != 1)
             {
                 btnExport.Enabled = false;
                 btnMarkAllRead.Enabled = false;

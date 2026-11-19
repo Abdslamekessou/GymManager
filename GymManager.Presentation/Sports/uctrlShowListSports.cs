@@ -1,4 +1,5 @@
 ﻿using GymManager.Business;
+using GymManager.Presentation.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +20,15 @@ namespace GymManager.Presentation.Sports
         {
             InitializeComponent();
             dgvSports.DataSource = _AllSports;
+            if (clsGlobal.CurrentUser.RoleID != 1)
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                dgvSports.Enabled = false;
+            }
         }
 
-      
+
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -130,6 +137,11 @@ namespace GymManager.Presentation.Sports
                     MessageBoxIcon.Warning
                 );
             }
+        }
+
+        private void tlpMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

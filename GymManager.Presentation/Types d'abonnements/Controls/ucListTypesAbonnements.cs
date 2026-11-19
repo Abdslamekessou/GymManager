@@ -1,5 +1,6 @@
 ﻿
 using GymManager.Business;
+using GymManager.Presentation.Global_Classes;
 using GymManager.Presentation.Types_d_abonnements;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace GymManager.Presentation
         public ucListTypesAbonnements()
         {
             InitializeComponent();
+            if (clsGlobal.CurrentUser.RoleID != 1)
+            {
+                btnAjouterType.Enabled = false;
+                dgvListTypeAbonnement.Enabled = false;
+            }
+
         }
 
         private void ucListTypesAbonnements_Load(object sender, EventArgs e)

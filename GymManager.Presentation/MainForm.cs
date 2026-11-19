@@ -38,11 +38,9 @@ namespace GymManager.Presentation
         public MainForm()
         {
             InitializeComponent();
-            if (clsGlobal.CurrentUser.RoleID==1)
+            if (clsGlobal.CurrentUser.RoleID!=1)
             {
                 btnUtilisateurs.Enabled = false;
-                btnTypesAbonnements.Enabled = false;
-                btnSports.Enabled = false;
             }
             _sidebarIndicators = new List<Panel>
             {
@@ -66,8 +64,11 @@ namespace GymManager.Presentation
             UIHelper.SetupIconButton(btnSports, IconChar.Dumbbell);
             UIHelper.SetupIconButton(btnTypesAbonnements, IconChar.List);
             UIHelper.SetupIconButton(btnAbonnements, IconChar.CreditCard);
-            UIHelper.SetupIconButton(btnUtilisateurs, IconChar.UserCog);
             UIHelper.SetupIconButton(btnDeconnexion, IconChar.SignOutAlt);
+
+            if (clsGlobal.CurrentUser.RoleID == 1)
+                UIHelper.SetupIconButton(btnUtilisateurs, IconChar.UserCog);
+
 
             lblTitle.ForeColor = ColorTranslator.FromHtml("#111827");
 

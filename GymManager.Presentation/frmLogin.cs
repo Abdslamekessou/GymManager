@@ -18,9 +18,13 @@ namespace GymManager.Presentation
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            //Admin
             txtUsername.Text = "user1";
             txtPassword.Text = "hocine2004";
+
+            //Recepcioniste
+            //txtUsername.Text = "user2";
+            //txtPassword.Text = "hocine2004";
             _User = clsUser.FindByUserName(txtUsername.Text);
 
             if (_User == null)
