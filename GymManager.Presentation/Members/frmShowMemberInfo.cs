@@ -36,7 +36,7 @@ namespace GymManager.Presentation.Members
             ucMemberCardWithFilter1.LoadMemberInfo(_memberId);
             ucMemberCardWithFilter1.FilterEnabled = false;
 
-            ucListAbonnmentPerson1.LoadAbonnementsPersonData(ucMemberCardWithFilter1.PersonInfo.LastName);
+            ucListAbonnmentPerson1.LoadAbonnementsPersonData(_memberId);
 
         }
 

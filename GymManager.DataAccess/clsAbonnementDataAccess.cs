@@ -132,17 +132,19 @@ namespace GymManager.DataAccess
             return dt;
         }
 
-        public static DataTable GetAllAbonnementsWithPerson(string Adherent)
+        public static DataTable GetAllAbonnementsWithMemberID(int MemberID)
         {
             DataTable dt = new DataTable();
-            string query = @"select * from View_ListAbonnement
-                        where Adherent = @Adherent";
+            string query = @"select A.AbonnementID ,T.Nom as TypeAbonnement ,A.DateDebut,A.DateFin,A.PrixPaye,
+                            CASE WHEN A.EtatAbonnement = 0 THEN 'Actif' WHEN A.EtatAbonnement = 1 THEN 'Expiré' WHEN A.EtatAbonnement = 2 THEN 'Expire bientôt' ELSE 'Annulé' END AS Statut
+
+                            from Abonnements as A INNER JOIN TypeAbonnements as T on A.TypeAbonnementID = T.TypeAbonnementID and A.AdherentID=@AdherentID;";
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Adherent", Adherent);
+                    command.Parameters.AddWithValue("@AdherentID", MemberID);
 
                     try
                     {

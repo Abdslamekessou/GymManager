@@ -153,9 +153,9 @@ namespace GymManager.Business
                 return clsAbonnementDataAccess.GetAllAbonnements();
             }
 
-            public static DataTable GetAllAbonnementsWithPerson(string Adherent)
+            public static DataTable GetAllAbonnementsWithMemberID(int MemberID)
             {
-                return clsAbonnementDataAccess.GetAllAbonnementsWithPerson(Adherent);
+                return clsAbonnementDataAccess.GetAllAbonnementsWithMemberID(MemberID);
             }
 
             public static bool CancelAbonnement(int abonnementID)
