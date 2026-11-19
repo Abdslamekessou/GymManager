@@ -249,13 +249,14 @@ namespace GymManager.Presentation.Abonnements
             this.tsmiAnnuler});
             this.cmsAbonnements.Name = "cmsAbonnements";
             this.cmsAbonnements.ShowImageMargin = false;
-            this.cmsAbonnements.Size = new System.Drawing.Size(261, 132);
+            this.cmsAbonnements.Size = new System.Drawing.Size(261, 165);
             // 
             // tsmiAjouterAbonnement
             // 
             this.tsmiAjouterAbonnement.Name = "tsmiAjouterAbonnement";
             this.tsmiAjouterAbonnement.Size = new System.Drawing.Size(260, 32);
             this.tsmiAjouterAbonnement.Text = "Ajouter un abonnement";
+            this.tsmiAjouterAbonnement.Click += new System.EventHandler(this.tsmiAjouterAbonnement_Click);
             // 
             // tsmiDetails
             // 

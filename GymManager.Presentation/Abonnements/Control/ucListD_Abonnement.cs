@@ -354,5 +354,14 @@ namespace GymManager.Presentation.Abonnements
                 frm.ShowDialog();
             }
         }
+
+        private void tsmiAjouterAbonnement_Click(object sender, EventArgs e)
+        {
+            frmAjouterAbonnemnt frmAj = new frmAjouterAbonnemnt();
+
+            frmAj.ShowDialog();
+
+            _LoadAbonnementsData();
+        }
     }
 }
