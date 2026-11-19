@@ -319,7 +319,7 @@ namespace GymManager.Presentation.Notifications
             // lblReadStatusValue
             // 
             this.lblReadStatusValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblReadStatusValue.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblReadStatusValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadStatusValue.ForeColor = System.Drawing.Color.Firebrick;
             this.lblReadStatusValue.Location = new System.Drawing.Point(868, 80);
             this.lblReadStatusValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -343,7 +343,7 @@ namespace GymManager.Presentation.Notifications
             // lblExportStatusValue
             // 
             this.lblExportStatusValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblExportStatusValue.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblExportStatusValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExportStatusValue.Location = new System.Drawing.Point(868, 200);
             this.lblExportStatusValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExportStatusValue.Name = "lblExportStatusValue";
@@ -381,7 +381,7 @@ namespace GymManager.Presentation.Notifications
             // 
             // btnMarkAsRead
             // 
-            this.btnMarkAsRead.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnMarkAsRead.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarkAsRead.Location = new System.Drawing.Point(1003, 815);
             this.btnMarkAsRead.Margin = new System.Windows.Forms.Padding(4);
             this.btnMarkAsRead.Name = "btnMarkAsRead";

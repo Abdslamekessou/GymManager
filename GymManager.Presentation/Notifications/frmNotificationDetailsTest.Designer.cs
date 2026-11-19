@@ -34,7 +34,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(792, 810);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
